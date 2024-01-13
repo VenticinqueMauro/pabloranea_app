@@ -1,19 +1,20 @@
 'use client';
 
-import { Button, Card, Input } from '@nextui-org/react';
+import { Button, Card, Input, Textarea } from '@nextui-org/react';
 import { Calendar, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-const FormCreateStay = () => {
+const FormCreateEvent = () => {
 
     const router = useRouter()
 
     const [bookingData, setBookingData] = useState({
+        title: '',
         location: '',
-        startDate: '',
-        endDate: '',
-        color: '#CCCCCC',
+        date: '',
+        time: '',
+        description: '',
         status: 'active',
     });
 
@@ -26,10 +27,11 @@ const FormCreateStay = () => {
         });
     };
 
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const res = await fetch('/api/reservation', {
+            const res = await fetch('/api/event', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'Application/json'
@@ -39,7 +41,6 @@ const FormCreateStay = () => {
 
             if (res.ok) {
                 const data = await res.json();
-                console.log(data);
                 router.refresh();
             } else {
                 const errorData = await res.json();
@@ -50,10 +51,11 @@ const FormCreateStay = () => {
         } finally {
             setBookingData(
                 {
+                    title: '',
                     location: '',
-                    startDate: '',
-                    endDate: '',
-                    color: '#ffffff',
+                    date: '',
+                    time: '',
+                    description: '',
                     status: 'active',
                 })
         }
@@ -65,8 +67,21 @@ const FormCreateStay = () => {
             <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md '>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
                     <Calendar size={20} />
-                    Create tour stay
+                    Create event
                 </h2>
+                <div>
+                    <Input
+                        type="text"
+                        id="title"
+                        name="title"
+                        label="Title"
+                        endContent={<MapPin size={16} />}
+                        placeholder='Title'
+                        value={bookingData?.title}
+                        onChange={handleInputChange}
+                        isRequired
+                    />
+                </div>
                 <div>
                     <Input
                         type="text"
@@ -75,7 +90,7 @@ const FormCreateStay = () => {
                         label="Location"
                         endContent={<MapPin size={16} />}
                         placeholder='New York city'
-                        value={bookingData.location}
+                        value={bookingData?.location}
                         onChange={handleInputChange}
                         isRequired
                     />
@@ -84,11 +99,11 @@ const FormCreateStay = () => {
                     <label>
                         <Input
                             type="date"
-                            id="startDate"
-                            name="startDate"
+                            id="date"
+                            name="date"
                             label='Start Date'
                             placeholder='Start Date'
-                            value={bookingData.startDate}
+                            value={bookingData?.date}
                             onChange={handleInputChange}
                             isRequired
                         />
@@ -97,26 +112,25 @@ const FormCreateStay = () => {
                 <div>
                     <label>
                         <Input
-                            type="date"
-                            id="endDate"
-                            name="endDate"
-                            label='End Date'
-                            placeholder='End Date'
-                            value={bookingData.endDate}
+                            type="time"
+                            id="time"
+                            name="time"
+                            label='Start time'
+                            placeholder='Start time'
+                            value={bookingData?.time}
                             onChange={handleInputChange}
                             isRequired
                         />
                     </label>
                 </div>
                 <div>
-                    <Input
-                        type="color"
-                        id="color"
-                        name="color"
-                        label='Select Color'
-                        value={bookingData.color}
+                    <Textarea
+                        label="Description"
+                        name='description'
+                        placeholder="Enter your description"
+                        className="max-w-xs"
+                        value={bookingData?.description}
                         onChange={handleInputChange}
-                        isRequired
                     />
                 </div>
                 <Button
@@ -130,4 +144,4 @@ const FormCreateStay = () => {
     );
 };
 
-export default FormCreateStay;
+export default FormCreateEvent;

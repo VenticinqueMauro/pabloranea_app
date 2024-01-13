@@ -1,4 +1,4 @@
-import { Schema, Types, model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const eventSchema = new Schema({
     title: {
@@ -20,8 +20,9 @@ const eventSchema = new Schema({
         type: String
     },
     status: {
-        type: Boolean,
-        default: true
+        type: String,
+        enum: ['active', 'inactive'],
+        default: 'active'
     }
 })
 

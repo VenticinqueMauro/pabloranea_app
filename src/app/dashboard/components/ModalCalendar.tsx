@@ -1,5 +1,6 @@
 'use client';
 
+import { Event } from "@/types/event.type";
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import dayjs from "dayjs";
 import { animate, motion } from "framer-motion";
@@ -9,8 +10,7 @@ import { MapPinned, Plane, PlaneLanding, PlaneTakeoff } from "lucide-react";
 export default function ModalCalendar({ day, staysForDate }: any) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-    const hasEvents = staysForDate?.events && staysForDate?.events?.some((event: any) => dayjs(event.date).date() === day);
-
+    const hasEvents = staysForDate?.events && staysForDate?.events?.some((event: Event) => dayjs(event.date).date() + 1 === day);
 
     return (
         <>

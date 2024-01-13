@@ -1,11 +1,10 @@
+import { Event } from "./event.type"
 
 export type Stay = {
-    _id: string,
+    _id?: string,
     location: string,
-    stay: {
-        startDate: Date,
-        endDate: Date,
-        color: string
-    },
-    status: 'active' | 'inactive' | 'pending'
+    startDate: Date,
+    endDate: Date,
+    color: string
+    events: Event[] | undefined
 }
