@@ -24,10 +24,18 @@ const FormCreateStay = () => {
             ...bookingData,
             [name]: value,
         });
-    };
+    }
+
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (bookingData.startDate > bookingData.endDate) {
+            console.log('ERROR, fecha de terminacion es mejor que la de comienzo!')
+            return;
+        }
+
         try {
             const res = await fetch('/api/reservation', {
                 method: 'POST',
@@ -60,7 +68,7 @@ const FormCreateStay = () => {
 
     return (
         <Card>
-            <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md '>
+            <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md space-y-1'>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
                     <Calendar size={20} />
                     Create tour stay
