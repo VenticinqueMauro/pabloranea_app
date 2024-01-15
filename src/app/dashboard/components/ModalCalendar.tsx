@@ -10,7 +10,17 @@ import { MapPinned, Plane, PlaneLanding, PlaneTakeoff } from "lucide-react";
 export default function ModalCalendar({ day, staysForDate }: any) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-    const hasEvents = staysForDate?.events && staysForDate?.events?.some((event: Event) => dayjs(event.date).date() + 1 === day);
+    const hasEvents = staysForDate?.events && staysForDate?.events?.some((event: Event) => {
+        let eventDay = dayjs(event.date).date();
+
+        if (eventDay === 31 ) {
+            eventDay = 1;
+            return day === eventDay || (eventDay === 1 && day === 1);
+        }
+
+        return day === eventDay + 1 || (eventDay === 1 && day === 1);
+    });
+
 
     return (
         <>
