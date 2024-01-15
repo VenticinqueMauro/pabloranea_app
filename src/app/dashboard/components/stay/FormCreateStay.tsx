@@ -22,7 +22,7 @@ const FormCreateStay = () => {
         const { name, value } = e.target;
         setBookingData({
             ...bookingData,
-            [name]: value,
+            [name]: value.toLowerCase(),
         });
     }
 

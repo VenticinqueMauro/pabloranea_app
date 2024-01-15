@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
-import ModalCalendar from './ModalCalendar';
 import { Card } from '@nextui-org/react';
+import dynamic from 'next/dynamic';
 
+const ModalCalendar = dynamic(() => import('./ModalCalendar'));
 
 const Calendar = ({ stays }) => {
     const [selectedDate, setSelectedDate] = useState(dayjs());
@@ -14,7 +15,7 @@ const Calendar = ({ stays }) => {
 
     useEffect(() => {
         const staysMap = {};
-        
+
         stays?.forEach((stay) => {
             const startDate = dayjs(stay.startDate);
             const endDate = dayjs(stay.endDate);

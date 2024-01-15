@@ -5,7 +5,7 @@ import FormCreateStay from "./components/stay/FormCreateStay";
 import FormEditStay from "./components/stay/FormEditStay";
 
 async function getStays() {
-    const res = await fetch('http://localhost:3000/api/reservation', {
+    const res = await fetch(`${process.env.BASE_URL}/api/reservation`, {
         cache: 'no-store'
     })
     if (res.ok) {

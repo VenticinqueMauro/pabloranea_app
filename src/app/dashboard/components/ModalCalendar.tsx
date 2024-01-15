@@ -3,7 +3,7 @@
 import { Event } from "@/types/event.type";
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import dayjs from "dayjs";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { MapPinned, Plane, PlaneLanding, PlaneTakeoff } from "lucide-react";
 
 
@@ -37,11 +37,11 @@ export default function ModalCalendar({ day, staysForDate }: any) {
                                 </motion.p>
                                 <motion.p className="flex gap-2 items-center" initial={{ y: 20 }} animate={{ y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
                                     <PlaneLanding size={20} />
-                                    {dayjs(staysForDate?.startDate).format('dddd, MM YYYY.')}
+                                    {dayjs(staysForDate?.startDate).add(1, 'day').format('dddd, DD-MM-YYYY')}
                                 </motion.p>
                                 <motion.p className="flex gap-2 items-center" initial={{ y: 20 }} animate={{ y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
                                     <PlaneTakeoff size={20} />
-                                    {dayjs(staysForDate?.endDate).format('dddd, MM YYYY.')}
+                                    {dayjs(staysForDate?.endDate).add(1, 'day').format('dddd, DD-MM-YYYY')}
                                 </motion.p>
                                 {staysForDate?.events && staysForDate.events.length > 0 && (
                                     <>
@@ -50,7 +50,7 @@ export default function ModalCalendar({ day, staysForDate }: any) {
                                         </motion.p>
                                         {staysForDate.events.map((event: any) => (
                                             <motion.p key={event._id} className="flex gap-2 items-center" initial={{ y: 20 }} animate={{ y: 0 }} transition={{ duration: 0.5, delay: 0.6 }}>
-                                                {event.title} on {dayjs(event.date).format('dddd, MM YYYY')} at {event.time}
+                                                {event.title} on {dayjs(event.date).add(1, 'day').format('dddd, MM YYYY')} at {event.time}hs
                                             </motion.p>
                                         ))}
                                     </>
