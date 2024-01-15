@@ -49,7 +49,7 @@ const Calendar = ({ stays }) => {
         return (
             <div
                 key={day}
-                className={`text-center py-2 px-1 border rounded-md shadow bg-white`}
+                className={`text-center py-2 px-1 border rounded-md bg-white`}
                 style={{
                     background: backgroundColor,
                     cursor: cursorStyle,

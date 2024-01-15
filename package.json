@@ -13,6 +13,7 @@
     "dayjs": "^1.11.10",
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.309.0",
+    "million": "^2.6.4",
     "mongoose": "^8.0.4",
     "next": "14.0.4",
     "react": "^18",
