@@ -57,6 +57,7 @@ export default function EventTable() {
                 aria-label="Events Table"
                 className="overflow-x-hidden"
                 isStriped
+                radius="none"
             >
                 <TableHeader columns={columns}>
                     {(column) =>

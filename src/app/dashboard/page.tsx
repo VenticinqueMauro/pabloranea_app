@@ -30,8 +30,8 @@ export default async function DashboardHome() {
                 {/* <Calendar stays={stays} /> */}
                 {/* <FormCreateStay />
                 {/* <FormEditStay id={id} color={color} /> */}
-                <FormCreateEvent locations={locations} />
-                <EventTable />
+                {/* <FormCreateEvent locations={locations} /> */}
+                {/* <EventTable />  */}
             </div>
         </div>
     )
