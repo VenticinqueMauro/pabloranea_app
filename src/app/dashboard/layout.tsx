@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
 
 export const metadata: Metadata = {
@@ -9,12 +8,9 @@ export const metadata: Metadata = {
 
 export default function layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="h-screen">
-            <Navbar />
-            <div className="grid grid-cols-12 w-full h-full">
-                <Sidebar />
-                {children}
-            </div>
+        <div className="h-screen flex">
+            <Sidebar />
+            {children}
         </div>
     )
 }

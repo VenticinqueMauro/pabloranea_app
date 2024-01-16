@@ -1,19 +1,25 @@
 'use client';
 
 import { Event } from "@/types/event.type";
+import { Stay } from "@/types/stay.type";
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import { MapPinned, Plane, PlaneLanding, PlaneTakeoff } from "lucide-react";
 
+interface Props {
+    day: number,
+    staysForDate: Stay
+}
 
-export default function ModalCalendar({ day, staysForDate }: any) {
+
+export default function ModalCalendar({ day, staysForDate }: Props) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const hasEvents = staysForDate?.events && staysForDate?.events?.some((event: Event) => {
         let eventDay = dayjs(event.date).date();
 
-        if (eventDay === 31 ) {
+        if (eventDay === 31) {
             eventDay = 1;
             return day === eventDay || (eventDay === 1 && day === 1);
         }

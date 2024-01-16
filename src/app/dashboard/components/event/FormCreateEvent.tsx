@@ -59,7 +59,7 @@ const FormCreateEvent = ({ locations }: Props) => {
             });
 
             if (res.ok) {
-                const data = await res.json();
+                await res.json();
                 router.refresh();
             } else {
                 const errorData = await res.json();
@@ -83,7 +83,7 @@ const FormCreateEvent = ({ locations }: Props) => {
 
     return (
         <Card>
-            <form onSubmit={handleSubmit} className='max-w-md flex flex-col gap-2 p-5 border rounded-md space-y-1'>
+            <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md space-y-1'>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
                     <Calendar size={20} />
                     Create event
@@ -91,8 +91,8 @@ const FormCreateEvent = ({ locations }: Props) => {
                 <Checkbox
                     isSelected={newLocation}
                     onValueChange={() => {
-                        setNewLocation(!newLocation); 
-                        setValue(new Set([])); 
+                        setNewLocation(!newLocation);
+                        setValue(new Set([]));
                     }}
                 >
                     Do you need a new location?

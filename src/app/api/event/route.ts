@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Event from "@/models/event";
+import dayjs from "dayjs";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
@@ -7,7 +8,7 @@ export async function GET() {
     try {
         await connectDB();
 
-        const events = Event.find({})
+        const events = await Event.find({})
 
         if (!events) {
             return NextResponse.json({ message: 'No events found' }, {
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest) {
 
         const event = new Event({
             title,
-            date,
+            date: dayjs(date).format("YYYY-MM-DD"),
             time,
             location,
             description

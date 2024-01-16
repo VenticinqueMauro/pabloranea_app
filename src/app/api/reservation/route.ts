@@ -1,6 +1,7 @@
 import { connectDB } from "@/lib/mongodb";
 import Event from "@/models/event";
 import Stay from "@/models/stay";
+import dayjs from "dayjs";
 import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -79,8 +80,8 @@ export async function POST(request: NextRequest) {
         const stays = new Stay({
             _id: new mongoose.Types.ObjectId(),
             location,
-            startDate,
-            endDate,
+            startDate: dayjs(startDate).format("YYYY-MM-DD"),
+            endDate: dayjs(endDate).format("YYYY-MM-DD"),
             color,
             status,
         });

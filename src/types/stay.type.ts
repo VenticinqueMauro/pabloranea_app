@@ -6,5 +6,6 @@ export type Stay = {
     startDate: Date,
     endDate: Date,
     color: string
-    events: Event[] | undefined
+    events: Event[] | [],
+    __v?: number
 }

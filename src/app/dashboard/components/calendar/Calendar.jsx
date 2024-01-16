@@ -11,8 +11,6 @@ const Calendar = ({ stays }) => {
     const [selectedDate, setSelectedDate] = useState(dayjs());
     const [staysByDate, setStaysByDate] = useState({});
 
-    console.log(stays)
-
     useEffect(() => {
         const staysMap = {};
 
