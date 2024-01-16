@@ -25,7 +25,7 @@ export default async function DashboardHome() {
     // const { _id: id, color } = stays;
 
     return (
-        <div className="px-6 py-6 flex flex-col items-start ">
+        <div className="px-6 py-6 flex flex-col items-start min-w-full">
             <div className="flex items-start gap-4 w-full">
                 {/* <Calendar stays={stays} /> */}
                 {/* <FormCreateStay />

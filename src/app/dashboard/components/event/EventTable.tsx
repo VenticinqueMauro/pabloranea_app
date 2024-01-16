@@ -3,10 +3,13 @@
 import { Event } from "@/types/event.type";
 import { Chip, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
 import dayjs from "dayjs";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import ModalEdit from "./ModalEdit";
-import ModalDelete from "./ModalDelete";
-import StatusButton from "./StatusButton";
+
+
+const ModalEdit = dynamic(() => import("./ModalEdit"), { ssr: false });
+const ModalDelete = dynamic(() => import("./ModalDelete"), { ssr: false });
+const StatusButton = dynamic(() => import("./StatusButton"), { ssr: false });
 
 
 const columns = [
@@ -52,7 +55,7 @@ export default function EventTable() {
     }, [])
 
     return (
-        <section className='space-y-6'>
+        <section className="border rounded-lg ">
             <Table
                 aria-label="Events Table"
                 className="overflow-x-hidden"

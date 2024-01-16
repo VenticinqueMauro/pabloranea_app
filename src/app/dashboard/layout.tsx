@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function layout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="h-screen flex">
-            <Sidebar />
-            {children}
+        <div className="h-screen flex w-full">
+                <Sidebar />
+                {children}
         </div>
     )
 }
