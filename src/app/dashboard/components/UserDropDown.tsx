@@ -62,8 +62,7 @@ export default function UserDropdown() {
     }
 
     return (
-        <div className="absolute bottom-10">
-            <div className="flex items-center gap-4 ">
+            <div className="flex items-center gap-4">
                 <Dropdown placement="bottom-start">
                     <DropdownTrigger aria-label={`Perfil de ${user?.fullname}`}>
                         <User
@@ -107,6 +106,5 @@ export default function UserDropdown() {
                     </DropdownMenu>
                 </Dropdown>
             </div>
-        </div>
     );
 }

@@ -19,10 +19,10 @@ export default function Sidebar() {
     return (
         <div className="flex flex-col  px-6 py-6 border-r space-y-10 w-[15%]">
             <Link href="/dashboard" color="foreground" className="text-lg font-semibold flex gap-2 items-start">
-                <ChefHat size={26}/>
+                <ChefHat size={26} />
                 Admin Panel
             </Link>
-            <div className="space-y-2">
+            <div className="space-y-2 flex-grow">
                 {
                     routes.map(route => (
                         <Button
