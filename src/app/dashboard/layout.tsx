@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Sidebar from "./components/Sidebar"
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
     title: 'Admin Panel',
@@ -11,6 +12,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
         <div className="h-screen flex w-full">
                 <Sidebar />
                 {children}
+                <Toaster />
         </div>
     )
 }

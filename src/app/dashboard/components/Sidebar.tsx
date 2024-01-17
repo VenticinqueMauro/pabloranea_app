@@ -1,13 +1,13 @@
 'use client';
 
-import { Button, Link } from "@nextui-org/react"
-import { Calendar, ChefHat, Palmtree, Wine } from "lucide-react"
-import { usePathname } from "next/navigation"
+import { Button, Link } from "@nextui-org/react";
+import { ChefHat, Palmtree, UtensilsCrossed, Wine } from "lucide-react";
+import { usePathname } from "next/navigation";
 import UserDropDown from "./UserDropDown";
 
 const routes = [
-    { label: 'Events', route: '/dashboard/events', icon: <Calendar size={18} /> },
     { label: 'Stays', route: '/dashboard/stays', icon: <Palmtree size={18} /> },
+    { label: 'Events', route: '/dashboard/events', icon: <UtensilsCrossed size={18} /> },
     { label: 'Partners', route: '#', icon: <Wine size={18} /> },
 ]
 
@@ -17,7 +17,7 @@ export default function Sidebar() {
 
 
     return (
-        <div className="flex flex-col  px-6 py-6 border-r space-y-10 w-[15%]">
+        <div className="flex flex-col  px-6 py-6 border-r space-y-10 min-w-[15%]">
             <Link href="/dashboard" color="foreground" className="text-lg font-semibold flex gap-2 items-start">
                 <ChefHat size={26} />
                 Admin Panel

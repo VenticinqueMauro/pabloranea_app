@@ -1,9 +1,10 @@
 'use client';
 
 import { Button, Card, Input } from '@nextui-org/react';
-import { CalendarCheck2, MapPin } from 'lucide-react';
+import { MapPin, Palmtree } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 const FormEditStay = ({ id, color }: any) => {
 
@@ -32,35 +33,42 @@ const FormEditStay = ({ id, color }: any) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        try {
-            const res = await fetch(`/api/reservation/${id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'Application/json'
-                },
-                body: JSON.stringify(bookingData)
-            });
 
-            if (res.ok) {
-                const data = await res.json();
-                console.log(data);
-                router.refresh();
-            } else {
-                const errorData = await res.json();
-                console.log(errorData.message);
+        toast.promise(async () => {
+            try {
+                const res = await fetch(`/api/stay/${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'Application/json'
+                    },
+                    body: JSON.stringify(bookingData)
+                });
+
+                if (res.ok) {
+                    await res.json();
+                    return `Stay edited successfully 😎`;
+                } else {
+                    const errorData = await res.json();
+                    console.log(errorData.message);
+                }
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setBookingData(
+                    {
+                        location: '',
+                        startDate: '',
+                        endDate: '',
+                        color: '#ffffff',
+                        status: 'active',
+                    })
             }
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setBookingData(
-                {
-                    location: '',
-                    startDate: '',
-                    endDate: '',
-                    color: '#ffffff',
-                    status: 'active',
-                })
-        }
+        }, {
+            loading: "Loading...",
+            success: (message) => message,
+            error: (error) => error.message,
+        })
+
     };
 
 
@@ -68,7 +76,7 @@ const FormEditStay = ({ id, color }: any) => {
         <Card>
             <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md '>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
-                    <CalendarCheck2 size={20} />
+                    <Palmtree size={20} />
                     Edit tour Stay
                 </h2>
                 <div>

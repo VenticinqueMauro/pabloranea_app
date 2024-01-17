@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, Card, Checkbox, Input, Select, SelectItem, Selection, Textarea } from '@nextui-org/react';
-import { BookA, Calendar, MapPin } from 'lucide-react';
+import { BookA, Calendar, MapPin, UtensilsCrossed } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
@@ -85,7 +85,7 @@ const FormCreateEvent = ({ locations }: Props) => {
         <Card>
             <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md space-y-1'>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
-                    <Calendar size={20} />
+                    <UtensilsCrossed size={20} />
                     Create event
                 </h2>
                 <Checkbox

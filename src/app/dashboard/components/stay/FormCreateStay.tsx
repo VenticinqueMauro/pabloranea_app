@@ -4,6 +4,7 @@ import { Button, Card, Input } from '@nextui-org/react';
 import { Calendar, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { toast } from 'sonner';
 
 const FormCreateStay = () => {
 
@@ -32,38 +33,43 @@ const FormCreateStay = () => {
         e.preventDefault();
 
         if (bookingData.startDate > bookingData.endDate) {
-            console.log('ERROR, fecha de terminacion es mejor que la de comienzo!')
-            return;
+            return toast.error('Ending date is better than starting date 😞')
         }
 
-        try {
-            const res = await fetch('/api/reservation', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'Application/json'
-                },
-                body: JSON.stringify(bookingData)
-            });
+        toast.promise(async () => {
+            try {
+                const res = await fetch('/api/stay', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'Application/json'
+                    },
+                    body: JSON.stringify(bookingData)
+                });
 
-            if (res.ok) {
-                const data = await res.json();
-                router.refresh();
-            } else {
-                const errorData = await res.json();
-                console.log(errorData.message);
+                if (res.ok) {
+                    await res.json();
+                    return `Stay created successfully 😎`;
+                } else {
+                    const errorData = await res.json();
+                    toast.error(errorData.message);
+                }
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setBookingData(
+                    {
+                        location: '',
+                        startDate: '',
+                        endDate: '',
+                        color: '#ffffff',
+                        status: 'active',
+                    })
             }
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setBookingData(
-                {
-                    location: '',
-                    startDate: '',
-                    endDate: '',
-                    color: '#ffffff',
-                    status: 'active',
-                })
-        }
+        }, {
+            loading: "Loading...",
+            success: (message) => message,
+            error: (error) => error.message,
+        })
     };
 
     return (

@@ -1,16 +1,15 @@
-import { Metadata } from "next";
-import NavbarEvent from "../components/event/Navbar.event";
-
+import { Metadata } from "next"
+import NavbarStay from "../components/stay/Navbar.stay"
 
 export const metadata: Metadata = {
-    title: 'Events',
+    title: 'Stays',
     description: 'lorem ipsum',
 }
 
 export default function EventLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="space-y-4 w-full">
-            <NavbarEvent />
+            <NavbarStay />
             <div className="px-6">
                 {children}
             </div>

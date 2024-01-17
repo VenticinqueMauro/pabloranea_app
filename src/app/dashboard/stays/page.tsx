@@ -1,9 +1,9 @@
-import EventTable from "../components/event/EventTable";
+import StayTable from "../components/stay/StayTable";
 
 export default function page() {
     return (
         <section>
-            <EventTable />
+            <StayTable />
         </section>
     )
 }
