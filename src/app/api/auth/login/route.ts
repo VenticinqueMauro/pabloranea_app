@@ -37,13 +37,13 @@ export async function POST(req: NextRequest) {
 
         const response = NextResponse.json({ message: 'Login Succesfull' }, { status: 200 })
 
-
         response.cookies.set('PR_app', token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
             maxAge: 60 * 60 * 24 * 30,
             path: '/',
-        })
+        });
+
         return response;
 
     } catch (error) {

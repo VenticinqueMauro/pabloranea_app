@@ -1,9 +1,10 @@
 'use client';
 
+
 export default function page() {
 
-    const handleSubmit = async () => {
-
+    const handleSubmit = async (e: any) => {
+        e.preventDefault()
         try {
             const res = await fetch(`http://localhost:3000/api/auth/login`, {
                 cache: 'no-store',

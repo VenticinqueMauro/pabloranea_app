@@ -17,7 +17,11 @@ export async function GET() {
 
         const decodedToken: any = verify(PR_app, `${process.env.JWT_KEY}`);
 
-        const user = User.findOne({ email: decodedToken.email }).select("-password")
+        if (decodedToken.exp * 1000 < Date.now()) {
+            return NextResponse.json({ error: 'Token has expired' }, { status: 401 });
+        }
+
+        const user = await User.findOne({ email: decodedToken.email }).select("-password")
 
         if (!user) return NextResponse.json({ error: "User not found", authenticate: false }, { status: 400 });
 
