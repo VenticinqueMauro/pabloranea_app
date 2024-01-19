@@ -6,7 +6,7 @@ export default function page() {
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         try {
-            const res = await fetch(`http://localhost:3000/api/auth/login`, {
+            const res = await fetch(`${process.env.BASE_URL}/api/auth/login`, {
                 cache: 'no-store',
                 method: 'POST',
                 credentials: 'include',
