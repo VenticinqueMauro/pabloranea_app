@@ -2,7 +2,6 @@ import { connectDB } from "@/lib/mongodb";
 import { User } from "@/models/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -29,18 +28,22 @@ export async function POST(req: NextRequest) {
         const fullname = userFound.fullname;
 
         const tokenData = {
-            exp: Math.floor(Date.now() / 100) + 60 * 60 * 24 * 30,
+            exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
             email,
             fullname
         }
 
         const token = jwt.sign(tokenData, `${process.env.JWT_KEY}`)
 
+        const response = NextResponse.json({ message: 'Login Succesfull' }, { status: 200 })
 
-        cookies().set('PR_app', token, { secure: true })
-
-        return NextResponse.json({ message: 'Login Succesfull' }, { status: 200 })
-
+        response.cookies.set('PR_app', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production' ? true : false,
+            maxAge: 60 * 60 * 24 * 30,
+            path: '/',
+        })
+        return response;
 
     } catch (error) {
         if (error instanceof Error) {
