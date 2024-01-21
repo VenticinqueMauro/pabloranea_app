@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import { Card } from '@nextui-org/react';
 import dynamic from 'next/dynamic';
 
-const ModalCalendar = dynamic(() => import('./ModalCalendar'));
+const TooltipCalendar = dynamic(() => import('./TooltipCalendar'));
 
 const Calendar = ({ stays }) => {
     const [selectedDate, setSelectedDate] = useState(dayjs());
@@ -55,7 +55,7 @@ const Calendar = ({ stays }) => {
             >
                 {
                     staysForDate.length ?
-                        <ModalCalendar day={day} staysForDate={staysForDate[0]} />
+                        <TooltipCalendar day={day} staysForDate={staysForDate[0]} />
                         :
                         <p>{day}</p>
                 }

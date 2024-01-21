@@ -55,11 +55,14 @@ export async function POST(request: NextRequest) {
         const savedEvent = await event.save();
 
         return NextResponse.json({
-            title: savedEvent.title,
-            date: savedEvent.date,
-            time: savedEvent.time,
-            location: savedEvent.location,
-            description: savedEvent.description,
+            data: {
+                title: savedEvent.title,
+                date: savedEvent.date,
+                time: savedEvent.time,
+                location: savedEvent.location,
+                description: savedEvent.description,
+            },
+            message: "Event created successfully"
         })
 
     } catch (error) {

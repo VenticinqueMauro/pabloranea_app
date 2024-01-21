@@ -3,6 +3,7 @@
 import { Button, Card, Checkbox, Input, Select, SelectItem, Selection, Textarea } from '@nextui-org/react';
 import { BookA, MapPin, UtensilsCrossed } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 interface Props {
     locations: string[]
@@ -46,35 +47,45 @@ const FormCreateEvent = ({ locations }: Props) => {
                 location: stringValue.toLowerCase()
             }
         }
+        toast.promise(
+            async () => {
+                try {
+                    const res = await fetch('/api/event', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'Application/json'
+                        },
+                        body: JSON.stringify(dataForm)
+                    });
 
-        try {
-            const res = await fetch('/api/event', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'Application/json'
-                },
-                body: JSON.stringify(dataForm)
-            });
-
-            if (res.ok) {
-                await res.json();
-            } else {
-                const errorData = await res.json();
-                console.log(errorData.message);
+                    if (res.ok) {
+                        const { message } = await res.json();
+                        console.log(message)
+                        return message;
+                    } else {
+                        const { message } = await res.json();
+                        return message;
+                    }
+                } catch (error) {
+                    console.log(error);
+                } finally {
+                    setBookingData(
+                        {
+                            title: '',
+                            location: '',
+                            date: '',
+                            time: '',
+                            description: '',
+                            status: 'active',
+                        })
+                }
+            },
+            {
+                loading: 'Loading...',
+                success: (message: any) => message,
+                error: (error) => error.message,
             }
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setBookingData(
-                {
-                    title: '',
-                    location: '',
-                    date: '',
-                    time: '',
-                    description: '',
-                    status: 'active',
-                })
-        }
+        )
     };
 
 
