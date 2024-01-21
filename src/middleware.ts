@@ -9,8 +9,7 @@ export async function middleware(request: NextRequest) {
     if (token === undefined) return NextResponse.redirect(new URL('/login', request.url));
 
     try {
-        const { payload } = await jwtVerify(token, new TextEncoder().encode(`${process.env.JWT_KEY}`))
-        console.log('PAYLOAD MIDDLEWARE', payload);
+        await jwtVerify(token, new TextEncoder().encode(`${process.env.JWT_KEY}`))
         return NextResponse.next()
     } catch (error) {
         console.log(error)

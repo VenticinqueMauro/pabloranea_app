@@ -1,5 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { Pause, Play } from "lucide-react";
+import { toast } from "sonner";
 
 export default function StatusButton({ id, status }: { id: string, status?: string }) {
 
@@ -7,11 +8,11 @@ export default function StatusButton({ id, status }: { id: string, status?: stri
     const handleStatus = async () => {
 
         const newStatus = {
-            status: status === 'active' ? 'paused' : 'active'
+            status: status === 'active' ? 'inactive' : 'active'
         }
 
         try {
-            const res = await fetch(`/api/news/${id}`, {
+            const res = await fetch(`/api/event/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -19,7 +20,8 @@ export default function StatusButton({ id, status }: { id: string, status?: stri
                 body: JSON.stringify(newStatus)
             })
 
-            const data = await res.json()
+            const { message } = await res.json()
+            toast.success(message)
         } catch (error: any) {
             throw new Error(error)
         }

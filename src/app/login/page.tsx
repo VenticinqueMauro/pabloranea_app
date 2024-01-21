@@ -1,12 +1,14 @@
 'use client';
 
+import { BASE_URL } from "@/utils/enviroments";
+
 
 export default function page() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
         try {
-            const res = await fetch(`https://pabloranea.vercel.app/api/auth/login`, {
+            const res = await fetch(`${BASE_URL}/api/auth/login`, {
                 cache: 'no-store',
                 method: 'POST',
                 credentials: 'include',

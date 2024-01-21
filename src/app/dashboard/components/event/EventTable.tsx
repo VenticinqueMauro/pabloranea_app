@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
 
-const ModalEdit = dynamic(() => import("./ModalEdit"), { ssr: false });
 const ModalDelete = dynamic(() => import("./ModalDelete"), { ssr: false });
 const StatusButton = dynamic(() => import("./StatusButton"), { ssr: false });
 
@@ -26,8 +25,6 @@ export default function EventTable() {
 
     const [isFetching, setIsFetching] = useState(true);
     const [allEvents, setAllEvents] = useState<Event[]>([])
-
-    console.log(allEvents)
 
     useEffect(() => {
 
@@ -53,6 +50,7 @@ export default function EventTable() {
         getEvents();
 
     }, [])
+
 
     return (
         <section className="border rounded-lg ">
@@ -90,7 +88,6 @@ export default function EventTable() {
                                                 :
                                                 columnKey === 'actions' ?
                                                     <div className="flex gap-2">
-                                                        <ModalEdit id={item._id} />
                                                         <StatusButton id={item._id} status={item.status} />
                                                         <ModalDelete id={item._id} />
                                                     </div>

@@ -1,9 +1,8 @@
 'use client';
 
 import { Button, Card, Checkbox, Input, Select, SelectItem, Selection, Textarea } from '@nextui-org/react';
-import { BookA, Calendar, MapPin, UtensilsCrossed } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { BookA, MapPin, UtensilsCrossed } from 'lucide-react';
+import { useState } from 'react';
 
 interface Props {
     locations: string[]
@@ -11,7 +10,6 @@ interface Props {
 
 const FormCreateEvent = ({ locations }: Props) => {
 
-    const router = useRouter()
 
     const [newLocation, setNewLocation] = useState(false)
     const [value, setValue] = useState<Selection>(new Set([]));
@@ -60,7 +58,6 @@ const FormCreateEvent = ({ locations }: Props) => {
 
             if (res.ok) {
                 await res.json();
-                router.refresh();
             } else {
                 const errorData = await res.json();
                 console.log(errorData.message);

@@ -3,8 +3,8 @@
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, User } from "@nextui-org/react";
 import { LogOutIcon } from "lucide-react";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 interface User {
@@ -18,35 +18,37 @@ export default function UserDropdown() {
 
     const [user, setUser] = useState<User>()
 
-    // useEffect(() => {
-    //     const isAuthenticate = async () => {
+    useEffect(() => {
+        const isAuthenticate = async () => {
 
-    //         try {
-    //             const res = await fetch('/api/auth/authenticate')
+            try {
+                const res = await fetch('/api/auth/profile')
 
-    //             const { data }: { data: User } = await res.json();
+                const { data }: { data: User } = await res.json();
 
-    //             setUser(data);
+                setUser(data);
 
-    //         } catch (error) {
-    //             console.log('error')
-    //             redirect('/login')
-    //         }
-    //     }
-    //     isAuthenticate()
-    // }, [])
+            } catch (error) {
+                console.log('error')
+            }
+        }
+        isAuthenticate()
+    }, [])
 
 
     const signOut = async () => {
         toast.promise(
             async () => {
                 try {
-                    const response = await fetch(`/api/auth/logout`);
+                    const response = await fetch(`/api/auth/logout`, {
+                        method: 'DELETE'
+                    });
                     if (response.ok) {
                         setTimeout(() => {
                             router.push('/');
                         }, 1000);
-                        return `¡Hasta pronto! 👋`;
+                        const { message } = await response.json();
+                        return message;
                     } else {
                         throw new Error(`Oops, algo salió mal en el cierre de sesión. 😕`);
                     }
@@ -72,9 +74,9 @@ export default function UserDropdown() {
                             src: "/avatar.jpg",
                         }}
                         className="transition-transform"
-                        description={user?.email ?? 'ejemplo@ejemplo.com'}
-                        name={user?.fullname ?? 'Pablo Ranea'}
-                        aria-label={`Usuario: ${user?.fullname ?? 'Balcanes'}, correo electrónico: ${user?.email ?? ''}`}
+                        description={user?.email ?? ''}
+                        name={user?.fullname.toUpperCase() ?? ''}
+                        aria-label={`Usuario: ${user?.fullname ?? ''}, correo electrónico: ${user?.email ?? ''}`}
                     />
                 </DropdownTrigger>
                 <DropdownMenu aria-label="User Actions" variant="flat">
@@ -99,7 +101,7 @@ export default function UserDropdown() {
                         <span
                             className="flex gap-1"
                             onClick={signOut}>
-                            <LogOutIcon size={20}/>
+                            <LogOutIcon size={20} />
                             Logout
                         </span>
                     </DropdownItem>

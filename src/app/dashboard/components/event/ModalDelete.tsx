@@ -25,7 +25,8 @@ export default function ModalDelete({ id }: Props) {
                     })
 
                     if (response.ok) {
-                        return `¡Noticia eliminada con éxito! 😄`;
+                        const { message } = await response.json();
+                        return message;
                     } else {
                         throw new Error(`Oops, algo salió mal 😕`);
                     }
@@ -35,7 +36,7 @@ export default function ModalDelete({ id }: Props) {
             },
             {
                 loading: 'Loading...',
-                success: (message: string) => message,
+                success: (message) => message,
                 error: (error: any) => error.message,
             }
         )

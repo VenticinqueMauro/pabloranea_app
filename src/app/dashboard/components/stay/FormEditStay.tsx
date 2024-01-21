@@ -2,13 +2,10 @@
 
 import { Button, Card, Input } from '@nextui-org/react';
 import { MapPin, Palmtree } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 const FormEditStay = ({ id, color }: any) => {
-
-    const router = useRouter()
 
     const [bookingData, setBookingData] = useState({
         location: '',
