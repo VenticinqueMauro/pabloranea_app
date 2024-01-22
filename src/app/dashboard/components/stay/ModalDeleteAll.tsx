@@ -1,11 +1,14 @@
 'use client';
 
+import { useStore } from "@/store/dashboard";
 import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { Trash } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
 export default function ModalDeleteAll() {
+
+    const { setRefresh } = useStore();
 
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const [value, setValue] = useState('')
@@ -21,6 +24,7 @@ export default function ModalDeleteAll() {
                     })
 
                     if (response.ok) {
+                        setRefresh();
                         return `All stays deleted successfully ♻️`;
                     }
                 } catch (error: any) {

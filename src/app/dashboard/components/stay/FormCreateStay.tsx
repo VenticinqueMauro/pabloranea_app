@@ -1,14 +1,14 @@
 'use client';
 
+import { useStore } from '@/store/dashboard';
 import { Button, Card, Input } from '@nextui-org/react';
 import { Calendar, MapPin } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 
 const FormCreateStay = () => {
 
-    const router = useRouter()
+    const { setRefresh } = useStore();
 
     const [bookingData, setBookingData] = useState({
         location: '',
@@ -48,6 +48,7 @@ const FormCreateStay = () => {
 
                 if (res.ok) {
                     await res.json();
+                    setRefresh();
                     return `Stay created successfully 😎`;
                 } else {
                     const errorData = await res.json();

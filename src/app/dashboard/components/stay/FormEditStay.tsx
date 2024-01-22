@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from '@/store/dashboard';
 import { Button, Card, Input } from '@nextui-org/react';
 import { MapPin, Palmtree } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { toast } from 'sonner';
 
 const FormEditStay = ({ id, color }: any) => {
 
+    const { setRefresh } = useStore();
     const [bookingData, setBookingData] = useState({
         location: '',
         startDate: '',
@@ -43,6 +45,7 @@ const FormEditStay = ({ id, color }: any) => {
 
                 if (res.ok) {
                     await res.json();
+                    setRefresh();
                     return `Stay edited successfully 😎`;
                 } else {
                     const errorData = await res.json();

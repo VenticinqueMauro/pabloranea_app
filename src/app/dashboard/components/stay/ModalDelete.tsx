@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from "@/store/dashboard";
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { TrashIcon } from "lucide-react";
 import { toast } from "sonner";
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function ModalDelete({ id }: Props) {
+
+    const { setRefresh } = useStore();
 
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -23,6 +26,7 @@ export default function ModalDelete({ id }: Props) {
                     })
 
                     if (response.ok) {
+                        setRefresh();
                         return `Stay deleted successfully ♻️`;
                     } else {
                         throw new Error(`Oops, algo salió mal 😕`);

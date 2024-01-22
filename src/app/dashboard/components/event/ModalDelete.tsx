@@ -1,8 +1,8 @@
 'use client';
 
+import { useStore } from "@/store/dashboard";
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { TrashIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 interface Props {
@@ -11,9 +11,9 @@ interface Props {
 
 export default function ModalDelete({ id }: Props) {
 
+    const { setRefresh } = useStore();
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-    const router = useRouter();
 
     const handleDelete = async () => {
 
@@ -26,6 +26,7 @@ export default function ModalDelete({ id }: Props) {
 
                     if (response.ok) {
                         const { message } = await response.json();
+                        setRefresh();
                         return message;
                     } else {
                         throw new Error(`Oops, algo salió mal 😕`);

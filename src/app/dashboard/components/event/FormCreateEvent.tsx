@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from '@/store/dashboard';
 import { Button, Card, Checkbox, Input, Select, SelectItem, Selection, Textarea } from '@nextui-org/react';
 import { BookA, MapPin, UtensilsCrossed } from 'lucide-react';
 import { useState } from 'react';
@@ -11,7 +12,7 @@ interface Props {
 
 const FormCreateEvent = ({ locations }: Props) => {
 
-
+    const { setRefresh } = useStore();
     const [newLocation, setNewLocation] = useState(false)
     const [value, setValue] = useState<Selection>(new Set([]));
 
@@ -60,7 +61,7 @@ const FormCreateEvent = ({ locations }: Props) => {
 
                     if (res.ok) {
                         const { message } = await res.json();
-                        console.log(message)
+                        setRefresh();
                         return message;
                     } else {
                         const { message } = await res.json();

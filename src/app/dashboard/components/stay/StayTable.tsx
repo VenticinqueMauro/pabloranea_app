@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from "@/store/dashboard";
 import { Stay } from "@/types/stay.type";
 import { Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
 import dayjs from "dayjs";
@@ -22,6 +23,7 @@ const columns = [
 
 export default function StayTable() {
 
+    const { refresh } = useStore();
     const [isFetching, setIsFetching] = useState(true);
     const [allStays, setAllStays] = useState<Stay[]>([])
 
@@ -48,7 +50,7 @@ export default function StayTable() {
 
         getEvents();
 
-    }, [])
+    }, [refresh])
 
     return (
         <section className="border rounded-lg ">

@@ -1,5 +1,6 @@
 'use client';
 
+import { useStore } from "@/store/dashboard";
 import { Event } from "@/types/event.type";
 import { Chip, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
 import dayjs from "dayjs";
@@ -23,6 +24,7 @@ const columns = [
 
 export default function EventTable() {
 
+    const {refresh} = useStore();
     const [isFetching, setIsFetching] = useState(true);
     const [allEvents, setAllEvents] = useState<Event[]>([])
 
@@ -49,7 +51,7 @@ export default function EventTable() {
 
         getEvents();
 
-    }, [])
+    }, [refresh])
 
 
     return (

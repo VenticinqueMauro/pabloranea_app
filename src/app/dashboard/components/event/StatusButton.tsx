@@ -1,9 +1,11 @@
+import { useStore } from "@/store/dashboard";
 import { Button } from "@nextui-org/react";
 import { Pause, Play } from "lucide-react";
 import { toast } from "sonner";
 
 export default function StatusButton({ id, status }: { id: string, status?: string }) {
 
+    const { setRefresh } = useStore();
 
     const handleStatus = async () => {
 
@@ -21,6 +23,7 @@ export default function StatusButton({ id, status }: { id: string, status?: stri
             })
 
             const { message } = await res.json()
+            setRefresh();
             toast.success(message)
         } catch (error: any) {
             throw new Error(error)
