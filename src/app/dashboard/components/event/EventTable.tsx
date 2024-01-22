@@ -2,7 +2,7 @@
 
 import { useStore } from "@/store/dashboard";
 import { Event } from "@/types/event.type";
-import { Chip, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
+import { Chip, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Tooltip, getKeyValue } from "@nextui-org/react";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
@@ -24,7 +24,7 @@ const columns = [
 
 export default function EventTable() {
 
-    const {refresh} = useStore();
+    const { refresh } = useStore();
     const [isFetching, setIsFetching] = useState(true);
     const [allEvents, setAllEvents] = useState<Event[]>([])
 
@@ -85,16 +85,21 @@ export default function EventTable() {
                                         columnKey === 'date' ?
                                             <p>{dayjs(item.date).format("DD-MM-YY")}</p>
                                             :
-                                            columnKey === 'status' ?
-                                                <Chip variant="flat" color={item.status === 'active' ? 'success' : 'warning'}>{item.status}</Chip>
+                                            columnKey === 'description' ?
+                                                <p className="max-w-[100px] truncate">
+                                                    {item.description}
+                                                </p>
                                                 :
-                                                columnKey === 'actions' ?
-                                                    <div className="flex gap-2">
-                                                        <StatusButton id={item._id} status={item.status} />
-                                                        <ModalDelete id={item._id} />
-                                                    </div>
+                                                columnKey === 'status' ?
+                                                    <Chip variant="flat" color={item.status === 'active' ? 'success' : 'warning'}>{item.status}</Chip>
                                                     :
-                                                    getKeyValue(item, columnKey)
+                                                    columnKey === 'actions' ?
+                                                        <div className="flex gap-2">
+                                                            <StatusButton id={item._id} status={item.status} />
+                                                            <ModalDelete id={item._id} />
+                                                        </div>
+                                                        :
+                                                        getKeyValue(item, columnKey)
                                     }
                                 </TableCell>
                             )}
