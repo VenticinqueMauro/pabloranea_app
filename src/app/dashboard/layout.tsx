@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import Sidebar from "./components/Sidebar"
 import { Toaster } from "sonner"
+import { getStays } from "@/utils/helpers";
+import PopCalendar from "./components/calendar/PopCalendar";
 
 export const metadata: Metadata = {
     title: 'Admin Panel',
@@ -8,11 +10,13 @@ export const metadata: Metadata = {
 }
 
 export default function layout({ children }: { children: React.ReactNode }) {
+
     return (
-        <div className="h-screen flex w-full">
-                <Sidebar />
-                {children}
-                <Toaster />
+        <div className="h-screen flex w-full relative">
+            <Sidebar />
+            {children}
+            <PopCalendar />
+            <Toaster />
         </div>
     )
 }

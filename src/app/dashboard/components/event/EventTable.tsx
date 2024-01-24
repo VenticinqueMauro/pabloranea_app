@@ -83,7 +83,9 @@ export default function EventTable() {
                                 <TableCell className="capitalize">
                                     {
                                         columnKey === 'date' ?
-                                            <p>{dayjs(item.date).format("DD-MM-YY")}</p>
+                                            <p>
+                                                {dayjs(item.date).add(1, 'day').format('DD-MM-YY')}
+                                            </p>
                                             :
                                             columnKey === 'description' ?
                                                 <p className="max-w-[100px] truncate">

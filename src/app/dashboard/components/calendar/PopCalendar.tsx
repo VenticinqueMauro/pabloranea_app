@@ -1,17 +1,45 @@
-import { Popover, PopoverTrigger, PopoverContent, Button } from "@nextui-org/react";
-import Calendar from "./Calendar";
-import { Stay } from "@/types/stay.type";
-import { CalendarIcon } from "lucide-react";
+'use client';
 
-export default function PopCalendar({ stays }: { stays: Stay[] | undefined }) {
+import { Stay } from "@/types/stay.type";
+import { BASE_URL } from "@/utils/enviroments";
+import { Button, Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
+import { CalendarIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import Calendar from "./Calendar";
+import { useStore } from "@/store/dashboard";
+
+export default function PopCalendar() {
+
+    const { refresh } = useStore();
+    const [stays, setStays] = useState<Stay[]>([])
+
+    useEffect(() => {
+        async function GET() {
+            const res = await fetch(`${BASE_URL}/api/stay`, {
+                cache: 'no-store'
+            })
+            if (res.ok) {
+                const data: Stay[] = await res.json();
+                console.log(data)
+                setStays(data);
+            }
+        }
+
+        GET();
+
+    }, [refresh])
+
+
     return (
-        <Popover placement="bottom">
-            <PopoverTrigger>
-                <Button variant="light" color="default" startContent={<CalendarIcon size={18} />}>Calendar</Button>
-            </PopoverTrigger>
-            <PopoverContent className="shadow-none bg-transparent">
-                <Calendar stays={stays} />
-            </PopoverContent>
-        </Popover>
+        <div className='absolute bottom-10 right-5'>
+            <Popover placement="bottom" >
+                <PopoverTrigger>
+                    <Button variant="shadow" color="default" className="bg-background text-foreground dark" isIconOnly ><CalendarIcon size={18} /></Button>
+                </PopoverTrigger>
+                <PopoverContent className="shadow-none bg-transparent">
+                    <Calendar stays={stays} />
+                </PopoverContent>
+            </Popover>
+        </div>
     );
 }

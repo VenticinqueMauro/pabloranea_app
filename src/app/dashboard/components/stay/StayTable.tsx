@@ -84,10 +84,14 @@ export default function StayTable() {
                                             <p>{item?.events?.length}</p>
                                             :
                                             columnKey === 'startDate' ?
-                                                <p>{dayjs(item.startDate).format("DD-MM-YY")}</p>
+                                                <p>
+                                                    {dayjs(item.startDate).add(1, 'day').format('DD-MM-YY')}
+                                                </p>
                                                 :
                                                 columnKey === 'endDate' ?
-                                                    <p>{dayjs(item.endDate).format("DD-MM-YY")}</p>
+                                                    <p>
+                                                        {dayjs(item.endDate).add(1, 'day').format('DD-MM-YY')}
+                                                    </p>
                                                     :
                                                     columnKey === 'color' ?
                                                         <p
