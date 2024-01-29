@@ -1,9 +1,12 @@
-import { Image } from "@nextui-org/react";
+import CalendarFront from "@/components/CalendarFront";
 
 export default function page() {
   return (
-    <div className="h-screen w-full">
-      <Image radius="none" src="http://www.pabloranea.com/images/CPRlink06des.jpg" alt="portada" className="w-screen object-cover " />
-    </div>
+    <section>
+      {/* PORTADA  */}
+      <div className="h-[770px] bg-gray-200 flex justify-center items-center text-5xl font-bold">PORTADA</div>
+      {/* CALENDAR  */}
+      <CalendarFront />
+    </section>
   )
 }

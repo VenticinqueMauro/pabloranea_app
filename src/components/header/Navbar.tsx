@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { Roboto } from 'next/font/google'
 import { Image } from "@nextui-org/react";
+import path from "path";
 
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300'] })
@@ -12,6 +13,8 @@ const sections = ['pop-ups', 'calendar', 'partners', 'about pablo', 'clasess', '
 export default function Navbar() {
 
     const pathname = usePathname();
+
+    if (pathname.includes('/dashboard') || pathname.includes('/login')) return null
 
     return (
         <div className="pt-16 pb-6 px-20 flex justify-between items-center">
