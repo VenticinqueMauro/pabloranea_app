@@ -1,5 +1,6 @@
 import { Stay } from "@/types/stay.type";
 import { BASE_URL } from "@/utils/enviroments"
+import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
 
 async function getStays() {
@@ -20,16 +21,17 @@ export default async function CalendarFront() {
 
     const stays: Stay[] = await getStays();
 
-    console.log(stays)
-
     return (
-        <div className="h-screen px-20 flex items-center justify-center">
+        <section className="h-screen flex items-center justify-center flex-col">
+            <div className="relative imgScroll">
+                <Image src="/world.png" alt='world' className="" width={350} height={350} />
+                <h2 className="text-center text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2>
+            </div>
             <div>
-                <h2 className="text-center text-6xl font-bold block py-2">tour&lsquo;24 <br /> dates</h2>
-                <div className="flex flex-col border-t-4 border-black max-w-7xl mx-auto">
+                <div className="flex flex-col border-t-4 border-black max-w-7xl mx-auto relative">
                     {
                         stays?.map((stay) => (
-                            <div key={stay._id} className=" border-black border-b-4 flex justify-between items-center py-5 hover:bg-gray-100">
+                            <div key={stay._id} className=" border-black border-b-4 flex justify-between items-center py-5 hover:bg-gray-100 letterScroll">
                                 <div className="w-full text-start">
                                     <p className="font-bold text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
                                     <p className="uppercase text-lg text-zinc-500 font-bold">{stay.location}</p>
@@ -37,15 +39,12 @@ export default async function CalendarFront() {
                                 <div className="w-full text-justify">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tempore id, architecto doloremque temporibus voluptas fugiat ut veritatis veniam quam.
                                 </div>
-                                {/* <div className="w-full text-end">
-                                <p className="underline text-zinc-500 font-bold">BOTON A DEFINIR</p>
-                            </div> */}
                             </div>
                         ))
                     }
-                    <button className="bg-black text-white px-1 w-fit ms-auto mt-5 font-semibold">MORE DATE</button>
+                    <button className="bg-black text-white px-1 w-fit ms-auto mt-5 font-semibold imgScroll">MORE DATE</button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

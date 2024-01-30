@@ -16,7 +16,7 @@
   view-timeline-axis: block;
   animation-timeline: --imagen2;
   animation-name: scroll-img;
-  animation-range: entry exit;
+  animation-range: entry cover 50%;
   animation-fill-mode: both;
 }
 
@@ -65,12 +65,36 @@
   animation-fill-mode: both;
 }
 
-@keyframes scroll-parallax {
+.scroll-reveal span {
+  color: hsla(0, 0%, 0%, 0.2);
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-image: linear-gradient(90deg, black, black);
+  animation: scroll-reveal linear;
+  animation-timeline: view();
+}
+
+.scroll-reveal p span {
+  animation-range-start: 4.1%;
+  animation-range-end: contain ;
+}
+
+@keyframes scroll-reveal {
   from {
-    transform: translate(0, 0%);
+    background-size: 0% 100%;
   }
   to {
-    transform: translate(0, -50%);
+    background-size: 110% 100%;
+  }
+}
+
+@keyframes scroll-parallax {
+  from {
+    transform: translate(0, 50%);
+  }
+  to {
+    transform: translate(0, 0%);
   }
 }
 
@@ -112,11 +136,11 @@
 
 @keyframes scroll-img {
   from {
-    transform: translateY(100px);
+    opacity: 0;
   }
 
   to {
-    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -133,11 +157,21 @@
 @keyframes scroll {
   from {
     opacity: 0;
-    transform: translateX(200px);
+    transform: translateX(-200px);
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.text-shadow {
+  text-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
+}
+
+.text-shadow:hover {
+  text-shadow: 0 0 80px white;
+  scale: 0.9;
 }

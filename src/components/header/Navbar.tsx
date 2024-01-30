@@ -1,14 +1,14 @@
 'use client';
+import { motion } from 'framer-motion';
+import { Roboto } from 'next/font/google';
 import { usePathname } from "next/navigation";
-import { Roboto } from 'next/font/google'
-import { Image } from "@nextui-org/react";
-import path from "path";
+
 
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['100', '300'] })
 
 
-const sections = ['pop-ups', 'calendar', 'partners', 'about pablo', 'clasess', 'press', 'community', 'contact']
+const sections = ['home','pop-ups', 'calendar', 'partners', 'about pablo', 'clasess', 'press', 'community', 'contact']
 
 export default function Navbar() {
 
@@ -18,13 +18,25 @@ export default function Navbar() {
 
     return (
         <div className="pt-16 pb-6 px-20 flex justify-between items-center">
-            <Image src='/logo.png' alt="logo" width={200} className="font-bold text-3xl uppercase" />
-            <div className={`$${roboto.className} flex gap-1 uppercase`}>
-                {
-                    sections.map(section => (
-                        <p key={section} className={`${pathname === '/' && section === 'pop-ups' ? 'bg-black text-white' : ''} hover:bg-black hover:text-white cursor-pointer px-1`}>{section}</p>
-                    ))
-                }
+            <motion.img
+                src="/logo.png"
+                alt="logo"
+                width={200}
+                className="font-bold text-3xl uppercase"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.3 } }}
+            />
+            <div className={`$${roboto.className} flex uppercase`}>
+                {sections.map((section, index) => (
+                    <motion.p
+                        key={section}
+                        className={`${pathname === '/' && section === 'home' ? 'bg-black text-white' : ''} hover:bg-black hover:text-white cursor-pointer px-1`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1, transition: { duration: 0.5, delay: index * 0.3 } }}
+                    >
+                        {section}
+                    </motion.p>
+                ))}
             </div>
         </div>
     )

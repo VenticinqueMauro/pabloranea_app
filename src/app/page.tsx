@@ -1,12 +1,19 @@
-import CalendarFront from "@/components/CalendarFront";
+import About from "@/components/about/About";
+import CalendarFront from "@/components/calendar/CalendarFront";
+import Popups from "@/components/pop-ups/Popups";
+import Portada from "@/components/portada/Portada";
 
 export default function page() {
   return (
     <section>
       {/* PORTADA  */}
-      <div className="h-[770px] bg-gray-200 flex justify-center items-center text-5xl font-bold">PORTADA</div>
+      <Portada />
       {/* CALENDAR  */}
       <CalendarFront />
-    </section>
+      {/* POP-UPS */}
+      <Popups />
+      {/* ABOUT PABLO */}
+      <About />
+    </section >
   )
 }
