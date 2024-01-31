@@ -10,8 +10,8 @@ export default async function CalendarFront() {
 
     return (
         <section className="h-screen flex items-center justify-center flex-col">
-            <div className="relative imgScroll">
-                <Image src="/world.png" alt='world' className="transition-all  ease-linear filter grayscale  duration-300 wordlScroll" width={350} height={350} />
+            <div className="relative pt-20">
+                <Image src="/world.png" alt='world' className="wordlScroll" width={350} height={350} />
                 <h2 className="text-center text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2>
             </div>
             <div>
