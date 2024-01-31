@@ -6,7 +6,7 @@ import { Providers } from './providers'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
-export const metada: Metadata = {
+export const metadata: Metadata = {
   title: 'Pablo Ranea [Chef & Somm]',
   description: 'Falta crear description'
 }
