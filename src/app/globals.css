@@ -20,12 +20,12 @@
   animation-fill-mode: both;
 }
 
-.imgScroll2 {
-  view-timeline-name: --imagen;
+.wordlScroll {
+  view-timeline-name: --wordl;
   view-timeline-axis: block;
-  animation-timeline: --imagen;
-  animation-name: scroll-img2;
-  animation-range: entry 20% cover 30%;
+  animation-timeline: --wordl;
+  animation-name: scroll-world;
+  animation-range: entry cover 50%;
   animation-fill-mode: both;
 }
 
@@ -35,24 +35,6 @@
   animation-timeline: --top;
   animation-name: scroll-top;
   animation-range: entry -100% cover 50%;
-  animation-fill-mode: both;
-}
-
-.letterScroll2 {
-  view-timeline-name: --top2;
-  view-timeline-axis: block;
-  animation-timeline: --top2;
-  animation-name: scroll-top2;
-  animation-range: entry 10% cover 50%;
-  animation-fill-mode: both;
-}
-
-.RevisaTodoNuestroCatalogo {
-  view-timeline-name: --michi;
-  view-timeline-axis: block;
-  animation-timeline: --michi;
-  animation-name: scroll-michi;
-  animation-range: entry 90% cover 60%;
   animation-fill-mode: both;
 }
 
@@ -77,7 +59,7 @@
 
 .scroll-reveal p span {
   animation-range-start: 4.1%;
-  animation-range-end: contain ;
+  animation-range-end: contain;
 }
 
 @keyframes scroll-reveal {
@@ -95,30 +77,6 @@
   }
   to {
     transform: translate(0, 0%);
-  }
-}
-
-@keyframes scroll-michi {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scroll-top2 {
-  from {
-    opacity: 0;
-    transform: translateY(300px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -144,13 +102,13 @@
   }
 }
 
-@keyframes scroll-img2 {
+@keyframes scroll-world {
   from {
-    transform: translateY(200px);
+    transform: translate(0, 80%);
   }
-
   to {
-    transform: translateY(0);
+    transform: translate(0, 0);
+    filter: none;
   }
 }
 

@@ -8,10 +8,10 @@ export default function page() {
     <section>
       {/* PORTADA  */}
       <Portada />
-      {/* CALENDAR  */}
-      <CalendarFront />
       {/* POP-UPS */}
       <Popups />
+      {/* CALENDAR  */}
+      <CalendarFront />
       {/* ABOUT PABLO */}
       <About />
     </section >

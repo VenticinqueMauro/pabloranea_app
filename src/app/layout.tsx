@@ -1,10 +1,15 @@
+import Navbar from '@/components/header/Navbar'
 import type { Metadata } from 'next'
-import { Inter, Open_Sans } from 'next/font/google'
+import { Open_Sans } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
-import Navbar from '@/components/header/Navbar'
 
-const inter = Open_Sans({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'] })
+
+export const metada: Metadata = {
+  title: 'Pablo Ranea [Chef & Somm]',
+  description: 'Falta crear description'
+}
 
 
 export default function RootLayout({
@@ -14,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='light'>
-      <body className={`${inter.className} h-screen`}>
+      <body className={`${openSans.className} h-screen`}>
         <Providers>
           <Navbar />
           {children}
