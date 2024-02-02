@@ -63,13 +63,14 @@
   background-repeat: no-repeat;
   background-size: 0% 100%;
   background-image: linear-gradient(90deg, black, black);
-  animation: scroll-reveal linear;
+  animation: scroll-reveal linear ;
   animation-timeline: view();
 }
 
 .scroll-reveal p span {
   animation-range-start: 4.1%;
   animation-range-end: contain;
+  animation-fill-mode: forwards; 
 }
 
 @keyframes scroll-reveal {

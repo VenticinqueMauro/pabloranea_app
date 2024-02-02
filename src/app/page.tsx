@@ -2,10 +2,11 @@ import About from "@/components/about/About";
 import CalendarFront from "@/components/calendar/CalendarFront";
 import Popups from "@/components/pop-ups/Popups";
 import Portada from "@/components/portada/Portada";
+import Press from "@/components/press/Press";
 
 export default function page() {
   return (
-    <section>
+    <section >
       {/* PORTADA  */}
       <Portada />
       {/* POP-UPS */}
@@ -14,6 +15,7 @@ export default function page() {
       <CalendarFront />
       {/* ABOUT PABLO */}
       <About />
+      <Press />
     </section >
   )
 }
