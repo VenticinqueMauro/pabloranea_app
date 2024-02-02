@@ -53,7 +53,7 @@ const CardPress = () => {
                     background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(182, 182, 182, 0.1), transparent 40%)`,
                 }}
             ></div>
-                <div className='border max-w-[250px]'>
+                <div className='border-dashed border max-w-[250px]'>
                     <div className="mx-5 py-4 space-y-2 ">
                         <p className='font-bold'>Press Release Title</p>
                         <p className="text-sm flex gap-1 items-center">

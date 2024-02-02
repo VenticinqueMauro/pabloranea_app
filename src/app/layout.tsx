@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='light'>
-      <body className={`${openSans.className} h-screen`}>
+      <body className={`${openSans.className} h-screen overflow-x-hidden`}>
         <Providers>
           <Navbar />
           {children}

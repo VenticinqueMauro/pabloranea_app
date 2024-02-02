@@ -9,21 +9,21 @@ export default async function CalendarFront() {
     const stays: Stay[] | undefined = await getStays();
 
     return (
-        <section className="h-screen flex items-center justify-center flex-col">
+        <section className="h-screen flex items-center justify-center flex-col px-6 lg:px-0">
             <div className="relative pt-20">
                 <Image src="/world.png" alt='world' className="wordlScroll" width={350} height={350} />
-                <h2 className="text-center text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2>
+                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2>
             </div>
             <div>
-                <div className="flex flex-col border-t-4 border-black max-w-7xl mx-auto relative z-10 bg-white">
+                <div className="flex flex-col border-t-2 border-gray-800 border-dashed  max-w-7xl mx-auto relative z-10 bg-white">
                     {
                         stays?.map((stay) => (
-                            <div key={stay._id} className=" border-black border-b-4 flex justify-between items-center py-5 hover:bg-gray-100 letterScroll">
-                                <div className="w-full text-start">
-                                    <p className="font-bold text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
-                                    <p className="uppercase text-lg text-zinc-500 font-bold">{stay.location}</p>
+                            <div key={stay._id} className=" border-gray-800 border-b-2 border-dashed flex justify-between items-center py-5 hover:bg-gray-100 letterScroll">
+                                <div className="w-full text-start px-1">
+                                    <p className="font-bold text-base lg:text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
+                                    <p className="uppercase text-sm lg:text-lg text-zinc-500 font-bold">{stay.location}</p>
                                 </div>
-                                <div className="w-full text-justify ">
+                                <div className="w-full text-justify text-sm lg:text-base px-1">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tempore id, architecto doloremque temporibus voluptas fugiat ut veritatis veniam quam.
                                 </div>
                             </div>

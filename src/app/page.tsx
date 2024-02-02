@@ -15,6 +15,7 @@ export default function page() {
       <CalendarFront />
       {/* ABOUT PABLO */}
       <About />
+      {/* PRESS  */}
       <Press />
     </section >
   )
