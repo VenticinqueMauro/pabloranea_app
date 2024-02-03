@@ -96,20 +96,23 @@ export default function StayTable() {
                                                         {dayjs(item.endDate).add(1, 'day').format('DD-MM-YY')}
                                                     </p>
                                                     :
-                                                    columnKey === 'color' ?
-                                                        <p
-                                                            className="w-5 h-5 rounded-full inline-block shadow"
-                                                            style={{ background: `${item.color}` }}>
-
-                                                        </p>
+                                                    columnKey === 'description' ?
+                                                        <p className="max-w-[250px] truncate">{item.description}</p>
                                                         :
-                                                        columnKey === 'actions' ?
-                                                            <div className="flex gap-2">
-                                                                <ModalEdit id={item._id} />
-                                                                <ModalDelete id={item._id} />
-                                                            </div>
+                                                        columnKey === 'color' ?
+                                                            <p
+                                                                className="w-5 h-5 rounded-full inline-block shadow"
+                                                                style={{ background: `${item.color}` }}>
+
+                                                            </p>
                                                             :
-                                                            getKeyValue(item, columnKey)
+                                                            columnKey === 'actions' ?
+                                                                <div className="flex gap-2">
+                                                                    <ModalEdit id={item._id} />
+                                                                    <ModalDelete id={item._id} />
+                                                                </div>
+                                                                :
+                                                                getKeyValue(item, columnKey)
                                     }
                                 </TableCell>
                             )}

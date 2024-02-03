@@ -10,8 +10,8 @@ export default function Press() {
             <div className="container grid gap-8 px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
-                        <div className="inline-block  bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Press</div>
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Press Section</h2>
+                        <div className="inline-block  bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Prensa</div>
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Prensa y Medios</h2>
                         <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                             Read about our latest press releases and media coverage.
                         </p>

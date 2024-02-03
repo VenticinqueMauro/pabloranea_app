@@ -12,7 +12,8 @@ export default async function CalendarFront() {
         <section className="h-screen flex items-center justify-center flex-col px-6 lg:px-0">
             <div className="relative pt-20">
                 <Image src="/world.png" alt='world' className="wordlScroll" width={350} height={350} />
-                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2>
+                {/* <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2> */}
+                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour 2024</h2>
             </div>
             <div>
                 <div className="flex flex-col border-t-2 border-gray-800 border-dashed  max-w-7xl mx-auto relative z-10 bg-white">
