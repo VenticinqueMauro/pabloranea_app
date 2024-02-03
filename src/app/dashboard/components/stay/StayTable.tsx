@@ -17,6 +17,7 @@ const columns = [
     { label: 'Start date', key: 'startDate' },
     { label: 'End date', key: 'endDate' },
     { label: 'Events', key: 'eventsLenght' },
+    { label: 'Description', key: 'description' },
     { label: "Color", key: 'color' },
     { label: "Actions", key: 'actions' }
 ]
@@ -51,6 +52,8 @@ export default function StayTable() {
         getEvents();
 
     }, [refresh])
+
+    console.log(allStays)
 
     return (
         <section className="border rounded-lg ">

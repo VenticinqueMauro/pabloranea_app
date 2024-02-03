@@ -30,7 +30,7 @@ export default function Navbar() {
                 {sections.map((section, index) => (
                     <motion.p
                         key={section}
-                        className={`${pathname === '/' && section === 'home' ? 'bg-black text-white' : ''} hover:bg-black hover:text-white cursor-pointer px-1`}
+                        className={`${pathname === '/' && section === 'home' ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1, transition: { duration: 0.5, delay: index * 0.3 } }}
                     >

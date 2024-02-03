@@ -5,7 +5,9 @@
 .showAnimate {
   view-timeline-name: --presentacion;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --presentacion;
   animation-timeline: --presentacion;
+  -webkit-animation-name: scroll;
   animation-name: scroll;
   animation-range: entry 0% cover 40%;
   animation-fill-mode: both;
@@ -14,7 +16,9 @@
 .imgScroll {
   view-timeline-name: --imagen2;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --imagen2;
   animation-timeline: --imagen2;
+  -webkit-animation-name: scroll-img;
   animation-name: scroll-img;
   animation-range: entry cover 50%;
   animation-fill-mode: both;
@@ -23,17 +27,20 @@
 .fade {
   view-timeline-name: --fade;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --fade;
   animation-timeline: --fade;
+  -webkit-animation-name: fade;
   animation-name: fade;
   animation-range: entry cover 50%;
   animation-fill-mode: both;
 }
 
-
 .wordlScroll {
   view-timeline-name: --wordl;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --wordl;
   animation-timeline: --wordl;
+  -webkit-animation-name: scroll-world;
   animation-name: scroll-world;
   animation-range: entry cover 50%;
   animation-fill-mode: both;
@@ -42,7 +49,9 @@
 .letterScroll {
   view-timeline-name: --top;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --top;
   animation-timeline: --top;
+  -webkit-animation-name: scroll-top;
   animation-name: scroll-top;
   animation-range: entry -100% cover 50%;
   animation-fill-mode: both;
@@ -51,25 +60,27 @@
 .scroll-parallax {
   view-timeline-name: --parallax;
   view-timeline-axis: block;
+  -webkit-animation-timeline: --parallax;
   animation-timeline: --parallax;
+  -webkit-animation-name: scroll-parallax;
   animation-name: scroll-parallax;
   animation-range: entry exit;
   animation-fill-mode: both;
 }
 
 .scroll-reveal span {
-  color: hsla(0, 0%, 0%, 0.2);
+  color: hsla(100, 100%, 100%, 0.2);
   background-clip: text;
   background-repeat: no-repeat;
   background-size: 0% 100%;
-  background-image: linear-gradient(90deg, black, black);
-  animation: scroll-reveal linear ;
-  animation-timeline: view();
+  background-image: linear-gradient(90deg, white, white);
+  animation: scroll-reveal linear;
+  animation-timeline: view(y);
 }
 
 .scroll-reveal p span {
-  animation-range-start: 4.1%;
-  animation-range-end: contain;
+  animation-range-start: 20px;
+  animation-range-end: contain 300px;
   animation-fill-mode: forwards; 
 }
 

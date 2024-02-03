@@ -24,7 +24,7 @@ export default async function CalendarFront() {
                                     <p className="uppercase text-sm lg:text-lg text-zinc-500 font-bold">{stay.location}</p>
                                 </div>
                                 <div className="w-full text-justify text-sm lg:text-base px-1">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tempore id, architecto doloremque temporibus voluptas fugiat ut veritatis veniam quam.
+                                    {stay.description}
                                 </div>
                             </div>
                         ))

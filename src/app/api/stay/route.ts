@@ -59,7 +59,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
 
-    const { location, startDate, endDate, color, status } = await request.json();
+    const { location, startDate, endDate, color, status, description } = await request.json();
 
     try {
         await connectDB();
@@ -83,6 +83,7 @@ export async function POST(request: NextRequest) {
             startDate: dayjs(startDate).format("YYYY-MM-DD"),
             endDate: dayjs(endDate).format("YYYY-MM-DD"),
             color,
+            description,
             status,
         });
 
@@ -92,6 +93,7 @@ export async function POST(request: NextRequest) {
             location: savedStays.location,
             startDate: savedStays.startDate,
             endDate: savedStays.endDate,
+            description: savedStays.description,
             color: savedStays.color,
             status: savedStays.status,
         })

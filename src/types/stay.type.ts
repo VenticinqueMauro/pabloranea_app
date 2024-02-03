@@ -5,6 +5,7 @@ export type Stay = {
     location: string,
     startDate: Date,
     endDate: Date,
+    description: string
     color: string
     events: Event[] | [],
     __v?: number

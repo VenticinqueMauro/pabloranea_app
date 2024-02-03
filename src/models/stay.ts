@@ -15,6 +15,10 @@ const staySchema = new Schema({
         required: true,
         unique: true
     },
+    description: {
+        type: String,
+        required: true
+    },
     color: {
         type: String,
         default: "#9cd3f7"
