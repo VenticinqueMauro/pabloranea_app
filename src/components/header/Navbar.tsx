@@ -17,7 +17,7 @@ export default function Navbar() {
     if (pathname.includes('/dashboard') || pathname.includes('/login')) return null
 
     return (
-        <div className="pt-16 pb-6 px-20 flex justify-between items-center">
+        <div className="hidden pt-16 pb-6 px-20 lg:flex justify-between items-center">
             <motion.img
                 src="/logo.png"
                 alt="logo"

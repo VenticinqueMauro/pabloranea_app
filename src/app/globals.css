@@ -81,7 +81,27 @@
 .scroll-reveal p span {
   animation-range-start: 20px;
   animation-range-end: contain 300px;
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards;
+}
+
+.fade {
+  view-timeline-name: --fade;
+  view-timeline-axis: block;
+  -webkit-animation-timeline: --fade;
+  animation-timeline: --fade;
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  animation-range: entry exit;
+  animation-fill-mode: both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scroll-reveal {
@@ -128,13 +148,12 @@
 @keyframes fade {
   from {
     opacity: 0;
-    transform: translate(0, 50%)
+    transform: translate(0, 50%);
   }
 
   to {
     opacity: 1;
     transform: translate(0, 0);
-
   }
 }
 
