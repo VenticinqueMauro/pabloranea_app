@@ -1,5 +1,6 @@
 import About from "@/components/about/About";
 import CalendarFront from "@/components/calendar/CalendarFront";
+import Classes from "@/components/classes/Classes";
 import Footer from "@/components/footer/Footer";
 import Partners from "@/components/partners/Partners";
 import Popups from "@/components/pop-ups/Popups";
@@ -24,6 +25,8 @@ async function HomePage({ params: { lang } }: Lang) {
       <CalendarFront dictionary={dictionary} />
       {/* ABOUT PABLO */}
       <About dictionary={dictionary} />
+      {/* CLASSES  */}
+      <Classes dictionary={dictionary} />
       {/* PARTNERS */}
       <Partners dictionary={dictionary} />
       {/* PRESS  */}
