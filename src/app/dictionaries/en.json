@@ -1,0 +1,19 @@
+{
+    "menu": {
+        "home": "inicio",
+        "popups": "pop-ups",
+        "calendar": "calendario",
+        "aboutpablo": "sobre pablo",
+        "classes": "clases",
+        "partners": "partners",
+        "community": "comunidad",
+        "press": "prensa",
+        "contact": "contacto"
+    },
+    "popups": {
+        "title1": "The",
+        "title2": "Concept",
+        "description": "",
+        "button": "discover more"
+    }
+}
