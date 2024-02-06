@@ -1,14 +1,14 @@
 {
     "menu": {
-        "home": "inicio",
+        "home": "home",
         "popups": "pop-ups",
-        "calendar": "calendario",
-        "aboutpablo": "sobre pablo",
-        "classes": "clases",
+        "calendar": "calendar",
+        "aboutpablo": "about pablo",
+        "classes": "classes",
         "partners": "partners",
-        "community": "comunidad",
-        "press": "prensa",
-        "contact": "contacto"
+        "community": "community",
+        "press": "press",
+        "contact": "contact"
     },
     "popups": {
         "title1": "The",

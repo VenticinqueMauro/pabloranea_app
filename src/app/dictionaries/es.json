@@ -1,14 +1,14 @@
 {
     "menu": {
-        "home": "home",
+        "home": "inicio",
         "popups": "pop-ups",
-        "calendar": "calendar",
-        "aboutpablo": "about pablo",
-        "classes": "classes",
+        "calendar": "calendario",
+        "aboutpablo": "sobre pablo",
+        "classes": "clases",
         "partners": "partners",
-        "community": "community",
-        "press": "press",
-        "contact": "contact"
+        "community": "comunidad",
+        "press": "prensa",
+        "contact": "contacto"
     },
     "popups": {
         "title1": "Cenas",
