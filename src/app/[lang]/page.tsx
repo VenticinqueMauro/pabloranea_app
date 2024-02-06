@@ -27,7 +27,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* PARTNERS */}
       <Partners dictionary={dictionary} />
       {/* PRESS  */}
-      <Press />
+      <Press dictionary={dictionary} />
       {/* FOOTER */}
       <Footer />
     </section >

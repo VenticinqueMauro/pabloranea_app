@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
 import '../globals.css'
 import { Providers } from '../providers'
-import Link from 'next/link'
-import { redirect } from 'next/navigation'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 

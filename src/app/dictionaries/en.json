@@ -26,5 +26,11 @@
         "title1": "Partners",
         "title2": "2024",
         "button": "discover more"
+    },
+    "press": {
+        "badge": "Press",
+        "title": "The press",
+        "subtitle": "Read about our latest press releases and media coverage.",
+        "button": "View All Press Releases"
     }
 }

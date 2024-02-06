@@ -26,5 +26,11 @@
         "title1": "Nuestros",
         "title2": "aliados",
         "button": "descubre mas"
+    },
+    "press": {
+        "badge": "Prensa",
+        "title": "Nuestros aliados",
+        "subtitle": "Lea acerca de nuestros últimos comunicados de prensa y cobertura de los medios.",
+        "button": "Ver todos los comunicados de prensa"
     }
 }
