@@ -1,8 +1,11 @@
 
-export default function About() {
+export default function About({ dictionary }: any) {
+
+    const { title } = dictionary.aboutpablo;
+
     return (
         <section className="h-screen flex flex-col justify-center scroll-reveal mt-10 bg-black text-white pt-10 lg:pt-20">
-            <h2 className="text-5xl lg:text-9xl font-bold text-center -tracking-widest lg:-tracking-[16px] letterScroll">QUIÉN ES PABLO</h2>
+            <h2 className="text-5xl lg:text-9xl font-bold text-center -tracking-widest lg:-tracking-[16px] letterScroll">{title}</h2>
             <div className="px-6 lg:px-0 text-justify pt-10 pb-5 lg:py-10 max-w-7xl mx-auto">
                 <p className="font-bold text-xl lg:text-2xl h-full">
                     <span>

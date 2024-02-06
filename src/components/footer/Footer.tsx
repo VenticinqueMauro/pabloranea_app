@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import { Image } from '@nextui-org/react'
 import React from 'react'
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="https://flowbite.com/" className="flex items-center">
-                            <img src="/logo.png"
+                            <Image src="/logo.png"
                                 alt="logo"
                                 width={200}
                                 className="font-bold text-3xl uppercase" />

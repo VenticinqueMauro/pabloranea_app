@@ -15,5 +15,16 @@
         "title2": "Concept",
         "description": "",
         "button": "discover more"
+    },
+    "calendar": {
+        "title": "tour 2024 dates"
+    },
+    "aboutpablo": {
+        "title": "WHO IS PABLO?"
+    },
+    "partners": {
+        "title1": "Partners",
+        "title2": "2024",
+        "button": "discover more"
     }
 }

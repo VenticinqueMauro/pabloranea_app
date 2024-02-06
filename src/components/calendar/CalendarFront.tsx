@@ -1,12 +1,14 @@
+import { Lang } from "@/types/lang.type";
 import { Stay } from "@/types/stay.type";
 import { getStays } from "@/utils/helpers";
 import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
 
 
-export default async function CalendarFront() {
+export default async function CalendarFront({ dictionary }: any) {
 
     const stays: Stay[] | undefined = await getStays();
+    const { title } = dictionary.calendar
 
     return (
         <section className="h-screen flex items-center justify-center flex-col mb-10 px-6 lg:px-0">
@@ -14,7 +16,7 @@ export default async function CalendarFront() {
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
                 {/* <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour&lsquo;24 <br /> dates</h2> */}
-                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">tour 2024</h2>
+                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">{title}</h2>
             </div>
             <div>
                 <div className="flex flex-col border-t-2 border-gray-800 border-dashed  max-w-7xl mx-auto relative z-10 bg-white">

@@ -15,5 +15,16 @@
         "title2": "Pop-Up",
         "description": "",
         "button": "descubre mas"
+    },
+    "calendar": {
+        "title": "tour 2024"
+    },
+    "aboutpablo": {
+        "title": "QUIÉN ES PABLO"
+    },
+    "partners": {
+        "title1": "Nuestros",
+        "title2": "aliados",
+        "button": "descubre mas"
     }
 }

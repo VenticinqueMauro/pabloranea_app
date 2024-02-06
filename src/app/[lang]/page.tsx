@@ -5,34 +5,27 @@ import Partners from "@/components/partners/Partners";
 import Popups from "@/components/pop-ups/Popups";
 import Portada from "@/components/portada/Portada";
 import Press from "@/components/press/Press";
-import Link from "next/link";
+import TradButton from "@/components/tradButton/TradButton";
+import { Lang } from "@/types/lang.type";
 
-type Props = {
-  params: {
-    lang: 'es' | 'en'
-  }
-}
 
-async function HomePage({ params: { lang } }: Props) {
+async function HomePage({ params: { lang } }: Lang) {
 
-  const dictionary = await import(`@/app/dictionaries/${lang}`).then(m => m.default)
+  const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
 
   return (
     <section className="relative">
-      <Link
-        href={`/${lang === 'es' ? 'en' : 'es'}`}
-        className='absolute -top-32 right-20 px-2 text-sm py-1 z-50 border-black border'
-      >{lang === 'es' ? 'EN' : 'ES'}</Link>
+      <TradButton lang={lang} />
       {/* PORTADA  */}
       <Portada />
       {/* POP-UPS */}
       <Popups dictionary={dictionary} />
       {/* CALENDAR  */}
-      <CalendarFront />
+      <CalendarFront dictionary={dictionary} />
       {/* ABOUT PABLO */}
-      <About />
+      <About dictionary={dictionary} />
       {/* PARTNERS */}
-      <Partners />
+      <Partners dictionary={dictionary} />
       {/* PRESS  */}
       <Press />
       {/* FOOTER */}
