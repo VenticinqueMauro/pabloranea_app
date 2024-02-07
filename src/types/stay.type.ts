@@ -5,8 +5,13 @@ export type Stay = {
     location: string,
     startDate: Date,
     endDate: Date,
-    description: string
+    description: Description
     color: string
     events: Event[] | [],
     __v?: number
+}
+
+type Description = {
+    en: string,
+    es: string
 }

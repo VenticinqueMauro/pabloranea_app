@@ -10,7 +10,7 @@ export default function ModalCreate() {
     return (
         <>
             <Button onPress={onOpen} className="bg-black text-white font-medium" startContent={<Palmtree size={20} />}>Create stay</Button>
-            <Modal isOpen={isOpen} size="sm" onOpenChange={onOpenChange} className="bg-transparent shadow-none" hideCloseButton={true}>
+            <Modal isOpen={isOpen} size="md" onOpenChange={onOpenChange} className="bg-transparent shadow-none" hideCloseButton={true}>
                 <ModalContent>
                     {(onClose) => (
                         <>

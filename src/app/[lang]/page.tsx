@@ -22,7 +22,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* POP-UPS */}
       <Popups dictionary={dictionary} />
       {/* CALENDAR  */}
-      <CalendarFront dictionary={dictionary} />
+      <CalendarFront dictionary={dictionary} lang={lang} />
       {/* ABOUT PABLO */}
       <About dictionary={dictionary} />
       {/* CLASSES  */}

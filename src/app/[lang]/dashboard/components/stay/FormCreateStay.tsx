@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@/store/dashboard';
-import { Button, Card, Input } from '@nextui-org/react';
+import { Button, Card, Input, Tab, Tabs, Textarea } from '@nextui-org/react';
 import { Calendar, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
@@ -14,18 +14,33 @@ const FormCreateStay = () => {
         location: '',
         startDate: '',
         endDate: '',
+        description: {
+            en: '',
+            es: ''
+        },
         color: '#CCCCCC',
-        status: 'active',
     });
 
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setBookingData({
-            ...bookingData,
-            [name]: value.toLowerCase(),
-        });
+
+        if (name === 'en' || name === 'es') {
+            setBookingData({
+                ...bookingData,
+                description: {
+                    ...bookingData.description,
+                    [name]: value
+                }
+            })
+        } else {
+            setBookingData({
+                ...bookingData,
+                [name]: value.toLowerCase()
+            });
+        }
     }
+
 
 
 
@@ -62,8 +77,11 @@ const FormCreateStay = () => {
                         location: '',
                         startDate: '',
                         endDate: '',
+                        description: {
+                            en: '',
+                            es: ''
+                        },
                         color: '#ffffff',
-                        status: 'active',
                     })
             }
         }, {
@@ -75,7 +93,7 @@ const FormCreateStay = () => {
 
     return (
         <Card>
-            <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 border rounded-md space-y-1'>
+            <form onSubmit={handleSubmit} className='max-w-sm flex flex-col gap-2 p-5 rounded-md space-y-1'>
                 <h2 className='text-center font-medium text-lg flex gap-1 items-center justify-center'>
                     <Calendar size={20} />
                     Create tour stay
@@ -121,6 +139,30 @@ const FormCreateStay = () => {
                         />
                     </label>
                 </div>
+                <Tabs
+                    aria-label='options'
+                >
+                    <Tab key='en' title='EN'>
+                        <Textarea
+                            label="Description"
+                            placeholder="Enter your description"
+                            className="max-w-md"
+                            name='en'
+                            value={bookingData.description.en}
+                            onChange={(handleInputChange)}
+                        />
+                    </Tab>
+                    <Tab key='es' title='ES'>
+                        <Textarea
+                            label="Descripción"
+                            placeholder="Ingresá tu descripción"
+                            className="max-w-md"
+                            name='es'
+                            value={bookingData.description.es}
+                            onChange={handleInputChange}
+                        />
+                    </Tab>
+                </Tabs>
                 <div>
                     <Input
                         type="color"

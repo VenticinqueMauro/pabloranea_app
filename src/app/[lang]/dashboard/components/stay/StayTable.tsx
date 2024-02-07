@@ -97,7 +97,7 @@ export default function StayTable() {
                                                     </p>
                                                     :
                                                     columnKey === 'description' ?
-                                                        <p className="max-w-[250px] truncate">{item.description}</p>
+                                                        <p className="max-w-[250px] truncate">{item.description.en}</p>
                                                         :
                                                         columnKey === 'color' ?
                                                             <p
