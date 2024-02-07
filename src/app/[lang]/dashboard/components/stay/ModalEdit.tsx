@@ -2,7 +2,7 @@
 
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { EditIcon } from "lucide-react";
-import FormEditStay from "../stay/FormEditStay";
+import FormEditStay from "./FormEditStay";
 
 interface Props {
     id: string;

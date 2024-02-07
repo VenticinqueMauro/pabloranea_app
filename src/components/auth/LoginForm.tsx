@@ -3,13 +3,14 @@
 import { BASE_URL } from "@/utils/enviroments";
 import { Button, Card, Input } from "@nextui-org/react";
 import { EyeIcon, EyeOffIcon, MailIcon, UserIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 export default function LoginForm() {
 
     const router = useRouter();
+    const { lang } = useParams();
     const [isVisible, setIsVisible] = useState(false);
     const [data, setData] = useState({ email: '', password: '' });
 
@@ -39,12 +40,12 @@ export default function LoginForm() {
                         body: JSON.stringify(data),
                     });
 
-                    if(response.status === 404){
+                    if (response.status === 404) {
                         return `Email inválido. Por favor, inténtelo de nuevo.`
                     }
 
                     if (response.ok) {
-                        router.push('/dashboard');
+                        router.push(`/${lang}/dashboard`);
                         return `¡Inicio de sesión exitoso! 😄 ¡Bienvenid@!`;
                     } else {
                         const error = await response.json();

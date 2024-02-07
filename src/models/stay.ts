@@ -16,8 +16,14 @@ const staySchema = new Schema({
         unique: true
     },
     description: {
-        type: String,
-        required: true
+        en: {
+            type: String,
+            required: true
+        },
+        es: {
+            type: String,
+            required: true
+        }
     },
     color: {
         type: String,

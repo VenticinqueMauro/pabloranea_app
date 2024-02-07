@@ -34,7 +34,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { [key: 
             return NextResponse.json({ message: "Stay not found" }, { status: 400 });
         }
 
-        const { location, startDate, endDate, description, color, status, events } = await request.json();
+        const { location, startDate, endDate, description, color, events } = await request.json();
 
         if (location) {
             stayFound.location = location;
@@ -51,9 +51,6 @@ export async function PATCH(request: NextRequest, { params }: { params: { [key: 
         if (color) {
             stayFound.color = color;
         }
-        if (status) {
-            stayFound.status = status;
-        }
         if (events) {
             stayFound.events = events;
         }
@@ -66,7 +63,6 @@ export async function PATCH(request: NextRequest, { params }: { params: { [key: 
             endDate: updatedStay.endDate,
             description: updatedStay.description,
             color: updatedStay.color,
-            status: updatedStay.status,
         });
 
     } catch (error) {
