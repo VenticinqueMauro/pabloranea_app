@@ -10,7 +10,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
     const { title } = dictionary.calendar
 
     return (
-        <section className="h-screen flex items-center justify-center flex-col mb-10 px-6 lg:px-0">
+        <section className="flex items-center justify-center flex-col mb-20 px-6 lg:px-0 border-white">
             <div className="relative">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />

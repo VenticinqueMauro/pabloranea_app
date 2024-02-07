@@ -8,20 +8,20 @@ export default async function Popups({ dictionary }: any) {
     const { title1, title2, button } = dictionary.popups;
 
     return (
-        <section className="relative overflow-x-clip imgScroll">
+        <section className="relative overflow-x-clip ">
             {/* <div className="h-full bg-gray-700 flex justify-center items-center imgScroll"></div> */}
-            <div className="flex bg-black text-white ">
+            <div className="bg-black text-white">
                 <img
                     src="/popups/popups.jpg"
-                    className="object-contain"
+                    className="object-contain w-full imgScroll pt-6"
                     alt="pop-ups"
-                    style={{ maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0), #000000cc)' }}
-                    />
-                <div className="flex items-center px-10 relative">
-                    <div className="text-9xl text-white font-bold text-justify">
-                        <div className="h-20 w-[70%] bg-white inline-block lg:mr-10"></div>
+                    style={{ maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)' }}
+                />
+                <div className="position absolute bottom-0 left-0 w-full bg-black py-10">
+                    <div className="text-8xl lg:px-40 mx-auto text-white font-bold text-justify leading-tight">
+                        <div className="h-20 w-[80%] bg-white inline-block lg:mr-28 "></div>
                         más de 50 litros de chimichurri, 180 kilos de dulce de leche y 1400 botellas de vino
-                        <div className="w-[70%] absolute bottom-0 right-0 h-32 flex items-center gap-5 bg-white justify-end lg:ml-6 text-black font-semibold text-end text-6xl px-6 border-white border-4">the 2024 tour dates
+                        <div className="absolute bottom-0 right-0 h-32 w-[60%] flex items-center gap-5 bg-white justify-end lg:ml-6 text-black font-semibold text-end text-6xl px-6 border-white border-8">the 2024 tour dates
                             <div className="flex items-end gap-2">
                                 <ArrowDown className="bg-black text-white rounded-full p-1" size={40} />
                                 <ArrowDown className="bg-black text-white rounded-full p-1" size={40} />
