@@ -14,22 +14,23 @@
         "title1": "Cenas",
         "title2": "Pop-Up",
         "description": "",
-        "button": "descubre mas"
+        "button": "descubre más"
     },
     "calendar": {
         "title": "tour 2024"
     },
     "aboutpablo": {
-        "title": "QUIÉN ES PABLO"
+        "title": "QUIÉN ES PABLO",
+        "button": "descubre más"
     },
     "classes": {
         "title": "Lecciones",
-        "button": "descubre mas"
+        "button": "descubre más"
     },
     "partners": {
         "title1": "Nuestros",
         "title2": "aliados",
-        "button": "descubre mas"
+        "button": "descubre más"
     },
     "press": {
         "badge": "Prensa",

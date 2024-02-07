@@ -11,7 +11,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
 
     return (
         <section className="h-screen flex items-center justify-center flex-col mb-10 px-6 lg:px-0">
-            <div className="relative pt-0 lg:pt-20">
+            <div className="relative">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
                 <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">{title}</h2>
