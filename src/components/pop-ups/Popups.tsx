@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 
 export default async function Popups({ dictionary }: any) {
 
-    const { title1, title2, button } = dictionary.popups;
+    const { title1, title2, description, button } = dictionary.popups;
 
     return (
         <section className="relative overflow-x-clip ">
@@ -13,7 +13,7 @@ export default async function Popups({ dictionary }: any) {
             <div className="bg-black text-white">
                 <img
                     src="/popups/popups.jpg"
-                    className="object-contain w-full imgScroll pt-6"
+                    className="object-contain w-full imgScroll"
                     alt="pop-ups"
                     style={{ maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)' }}
                 />
@@ -32,7 +32,7 @@ export default async function Popups({ dictionary }: any) {
             </div>
             <div className="absolute top-0 left-0 px-6  lg:px-20 lg:py-16 max-w-md text-justify text-white scroll-parallax">
                 <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-widest">{title1}<br />{title2}</h2>
-                <h3 className="text-sm md:text-base pt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illo alias impedit corporis quod cupiditate excepturi eveniet eaque, asperiores quidem illum quae ratione expedita voluptatem nihil molestiae laudantium inventore pariatur ipsum assumenda rem voluptates aliquam? Libero amet nihil iusto, cumque, quidem a aspernatur tempora ratione voluptatibus assumenda debitis et ducimus?</h3>
+                <h3 className="text-sm md:text-base pt-5">{description}</h3>
                 <button className="flex justify-between font-bold pt-10 showAnimate w-fit gap-10">
                     <span>
                         {`>>>>>>`}
