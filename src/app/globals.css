@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .showAnimate {
   view-timeline-name: --presentacion;
   view-timeline-axis: block;
