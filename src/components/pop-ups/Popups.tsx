@@ -21,7 +21,7 @@ export default async function Popups({ dictionary }: any) {
                     <div className="text-8xl lg:px-40 mx-auto text-white font-bold text-justify leading-tight">
                         <div className="h-20 w-[80%] bg-white inline-block lg:mr-28 "></div>
                         más de 50 litros de chimichurri, 180 kilos de dulce de leche y 1400 botellas de vino
-                        <div className="absolute bottom-0 right-0 h-32 w-[60%] flex items-center gap-5 bg-white justify-end lg:ml-6 text-black font-semibold text-end text-6xl px-6 border-white border-8">the 2024 tour dates
+                        <div className="absolute bottom-0 right-0 h-32 w-[40%] flex items-center gap-5 bg-white justify-end lg:ml-6 text-black font-semibold text-end text-6xl px-6 border-white border-8">the 2024 tour dates
                             <div className="flex items-end gap-2">
                                 <ArrowDown className="bg-black text-white rounded-full p-1" size={40} />
                                 <ArrowDown className="bg-black text-white rounded-full p-1" size={40} />
