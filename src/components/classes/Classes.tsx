@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import React from 'react'
 
 export default function Classes({ dictionary }: any) {
@@ -7,12 +8,18 @@ export default function Classes({ dictionary }: any) {
 
     return (
         <section className="h-screen relative overflow-x-clip">
-            {/* <div className="h-full bg-gray-700 flex justify-center items-center imgScroll"></div> */}
-            <img
-                src="https://estudiarcocina.com/wp-content/uploads/2023/01/Que-es-un-chef-y-cuales-son-sus-funciones.jpg"
-                className="min-w-full min-h-full object-cover"
-                alt="pop-ups"
-            />
+            <div className='bg-black'>
+                <Image
+                    src='/classes/classes.jpg'
+                    width={1980}
+                    height={1023}
+                    alt='partners'
+                    className="object-cover w-full h-screen sm:h-screen"
+                    style={{
+                        maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'
+                    }}
+                />
+            </div>
             <div className='absolute bottom-5 right-3 px-1 bg-white flex flex-col items-start justify-center gap-4 h-[400px] overflow-y-auto'>
                 {
                     Array.from({ length: 5 }, (_, index) => (

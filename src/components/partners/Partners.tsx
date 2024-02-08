@@ -8,14 +8,18 @@ export default function Partners({ dictionary }: any) {
 
     return (
         <section className="h-screen relative overflow-x-clip">
-            {/* <div className="h-full bg-gray-700 flex justify-center items-center imgScroll"></div> */}
-            <Image
-                src='/partners/partners.jpg'
-                width={1980}
-                height={1114}
-                alt='partners'
-                className='w-full'
-            />
+            <div className="bg-black">
+                <Image
+                    src='/partners/partners.jpg'
+                    width={1980}
+                    height={1114}
+                    alt='partners'
+                    className="object-cover w-full h-screen sm:h-screen"
+                    style={{
+                        maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'
+                    }}
+                />
+            </div>
             <div className="absolute top-0 left-0 px-6  lg:px-20 lg:py-10 max-w-md text-justify text-white scroll-parallax">
                 <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-widest">{title1}<br />{title2}</h2>
                 <h3 className="text-sm md:text-base pt-5">{description}</h3>
