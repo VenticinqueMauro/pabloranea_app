@@ -8,7 +8,7 @@ export default function GiraEnNum() {
                 más de 50 litros de chimichurri, 180 kilos de dulce de leche y 1400 botellas de vino
             </div>
                 <div className="absolute bottom-0 right-0 h-14 md:h-16 lg:h-24 w-full md:w-fit  flex items-center gap-2 md:gap-5 bg-white justify-center md:justify-end lg:ml-6 text-black font-semibold text-end 
-                text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-6 border-white border-8">the 2024 tour dates
+                text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-3 sm:px-6 border-white border-8">the 2024 tour dates
                     <div className="flex items-end gap-2">
                         <ArrowDown className="bg-black text-white rounded-full p-1 h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"  />
                         <ArrowDown className="bg-black text-white rounded-full p-1 h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"  />
