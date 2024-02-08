@@ -13,10 +13,10 @@ export default function Classes({ dictionary }: any) {
                 className="min-w-full min-h-full object-cover"
                 alt="pop-ups"
             />
-            <div className='absolute bottom-5 right-3 p-7 bg-white flex flex-col items-start justify-center gap-4'>
+            <div className='absolute bottom-5 right-3 px-1 bg-white flex flex-col items-start justify-center gap-4 h-[400px] overflow-y-auto'>
                 {
-                    Array.from({ length: 3 }, (_, index) => (
-                        <div key={index} className=' border-b pb-5 flex flex-col items-start justify-center '>
+                    Array.from({ length: 5 }, (_, index) => (
+                        <div key={index} className='cursor-pointer px-3 border-b border-dashed py-5 flex flex-col items-start justify-center '>
                             <span className='text-gray-500 font-semibold'>22.03.04</span>
                             <p className='font-bold'>The Macao University of Science en Macao</p>
                             <p className='text-sm italic'>Macao, China</p>

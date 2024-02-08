@@ -1,20 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Image from "next/image";
+
 export default function Partners({ dictionary }: any) {
 
-    const { title1, title2, button } = dictionary.partners;
+    const { title1, title2, description, button } = dictionary.partners;
 
     return (
         <section className="h-screen relative overflow-x-clip">
             {/* <div className="h-full bg-gray-700 flex justify-center items-center imgScroll"></div> */}
-            <img
-                src="https://estudiarcocina.com/wp-content/uploads/2023/01/Que-es-un-chef-y-cuales-son-sus-funciones.jpg"
-                className="min-w-full min-h-full object-cover"
-                alt="pop-ups"
+            <Image
+                src='/partners/partners.jpg'
+                width={1980}
+                height={1114}
+                alt='partners'
+                className='w-full'
             />
-            <div className="absolute top-0 left-0 px-6  lg:px-20 ;gLpy-10 max-w-md text-justify text-white scroll-parallax">
-                <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-widest">{title1}<br />{title2}</h2>
-                <h3 className="text-sm md:text-base pt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta illo alias impedit corporis quod cupiditate excepturi eveniet eaque, asperiores quidem illum quae ratione expedita voluptatem nihil molestiae laudantium inventore pariatur ipsum assumenda rem voluptates aliquam? Libero amet nihil iusto, cumque, quidem a aspernatur tempora ratione voluptatibus assumenda debitis et ducimus?</h3>
+            <div className="absolute top-0 left-0 px-6  lg:px-20 lg:py-10 max-w-md text-justify text-white scroll-parallax">
+                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-widest">{title1}<br />{title2}</h2>
+                <h3 className="text-sm md:text-base pt-5">{description}</h3>
                 <button className="flex justify-between w-fit gap-10 font-bold pt-10 showAnimate">
                     <span>
                         {`>>>>>>`}

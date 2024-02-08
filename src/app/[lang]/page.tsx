@@ -2,6 +2,7 @@ import About from "@/components/about/About";
 import CalendarFront from "@/components/calendar/CalendarFront";
 import Classes from "@/components/classes/Classes";
 import Footer from "@/components/footer/Footer";
+import GiraEnNum from "@/components/giraennumeros/GiraEnNum";
 import Partners from "@/components/partners/Partners";
 import Popups from "@/components/pop-ups/Popups";
 import Portada from "@/components/portada/Portada";
@@ -21,6 +22,8 @@ async function HomePage({ params: { lang } }: Lang) {
       <Portada />
       {/* POP-UPS */}
       <Popups dictionary={dictionary} />
+      {/* GIRA EN NUMEROS  */}
+      <GiraEnNum />
       {/* CALENDAR  */}
       <CalendarFront dictionary={dictionary} lang={lang} />
       {/* ABOUT PABLO */}
