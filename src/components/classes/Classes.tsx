@@ -7,7 +7,7 @@ export default function Classes({ dictionary }: any) {
     const { title, button } = dictionary.classes
 
     return (
-        <section className="h-screen relative overflow-x-clip">
+        <section className="min-h-screen relative overflow-x-clip">
             <div className='bg-black'>
                 <Image
                     src='/classes/classes.jpg'

@@ -19,7 +19,7 @@ export default function About({ dictionary }: any) {
                     </button>
                 </p>
             </div>
-            <div className="h-full bg-gray-200 flex justify-center items-center text-5xl font-bold fade">IMAGEN</div>
+            {/* <div className="h-full bg-gray-200 flex justify-center items-center text-5xl font-bold fade">IMAGEN</div> */}
         </section>
     )
 }

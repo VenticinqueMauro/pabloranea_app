@@ -7,7 +7,7 @@ export default function Partners({ dictionary }: any) {
     const { title1, title2, description, button } = dictionary.partners;
 
     return (
-        <section className="h-screen relative overflow-x-clip">
+        <section className="min-h-screen relative overflow-x-clip">
             <div className="bg-black">
                 <Image
                     src='/partners/partners.jpg'

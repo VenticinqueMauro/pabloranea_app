@@ -12,7 +12,7 @@ export default function Portada() {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.3 } }}
-            className='h-screen embla'
+            className='h-screen embla '
             ref={emblaRef}
         >
             <div className="embla__container">

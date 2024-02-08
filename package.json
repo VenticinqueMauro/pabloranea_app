@@ -13,6 +13,7 @@
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.10",
     "embla-carousel-autoplay": "^8.0.0-rc22",
+    "embla-carousel-class-names": "^8.0.0-rc22",
     "embla-carousel-react": "^8.0.0-rc22",
     "framer-motion": "^10.18.0",
     "jose": "^5.2.0",
