@@ -16,7 +16,7 @@ async function HomePage({ params: { lang } }: Lang) {
   const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
 
   return (
-    <section className="relative">
+    <section className="relative z-30">
       <TradButton lang={lang} />
       {/* PORTADA  */}
       <Portada />
