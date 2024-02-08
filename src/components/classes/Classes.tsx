@@ -20,7 +20,7 @@ export default function Classes({ dictionary }: any) {
                     }}
                 />
             </div>
-            <div className='absolute bottom-5 right-3 px-1 bg-white flex flex-col items-start justify-center gap-4 h-[400px] overflow-y-auto'>
+            <div className='hidden absolute bottom-5 right-3 px-1 bg-white lg:flex flex-col items-start justify-center gap-4 h-[400px] overflow-y-auto'>
                 {
                     Array.from({ length: 5 }, (_, index) => (
                         <div key={index} className='cursor-pointer px-3 border-b border-dashed py-5 flex flex-col items-start justify-center '>
