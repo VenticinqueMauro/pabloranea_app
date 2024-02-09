@@ -11,7 +11,7 @@ export default function About({ dictionary }: any) {
                     <span>
                         A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver en USA; como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde supo plantar bandera creando una comunidad foodie fiel de comensales aventureros que siempre están atentos a todas las novedades sobre vinos argentinos y deleitar sus sentidos con sus fabulosos platos.
                     </span>
-                    <button className="flex justify-between gap-10 pt-10 showAnimate w-fit font-bold ms-auto">
+                    <button className="flex justify-between gap-10 pt-10  w-fit font-bold ms-auto">
                         <span>
                             {`>>>>>>`}
                         </span>
@@ -19,7 +19,6 @@ export default function About({ dictionary }: any) {
                     </button>
                 </p>
             </div>
-            {/* <div className="h-full bg-gray-200 flex justify-center items-center text-5xl font-bold fade">IMAGEN</div> */}
         </section>
     )
 }
