@@ -71,6 +71,7 @@ export default function MarqueeContainer() {
         <Marquee
             autoFill={true}
             pauseOnHover={true}
+            gradient={true}
             className="items-center"
         >
             {
