@@ -1,7 +1,7 @@
 
 export default function About({ dictionary }: any) {
 
-    const { title, button } = dictionary.aboutpablo;
+    const { title, description, button } = dictionary.aboutpablo;
 
     return (
         <section className="h-screen flex flex-col justify-center scroll-reveal mt-10 bg-black text-white pt-10 ">
@@ -9,7 +9,7 @@ export default function About({ dictionary }: any) {
             <div className="px-6 lg:px-0 text-justify pt-10 pb-5 lg:py-10 max-w-7xl mx-auto">
                 <p className="font-light text-xl lg:text-2xl h-full">
                     <span>
-                        A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver en USA; como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde supo plantar bandera creando una comunidad foodie fiel de comensales aventureros que siempre están atentos a todas las novedades sobre vinos argentinos y deleitar sus sentidos con sus fabulosos platos.
+                        {description}
                     </span>
                     <button className="flex justify-between gap-10 pt-10  w-fit font-bold ms-auto">
                         <span>
