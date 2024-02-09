@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import MarqueeContainer from "./MarqueeContainer";
 
 const CardPress = dynamic(() => import("./CardPress"), { ssr: false });
 
@@ -9,7 +10,8 @@ export default function Press({ dictionary }: any) {
     const { badge, title, subtitle, button } = dictionary.press;
 
     return (
-        <section className="max-w-7xl mx-auto py-12 md:py-24 lg:py-32 lg:mt-20">
+        <section className="max-w-7xl mx-auto py-12 md:py-24 lg:py-10">
+            <MarqueeContainer />
             <div className="container grid gap-8 px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
