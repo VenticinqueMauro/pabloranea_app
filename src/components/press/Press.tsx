@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import MarqueeContainer from "./MarqueeContainer";
 
+const MarqueeContainer = dynamic(() => import("./MarqueeContainer"), { ssr: false });
 const CardPress = dynamic(() => import("./CardPress"), { ssr: false });
 
 
