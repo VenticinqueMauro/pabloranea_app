@@ -71,7 +71,7 @@ export default function MarqueeContainer() {
         <Marquee
             autoFill={true}
             pauseOnHover={true}
-            gradient={true}
+            // gradient={true}
             className="items-center"
         >
             {
@@ -82,7 +82,7 @@ export default function MarqueeContainer() {
                         alt={logo.alt}
                         width={logo.width}
                         height={logo.heigth}
-                        className={`${logo.alt === 'viapais' ? 'bg-[#ff6e00] px-3 py-2' : ''} mx-12 max-w-[200px] max-h-[150px] mt-10 mb-10`}
+                        className={`${logo.alt === 'viapais' ? 'bg-[#ff6e00] px-3 py-2' : ''} mx-6 lg:mx-12 max-w-[200px] max-h-[150px] lg:mt-10 mb-10`}
                     />
 
                 ))

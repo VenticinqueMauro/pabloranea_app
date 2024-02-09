@@ -169,7 +169,7 @@
 @keyframes scroll {
   from {
     opacity: 0;
-    transform: translateX(-200px);
+    transform: translateX(-400px);
   }
 
   to {
