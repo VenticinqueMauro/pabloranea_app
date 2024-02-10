@@ -11,11 +11,11 @@ export default function Classes({ dictionary }: any) {
         <section className="min-h-screen relative overflow-x-clip">
             <div className='bg-black'>
                 <Image
-                    src='/classes/classes.jpg'
-                    width={1980}
+                    src='/classes/classes.jpeg'
+                    width={1920}
                     height={1023}
                     alt='partners'
-                    className="object-cover w-full h-screen sm:h-screen"
+                    className="object-cover w-full h-screen sm:h-screen "
                     style={{
                         maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'
                     }}

@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "Aileron";
+  src: url("/tipografia/Aileron-Bold.otf")
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+font-family: Aileron;
+}
 
 .showAnimate {
   view-timeline-name: --presentacion;
@@ -192,4 +200,3 @@
   flex: 0 0 100%;
   min-width: 0;
 }
-

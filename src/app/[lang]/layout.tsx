@@ -24,7 +24,7 @@ export default async function RootLayout({ children, params: { lang } }: Props) 
 
   return (
     <html lang={lang} className='light'>
-      <body className={`${openSans.className} h-screen overflow-x-hidden relative`}>
+      <body className={` h-screen overflow-x-hidden relative`}>
         <Providers>
           <Navbar dictionary={dictionary} />
           {children}
