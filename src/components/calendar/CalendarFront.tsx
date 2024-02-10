@@ -14,7 +14,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
             <div className="relative">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
-                <h2 className="text-center text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">{title}</h2>
+                <h2 className="text-start text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">{title}</h2>
             </div>
             <div>
                 <div className="flex flex-col border-t-2 border-gray-800 border-dashed  max-w-7xl mx-auto relative z-10 bg-white">

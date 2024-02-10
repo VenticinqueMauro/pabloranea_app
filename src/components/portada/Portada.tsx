@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Portada() {
-    const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()])
+    const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay({ delay: 2000 })])
 
     return (
         <motion.div
@@ -17,7 +17,7 @@ export default function Portada() {
         >
             <div className="embla__container">
                 {
-                    Array.from({ length: 5 }, (_, index) => (
+                    Array.from({ length: 7 }, (_, index) => (
                         <div key={`slide${index}`} className="embla__slide">
                             <Image
                                 src={`/portada/slide${index + 1}.jpg`}
