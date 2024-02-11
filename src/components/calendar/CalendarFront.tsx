@@ -11,11 +11,12 @@ export default async function CalendarFront({ dictionary, lang }: any) {
 
     return (
         <section className="flex items-center justify-center flex-col mb-20 px-6 lg:px-0 border-white">
-            <div className="relative">
+            <div className="relative flex flex-col items-center justify-center">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
-                <h2 className="text-start text-5xl lg:text-6xl font-bold block py-2 absolute bottom-0 z-10 left-1/2 -translate-x-1/2 text-white">{title}</h2>
+                <h2 className="text-center text-4xl lg:text-6xl font-bold w-auto lg:w-[250px] py-2 absolute bottom-2 lg:bottom-8 z-10 text-white">{title}</h2>
             </div>
+
             <div>
                 <div className="flex flex-col border-t-2 border-gray-800 border-dashed  max-w-7xl mx-auto relative z-10 bg-white">
                     {
@@ -31,7 +32,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
                             </div>
                         ))
                     }
-                    <button className="bg-black text-white px-1 w-fit ms-auto mt-5 font-semibold fade">MORE DATE</button>
+                    <button className="bg-black text-white px-1 w-fit ms-auto mt-5 font-semibold letterScroll">MORE DATE</button>
                 </div>
             </div>
         </section>

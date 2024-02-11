@@ -61,7 +61,7 @@ body {
   animation-timeline: --top;
   -webkit-animation-name: scroll-top;
   animation-name: scroll-top;
-  animation-range: entry -100% cover 50%;
+  animation-range: entry -100% cover 20%;
   animation-fill-mode: both;
 }
 
