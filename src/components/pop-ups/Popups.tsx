@@ -19,10 +19,10 @@ export default async function Popups({ dictionary }: any) {
                     }}
                 />
             </div>
-            <div className="absolute bottom-28 md:top-0 left-0 px-6  lg:px-20 lg:py-16 max-w-md text-justify text-white scroll-parallax">
-                <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-widest">{title1}<br />{title2}</h2>
+            <div className="absolute bottom-28 md:top-0 left-0 px-6  lg:px-20 lg:py-16 max-w-md text-justify text-white scroll-parallax" >
+                <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-[12px]" style={{lineHeight: 0.8}}>{title1}<br />{title2}</h2>
                 <h3 className="text-sm max-w-xs md:w-fit md:text-base pt-5">{description}</h3>
-                <button className="flex justify-between font-bold pt-10 w-fit gap-10 scroll-reveal">
+                <button className="flex justify-between font-bold pt-10 w-fit gap-10">
                     <span>
                         {`>>>>>>`}
                     </span>
