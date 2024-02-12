@@ -17,7 +17,8 @@
         "button": "descubre más"
     },
     "calendar": {
-        "title": "tour´24 dates"
+        "title": "tour´24 dates",
+        "button": "UNITE A LA EXPERIENCIA"
     },
     "aboutpablo": {
         "title": "QUIÉN ES PABLO",
@@ -25,7 +26,7 @@
         "button": "descubre más"
     },
     "classes": {
-        "title": "Lecciones",
+        "title": "Clases",
         "description": "Durante sus viajes y orientado siempre hacia el maridaje, Pablo se dedica a ofrecer clases de cocina y de vinos. Cada destino visitado lo tienta con la oportunidad de compartir sus experiencias, recetas y conocimientos. The Culinary Institute of America en San Antonio y California, The Institute of Culinary Education en New York, The Macao University of Science en Macao y Urban Kitchen en Lima Perú,  han albergado sus palabras en clases magistrales y talleres de cocina, destinados a cocineros, chefs, sommeliers, prensa y público en general.",
         "button": "descubre más"
     },
@@ -33,7 +34,7 @@
         "title1": "Nuestros",
         "title2": "aliados",
         "description": "Como todos los años, tras la época de la vendimia en Mendoza, Pablo emprende su tour que lo lleva a viajar por los Estados Unidos donde cientos de comensales lo esperan para disfrutar de sus cenas y/o almuerzos exclusivosendeslumbrantespaisajes.",
-        "button": "descubre más"
+        "button": "Los Vinos del tour"
     },
     "press": {
         "badge": "Prensa",

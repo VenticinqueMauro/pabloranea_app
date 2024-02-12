@@ -1,76 +1,40 @@
-'use client';
-import { Button } from '@nextui-org/react';
-import { Calendar } from 'lucide-react';
-import React, { useRef, useState } from 'react';
+import { Image } from "@nextui-org/react"
+import Link from "next/link";
 
-const CardPress = () => {
-    const divRef = useRef<HTMLDivElement>(null);
-    const [isFocused, setIsFocused] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [opacity, setOpacity] = useState(0);
+const pressMap = [
+    {
+        title: "Pablo Ranea: 'Ninguna capital del vino tiene la cocina de Mendoza'",
+        linkPress: "https://www.mdzol.com/estilo/2024/1/14/pablo-ranea-ninguna-capital-del-vino-tiene-la-cocina-de-mendoza-398310.html",
+        image: "https://www.mdzol.com/u/fotografias/m/2024/1/3/f848x477-1531330_1589133_5050.jpg",
+        diary: "mdzonline.es",
+        date: "Enero, 2024",
+    },
+    {
+        title: "Pablo Ranea: el chef que lleva la grastronomía mendocina a lugares emblemáticos del mundo",
+        linkPress: "https://www.diariouno.com.ar/emprendedores/pablo-ranea-el-chef-que-lleva-la-gastronomia-mendocina-lugares-emblematicos-del-mundo-n1283699",
+        image: "https://media.diariouno.com.ar/p/1a8f8e6b418e3e83e35a40f76611ed77/adjuntos/298/imagenes/009/287/0009287174/1200x0/smart/che-nomade-pablo-ranea-portada-1jpg.jpg",
+        diary: "diariouno.com.ar",
+        date: "Enero, 2024",
+    },
+]
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!divRef.current || isFocused) return;
-
-        const div = divRef.current;
-        const rect = div.getBoundingClientRect();
-
-        setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    };
-
-    const handleFocus = () => {
-        setIsFocused(true);
-        setOpacity(1);
-    };
-
-    const handleBlur = () => {
-        setIsFocused(false);
-        setOpacity(0);
-    };
-
-    const handleMouseEnter = () => {
-        setOpacity(1);
-    };
-
-    const handleMouseLeave = () => {
-        setOpacity(0);
-    };
-
+export default function CardPress() {
     return (
-        <div
-            ref={divRef}
-            onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className='relative flex items-center justify-center overflow-hidden'
-        >
-            <div
-                className='pointer-events-none absolute -inset-px opacity-0 transition duration-300'
-                style={{
-                    opacity,
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(182, 182, 182, 0.1), transparent 40%)`,
-                }}
-            ></div>
-                <div className='border-dashed border max-w-[250px]'>
-                    <div className="mx-5 py-4 space-y-2 ">
-                        <p className='font-bold'>Press Release Title</p>
-                        <p className="text-sm flex gap-1 items-center">
-                            <Calendar size={14} />
-                            02.02.24
-                        </p>
-                    </div>
-                    <div className="grid gap-4 border-y py-4 mx-5">
-                        <p className="text-sm/relaxed line-clamp-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores recusandae cupiditate tenetur libero dicta eligendi.</p>
-                    </div>
-                    <div className="bg-gray-100 py-4 ">
-                        <Button size="sm" radius="none" className="bg-black text-white mx-5 font-semibold">Read More</Button>
-                    </div>
-                </div>
-            
+        <div>
+            {
+                pressMap.map((press, i) => (
+                    <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === pressMap.length -1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10 hover:bg-gray-50 px-6 `}>
+                        <div className="w-full">
+                            <p className="text-2xl md:text-3xl lg:text-4xl font-bold">{press.title}</p>
+                            <p className="text-gray-500">{press.diary}</p>
+                            <p className="text-sm">{press.date}</p>
+                        </div>
+                        <div className="w-full">
+                            <Image isZoomed radius="none" src={press.image} alt="diariouno" />
+                        </div>
+                    </Link>
+                ))
+            }
         </div>
-    );
-};
-
-export default CardPress;
+    )
+}

@@ -1,13 +1,21 @@
 @font-face {
   font-family: "Aileron";
-  src: url("/tipografia/Aileron-Bold.otf");
+  src: url("/tipografia/Aileron-Regular.otf");
+}
+@font-face {
+  font-family: "Aileron-Light";
+  src: url("/tipografia/Aileron-Light.otf"); 
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Aileron;
+  font-family: Aileron, Arial, sans-serif;;
+}
+
+.light{
+  font-family: Aileron-Light;
 }
 
 .showAnimate {

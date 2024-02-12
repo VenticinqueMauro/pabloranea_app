@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import ContainerCardClasses from './ContainerCard.classes'
+import { ChevronDown } from 'lucide-react'
 
 export default function Classes({ dictionary }: any) {
 
@@ -21,16 +22,19 @@ export default function Classes({ dictionary }: any) {
                     }}
                 />
             </div>
+            <p className='hidden absolute top-1/2 right-80 text-white lg:flex'>
+                <ChevronDown className='animate-bounce mr-3 mt-3 bg-black rounded-full' size={30} />
+            </p>
             <ContainerCardClasses />
             <div className="absolute bottom-32 left-0 px-6  lg:px-20 max-w-md text-justify text-white scroll-parallax">
-                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[9px]" style={{lineHeight: 0.8}}>{title}</h2>
+                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[9px]" style={{ lineHeight: 0.8 }}>{title}</h2>
                 <h3 className="text-sm md:text-base pt-5">{description}</h3>
-                <button className="flex justify-between w-fit gap-10 font-bold pt-10">
+                {/* <button className="flex justify-between w-fit gap-10 font-bold pt-10">
                     <span>
                         {`>>>>>>`}
                     </span>
                     {button}
-                </button>
+                </button> */}
             </div>
         </section>
     )

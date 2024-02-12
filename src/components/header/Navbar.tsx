@@ -21,7 +21,7 @@ export default function Navbar({ dictionary }: any) {
     if (pathname.includes('/dashboard') || pathname.includes('/login')) return null
 
     return (
-        <div className={roboto.className}>
+        <div className={`${roboto.className} font-semibold`}>
             <Mobile sections={sections}  lang={lang} pathname={pathname} />
             <Desktop sections={sections}  lang={lang} pathname={pathname} />
         </div>
