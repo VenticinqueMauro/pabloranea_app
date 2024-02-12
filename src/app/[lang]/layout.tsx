@@ -1,10 +1,8 @@
 import Navbar from '@/components/header/Navbar'
 import type { Metadata } from 'next'
-import { Open_Sans } from 'next/font/google'
 import '../globals.css'
 import { Providers } from '../providers'
 
-const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Pablo Ranea [Chef & Somm]',
@@ -24,7 +22,7 @@ export default async function RootLayout({ children, params: { lang } }: Props) 
 
   return (
     <html lang={lang} className='light'>
-      <body className={` h-screen overflow-x-hidden relative`}>
+      <body className={`h-screen overflow-x-hidden relative`}>
         <Providers>
           <Navbar dictionary={dictionary} />
           {children}

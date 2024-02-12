@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { NextFont } from 'next/dist/compiled/@next/font';
 
 interface Props {
     sections: string[],
@@ -21,16 +20,19 @@ export default function Desktop({ sections, lang, pathname }: Props) {
             />
             <div className={`flex uppercase`}>
                 {sections.map((section, index) => (
-                    <motion.p
+                    <motion.a
                         key={section}
-                        className={`${pathname === `/${lang}` && section === `home` || section === 'inicio' ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, transition: { duration: 0.5, delay: index * 0.3 } }}
+                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}/${section}`}`}
+                        className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
+                                pathname === `/${lang}/${section}`
+                                ? 'bg-black text-white'
+                                : ''
+                            } z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
                     >
                         {section}
-                    </motion.p>
+                    </motion.a>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
