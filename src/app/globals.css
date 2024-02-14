@@ -11,11 +11,11 @@
 @tailwind utilities;
 
 body {
-  font-family: Aileron, Arial, sans-serif;;
+  font-family: "Aileron", Arial, sans-serif;;
 }
 
 .light{
-  font-family: Aileron-Light;
+  font-family: "Aileron-Light";
 }
 
 .showAnimate {
