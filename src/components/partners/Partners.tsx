@@ -21,7 +21,7 @@ export default function Partners({ dictionary }: any) {
                 />
             </div>
             <div className="absolute top-0 left-0 px-6  lg:px-20 lg:py-10 max-w-md text-justify text-white scroll-parallax">
-                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[8px]" style={{lineHeight: 0.8}}>{title1}<br />{title2}</h2>
+                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[3px] lg:-tracking-[4px]" style={{lineHeight: 0.9}}>{title1}<br />{title2}</h2>
                 <h3 className="text-sm md:text-base pt-5">{description}</h3>
                 <button className="flex justify-between w-fit gap-10 font-bold pt-10">
                     <span>
