@@ -1,3 +1,4 @@
+import Footer from '@/components/footer/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default async function PressLayout({ children, params: { lang } }: Props)
     return (
         <section>
             {children}
+            <Footer />
         </section>
     )
 }

@@ -52,18 +52,18 @@ const pressMap = [
         date: "Mayo, 2022",
     },
     {
-        title: "Cinco buenas razones para tomar vino mendocino",
-        linkPress: "https://www.infobae.com/tendencias/2022/03/11/cinco-buenas-razones-para-tomar-vino-mendocino/",
-        image: "https://www.infobae.com/new-resizer/NAViZT4ZYOz32UAV0bQ5qDB2J1s=/1200x675/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/RFMDRPSTHZD7HINPNCU6AVFCXI.jpg",
-        diary: "infobae.com",
-        date: "Marzo, 2022",
-    },
-    {
         title: "El chef nómade que lleva sabores argentinos al mundo",
         linkPress: "https://elgourmet.com/noticias/el-chef-nomade-que-lleva-sabores-argentinos-al-mundo/",
         image: "https://assets.elgourmet.com/wp-content/uploads/2023/03/wzlv6y13t4_pabloraneaslide-1024x684.jpg.webp",
         diary: "elgourmet.com",
         date: "Febrero, 2022",
+    },
+    {
+        title: "Cinco buenas razones para tomar vino mendocino",
+        linkPress: "https://www.infobae.com/tendencias/2022/03/11/cinco-buenas-razones-para-tomar-vino-mendocino/",
+        image: "https://www.infobae.com/new-resizer/NAViZT4ZYOz32UAV0bQ5qDB2J1s=/1200x675/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/RFMDRPSTHZD7HINPNCU6AVFCXI.jpg",
+        diary: "infobae.com",
+        date: "Marzo, 2022",
     },
     {
         title: "Los tips del chef Pablo Ranea para organizar una comida hogareña",
