@@ -36,7 +36,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* INSTAGRAM  */}
       <Instagram />
       {/* PRESS  */}
-      <Press dictionary={dictionary} />
+      <Press dictionary={dictionary} lang={lang} />
       {/* FOOTER */}
       <Footer />
     </section >
