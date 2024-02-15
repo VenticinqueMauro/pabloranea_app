@@ -6,6 +6,18 @@ interface Props {
     pathname: string
 }
 
+const sectionshref = [
+    'home',
+    'popups',
+    'calendar',
+    'about',
+    'classes',
+    'partners',
+    'community',
+    'press',
+    'contact'
+]
+
 export default function Desktop({ sections, lang, pathname }: Props) {
     return (
         <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center">
@@ -22,7 +34,7 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                 {sections.map((section, index) => (
                     <motion.a
                         key={section}
-                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}/${section}`}`}
+                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}/${sectionshref[index]}`}`}
                         className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
                                 pathname === `/${lang}/${section}`
                                 ? 'bg-black text-white'

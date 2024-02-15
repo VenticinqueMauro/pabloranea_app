@@ -14,6 +14,18 @@ interface Props {
     pathname: string
 }
 
+const sectionshref = [
+    'home',
+    'popups',
+    'calendar',
+    'about',
+    'classes',
+    'partners',
+    'community',
+    'press',
+    'contact'
+]
+
 export default function Mobile({ sections, lang, pathname }: Props) {
 
     const [isOpen, setIsOpen] = useState(false);
