@@ -13,16 +13,13 @@ export default function Classes({ dictionary }: any) {
             <div className={`imageContainer `}>
                 <div className={`imageOverlay-classes`} />
                 <Image
-                    src='/classes/classes2.webp'
+                    src='/classes/classes.jpg'
                     width={1920}
                     height={1023}
                     alt='partners'
                     className="object-cover w-full h-screen sm:h-screen"
                 />
             </div>
-            <p className='hidden absolute top-1/2 right-80 text-white lg:flex'>
-                {/* Tu contenido aquí */}
-            </p>
             <ContainerCardClasses />
             <div className="absolute top-0 left-0 px-6 lg:px-20 max-w-md text-justify text-white scroll-parallax z-10">
                 <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[3px] lg:-tracking-[3px]" style={{ lineHeight: 0.8 }}>{title}</h2>
