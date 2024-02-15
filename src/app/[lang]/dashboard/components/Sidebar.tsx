@@ -2,7 +2,7 @@
 
 import { Button, Link } from "@nextui-org/react";
 import { ChefHat, Palmtree, UtensilsCrossed, Wine } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import UserDropDown from "./UserDropDown";
 
 const routes = [
@@ -14,7 +14,7 @@ const routes = [
 export default function Sidebar() {
 
     const pathname = usePathname();
-
+    const { lang } = useParams();
 
     return (
         <div className="flex flex-col  px-6 py-6 border-r space-y-10 min-w-[15%]">
@@ -31,7 +31,7 @@ export default function Sidebar() {
                             size="md"
                             variant={pathname.startsWith(route.route) ? 'flat' : 'light'}
                             startContent={route.icon}
-                            href={route.route}
+                            href={`/${lang}/${route.route}`}
                             className="flex items-center gap-2 justify-start"
                         >
                             {route.label}
