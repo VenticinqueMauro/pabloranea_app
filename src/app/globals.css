@@ -251,16 +251,28 @@ body {
   z-index: 2;
 }
 
-
 .container-calendar::-webkit-scrollbar {
-  width: 5px; 
+  width: 5px;
 }
 
 .container-calendar::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .container-calendar::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 1); 
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+}
+
+.container-classes::-webkit-scrollbar {
+  width: 5px;
+}
+
+.container-classes::-webkit-scrollbar-track {
+  background: white;
+}
+
+.container-classes::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 10px;
 }
