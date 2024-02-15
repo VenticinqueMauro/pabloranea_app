@@ -41,5 +41,10 @@
         "title": "Prensa y medios",
         "subtitle": "Lea acerca de nuestros últimos comunicados de prensa y cobertura de los medios.",
         "button": "Ver todos los comunicados de prensa"
+    },
+    "pages":{
+        "press":{
+            "title": "Prensa"
+        }
     }
 }

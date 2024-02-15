@@ -41,5 +41,10 @@
         "title": "The press",
         "subtitle": "Read about our latest press releases and media coverage.",
         "button": "View All Press Releases"
+    },
+    "pages":{
+        "press":{
+            "title": "Press"
+        }
     }
 }

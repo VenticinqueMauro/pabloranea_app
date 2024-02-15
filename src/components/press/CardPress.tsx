@@ -94,6 +94,7 @@ interface Props {
 
 export default function CardPress({ isPage }: Props) {
 
+
     const shuffledPressMap = pressMap.sort(() => Math.random() - 0.5);
     const selectedPresses = shuffledPressMap.slice(0, 2);
 
