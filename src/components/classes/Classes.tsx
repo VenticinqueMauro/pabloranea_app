@@ -10,32 +10,31 @@ export default function Classes({ dictionary }: any) {
 
     return (
         <section className="min-h-screen relative overflow-x-clip">
-            <div className='bg-black'>
+            <div className={`imageContainer `}>
+                <div className={`imageOverlay-classes`} />
                 <Image
-                    src='/classes/classes.jpeg'
+                    src='/classes/classes2.webp'
                     width={1920}
                     height={1023}
                     alt='partners'
-                    className="object-cover w-full h-screen sm:h-screen "
-                    style={{
-                        maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'
-                    }}
+                    className="object-cover w-full h-screen sm:h-screen"
                 />
             </div>
             <p className='hidden absolute top-1/2 right-80 text-white lg:flex'>
-                <ChevronDown className='animate-bounce mr-3 mt-3 bg-black rounded-full' size={30} />
+                {/* Tu contenido aquí */}
             </p>
             <ContainerCardClasses />
-            <div className="absolute bottom-32 left-0 px-6  lg:px-20 max-w-md text-justify text-white scroll-parallax">
-                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[3px] lg:-tracking-[6px]" style={{ lineHeight: 0.8 }}>{title}</h2>
+            <div className="absolute top-0 left-0 px-6 lg:px-20 max-w-md text-justify text-white scroll-parallax z-10">
+                <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[3px] lg:-tracking-[3px]" style={{ lineHeight: 0.8 }}>{title}</h2>
                 <h3 className="text-sm md:text-base pt-5">{description}</h3>
-                {/* <button className="flex justify-between w-fit gap-10 font-bold pt-10">
-                    <span>
-                        {`>>>>>>`}
-                    </span>
-                    {button}
-                </button> */}
             </div>
         </section>
     )
 }
+
+{/* <button className="flex justify-between w-fit gap-10 font-bold pt-10">
+    <span>
+        {`>>>>>>`}
+    </span>
+    {button}
+</button> */}
