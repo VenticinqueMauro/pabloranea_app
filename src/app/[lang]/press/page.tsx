@@ -10,7 +10,7 @@ export default async function page({ params: { lang } }: Lang) {
     return (
         <section className="max-w-7xl mx-auto">
             <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10 px-3 lg:px-0" style={{ lineHeight: 0.8 }}>{title}</h2>
-            <CardPress isPage={false} />
+            <CardPress isPage={false} lang={lang} />
         </section>
     )
 }
