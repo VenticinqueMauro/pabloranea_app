@@ -6,7 +6,7 @@ interface Props {
     pathname: string
 }
 
-const sectionshref = [
+export const sectionshref = [
     'home',
     'popups',
     'calendar',
