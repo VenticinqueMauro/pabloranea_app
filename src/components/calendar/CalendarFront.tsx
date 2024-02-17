@@ -12,11 +12,11 @@ export default async function CalendarFront({ dictionary, lang }: any) {
     const { title, button } = dictionary.calendar
 
     return (
-        <section id="calendar" className="flex items-center justify-center flex-col mb-20 px-6 lg:px-0 border-white">
+        <section id="calendar" className="flex items-center justify-center flex-col mb-20 px-2 border-white">
             <div className="relative flex flex-col items-center justify-center border-b">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
-                <h2 className="text-center text-4xl lg:text-6xl font-bold w-auto lg:w-[250px] py-2 absolute bottom-2 lg:bottom-8 z-10 text-white -tracking-[5px]">{title}</h2>
+                <h2 className="text-4xl lg:text-6xl font-bold w-auto lg:w-[250px] py-2 absolute bottom-2 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/3 text-start z-10 text-white textShadow -tracking-[3px] lg:-tracking-[5px]">{title}</h2>
             </div>
 
             <div>
@@ -28,7 +28,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
                                     <p className="font-bold text-base lg:text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
                                     <p className="uppercase text-sm lg:text-lg text-zinc-500 font-bold">{stay.location}</p>
                                 </div>
-                                <div className="w-full text-justify text-sm lg:text-base px-1 line-clamp-2 ">
+                                <div className="w-full text-justify text-sm lg:text-base px-1">
                                     {lang === 'es' ? stay.description.es : stay.description.en}
                                 </div>
                             </div>
