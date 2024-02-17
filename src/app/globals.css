@@ -219,6 +219,16 @@ body {
   background-image: url("/partners/partners.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+
+}
+.imageContainer-classes {
+  position: relative;
+  height: 100vh;
+  background-image: url("/classes/classes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .imageOverlay-classes {
