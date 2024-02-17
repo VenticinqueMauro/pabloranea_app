@@ -21,9 +21,9 @@ export default function Classes({ dictionary }: any) {
                 />
             </div>
             <ContainerCardClasses />
-            <div className="absolute top-0 left-0 px-6 lg:px-20 max-w-md text-justify text-white scroll-parallax z-10">
+            <div className="absolute top-0 left-0 px-6 lg:px-20 max-w-lg text-justify text-white scroll-parallax z-10">
                 <h2 className="text-6xl lg:text-7xl font-bold text-shadow -tracking-[3px] lg:-tracking-[3px]" style={{ lineHeight: 0.8 }}>{title}</h2>
-                <h3 className="text-sm md:text-base pt-5">{description}</h3>
+                <h3 className="text-sm md:text-base pt-5" style={{lineHeight: 1.2}}>{description}</h3>
             </div>
         </section>
     )
