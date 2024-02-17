@@ -38,7 +38,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* PRESS  */}
       <Press dictionary={dictionary} lang={lang} />
       {/* FOOTER */}
-      <Footer />
+      <Footer dictionary={dictionary} lang={lang} />
     </section >
   )
 }

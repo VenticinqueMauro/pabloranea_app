@@ -8,14 +8,14 @@ interface Props {
 
 export const sectionshref = [
     'home',
-    'popups',
-    'calendar',
-    'about',
-    'classes',
-    'partners',
-    'community',
-    'press',
-    'contact'
+    '/popups',
+    '#calendar',
+    '#about',
+    '#classes',
+    '#partners',
+    '#community',
+    '/press',
+    '#contact'
 ]
 
 export default function Desktop({ sections, lang, pathname }: Props) {
@@ -34,7 +34,7 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                 {sections.map((section, index) => (
                     <motion.a
                         key={section}
-                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}/${sectionshref[index]}`}`}
+                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}`}
                         className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
                                 pathname === `/${lang}/${section}`
                                 ? 'bg-black text-white'

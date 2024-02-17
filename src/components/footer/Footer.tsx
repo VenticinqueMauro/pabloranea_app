@@ -1,11 +1,19 @@
 import { Image } from '@nextui-org/react'
 import React from 'react'
 
-export default function Footer() {
-    return (
+export default function Footer({ dictionary, lang }: any) {
 
+    const menu = dictionary?.menu;
+
+    if (!menu) {
+        return null;
+    }
+    const { home, popups, calendar, aboutpablo, classes, partners, community, press, contact } = menu;
+
+
+    return (
         <footer className="bg-white dark:bg-gray-900">
-            <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
+            <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-10">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="https://flowbite.com/" className="flex items-center">
@@ -19,39 +27,39 @@ export default function Footer() {
                         <div>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://flowbite.com/" className="hover:underline capitalize">home</a>
+                                    <a href={`/${lang}`} className="hover:underline capitalize">{home}</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="https://flowbite.com/" className="hover:underline capitalize">popups</a>
+                                    <a href={`/${lang}/popups`} className="hover:underline capitalize">{popups}</a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline capitalize">calendar</a>
+                                    <a href={`/${lang}#calendar`} className="hover:underline capitalize">{calendar}</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" className="hover:underline capitalize ">about pablo</a>
+                                    <a href={`/${lang}/#`} className="hover:underline capitalize ">{aboutpablo}</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="https://github.com/themesberg/flowbite" className="hover:underline capitalize ">classes</a>
+                                    <a href={`/${lang}/#`} className="hover:underline capitalize ">{classes}</a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline capitalize">partners</a>
+                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{partners}</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="#" className="hover:underline capitalize">community</a>
+                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{community}</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="#" className="hover:underline capitalize">press</a>
+                                    <a href={`/${lang}/press`} className="hover:underline capitalize">{press}</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:underline capitalize">contact</a>
+                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{contact}</a>
                                 </li>
                             </ul>
                         </div>
@@ -83,7 +91,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer >
 
     )
 }

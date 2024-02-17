@@ -12,7 +12,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
     const { title, button } = dictionary.calendar
 
     return (
-        <section className="flex items-center justify-center flex-col mb-20 px-6 lg:px-0 border-white">
+        <section id="calendar" className="flex items-center justify-center flex-col mb-20 px-6 lg:px-0 border-white">
             <div className="relative flex flex-col items-center justify-center border-b">
                 <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
                 <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
