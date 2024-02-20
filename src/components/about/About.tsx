@@ -1,5 +1,12 @@
+import { Lang } from "@/types/lang.type";
+import Link from "next/link";
 
-export default function About({ dictionary }: any) {
+interface Props{
+    dictionary: any,
+    lang: Lang | string,
+}
+
+export default function About({ dictionary, lang }: Props) {
 
     const { title, description, button } = dictionary.aboutpablo;
 
@@ -11,12 +18,12 @@ export default function About({ dictionary }: any) {
                     <span>
                         {description}
                     </span>
-                    <button className="flex justify-between gap-10 pt-10  w-fit font-bold ms-auto">
+                    <Link href={`/${lang}/about`} className="flex justify-between gap-10 pt-10  w-fit font-bold ms-auto">
                         <span>
                             {`>>>>>>`}
                         </span>
                         {button}
-                    </button>
+                    </Link>
                 </p>
             </div>
         </section>

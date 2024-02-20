@@ -28,7 +28,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* CALENDAR  */}
       <CalendarFront dictionary={dictionary} lang={lang} />
       {/* ABOUT PABLO */}
-      <About dictionary={dictionary} />
+      <About dictionary={dictionary} lang={lang} />
       {/* CLASSES  */}
       <Classes dictionary={dictionary} />
       {/* PARTNERS */}
