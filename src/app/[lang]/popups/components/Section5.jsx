@@ -51,7 +51,7 @@ export default function Section5() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex flex-col justify-between min-h-full gap-40">
+                    <div className="w-full flex flex-col justify-between min-h-full gap-28">
                         <div className="bg-gray-400 h-[700px] w-full block"></div>
                         <div>
                             <div className="flex items-center gap-5 justify-start w-fit max-w-lg">
