@@ -1,8 +1,10 @@
-import { Image } from "@nextui-org/react";
+import dynamic from "next/dynamic";
 import Section2 from "./components/Section2";
 import Section3 from "./components/Section3";
 import Section4 from "./components/Section4";
-import Section5 from "./components/Section5";
+
+
+const Section5 = dynamic(() => import("./components/Section5"), { ssr: false });
 
 export default function page() {
     return (
