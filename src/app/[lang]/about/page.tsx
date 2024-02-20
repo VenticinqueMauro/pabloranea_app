@@ -1,7 +1,12 @@
+import Footer from "@/components/footer/Footer";
 import SliderPress from "@/components/pop-ups/page/sliderPress";
+import { Lang } from "@/types/lang.type";
 import { Image } from "@nextui-org/react";
 
-export default function page() {
+export default async function page({ params: { lang } }: Lang) {
+
+    const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
+
     return (
         <section className="h-screen space-y-10">
             {/* SECTION 2  */}
@@ -56,8 +61,8 @@ export default function page() {
                     <div className="w-full space-y-10">
                         <h3 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>
                             Reconocidas bodegas de Mendoza como <b>El Enemigo, Catena
-                            Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner,
-                            AchavalFerrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
+                                Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner,
+                                AchavalFerrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
                             <b>Otronia</b> de la Patagonia Argentina confían en <b>Ranea</b> como
                             comunicador y embajador para presentar sus más exclusivas
                             etiquetas en sus cenas nómades en el extranjero y de esta
@@ -88,6 +93,7 @@ export default function page() {
                     </h2>
                 </div>
             </div>
+            <Footer dictionary={dictionary} lang={lang} />
         </section>
     )
 }
