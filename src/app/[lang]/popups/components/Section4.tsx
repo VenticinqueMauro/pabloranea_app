@@ -12,23 +12,23 @@ export default function Section4() {
             </div>
             <div className="row-span-1 col-span-6">
                 <div className="text-3xl font-bold pt-10">
-                    PopUpDinnerparaelFestivalArgentinoenelAmericanClub
-                    HONGKONG ,AÑO
+                    Pop Up Dinner para el Festival Argentino en el American Club
+                    HONGKONG,AÑO
                     <br /><br />
-                    WineDinnerenLaJournéeMondialeduMalbec
+                    Wine Dinner en La Journée Mondial edu Malbec
                     CAHORSFRANCIA,AÑO
                     <br /><br />
-                    PopUpDinnerenelInternationalCulinaryCenter
+                    Pop Up Dinner en el International Culinary Center
                     SOHOENNEWYORK,AÑO
                     <br /><br />
-                    GalaDinnerconRutiniWinesenelParkHyatt
+                    Gala Dinner con Rutini Wines en el ParkHyatt
                     SHANGHAI,AÑO
                     <br /><br />
-                    WinedinnerenelCaesarPalace
+                    Wine dinner en el Caesar Palace
                     LASVEGASNEVADA,AÑO
                 </div>
             </div>
-            <div className="col-span-6 row-span-1 row-start-3 flex justify-center items-center">
+            <div className="col-span-6 row-span-1 row-start-3 flex justify-center items-end">
                 <Image radius="none" className="object-cover w-full h-full" src="/partners/partners.jpg" alt="test2" />
             </div>
             <div className="col-span-6 min-h-full row-span-2 row-start-2 items-center bg-gray-500 block"></div>
