@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { sectionshref } from "./Desktop";
 
 
 interface Props {
@@ -14,17 +15,6 @@ interface Props {
     pathname: string
 }
 
-const sectionshref = [
-    'home',
-    'popups',
-    'calendar',
-    'about',
-    'classes',
-    'partners',
-    'community',
-    'press',
-    'contact'
-]
 
 export default function Mobile({ sections, lang, pathname }: Props) {
 
@@ -72,7 +62,8 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                                     className="capitalize"
                                 >
                                     <Link
-                                        href={'#'}
+                                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}`}
+                                        onClick={() => setIsOpen(false)}
                                     >
                                         {section}
                                     </Link>
