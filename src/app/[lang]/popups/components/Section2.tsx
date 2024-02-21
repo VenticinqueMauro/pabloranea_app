@@ -8,7 +8,7 @@ export default function Section2() {
                     Tu navegador no admite el elemento de video.
                 </video>
             </div>
-            <div className="hidden col-span-12 lg:col-start-1 lg:col-span-6 lg:row-span-1 row-start-3 lg:flex justify-center items-center px-3 lg:px-0">
+            <div className="hidden col-span-12 lg:col-start-1 lg:col-span-6 lg:row-span-1 lg:row-start-3 lg:flex justify-center items-center px-3 lg:px-0">
                 <Image radius="none" className="object-cover w-full h-full" src="/popups/img1.jpg" alt="popups dinners" width={720} height={405} />
             </div>
         </div>
