@@ -115,7 +115,7 @@ export default function CardPress({ isPage, lang }: Props) {
             {
                 !isPage ? (
                     pressMap.map((press, i) => (
-                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === pressMap.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10 hover:bg-gray-50 px-6 `}>
+                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === pressMap.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10 hover:bg-gray-50 `}>
                             <div className="w-full">
                                 <p className="text-2xl md:text-3xl lg:text-4xl font-bold">{press.title}</p>
                                 <p className="text-gray-500">{press.diary}</p>
@@ -128,7 +128,7 @@ export default function CardPress({ isPage, lang }: Props) {
                     ))
                 ) : (
                     selectedPresses.map((press, i) => (
-                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === selectedPresses.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10 hover:bg-gray-50 px-6 `}>
+                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === selectedPresses.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10 hover:bg-gray-50`}>
                             <div className="w-full">
                                 <p className="text-2xl md:text-3xl lg:text-4xl font-bold">{press.title}</p>
                                 <p className="text-gray-500">{press.diary}</p>

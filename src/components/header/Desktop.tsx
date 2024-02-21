@@ -12,7 +12,7 @@ export const sectionshref = [
     '#calendar',
     '/about',
     '#classes',
-    '#partners',
+    '/partners',
     '#community',
     '/press',
     '#contact'
