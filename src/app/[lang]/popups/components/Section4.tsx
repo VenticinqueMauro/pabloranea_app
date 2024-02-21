@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Section4() {
     return (
-        <div className="bg-background text-foreground light px-3 lg:px-20 py-16 grid grid-cols-12 lg:grid-rows-3 gap-10">
+        <div className="bg-background text-foreground light px-3 lg:px-20 py-10 lg:py-16 grid grid-cols-12 lg:grid-rows-3 gap-5 lg:gap-10">
             <div className="col-span-12 lg:col-span-6 lg:row-span-2">
                 <div className="flex items-center gap-5 lg:gap-10">
                     <h2 className="text-7xl lg:text-9xl font-extrabold">5</h2>
