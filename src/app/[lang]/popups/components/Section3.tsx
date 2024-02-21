@@ -1,4 +1,5 @@
 import SliderPress from "@/components/pop-ups/page/sliderPress";
+import { Image } from "@nextui-org/react";
 
 export default function Section3() {
     return (
@@ -13,7 +14,10 @@ export default function Section3() {
                     </p>
                     <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">convertite en anfitrión</button>
                 </div>
-                <SliderPress />
+                {/* <SliderPress /> */}
+                <div className="col-span-12">
+                    <Image radius="none" className="object-cover w-full h-full" src="/portada/slide5.jpg" alt="popups dinners" width={1920} height={1100} />
+                </div>
             </div>
         </div>
     )

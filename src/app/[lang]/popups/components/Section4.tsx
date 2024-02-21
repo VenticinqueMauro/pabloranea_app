@@ -29,9 +29,11 @@ export default function Section4() {
                 </div>
             </div>
             <div className="col-span-6 row-span-1 row-start-3 flex justify-center items-end">
-                <Image radius="none" className="object-cover w-full h-full" src="/partners/partners.jpg" alt="test2" />
+                <Image radius="none" className="object-cover w-full h-full" src="/popups/img2.jpg" alt="popups dinners" width={720} height={600} />
             </div>
-            <div className="col-span-6 min-h-full row-span-2 row-start-2 items-center bg-gray-500 block"></div>
+            <div className="col-span-6 min-h-full row-span-2 row-start-2 flex items-end">
+                <Image radius="none" className="object-cover w-full h-full" src="/popups/vertical2.jpg" alt="popups dinners" width={720} height={1079} />
+            </div>
         </div>
     )
 }

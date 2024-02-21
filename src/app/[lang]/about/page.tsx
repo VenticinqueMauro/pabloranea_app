@@ -14,9 +14,11 @@ export default async function page({ params: { lang } }: Lang) {
                 <div className="flex flex-col justify-end w-full gap-10">
                     <div className="flex grow"></div>
                     <button className="uppercase text-xl lg:text-2xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold text-white">convertite en anfitrión</button>
-                    <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
+                    <Image radius="none" className="object-cover " src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
                 </div>
-                <div className="h-[800px] block bg-gray w-full bg-gray-400"></div>
+                <div className="">
+                    <Image radius="none" className="object-cover " src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
+                </div>
             </div>
             {/* SECTION 3 */}
             <div >
@@ -32,7 +34,11 @@ export default async function page({ params: { lang } }: Lang) {
                         lasprincipalescapitalesdelmundo.
                     </h3>
                 </div>
-                <SliderPress />
+                {/* <SliderPress /> */}
+                <div className="col-span-12 flex justify-center bg-black">
+                    <Image radius="none" className="object-cover w-full h-full" src="/aboutpablo/pablo3.jpg" alt="pablo ranea" width={1365} height={888} />
+                </div>
+
                 <div className="flex justify-between px-3 lg:px-20 py-16 bg-background text-foreground dark">
                     <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">TRAVELLINGCUISINE</h2>
                     <div className="w-full space-y-10">

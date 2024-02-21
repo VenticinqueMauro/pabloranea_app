@@ -9,7 +9,7 @@ export default function Section2() {
                 </video>
             </div>
             <div className="col-span-12 lg:col-start-1 row-start-3 lg:col-span-6 lg:row-span-1 lg:row-start-3 flex justify-center items-center px-3 lg:px-0">
-                <Image radius="none" className="object-cover w-full h-full" src="/partners/partners.jpg" alt="test2" />
+                <Image radius="none" className="object-cover w-full h-full" src="/popups/img1.jpg" alt="popups dinners" width={720} height={405} />
             </div>
         </div>
     )
