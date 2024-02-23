@@ -40,20 +40,20 @@ export default function Footer({ dictionary, lang }: any) {
                         <div>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href={`/${lang}/#`} className="hover:underline capitalize ">{aboutpablo}</a>
+                                    <a href={`/${lang}/about`} className="hover:underline capitalize ">{aboutpablo}</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href={`/${lang}/#`} className="hover:underline capitalize ">{classes}</a>
+                                    <a href={`/${lang}/#classes`} className="hover:underline capitalize ">{classes}</a>
                                 </li>
                                 <li>
-                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{partners}</a>
+                                    <a href={`/${lang}/partners`} className="hover:underline capitalize">{partners}</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{community}</a>
+                                    <a href={`/${lang}/#community`} className="hover:underline capitalize">{community}</a>
                                 </li>
                                 <li className="mb-4">
                                     <a href={`/${lang}/press`} className="hover:underline capitalize">{press}</a>
