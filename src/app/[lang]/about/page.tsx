@@ -2,6 +2,7 @@ import Footer from "@/components/footer/Footer";
 import SliderPress from "@/components/pop-ups/page/sliderPress";
 import { Lang } from "@/types/lang.type";
 import { Image } from "@nextui-org/react";
+import Link from "next/link";
 
 export default async function page({ params: { lang } }: Lang) {
 
@@ -9,15 +10,28 @@ export default async function page({ params: { lang } }: Lang) {
 
     return (
         <section className="h-screen space-y-10">
+            {/* SECTION 1  */}
+            <div className="relative">
+                {/* <Image className="lg:hidden" radius="none" src="/popups/popups.jpg" alt="portada popups" width={1980} /> */}
+                <Image className="" radius="none" src="/aboutpablo/portadapage.jpg" alt="portada popups" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <h1 className="text-6xl lg:text-9xl font-bold text-shadow -tracking-[3px] lg:-tracking-[9px] text-white">bio</h1>
+                </div>
+            </div>
             {/* SECTION 2  */}
-            <div className="flex justify-between w-full gap-5 lg:gap-10 px-3 lg:px-20">
+            <div className="flex justify-between items-end w-full gap-5 lg:gap-10 px-3 lg:px-20">
                 <div className="flex flex-col justify-end w-full gap-5 lg:gap-10">
-                    <div className="hidden lg:flex grow"></div>
-                    <button className="uppercase text-xl lg:text-2xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold text-white">convertite en anfitrión</button>
+                    <div className="hidden lg:flex grow">
+                        <h2 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
+                            Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina. </h2>
+                    </div>
+                    <a href="/aboutpablo/cv.pdf" download className="uppercase text-xl text-center lg:text-2xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold text-white">
+                        Descargar CV
+                    </a>
                     <Image radius="none" className="object-cover " src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
                 </div>
-                <div className="hidden lg:block">
-                    <Image radius="none" className="object-cover " src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
+                <div className="hidden lg:block ">
+                    <Image radius="none" className="object-cover min-h-full" src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
                 </div>
             </div>
             {/* SECTION 3 */}
@@ -44,7 +58,10 @@ export default async function page({ params: { lang } }: Lang) {
                     <div className="w-full space-y-10">
                         <h3 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
-                        <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">CONOCÉ MÁS SOBRE LAS CLASES</button>
+                        <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">
+                            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
+                            </a>
+                        </button>
                     </div>
                 </div>
             </div>

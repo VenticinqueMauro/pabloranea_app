@@ -59,7 +59,7 @@ export default function Footer({ dictionary, lang }: any) {
                                     <a href={`/${lang}/press`} className="hover:underline capitalize">{press}</a>
                                 </li>
                                 <li>
-                                    <a href={`/${lang}/#`} className="hover:underline capitalize">{contact}</a>
+                                    <a href={'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'} className="hover:underline capitalize" target='_blank'>{contact}</a>
                                 </li>
                             </ul>
                         </div>

@@ -15,7 +15,7 @@ export const sectionshref = [
     '/partners',
     '#community',
     '/press',
-    '#contact'
+    'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'
 ]
 
 export default function Desktop({ sections, lang, pathname }: Props) {
@@ -36,14 +36,22 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                         key={section}
                         href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}`}
                         className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
-                                pathname === `/${lang}/${section}`
-                                ? 'bg-black text-white'
-                                : ''
+                            pathname === `/${lang}/${section}`
+                            ? 'bg-black text-white'
+                            : ''
                             } z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
                     >
                         {section}
                     </motion.a>
                 ))}
+                <motion.a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
+                >
+                    {sections.includes('contact')}
+                </motion.a>
             </div>
         </div >
     )

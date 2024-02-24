@@ -1,4 +1,3 @@
-import SliderPress from "@/components/pop-ups/page/sliderPress";
 import { Image } from "@nextui-org/react";
 
 export default function Section3() {
@@ -12,7 +11,9 @@ export default function Section3() {
                         <br /><br />
                         Con nuestros “pop up dinners” buscamos que nuestros comensales conecten con Argentina y su historia a través de nuestra pasión por los vinos y los sabores de nuestra propuesta gastronómica.
                     </p>
-                    <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">convertite en anfitrión</button>
+                    <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">
+                        <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>convertite en anfitrión</a>
+                    </button>
                 </div>
                 {/* <SliderPress /> */}
                 <div className="col-span-12">
