@@ -22,10 +22,10 @@ export default async function page({ params: { lang } }: Lang) {
             <div className="flex justify-between items-end w-full gap-5 lg:gap-10 px-3 lg:px-20">
                 <div className="flex flex-col justify-end w-full gap-5 lg:gap-10">
                     <div className="hidden lg:flex grow">
-                        <h2 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
+                        <h2 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
                             Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina. </h2>
                     </div>
-                    <a href="/aboutpablo/cv.pdf" download className="uppercase text-xl text-center lg:text-2xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold text-white">
+                    <a href="/aboutpablo/cv.pdf" download className="uppercase text-xl text-center lg:text-2xl w-full px-5 py-2 bg-[#5E6B45] font-bold text-white">
                         Descargar CV
                     </a>
                     <Image radius="none" className="object-cover " src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
@@ -38,7 +38,7 @@ export default async function page({ params: { lang } }: Lang) {
             <div >
                 <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between px-3 lg:px-20 py-16 bg-background text-foreground dark">
                     <h2 className="uppercase text-xl lg:text-2xl font-bold w-full ">la tierra del sol y el buen vino</h2>
-                    <h3 className="text-lg lg:text-2xl text-justify w-full" style={{ lineHeight: 1.2 }}>Su fuerte conexión con Mendoza y el mundo vitivinícola, y su
+                    <h3 className="text-base lg:text-lg text-justify w-full" style={{ lineHeight: 1.2 }}>Su fuerte conexión con Mendoza y el mundo vitivinícola, y su
                         interés por introducir y comunicar los vinos en su propuesta
                         gastronómica, lo llevaron a obtener el título de Sommelier en la
                         Escuela Argentina de Sommelier en el 2013. En 2016, tras su
@@ -56,9 +56,9 @@ export default async function page({ params: { lang } }: Lang) {
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-0 px-3 lg:px-20 py-16 bg-background text-foreground dark">
                     <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">TRAVELLINGCUISINE</h2>
                     <div className="w-full space-y-10">
-                        <h3 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
+                        <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
-                        <button className="uppercase text-xl lg:text-3xl w-full py-5 lg:py-8 bg-[#5E6B45] font-bold">
+                        <button className="uppercase text-xl lg:text-3xl w-full px-5 py-2 text-lg bg-[#5E6B45] font-bold">
                             <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
                             </a>
                         </button>
@@ -74,7 +74,7 @@ export default async function page({ params: { lang } }: Lang) {
                 <div className="flex flex-col lg:flex-row lg:justify-between py-20 gap-10">
                     <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">EMBAJADOR DEL VINO ARGENTINO</h2>
                     <div className="w-full space-y-10">
-                        <h3 className="text-lg lg:text-2xl text-justify" style={{ lineHeight: 1.2 }}>
+                        <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>
                             Reconocidas bodegas de Mendoza como <b>El Enemigo, Catena
                                 Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner,
                                 AchavalFerrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
@@ -99,7 +99,7 @@ export default async function page({ params: { lang } }: Lang) {
                         <p>canadá</p>
                         <p>hong kong</p>
                     </div>
-                    <h2 className="text-lg lg:text-2xl flex-shrink text-justify">
+                    <h2 className="text-base lg:text-lg flex-shrink text-justify">
                         A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no
                         sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver enUSA;
                         como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde plantó bandera
