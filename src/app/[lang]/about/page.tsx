@@ -57,7 +57,7 @@ export default async function page({ params: { lang } }: Lang) {
                 </div>
 
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-0 px-3 lg:px-20 py-16 bg-background text-foreground dark">
-                    <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">TRAVELLINGCUISINE</h2>
+                    <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">TRAVELLING CUISINE</h2>
                     <div className="w-full space-y-10">
                         <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
