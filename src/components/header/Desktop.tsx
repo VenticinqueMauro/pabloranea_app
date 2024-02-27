@@ -23,7 +23,7 @@ export const sectionshref = [
 
 export default function Desktop({ sections, lang, pathname }: Props) {
     return (
-        <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 w-full z-40 bg-white">
+        <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 bg-white w-full z-40">
             <a
                 className='lg:w-[200px] '
                 href='/'

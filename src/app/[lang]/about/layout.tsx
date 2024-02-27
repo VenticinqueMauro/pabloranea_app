@@ -15,7 +15,7 @@ type Props = {
 export default async function AboutLayout({ children, params: { lang } }: Props) {
 
     return (
-        <section>
+        <section className='absolute top-0 w-full left-0 lg:pt-44'>
             {children}
         </section>
     )

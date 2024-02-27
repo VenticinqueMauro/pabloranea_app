@@ -12,11 +12,7 @@ export default async function page({ params: { lang } }: Lang) {
         <section className="h-screen space-y-10">
             {/* SECTION 1  */}
             <div className="relative">
-                {/* <Image className="lg:hidden" radius="none" src="/popups/popups.jpg" alt="portada popups" width={1980} /> */}
-                <Image className="" radius="none" src="/aboutpablo/portadapage.jpg" alt="portada popups" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <h1 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-[3px] lg:-tracking-[5px] text-white">bio</h1>
-                </div>
+                <Image className="" radius="none" src="/aboutpablo/portadapage.png" alt="portada popups" />
             </div>
             {/* SECTION 2  */}
             <div className="grid grid-cols-1 2xl:grid-cols-2 gap-5 lg:gap-10 px-3 min-h-full lg:px-20">

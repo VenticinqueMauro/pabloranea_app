@@ -15,7 +15,7 @@ type Props = {
 export default async function PopupsLayout({ children, params: { lang } }: Props) {
 
     return (
-        <section>
+        <section className='lg:pt-44'>
             {children}
         </section>
     )

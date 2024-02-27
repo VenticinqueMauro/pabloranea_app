@@ -2,7 +2,6 @@ import About from "@/components/about/About";
 import CalendarFront from "@/components/calendar/CalendarFront";
 import Classes from "@/components/classes/Classes";
 import Footer from "@/components/footer/Footer";
-import GiraEnNum from "@/components/giraennumeros/GiraEnNum";
 import { Instagram } from "@/components/instagram/Instagram";
 import Partners from "@/components/partners/Partners";
 import Popups from "@/components/pop-ups/Popups";
@@ -10,7 +9,9 @@ import Portada from "@/components/portada/Portada";
 import Press from "@/components/press/Press";
 import TradButton from "@/components/tradButton/TradButton";
 import { Lang } from "@/types/lang.type";
+import dynamic from "next/dynamic";
 
+const GiraEnNum = dynamic(() => import("@/components/giraennumeros/GiraEnNum")) ;
 
 async function HomePage({ params: { lang } }: Lang) {
 
