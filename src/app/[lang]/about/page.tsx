@@ -15,25 +15,28 @@ export default async function page({ params: { lang } }: Lang) {
                 {/* <Image className="lg:hidden" radius="none" src="/popups/popups.jpg" alt="portada popups" width={1980} /> */}
                 <Image className="" radius="none" src="/aboutpablo/portadapage.jpg" alt="portada popups" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <h1 className="text-6xl lg:text-9xl font-bold text-shadow -tracking-[3px] lg:-tracking-[9px] text-white">bio</h1>
+                    <h1 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-[3px] lg:-tracking-[5px] text-white">bio</h1>
                 </div>
             </div>
             {/* SECTION 2  */}
-            <div className="flex justify-between items-end w-full gap-5 lg:gap-10 px-3 lg:px-20">
-                <div className="flex flex-col justify-end w-full gap-5 lg:gap-10">
-                    <div className="hidden lg:flex grow">
+            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-5 lg:gap-10 px-3 min-h-full lg:px-20">
+                {/* contenido 1 */}
+                <div className="flex flex-col justify-center items-center h-full">
+                    <div className="flex flex-col gap-10 items-start flex-1">
                         <h2 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
                             Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina. </h2>
+                        <a href="/aboutpablo/cv.pdf" target="_blank" rel="noopener noreferrer" className="uppercase text-lg text-center lg:text-xl w-full px-5 py-4 bg-[#5E6B45] font-bold text-white">
+                            Descargar CV
+                        </a>
                     </div>
-                    <a href="/aboutpablo/cv.pdf" download className="uppercase text-xl text-center lg:text-2xl w-full px-5 py-2 bg-[#5E6B45] font-bold text-white">
-                        Descargar CV
-                    </a>
-                    <Image radius="none" className="object-cover " src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
+                    <Image radius="none" className="object-cover aspect-video" src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
                 </div>
-                <div className="hidden lg:block ">
-                    <Image radius="none" className="object-cover min-h-full" src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
+                {/* contenido 2 */}
+                <div className="hidden 2xl:flex">
+                    <Image radius="none" className="object-cover aspect-w-[16] aspect-h-[9]" src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
                 </div>
             </div>
+
             {/* SECTION 3 */}
             <div >
                 <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between px-3 lg:px-20 py-16 bg-background text-foreground dark">
@@ -58,7 +61,7 @@ export default async function page({ params: { lang } }: Lang) {
                     <div className="w-full space-y-10">
                         <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
-                        <button className="uppercase text-xl lg:text-3xl w-full px-5 py-2 text-lg bg-[#5E6B45] font-bold">
+                        <button className="uppercase text-lg lg:text-xl w-full px-5 py-4 bg-[#5E6B45] font-bold">
                             <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
                             </a>
                         </button>
@@ -89,8 +92,8 @@ export default async function page({ params: { lang } }: Lang) {
                     <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
                     <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
                 </div>
-                <div className="flex flex-col lg:flex-row py-10 lg:py-20 lg:justify-between gap-5 lg:gap-36">
-                    <div className="uppercase font-extrabold text-xl lg:text-2xl flex-shrink-0" style={{ lineHeight: 1.2 }}>
+                <div className="flex flex-col lg:flex-row py-10 lg:py-20 lg:justify-between gap-5 lg:gap-10 w-full">
+                    <div className="uppercase font-extrabold text-xl lg:text-2xl w-full" style={{ lineHeight: 1.2 }}>
                         <p>new york</p>
                         <p>san francisco</p>
                         <p>houston</p>
@@ -99,7 +102,7 @@ export default async function page({ params: { lang } }: Lang) {
                         <p>canadá</p>
                         <p>hong kong</p>
                     </div>
-                    <h2 className="text-base lg:text-lg flex-shrink text-justify">
+                    <h2 className="text-base lg:text-lg  text-justify w-full">
                         A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no
                         sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver enUSA;
                         como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde plantó bandera
