@@ -24,7 +24,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
 
 
     return (
-        <div className={`py-2 px-2 w-full lg:hidden`}>
+        <div className={`${pathname === `/${lang}` ? 'absolute bg-white z-50 top-0 left-0' : ''} py-2 px-2 w-full lg:hidden`}>
             <Link
                 href={`/${lang === 'es' ? 'en' : 'es'}`}
                 className='ms-auto block w-fit px-2 text-sm py-1  border-black border font-semibold'
