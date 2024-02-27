@@ -25,7 +25,7 @@ export default async function page({ params: { lang } }: Lang) {
                     <div className="flex flex-col gap-10 items-start flex-1">
                         <h2 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
                             Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina. </h2>
-                        <a href="/aboutpablo/cv.pdf" target="_blank" rel="noopener noreferrer" className="uppercase text-lg text-center lg:text-xl w-full px-5 py-4 bg-[#5E6B45] font-bold text-white">
+                        <a href="/aboutpablo/cv.pdf" target="_blank" rel="noopener noreferrer" className="uppercase text-lg text-center lg:text-xl w-fit mx-auto block px-5 py-4 bg-[#5E6B45]  font-bold text-white">
                             Descargar CV
                         </a>
                     </div>
@@ -61,7 +61,7 @@ export default async function page({ params: { lang } }: Lang) {
                     <div className="w-full space-y-10">
                         <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
-                        <button className="uppercase text-lg lg:text-xl w-full px-5 py-4 bg-[#5E6B45] font-bold">
+                        <button className="uppercase text-lg lg:text-xl w-fit mx-auto block px-5 py-4 bg-[#5E6B45] font-bold">
                             <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
                             </a>
                         </button>
