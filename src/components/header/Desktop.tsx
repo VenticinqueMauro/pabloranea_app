@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import ContactButton from './ContactButton';
+import { Image } from '@nextui-org/react';
 
 interface Props {
     sections: string[],
@@ -22,19 +22,22 @@ export const sectionshref = [
 
 export default function Desktop({ sections, lang, pathname }: Props) {
     return (
-        <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center">
-            <motion.img
-                src="/logo.png"
-                alt="logo"
-                width={2126}
-                height={768}
+        <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 w-full z-40 bg-white">
+            <a
                 className='lg:w-[200px] '
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.3 } }}
-            />
-            <div className={`flex uppercase`}>
+                href='/'
+            >
+                <Image
+                    src="/logo.png"
+                    alt="logo"
+                    width={2126}
+                    height={768}
+
+                />
+            </a>
+            <div className={`flex uppercase gap-2`}>
                 {sections.filter(section => section !== 'contact' && section !== 'contacto').map((section, index) => (
-                    <motion.a
+                    <a
                         key={section}
                         href={section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}
                         className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
@@ -44,17 +47,9 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                             } z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
                     >
                         {section}
-                    </motion.a>
+                    </a>
                 ))}
                 <ContactButton pathname={pathname} lang={lang} />
-                {/* <motion.a
-                    href={sections.includes('contact') ? sectionshref[sectionshref.length - 1] : (section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`)}
-                    target='_blank'
-                    rel="noopener noreferrer"
-                    className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
-                >
-                    {sections.includes('contact')}
-                </motion.a> */}
             </div>
         </div >
     )

@@ -35,7 +35,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
                         ))
                     }
                 </div>
-                <button className="bg-black text-white px-1 w-fit block ms-auto mt-5 font-semibold letterScroll">{button}</button>
+                <button className=" text-white px-5 py-2 text-lg bg-[#5E6B45] w-fit block mx-auto mt-10 font-semibold letterScroll">{button}</button>
             </div>
         </section>
     )

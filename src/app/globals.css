@@ -14,12 +14,34 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   font-family: "Aileron", Arial, sans-serif;
 }
 
 .light {
   font-family: "Aileron-Light";
+} */
+
+body {
+  font-family: "Aileron", "Helvetica Neue", Arial, sans-serif; /* Para Chrome y Safari en macOS */
+}
+
+/* Para Safari en macOS */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    body {
+      font-family: "Aileron", "Helvetica Neue", Arial, sans-serif;
+    }
+  }
+}
+
+/* Para Chrome en Windows */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @media {
+    body {
+      font-family: "Aileron", Arial, sans-serif;
+    }
+  }
 }
 
 .showAnimate {
@@ -199,6 +221,7 @@ body {
 }
 
 .text-shadow {
+  -webkit-text-shadow: 1px 0px 50px rgba(255, 255, 255, 1);
   text-shadow: 1px 0px 50px rgba(255, 255, 255, 1);
 }
 
