@@ -15,7 +15,7 @@ type Props = {
 export default async function PressLayout({ children, params: { lang } }: Props) {
 
     return (
-        <section className='absolute top-0 w-full left-0 lg:pt-44'>
+        <section className='lg:pt-44'>
             {children}
         </section>
     )

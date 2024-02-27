@@ -57,7 +57,7 @@ export default async function page({ params: { lang } }: Lang) {
                     <div className="w-full space-y-10">
                         <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
                         </h3>
-                        <button className="uppercase text-lg lg:text-xl w-fit mx-auto block px-5 py-4 bg-[#5E6B45] font-bold">
+                        <button className="uppercase text-lg lg:text-xl w-full lg:w-fit lg:ms-auto block px-5 py-4 bg-[#5E6B45] font-bold">
                             <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
                             </a>
                         </button>
@@ -76,11 +76,11 @@ export default async function page({ params: { lang } }: Lang) {
                         <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>
                             Reconocidas bodegas de Mendoza como <b>El Enemigo, Catena
                                 Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner,
-                                AchavalFerrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
+                                Achaval Ferrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
                             <b>Otronia</b> de la Patagonia Argentina confían en <b>Ranea</b> como
                             comunicador y embajador para presentar sus más exclusivas
                             etiquetas en sus cenas nómades en el extranjero y de esta
-                            manera,llegar a nuevos consumidores.
+                            manera, llegar a nuevos consumidores.
                         </h3>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ export default async function page({ params: { lang } }: Lang) {
                     </div>
                     <h2 className="text-base lg:text-lg  text-justify w-full">
                         A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no
-                        sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver enUSA;
+                        sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver en USA;
                         como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde plantó bandera
                         creando una comunidad foodie fiel de comensales aventureros que siempre están atentos a todas
                         las novedades sobre vinos argentinos y deleitar sus sentidos con sus fabulosos platos.

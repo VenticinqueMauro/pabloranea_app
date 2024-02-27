@@ -11,7 +11,7 @@ export default function Section3() {
                         <br /><br />
                         Con nuestros “pop up dinners” buscamos que nuestros comensales conecten con Argentina y su historia a través de nuestra pasión por los vinos y los sabores de nuestra propuesta gastronómica.
                     </p>
-                    <button className="uppercase text-lg lg:text-xl w-fit mx-auto block px-5 py-4 bg-[#5E6B45] font-bold">
+                    <button className="uppercase text-lg lg:text-xl w-full lg:w-fit lg:ms-auto block px-5 py-4 bg-[#5E6B45] font-bold">
                         <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>convertite en anfitrión</a>
                     </button>
                 </div>
