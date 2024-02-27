@@ -13,7 +13,7 @@ export default function Navbar({ dictionary }: any) {
 
     const { home, popups, calendar, aboutpablo, classes, partners, community, press, contact } = dictionary.menu;
 
-    const sections = [home, popups, calendar, aboutpablo, classes, partners, community, press, contact]
+    const sections = [home, popups, calendar, aboutpablo, classes, partners, community, press]
 
     const pathname = usePathname();
     const { lang } = useParams();

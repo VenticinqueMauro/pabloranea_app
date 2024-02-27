@@ -1,12 +1,12 @@
 'use client';
 
-import { AlignJustify, Menu, X } from "lucide-react"
-import { NextFont } from "next/dist/compiled/@next/font"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { sectionshref } from "./Desktop";
+import ModalContact from "./ModalContact";
 
 
 interface Props {
@@ -21,6 +21,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpen = () => setIsOpen((prevState) => !prevState);
+
 
     return (
         <div className={`py-2 px-2 w-full lg:hidden`}>
@@ -69,6 +70,14 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                                     </Link>
                                 </motion.li>
                             ))}
+                            <motion.li
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -50 }}
+                                transition={{ delay: 1 * 0.8 }}
+                            >
+                                <ModalContact pathname={pathname} lang={lang} />
+                            </motion.li>
                         </motion.ul>
                     )}
                 </AnimatePresence>

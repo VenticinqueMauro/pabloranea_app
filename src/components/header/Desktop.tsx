@@ -1,5 +1,6 @@
 import ContactButton from './ContactButton';
 import { Image } from '@nextui-org/react';
+import ModalContact from './ModalContact';
 
 interface Props {
     sections: string[],
@@ -49,7 +50,8 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                         {section}
                     </a>
                 ))}
-                <ContactButton pathname={pathname} lang={lang} />
+                {/* <ContactButton pathname={pathname} lang={lang} /> */}
+                <ModalContact pathname={pathname} lang={lang} />
             </div>
         </div >
     )
