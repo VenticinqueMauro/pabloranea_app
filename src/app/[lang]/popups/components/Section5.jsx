@@ -9,10 +9,10 @@ export default function Section5() {
     const [isEnter, setIsEnter] = useState(false);
 
     return (
-        <div className="bg-background text-foreground dark px-3 lg:px-20 pt-16 pb-20 min-h-screen">
+        <div className="bg-background text-foreground dark px-3 lg:px-20 lg:pt-16 pt-10 pb-20 min-h-screen">
             <ScrollTrigger onEnter={() => setIsEnter(true)} onExit={() => setIsEnter(false)}>
-                <div className="flex flex-col lg:flex-row lg:items-center gap-72 sm:gap-5 lg:gap-10">
-                    <div className="relative w-full flex flex-col min-h-full lg:justify-between items-center lg:items-start h-screen ">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-52 sm:gap-5 lg:gap-10">
+                    <div className="relative w-full flex flex-col min-h-full lg:justify-between items-center justify-between lg:items-center h-screen ">
                         <div className="relative">
                             <h2 className="text-[250px] font-medium">
                                 {isEnter && <CountUp start={0} end={40} duration={6} />}
