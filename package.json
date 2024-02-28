@@ -20,6 +20,7 @@
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.309.0",
     "million": "^2.6.4",
+    "modern-normalize": "^2.0.0",
     "mongoose": "^8.0.4",
     "next": "14.0.4",
     "react": "^18",
