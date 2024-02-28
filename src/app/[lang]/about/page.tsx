@@ -67,8 +67,8 @@ export default async function page({ params: { lang } }: Lang) {
             {/* SECTION 4 */}
             <div className="bg-background text-foreground light px-3 lg:px-20">
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
-                    <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
-                    <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
+                    <Image radius="none" className="object-contain " src="/aboutpablo/1.jpg" alt="test2" />
+                    <Image radius="none" className="object-cover " src="/aboutpablo/2.jpg" alt="test2" />
                 </div>
                 <div className="flex flex-col lg:flex-row lg:justify-between py-20 gap-10">
                     <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">EMBAJADOR DEL VINO ARGENTINO</h2>
@@ -85,8 +85,8 @@ export default async function page({ params: { lang } }: Lang) {
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-10">
-                    <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
-                    <Image radius="none" className="object-cover " src="/partners/partners.jpg" alt="test2" />
+                    <Image radius="none" className="object-cover " src="/aboutpablo/3.jpg" alt="test2" />
+                    <Image radius="none" className="object-cover " src="/aboutpablo/4.jpg" alt="test2" />
                 </div>
                 <div className="flex flex-col lg:flex-row py-10 lg:py-20 lg:justify-between gap-5 lg:gap-10 w-full">
                     <div className="uppercase font-extrabold text-xl lg:text-2xl w-full" style={{ lineHeight: 1.2 }}>
