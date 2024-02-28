@@ -30,7 +30,7 @@ type Props = {
       ],
       openGraph: {
         title: 'Pablo Ranea: Experiencias Gastronómicas por Todo el Mundo',
-        images: '/logo.png',
+        images: '/aboutpablo/pablo3.jpg',
         description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
       },
       referrer: 'origin-when-cross-origin',
