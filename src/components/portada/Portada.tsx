@@ -24,8 +24,8 @@ export default function Portada() {
                                 width={1980}
                                 height={1114}
                                 alt='portada'
-                                className="object-contain w-full "
-                                style={{ objectPosition: 'center' }} // Puedes ajustar 'center bottom' según tu necesidad
+                                className="object-cover w-full h-screen sm:h-screen"
+                                // style={{ objectPosition: 'center bottom' }}
                             />
                         </div>
                     ))
