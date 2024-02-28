@@ -5,9 +5,46 @@ import { Providers } from '../providers'
 
 
 export const metadata: Metadata = {
-  title: 'Pablo Ranea [Chef & Somm]',
-  description: 'Falta crear description'
+  metadataBase: new URL('https://pabloranea.vercel.app/'),
+  title: {
+    default: 'Pablo Ranea: Chef y Sommelier - Experiencias Gastronómicas por Todo el Mundo',
+    template: '%s - Pablo Ranea',
+  },
+  description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
+  keywords: [
+    'Pablo Ranea',
+    'Chef argentino',
+    'Sommelier',
+    'Experiencias gastronómicas',
+    'Cenas Pop-Up',
+    'Tours gastronómicos',
+    'Clases de cocina',
+    'Maridaje',
+    'Vino argentino',
+  ],
+  openGraph: {
+    title: 'Pablo Ranea: Experiencias Gastronómicas por Todo el Mundo',
+    images: '/aboutpablo/about1.jpg',
+    description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
+  },
+  referrer: 'origin-when-cross-origin',
+  creator: 'Insiders Agencia & MVDEV',
+  publisher: 'Insiders Agencia & MVDEV',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
+
 
 type Props = {
   children: React.ReactNode
