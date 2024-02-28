@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     description: 'Descubre las experiencias gastronómicas itinerantes de Pablo Ranea a través de sus Pop Up Dinners, que llevan la nueva cocina argentina y latinoamericana a deslumbrantes lugares alrededor del mundo. Conecta con Argentina a través de sus vinos y sabores únicos en escenarios como San Francisco, New York, Asheville, Mendoza, Shanghai y más.',
     keywords: [
         'Pop Up Dinners',
+        'Cenas popup',
+        'Cenas pop - up',
+        'PopUp dinners',
+        'Cena puertas adentro',
+        'Pop - up dinners',
         'Experiencias Gastronómicas',
         'Cocina Argentina',
         'Cocina Latinoamericana',
