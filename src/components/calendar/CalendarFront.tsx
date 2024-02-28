@@ -35,7 +35,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
                         ))
                     }
                 </div>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" target="_blank" className=" text-white px-5 py-2 text-lg bg-[#5E6B45] w-fit block mx-auto mt-10 font-semibold letterScroll">{button}</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" target="_blank" className=" text-white px-5 py-2 text-base lg:text-lg bg-[#5E6B45] w-fit block mx-auto mt-10 font-semibold letterScroll">{button}</a>
             </div>
         </section>
     )
