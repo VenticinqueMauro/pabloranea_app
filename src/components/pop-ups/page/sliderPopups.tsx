@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function SliderPress() {
+export default function SliderPopups() {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay({ delay: 2000 })])
 
     return (
@@ -17,14 +17,14 @@ export default function SliderPress() {
         >
             <div className="embla__container">
                 {
-                    Array.from({ length: 7 }, (_, index) => (
+                    Array.from({ length: 6 }, (_, index) => (
                         <div key={`slide${index}`} className="embla__slide">
                             <Image
-                                src={`/portada/slide${index + 1}.jpg`}
-                                width={1980}
-                                height={1114}
+                                src={`/popups/${index + 1}.jpg`}
+                                width={1600}
+                                height={840}
                                 alt='portada'
-                                className="object-cover w-full h-screen sm:h-screen"
+                                className="w-full"
                             />
                         </div>
                     ))

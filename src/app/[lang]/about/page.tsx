@@ -1,5 +1,5 @@
 import Footer from "@/components/footer/Footer";
-import SliderPress from "@/components/pop-ups/page/sliderPress";
+import SliderPress from "@/components/pop-ups/page/sliderPopups";
 import { Lang } from "@/types/lang.type";
 import { Image } from "@nextui-org/react";
 import Link from "next/link";

@@ -1,3 +1,4 @@
+import SliderPopups from "@/components/pop-ups/page/sliderPopups";
 import { Image } from "@nextui-org/react";
 
 export default function Section3() {
@@ -15,10 +16,10 @@ export default function Section3() {
                         <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>convertite en anfitrión</a>
                     </button>
                 </div>
-                {/* <SliderPress /> */}
-                <div className="col-span-12">
+                <SliderPopups />
+                {/* <div className="col-span-12">
                     <Image radius="none" className="object-cover w-full h-full" src="/portada/slide5.jpg" alt="popups dinners" width={1920} height={1100} />
-                </div>
+                </div> */}
             </div>
         </div>
     )
