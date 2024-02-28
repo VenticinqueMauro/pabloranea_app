@@ -6,7 +6,6 @@
   font-family: "Aileron-Light";
   src: url("/tipografia/Aileron-Light.otf");
 }
-@import 'node_modules/modern-normalize/modern-normalize.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -59,6 +59,7 @@ export default async function AboutLayout({ children, params: { lang } }: Props)
     return (
         <section className='lg:pt-44'>
             {children}
+            <link rel="stylesheet" href={`/node_modules/modern-normalize/modern-normalize.css`} />
         </section>
     )
 }
