@@ -30,7 +30,7 @@ export default function Footer({ dictionary, lang }: any) {
                                     <a href={`/${lang}`} className="hover:underline capitalize">{home}</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href={`/${lang}/popups`} className="hover:underline capitalize">{popups}</a>
+                                    <a href={`/${lang}/popup`} className="hover:underline capitalize">{popups}</a>
                                 </li>
                                 <li>
                                     <a href={`/${lang}#calendar`} className="hover:underline capitalize">{calendar}</a>

@@ -10,7 +10,7 @@ interface Props {
 
 export const sectionshref = [
     'home',
-    '/popups',
+    '/popup',
     '#calendar',
     '/about',
     '#classes',

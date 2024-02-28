@@ -23,7 +23,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* PORTADA  */}
       <Portada />
       {/* POP-UPS */}
-      <Popups dictionary={dictionary} />
+      <Popups dictionary={dictionary} lang={lang} />
       {/* GIRA EN NUMEROS  */}
       <GiraEnNum />
       {/* CALENDAR  */}
@@ -33,7 +33,7 @@ async function HomePage({ params: { lang } }: Lang) {
       {/* CLASSES  */}
       <Classes dictionary={dictionary} />
       {/* PARTNERS */}
-      <Partners dictionary={dictionary} />
+      <Partners dictionary={dictionary} lang={lang} />
       {/* INSTAGRAM  */}
       <Instagram />
       {/* PRESS  */}
