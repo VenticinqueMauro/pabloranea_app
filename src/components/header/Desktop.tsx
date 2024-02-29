@@ -31,9 +31,8 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                 <Image
                     src="/logo.png"
                     alt="logo"
-                    width={2126}
-                    height={768}
-
+                    width={200}
+                    height={72}
                 />
             </a>
             <div className={`flex uppercase gap-2`}>

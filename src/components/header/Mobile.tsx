@@ -33,8 +33,8 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                 <Image
                     src="/logo.png"
                     alt="logo"
-                    width={2126}
-                    height={768}
+                    width={200}
+                    height={72}
                     className="w-40"
                 />
                 <button className="z-50" onClick={handleOpen}>
