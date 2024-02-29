@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@/store/dashboard';
-import { Button, Card, Input } from '@nextui-org/react';
+import { Button, Card, Input, Tab, Tabs, Textarea } from '@nextui-org/react';
 import { MapPin, Palmtree } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
@@ -14,6 +14,10 @@ const FormEditStay = ({ id, color }: any) => {
         startDate: '',
         endDate: '',
         color: '#CCCCCC',
+        description: {
+            en: '',
+            es: ''
+        },
         status: '',
     });
 
@@ -24,10 +28,21 @@ const FormEditStay = ({ id, color }: any) => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setBookingData({
-            ...bookingData,
-            [name]: value,
-        });
+
+        if (name === 'en' || name === 'es') {
+            setBookingData({
+                ...bookingData,
+                description: {
+                    ...bookingData.description,
+                    [name]: value
+                }
+            })
+        } else {
+            setBookingData({
+                ...bookingData,
+                [name]: value
+            });
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -59,6 +74,10 @@ const FormEditStay = ({ id, color }: any) => {
                         location: '',
                         startDate: '',
                         endDate: '',
+                        description: {
+                            en: '',
+                            es: ''
+                        },
                         color: '#ffffff',
                         status: 'active',
                     })
@@ -120,6 +139,30 @@ const FormEditStay = ({ id, color }: any) => {
                         />
                     </label>
                 </div>
+                <Tabs
+                    aria-label='options'
+                >
+                    <Tab key='en' title='EN'>
+                        <Textarea
+                            label="Description"
+                            placeholder="Enter your description"
+                            className="max-w-md"
+                            name='en'
+                            value={bookingData.description.en}
+                            onChange={(handleInputChange)}
+                        />
+                    </Tab>
+                    <Tab key='es' title='ES'>
+                        <Textarea
+                            label="Descripción"
+                            placeholder="Ingresá tu descripción"
+                            className="max-w-md"
+                            name='es'
+                            value={bookingData.description.es}
+                            onChange={handleInputChange}
+                        />
+                    </Tab>
+                </Tabs>
                 <div>
                     <Input
                         type="color"

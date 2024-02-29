@@ -2,9 +2,10 @@
 
 import { useStore } from "@/store/dashboard";
 import { Stay } from "@/types/stay.type";
-import { Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, getKeyValue } from "@nextui-org/react";
+import { Spinner, Tab, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Tabs, getKeyValue } from "@nextui-org/react";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
@@ -16,9 +17,9 @@ const columns = [
     { label: 'Location', key: 'location' },
     { label: 'Start date', key: 'startDate' },
     { label: 'End date', key: 'endDate' },
-    { label: 'Events', key: 'eventsLenght' },
+    // { label: 'Events', key: 'eventsLenght' },
     { label: 'Description', key: 'description' },
-    { label: "Color", key: 'color' },
+    // { label: "Color", key: 'color' },
     { label: "Actions", key: 'actions' }
 ]
 
@@ -27,6 +28,10 @@ export default function StayTable() {
     const { refresh } = useStore();
     const [isFetching, setIsFetching] = useState(true);
     const [allStays, setAllStays] = useState<Stay[]>([])
+
+    const pathname = usePathname();
+
+    console.log(pathname)
 
     useEffect(() => {
 
@@ -52,8 +57,6 @@ export default function StayTable() {
         getEvents();
 
     }, [refresh])
-
-    console.log(allStays)
 
     return (
         <section className="border rounded-lg ">
@@ -83,36 +86,50 @@ export default function StayTable() {
                             {(columnKey) => (
                                 <TableCell className="capitalize">
                                     {
-                                        columnKey === 'eventsLenght' ?
-                                            <p>{item?.events?.length}</p>
+                                        // columnKey === 'eventsLenght' ?
+                                        //     <p>{item?.events?.length}</p>
+                                        //     :
+                                        columnKey === 'startDate' ?
+                                            <p>
+                                                {dayjs(item.startDate).add(1, 'day').format('DD-MM-YY')}
+                                            </p>
                                             :
-                                            columnKey === 'startDate' ?
+                                            columnKey === 'endDate' ?
                                                 <p>
-                                                    {dayjs(item.startDate).add(1, 'day').format('DD-MM-YY')}
+                                                    {dayjs(item.endDate).add(1, 'day').format('DD-MM-YY')}
                                                 </p>
                                                 :
-                                                columnKey === 'endDate' ?
-                                                    <p>
-                                                        {dayjs(item.endDate).add(1, 'day').format('DD-MM-YY')}
-                                                    </p>
-                                                    :
-                                                    columnKey === 'description' ?
-                                                        <p className="max-w-[250px] truncate">{item.description.en}</p>
-                                                        :
-                                                        columnKey === 'color' ?
-                                                            <p
-                                                                className="w-5 h-5 rounded-full inline-block shadow"
-                                                                style={{ background: `${item.color}` }}>
-
+                                                columnKey === 'description' ?
+                                                    <Tabs
+                                                        aria-label='options'
+                                                        size="sm"
+                                                    >
+                                                        <Tab key='en' title='EN'>
+                                                            <p className="max-w-[250px] line-clamp-5">
+                                                                {item.description.en}
                                                             </p>
-                                                            :
-                                                            columnKey === 'actions' ?
-                                                                <div className="flex gap-2">
-                                                                    <ModalEdit id={item._id} />
-                                                                    <ModalDelete id={item._id} />
-                                                                </div>
-                                                                :
-                                                                getKeyValue(item, columnKey)
+                                                        </Tab>
+                                                        <Tab key='es' title='ES'>
+                                                            <p className="max-w-[250px] line-clamp-5">
+                                                                {item.description.es}
+                                                            </p>
+                                                        </Tab>
+                                                    </Tabs>
+                                                    :
+                                                    // columnKey === 'color' ?
+                                                    //     <p
+                                                    //         className="w-5 h-5 rounded-full inline-block shadow"
+                                                    //         style={{ background: `${item.color}` }}>
+
+                                                    //     </p>
+                                                    //     :
+                                                    columnKey === 'actions' ?
+                                                        <div className="flex gap-2">
+                                                            <ModalEdit id={item._id} />
+                                                            <ModalDelete id={item._id} />
+                                                        </div>
+                                                        :
+                                                        getKeyValue(item, columnKey)
                                     }
                                 </TableCell>
                             )}
