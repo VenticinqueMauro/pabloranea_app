@@ -11,7 +11,7 @@ export default function Section2() {
                 <Image radius="none" className="object-cover min-w-full h-full" src="/popups/img1.jpg" alt="popups dinners" width={720} height={405} />
             </div>
             <div className="w-full">
-                <video className="w-full h-auto lg:max-h-[1000px] mt-1 mb-1 lg:mb-0 p-0" src="/popups/reelpopup.mov" controls autoPlay loop>
+                <video className="w-full h-auto lg:max-h-[1000px] aspect-[9/16] mt-1 mb-1 lg:mb-0 p-0" src="/popups/reelpopup.mov" preload="none" controls autoPlay loop>
                     Tu navegador no admite el elemento de video.
                 </video>
             </div>
