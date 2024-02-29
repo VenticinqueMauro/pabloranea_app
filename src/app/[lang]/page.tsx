@@ -4,9 +4,9 @@ import Footer from "@/components/footer/Footer";
 import TradButton from "@/components/tradButton/TradButton";
 import { Lang } from "@/types/lang.type";
 import dynamic from "next/dynamic";
+import CalendarFront from "@/components/calendar/CalendarFront";
 
 const GiraEnNum = dynamic(() => import("@/components/giraennumeros/GiraEnNum"));
-const CalendarFront = dynamic(() => import("@/components/calendar/CalendarFront"));
 const About = dynamic(() => import("@/components/about/About"));
 const Classes = dynamic(() => import("@/components/classes/Classes"));
 const Partners = dynamic(() => import("@/components/partners/Partners"));

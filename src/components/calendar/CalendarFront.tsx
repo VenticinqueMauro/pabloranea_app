@@ -13,9 +13,8 @@ export default async function CalendarFront({ dictionary, lang }: any) {
     return (
         <section id="calendar" className="flex items-center justify-center flex-col mb-20 px-2 border-white">
             <div className="relative flex flex-col items-center justify-center border-b">
-                <Image src="/world.png" alt='world' className="wordlScroll hidden lg:block" width={350} height={350} />
-                <Image src="/world.png" alt='world' className="wordlScroll block lg:hidden" width={200} height={200} />
-                <h2 className="text-4xl lg:text-6xl font-bold w-auto lg:w-[250px] py-2 absolute bottom-2 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/3 text-start z-10 text-white textShadow -tracking-[3px] lg:-tracking-[5px]">{title}</h2>
+                <Image src="/worldtitle.png" alt='world' className="wordlScroll hidden lg:block w-[350px]" width={500} height={500} />
+                <Image src="/worldtitle.png" alt='world' className="wordlScroll block lg:hidden w-[200px]" width={500} height={500} />
             </div>
 
             <div>
