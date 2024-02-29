@@ -27,7 +27,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
         <div className={`${pathname === `/${lang}` ? 'absolute bg-white z-50 top-0 left-0' : ''} py-2 px-2 w-full lg:hidden`}>
             <Link
                 href={`/${lang === 'es' ? 'en' : 'es'}`}
-                className='ms-auto block w-fit px-2 text-sm py-1  border-black border font-semibold'
+                className='ms-auto block w-fit px-2 text-sm py-1 opacity-0 pointer-events-none  border-black border font-semibold'
             >{lang === 'es' ? 'ES' : 'EN'}</Link>
             <div className="flex justify-between items-end">
                 <Image
