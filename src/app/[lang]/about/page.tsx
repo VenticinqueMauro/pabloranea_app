@@ -1,8 +1,9 @@
 import Footer from "@/components/footer/Footer";
-import SliderPress from "@/components/pop-ups/page/sliderPopups";
 import { Lang } from "@/types/lang.type";
-import { Image } from "@nextui-org/react";
-import Link from "next/link";
+import Section1 from "./components/Section1";
+import Section2 from "./components/Section2";
+import Section3 from "./components/Section3";
+import Section4 from "./components/Section4";
 
 export default async function page({ params: { lang } }: Lang) {
 
@@ -10,103 +11,10 @@ export default async function page({ params: { lang } }: Lang) {
 
     return (
         <section className="h-screen space-y-10">
-            {/* SECTION 1  */}
-            <div className="relative">
-                <Image className="" radius="none" src="/aboutpablo/portadapage.png" alt="portada popups" />
-            </div>
-            {/* SECTION 2  */}
-            <div className="grid grid-cols-1 2xl:grid-cols-2 gap-5 lg:gap-10 px-3 place-content-center min-h-full lg:px-20">
-                {/* contenido 1 */}
-                <div className="flex flex-col justify-center items-center h-full space-y-10">
-                    <div className="flex flex-col gap-10 items-start flex-1">
-                        <h2 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.<br /> <br />
-                            Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina. </h2>
-                        <a href="/aboutpablo/cv.pdf" target="_blank" rel="noopener noreferrer" className="uppercase text-base text-center lg:text-lg w-fit mx-auto block px-5 py-4 bg-[#5E6B45]  font-bold text-white">
-                            Descargar CV
-                        </a>
-                    </div>
-                    <Image radius="none" className="object-cover aspect-video" src="/aboutpablo/pablo1.jpg" alt="pablo ranea" width={1020} height={680} />
-                </div>
-                {/* contenido 2 */}
-                <div className="hidden 2xl:flex">
-                    <Image radius="none" className="object-cover aspect-w-[16] aspect-h-[9]" src="/aboutpablo/pablo2.jpg" alt="pablo ranea" width={1350} height={1013} />
-                </div>
-            </div>
-
-            {/* SECTION 3 */}
-            <div >
-                <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between px-3 lg:px-20 py-16 bg-background text-foreground dark">
-                    <h2 className="uppercase text-xl lg:text-2xl font-bold w-full ">la tierra del sol y el buen vino</h2>
-                    <h3 className="text-base lg:text-lg text-justify w-full" style={{ lineHeight: 1.2 }}>Su fuerte conexión con Mendoza y el mundo vitivinícola, y su
-                        interés por introducir y comunicar los vinos en su propuesta
-                        gastronómica, lo llevaron a obtener el título de Sommelier en la
-                        Escuela Argentina de Sommelier en el 2013. En 2016, tras su
-                        exitoso periodo en Azafrán, decidió profundizar su exploración
-                        gastronómica para seguir innovando, destacándose
-                        especialmente en la enseñanza y promoción del vino argentino en
-                        las principales capitales del mundo.
-                    </h3>
-                </div>
-                {/* <SliderPress /> */}
-                <div className="flex justify-center bg-black">
-                    <Image radius="none" className="object-cover w-full h-full" src="/aboutpablo/pablo3.jpg" alt="pablo ranea" width={1365} height={888} />
-                </div>
-
-                <div className="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-0 px-3 lg:px-20 py-16 bg-background text-foreground dark">
-                    <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">TRAVELLING CUISINE</h2>
-                    <div className="w-full space-y-10">
-                        <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.
-                        </h3>
-                        <button className="uppercase text-base lg:text-lg w-full lg:w-fit lg:ms-auto block px-5 py-4 bg-[#5E6B45] font-bold">
-                            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>CONOCÉ MÁS SOBRE LAS CLASES
-                            </a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            {/* SECTION 4 */}
-            <div className="bg-background text-foreground light px-3 lg:px-20">
-                <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
-                    <Image radius="none" className="object-contain " src="/aboutpablo/1.jpg" alt="test2" />
-                    <Image radius="none" className="object-cover " src="/aboutpablo/2.jpg" alt="test2" />
-                </div>
-                <div className="flex flex-col lg:flex-row lg:justify-between py-20 gap-10">
-                    <h2 className="uppercase text-2xl font-bold w-full col-span-12 lg:col-span-6">EMBAJADOR DEL VINO ARGENTINO</h2>
-                    <div className="w-full space-y-10">
-                        <h3 className="text-base lg:text-lg text-justify" style={{ lineHeight: 1.2 }}>
-                            Reconocidas bodegas de Mendoza como <b>El Enemigo, Catena
-                                Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner,
-                                Achaval Ferrer, AWI Wines</b> así como también <b>Colomé</b> de Salta,
-                            <b>Otronia</b> de la Patagonia Argentina confían en <b>Ranea</b> como
-                            comunicador y embajador para presentar sus más exclusivas
-                            etiquetas en sus cenas nómades en el extranjero y de esta
-                            manera, llegar a nuevos consumidores.
-                        </h3>
-                    </div>
-                </div>
-                <div className="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-10">
-                    <Image radius="none" className="object-cover " src="/aboutpablo/3.jpg" alt="test2" />
-                    <Image radius="none" className="object-cover " src="/aboutpablo/4.jpg" alt="test2" />
-                </div>
-                <div className="flex flex-col lg:flex-row py-10 lg:py-20 lg:justify-between gap-5 lg:gap-10 w-full">
-                    <div className="uppercase font-extrabold text-xl lg:text-2xl w-full" style={{ lineHeight: 1.2 }}>
-                        <p>new york</p>
-                        <p>san francisco</p>
-                        <p>houston</p>
-                        <p>denver</p>
-                        <p>lima</p>
-                        <p>canadá</p>
-                        <p>hong kong</p>
-                    </div>
-                    <h2 className="text-base lg:text-lg  text-justify w-full">
-                        A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no
-                        sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver en USA;
-                        como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde plantó bandera
-                        creando una comunidad foodie fiel de comensales aventureros que siempre están atentos a todas
-                        las novedades sobre vinos argentinos y deleitar sus sentidos con sus fabulosos platos.
-                    </h2>
-                </div>
-            </div>
+            <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
             <Footer dictionary={dictionary} lang={lang} />
         </section>
     )
