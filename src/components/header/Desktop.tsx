@@ -1,5 +1,5 @@
-import ContactButton from './ContactButton';
-import { Image } from '@nextui-org/react';
+import { Image } from "@nextui-org/react";
+import NextImage from "next/image";
 import ModalContact from './ModalContact';
 
 interface Props {
@@ -29,8 +29,10 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                 href='/'
             >
                 <Image
+                    as={NextImage}
                     src="/logo.png"
                     alt="logo"
+                    priority
                     width={200}
                     height={72}
                 />
@@ -49,7 +51,6 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                         {section}
                     </a>
                 ))}
-                {/* <ContactButton pathname={pathname} lang={lang} /> */}
                 <ModalContact pathname={pathname} lang={lang} />
             </div>
         </div >

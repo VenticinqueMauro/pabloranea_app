@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.vercel.app/'),
+    metadataBase: new URL('https://pabloranea.com/'),
     title: {
         default: 'Pablo Ranea: Chef y Sommelier - Trayectoria y Experiencias Gastronómicas',
         template: '%s - Pablo Ranea',
@@ -59,7 +59,6 @@ export default async function AboutLayout({ children, params: { lang } }: Props)
     return (
         <section className='lg:pt-44'>
             {children}
-            <link rel="stylesheet" href={`/node_modules/modern-normalize/modern-normalize.css`} />
         </section>
     )
 }

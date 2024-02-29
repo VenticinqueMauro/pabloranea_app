@@ -2,7 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
+import NextImage from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { sectionshref } from "./Desktop";
@@ -31,8 +32,10 @@ export default function Mobile({ sections, lang, pathname }: Props) {
             >{lang === 'es' ? 'ES' : 'EN'}</Link>
             <div className="flex justify-between items-end">
                 <Image
+                    as={NextImage}
                     src="/logo.png"
                     alt="logo"
+                    priority
                     width={200}
                     height={72}
                     className="w-40"

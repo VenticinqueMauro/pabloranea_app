@@ -1,5 +1,5 @@
 import Navbar from '@/components/header/Navbar'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import '../globals.css'
 import { Providers } from '../providers'
 
@@ -11,7 +11,7 @@ type Props = {
 }
 
     export const metadata: Metadata = {
-      metadataBase: new URL('https://pabloranea.vercel.app/'),
+      metadataBase: new URL('https://pabloranea.com/'),
       title: {
         default: 'Pablo Ranea: Chef y Sommelier - Experiencias Gastronómicas por Todo el Mundo',
         template: '%s - Pablo Ranea',

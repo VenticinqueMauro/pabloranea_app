@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const EmbedCards = dynamic(() => import('./EmbedCards'), { ssr: false });
 
-export const Instagram = () => {
+export default function Instagram() {
 
     return (
         <section id='community' className='flex justify-center items-center px-3 lg:px-0'>

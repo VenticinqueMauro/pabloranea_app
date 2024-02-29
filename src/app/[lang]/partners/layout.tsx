@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.vercel.app/'),
+    metadataBase: new URL('https://pabloranea.com/'),
     title: {
         default: 'Socios del Tour de Pablo Ranea: Destacadas Bodegas de Vinos Argentinos',
         template: '%s - Pablo Ranea',

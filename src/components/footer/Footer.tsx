@@ -1,5 +1,5 @@
-import { Image } from '@nextui-org/react'
-import React from 'react'
+import { Image } from "@nextui-org/react";
+import NextImage from "next/image";
 
 export default function Footer({ dictionary, lang }: any) {
 
@@ -17,9 +17,13 @@ export default function Footer({ dictionary, lang }: any) {
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="/" className="flex items-center">
-                            <Image src="/logo.png"
+                            <Image
+                                as={NextImage}
+                                src="/logo.png"
                                 alt="logo"
+                                priority
                                 width={200}
+                                height={72}
                                 className="font-bold text-3xl uppercase" />
                         </a>
                     </div>
