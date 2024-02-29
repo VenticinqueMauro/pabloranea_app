@@ -8,7 +8,6 @@ export default async function CalendarFront({ dictionary, lang }: any) {
 
     const stays: Stay[] | undefined = await getStays();
 
-
     const { title, button } = dictionary.calendar
 
     return (

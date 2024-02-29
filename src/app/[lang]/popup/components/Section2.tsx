@@ -8,7 +8,7 @@ export default function Section2() {
                     Desde 2010, cuando abrimos por primera vez las puertas de nuestro hogar en la ciudad de Mendoza para convertirlo en un restaurante escondido para comensales selectos, supimos lo que queríamos: llevar la nueva cocina argentina por todo el mundo.<br /> <br />
                     Hoy en día, nuestro concepto de “pop up dinners” son mucho más que una cena puertas adentro para amigos, sino que son experiencias itinerantes que combinan dos variables: tiempo y espacio. Un atardecer junto a la bahía de San Francisco, un rooftop en New York, una huerta de flores en las afueras de Asheville, una plaza en la ciudad de Mendoza, un sofisticado hotel en Shanghai o una elegante galería de arte de una ciudad cosmopolita son algunos de los deslumbrantes escenarios que elegimos para recibir a nuestros clientes.
                 </h2>
-                <Image radius="none" className="object-cover min-w-full h-full" src="/popups/img1.jpg" alt="popups dinners" width={720} height={405} />
+                <Image radius="none" className="object-cover hidden md:block min-w-full h-full" src="/popups/img1.jpg" alt="popups dinners" width={720} height={405} />
             </div>
             <div className="w-full">
                 <video className="w-full h-auto lg:max-h-[1000px] aspect-[9/16] mt-1 mb-1 lg:mb-0 p-0" src="/popups/reelpopup.mov" preload="none" controls autoPlay loop>

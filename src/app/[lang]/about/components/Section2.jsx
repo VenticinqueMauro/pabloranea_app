@@ -11,7 +11,7 @@ export default function Section2() {
                         Descargar CV
                     </a>
                 </div>
-                <Image radius="none" className="object-cover aspect-video" src="/popups/3.jpg" alt="pablo ranea" width={1600} height={840} />
+                <Image radius="none" className="object-cover hidden md:block aspect-video" src="/popups/3.jpg" alt="pablo ranea" width={1600} height={840} />
             </div>
             <div className="w-full">
                 <video className="w-full h-auto lg:max-h-[1000px] aspect-[9/16] mt-1 mb-1 lg:mb-0 p-0" src="/aboutpablo/reelabout.mov" preload="none" controls autoPlay loop>
