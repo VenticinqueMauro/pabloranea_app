@@ -23,13 +23,14 @@ export const sectionshref = [
 
 export default function Desktop({ sections, lang, pathname }: Props) {
     return (
-        <div className="hidden pt-16 pb-6 px-16 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 bg-white w-full z-40">
+        <div className="hidden pt-16 pb-6 px-12 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 bg-white w-full z-40">
             <a
-                className='lg:w-[200px] '
+                className='w-40 xl:w-[200px] '
                 href='/'
             >
                 <Image
                     as={NextImage}
+                    radius="none"
                     src="/logo.png"
                     alt="logo"
                     priority
@@ -37,7 +38,7 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                     height={72}
                 />
             </a>
-            <div className={`flex uppercase gap-2`}>
+            <div className={`flex uppercase gap-1 xl:gap-2`}>
                 {sections.filter(section => section !== 'contact' && section !== 'contacto').map((section, index) => (
                     <a
                         key={section}
@@ -46,7 +47,7 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                             pathname === `/${lang}/${section}`
                             ? 'bg-black text-white'
                             : ''
-                            } z-10 hover:bg-black hover:text-white cursor-pointer px-1`}
+                            } z-10 hover:bg-black hover:text-white cursor-pointer px-1 text-sm xl:text-base`}
                     >
                         {section}
                     </a>

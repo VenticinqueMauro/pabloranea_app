@@ -34,6 +34,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                 <Image
                     as={NextImage}
                     src="/logo.png"
+                    radius="none"
                     alt="logo"
                     priority
                     width={200}

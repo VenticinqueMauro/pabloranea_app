@@ -9,7 +9,7 @@ export default function ModalContact({ pathname, lang }: any) {
 
     return (
         <>
-            <button onClick={onOpen} className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer capitalize lg:uppercase lg:px-1`}
+            <button onClick={onOpen} className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer capitalize lg:uppercase lg:px-1 text-sm xl:text-base`}
             >{
                     lang === 'es' ? 'contacto' : 'contact'
                 }</button>
