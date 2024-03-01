@@ -13,7 +13,7 @@ export default async function page({ params: { lang } }: Lang) {
         <section className="h-screen space-y-10">
             <Section1 />
             <Section2 />
-            <Section3 />
+            <Section3 lang={lang} />
             <Section4 />
             <Footer dictionary={dictionary} lang={lang} />
         </section>

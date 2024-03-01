@@ -25,7 +25,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
 
 
     return (
-        <div className={`${pathname === `/${lang}` ? 'absolute bg-white z-50 top-0 left-0' : ''} py-2 px-2 w-full lg:hidden`}>
+        <div className={`${pathname === `/${lang}` ? 'fixed bg-white z-50 top-0 left-0' : ''} py-2 px-2 w-full lg:hidden`}>
             <Link
                 href={`/${lang === 'es' ? 'en' : 'es'}`}
                 className='ms-auto block w-fit px-2 text-sm py-1 opacity-0 pointer-events-none  border-black border font-semibold'
@@ -39,7 +39,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                     priority
                     width={200}
                     height={72}
-                    className="w-40"
+                    className="w-32"
                 />
                 <button className="z-50" onClick={handleOpen}>
                     <Menu className={`${isOpen && "hidden"}`} size={30} />
@@ -47,7 +47,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                 </button>
             </div>
             <div className={`${isOpen ? "translate-x-0" : "-translate-x-full"
-                } absolute top-24 left-0 block w-full h-screen bg-white transition-all ease-in-out duration-300 z-50`}>
+                } absolute top-[85px] left-0 block w-full h-screen bg-white transition-all ease-in-out duration-300 z-50`}>
                 <AnimatePresence>
                     {isOpen && (
                         <motion.ul

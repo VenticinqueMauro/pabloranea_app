@@ -47,9 +47,9 @@ export default function Desktop({ sections, lang, pathname }: Props) {
 
 
     return (
-        <div className="hidden navbarTest pt-16 pb-6 px-12 xl:px-20 lg:flex justify-between items-center fixed top-0 left-0 bg-white w-full z-40">
+        <div className="hidden navbarTest pt-10 pb-6 px-12 xl:px-20 lg:flex justify-between items-end fixed top-0 left-0 bg-white w-full z-40">
             <a
-                className='w-40 xl:w-[200px] logonav '
+                className='w-40 xl:w-[160px] logonav '
                 href='/'
             >
                 <Image
