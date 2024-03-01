@@ -1,5 +1,25 @@
 import Card from "./Card";
 
+export interface Class {
+    date: string;
+    location: string;
+    description: string;
+}
+
+const classes: Class[] = [
+    {
+        date: '29.04 – 02.06',
+        location: 'Houston – San Antonio, Texas', 
+        description: 'May 8th Food & Wine pairing class at Central Market in Houston'
+    },
+    {
+        date: '03.06 – 22.07',
+        location: 'New York – Washington DC – Asbury Pk, East Coast', 
+        description: 'June xx Argentinian wine class at ICE Institute of Culinary Education in Battery Park New York'
+    }
+];
+
+
 export default function ContainerCardClasses() {
     return (
         <>
@@ -7,8 +27,8 @@ export default function ContainerCardClasses() {
 
                 <div className='mt-24 space-y-2 '>
                     {
-                        Array.from({ length: 4 }, (_, index) => (
-                            <Card key={index} />
+                        classes.map((classItem) => (
+                            <Card key={classItem.date} classItem={classItem} />
                         ))
                     }
                 </div>

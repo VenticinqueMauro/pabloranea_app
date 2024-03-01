@@ -57,7 +57,6 @@ export default function StayTable() {
 
     }, [refresh])
 
-    console.log(allStays)
 
     return (
         <section className="border rounded-lg overflow-y-scroll max-h-[700px]">
