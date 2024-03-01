@@ -31,7 +31,6 @@ export default function StayTable() {
 
     const pathname = usePathname();
 
-    console.log(pathname)
 
     useEffect(() => {
 
@@ -58,8 +57,10 @@ export default function StayTable() {
 
     }, [refresh])
 
+    console.log(allStays)
+
     return (
-        <section className="border rounded-lg ">
+        <section className="border rounded-lg overflow-y-scroll max-h-[700px]">
             <Table
                 aria-label="Events Table"
                 className="overflow-x-hidden"
@@ -105,12 +106,12 @@ export default function StayTable() {
                                                         size="sm"
                                                     >
                                                         <Tab key='en' title='EN'>
-                                                            <p className="max-w-[250px] line-clamp-5">
+                                                            <p className="max-w-[250px] line-clamp-5 whitespace-pre-line">
                                                                 {item.description.en}
                                                             </p>
                                                         </Tab>
                                                         <Tab key='es' title='ES'>
-                                                            <p className="max-w-[250px] line-clamp-5">
+                                                            <p className="max-w-[250px] line-clamp-5 whitespace-pre-line">
                                                                 {item.description.es}
                                                             </p>
                                                         </Tab>

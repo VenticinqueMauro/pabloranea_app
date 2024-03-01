@@ -1,4 +1,5 @@
 import { Schema, model, models } from "mongoose";
+import { Familjen_Grotesk } from "next/font/google";
 
 
 const staySchema = new Schema({
@@ -18,11 +19,11 @@ const staySchema = new Schema({
     description: {
         en: {
             type: String,
-            required: true
+            required: false
         },
         es: {
             type: String,
-            required: true
+            required: false
         }
     },
     color: {

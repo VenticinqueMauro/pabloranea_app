@@ -2,6 +2,7 @@ import { Stay } from "@/types/stay.type";
 import { getStays } from "@/utils/helpers";
 import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
+import React from "react";
 
 
 export default async function CalendarFront({ dictionary, lang }: any) {
@@ -18,16 +19,29 @@ export default async function CalendarFront({ dictionary, lang }: any) {
             </div>
 
             <div>
-                <div className="flex flex-col border-t border-gray-400 border-dashed  max-w-7xl mx-auto relative z-10 bg-white lg:max-h-[500px] container-calendar overflow-y-scroll">
+                <div className="flex flex-col border-t border-gray-400 border-dashed  max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:max-h-[500px] container-calendar overflow-y-scroll">
                     {
                         stays?.map((stay) => (
                             <div key={stay._id} className=" border-gray-400 border-b border-dashed flex justify-between items-center py-5 hover:bg-gray-100 letterScroll px-3">
                                 <div className="w-full text-start px-1">
                                     <p className="font-bold text-base lg:text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
-                                    <p className="uppercase text-sm lg:text-lg text-zinc-500 font-bold">{stay.location}</p>
+                                    <p className="uppercase text-sm lg:text-base text-zinc-500 font-bold">{stay.location}</p>
                                 </div>
-                                <div className="w-full text-justify text-sm lg:text-base px-1">
-                                    {lang === 'es' ? stay.description.es : stay.description.en}
+                                <div className="w-full text-start text-sm lg:text-base px-1 whitespace-pre-line">
+                                    {lang === 'es'
+                                        ? stay.description.es.split('\n').map((line, index, array) => (
+                                            <React.Fragment key={index}>
+                                                {line.trim() && '• ' + line.trim()} 
+                                                {index !== array.length - 1 && line.trim() && <br />} 
+                                            </React.Fragment>
+                                        ))
+                                        : stay.description.en.split('\n').map((line, index, array) => (
+                                            <React.Fragment key={index}>
+                                                {line.trim() && '• ' + line.trim()} 
+                                                {index !== array.length - 1 && line.trim() && <br />} 
+                                            </React.Fragment>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         ))

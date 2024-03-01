@@ -30,20 +30,21 @@ const FormEditStay = ({ id, color }: any) => {
         const { name, value } = e.target;
 
         if (name === 'en' || name === 'es') {
-            setBookingData({
-                ...bookingData,
+            setBookingData(prevData => ({
+                ...prevData,
                 description: {
-                    ...bookingData.description,
+                    ...prevData.description,
                     [name]: value
                 }
-            })
+            }));
         } else {
-            setBookingData({
-                ...bookingData,
+            setBookingData(prevData => ({
+                ...prevData,
                 [name]: value
-            });
+            }));
         }
     };
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
