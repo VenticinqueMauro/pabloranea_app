@@ -19,7 +19,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
             </div>
 
             <div>
-                <div className="flex flex-col border-t border-gray-400 border-dashed  max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:max-h-[500px] container-calendar overflow-y-scroll">
+                <div className="flex flex-col border-t border-gray-400 border-dashed  max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:h-[420px] container-calendar overflow-y-scroll">
                     {
                         stays?.map((stay) => (
                             <div key={stay._id} className=" border-gray-400 border-b border-dashed flex justify-between items-center py-5 hover:bg-gray-100 letterScroll px-3">
