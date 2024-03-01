@@ -81,7 +81,7 @@ export default function MarqueeContainer() {
                         alt={logo.alt}
                         width={logo.width}
                         height={logo.heigth}
-                        className={`${logo.alt === 'viapais' ? 'bg-[#ff6e00] px-3 py-2' : ''} mx-6 lg:mx-12 max-w-[100px] lg:max-w-[180px] max-h-[150px] lg:mt-10 mb-10`}
+                        className={`${logo.alt === 'viapais' ? 'bg-[#ff6e00] px-3 py-2' : ''} mx-6 lg:mx-12 max-w-[100px] lg:max-w-[150px] lg:mt-10 mb-10`}
                     />
 
                 ))

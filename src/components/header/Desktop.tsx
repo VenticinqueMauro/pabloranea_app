@@ -1,6 +1,8 @@
+'use client';   
 import { Image } from "@nextui-org/react";
 import NextImage from "next/image";
 import ModalContact from './ModalContact';
+import { useEffect, useState } from "react";
 
 interface Props {
     sections: string[],
@@ -22,10 +24,32 @@ export const sectionshref = [
 
 
 export default function Desktop({ sections, lang, pathname }: Props) {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Limpiamos el listener del evento al desmontar el componente
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
+
     return (
-        <div className="hidden pt-16 pb-6 px-12 xl:px-20 lg:flex justify-between items-center absolute top-0 left-0 bg-white w-full z-40">
+        <div className="hidden navbarTest pt-16 pb-6 px-12 xl:px-20 lg:flex justify-between items-center fixed top-0 left-0 bg-white w-full z-40">
             <a
-                className='w-40 xl:w-[200px] '
+                className='w-40 xl:w-[200px] logonav '
                 href='/'
             >
                 <Image
@@ -38,16 +62,12 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                     height={72}
                 />
             </a>
-            <div className={`flex uppercase gap-1 xl:gap-2`}>
+            <div className={`flex items-center uppercase `}>
                 {sections.filter(section => section !== 'contact' && section !== 'contacto').map((section, index) => (
                     <a
                         key={section}
                         href={section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}
-                        className={`${(pathname === `/${lang}` && (section === `home` || section === 'inicio')) ||
-                            pathname === `/${lang}/${section}`
-                            ? 'bg-black text-white'
-                            : ''
-                            } z-10 hover:bg-black hover:text-white cursor-pointer px-1 text-sm xl:text-base`}
+                        className='z-10 hover:bg-black px-3 xl:px-5 hover:text-white cursor-pointer text-xs xl:text-sm border-r border-black'
                     >
                         {section}
                     </a>

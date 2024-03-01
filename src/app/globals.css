@@ -14,18 +14,42 @@ html {
   scroll-behavior: smooth;
 }
 
-/* body {
-  font-family: "Aileron", Arial, sans-serif;
-}
-
-.light {
-  font-family: "Aileron-Light";
-} */
-
 body {
   font-family: "Aileron", "Helvetica Neue", Arial, sans-serif; /* Para Chrome y Safari en macOS */
 }
 
+/* .navbarTest {
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
+}
+
+.logonav {
+  animation: logo linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
+}
+
+@keyframes logo {
+  to {
+    width: 140px;
+  }
+}
+@keyframes blur {
+  to {
+    height: 100px;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+    padding-bottom: 0;
+    padding-top: 0;
+    background: rgba(255, 255, 255, 0.8);
+  }
+} */
+
+
+.light {
+  font-family: "Aileron-Light";
+}
 /* Para Safari en macOS */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {

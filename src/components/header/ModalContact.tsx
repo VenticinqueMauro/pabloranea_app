@@ -1,15 +1,13 @@
 'use client';
 
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
-import { Mail } from "lucide-react";
-import Image from "next/image";
 
 export default function ModalContact({ pathname, lang }: any) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
         <>
-            <button onClick={onOpen} className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer capitalize lg:uppercase lg:px-1 text-sm xl:text-base`}
+            <button onClick={onOpen} className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer capitalize lg:uppercase lg:px-3 xl:px-5 lg:text-xs xl:text-sm`}
             >{
                     lang === 'es' ? 'contacto' : 'contact'
                 }</button>
