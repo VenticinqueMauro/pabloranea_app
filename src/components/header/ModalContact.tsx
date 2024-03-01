@@ -19,11 +19,24 @@ export default function ModalContact({ pathname, lang }: any) {
                                 lang === 'es' ? 'contacto' : 'contact'
                             }</ModalHeader>
                             <ModalBody className="border-t">
-                                <div className="space-y-1 w-full">
-                                    <a href="mailto:chefpabloranea@gmail.com" className="text-gray-700 text-xs items-center flex gap-2 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
-                                        chefpabloranea@gmail.com
+
+                                <div className="text-lg space-y-1 w-full mt-auto text-end ">
+                                    <a href="mailto:chefpabloranea@gmail.com" target="_blank" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900 dark:hover:text-white">
+                                        📧
+                                        <span className='pl-1 text-xs'>chefpabloranea@gmail.com</span>
                                     </a>
+                                    <a href="https://wa.me/17202849937" target="_blank" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900 dark:hover:text-white">
+                                        🇺🇸
+                                        <span className='pl-1 text-xs'>+1 (720) 284-9937</span>
+                                    </a>
+                                    <a href="https://wa.me/5492616832720" target="_blank" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900 dark:hover:text-white">
+                                        🇦🇷
+                                        <span className='pl-1 text-xs'>+54 9 261 6832720</span>
+                                    </a>
+                                </div>
+                            </ModalBody>
+                            <ModalFooter className="flex justify-between border-t">
+                                <div className="space-y-1 w-full">
                                     <a href="https://www.instagram.com/pabloranea/?hl=es-la" className="text-gray-700 text-xs items-center flex gap-2 hover:text-gray-900 dark:hover:text-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
                                         <span className="sr-only">Instagram</span>
@@ -43,18 +56,6 @@ export default function ModalContact({ pathname, lang }: any) {
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-pinterest" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg>
                                         <span className="sr-only">Pinterest</span>
                                         /chefpabloranea
-                                    </a>
-                                </div>
-                            </ModalBody>
-                            <ModalFooter className="flex justify-between border-t">
-                                <div className="text-lg space-y-1 w-full mt-auto text-end ">
-                                    <a href="https://wa.me/17202849937" target="_blank" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900 dark:hover:text-white">
-                                        🇺🇸
-                                        <span className='pl-1 text-xs'>+1 (720) 284-9937</span>
-                                    </a>
-                                    <a href="https://wa.me/5492616832720" target="_blank" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900 dark:hover:text-white">
-                                        🇦🇷
-                                        <span className='pl-1 text-xs'>+54 9 261 6832720</span>
                                     </a>
                                 </div>
                             </ModalFooter>
