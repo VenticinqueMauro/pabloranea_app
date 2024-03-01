@@ -57,7 +57,7 @@ type Props = {
 export default async function AboutLayout({ children, params: { lang } }: Props) {
 
     return (
-        <section className='lg:pt-44'>
+        <section className='lg:pt-36'>
             {children}
         </section>
     )
