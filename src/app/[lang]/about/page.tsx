@@ -12,9 +12,9 @@ export default async function page({ params: { lang } }: Lang) {
     return (
         <section className="h-screen space-y-10">
             <Section1 />
-            <Section2 />
-            <Section3 lang={lang} />
-            <Section4 />
+            <Section2 dictionary={dictionary} />
+            <Section3 dictionary={dictionary} lang={lang} />
+            <Section4 dictionary={dictionary} />
             <Footer dictionary={dictionary} lang={lang} />
         </section>
     )

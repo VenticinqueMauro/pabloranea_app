@@ -1,13 +1,14 @@
+import { Lang } from '@/types/lang.type'
 import { Image } from '@nextui-org/react'
 import React from 'react'
 
-export default function Section4() {
+export default function Section4({ lang }: any) {
     return (
         <div className="bg-background text-foreground light px-3 lg:px-20 py-10 lg:py-16 grid grid-cols-12 lg:grid-rows-2 gap-5 ">
             <div className="col-span-12 lg:col-span-6 lg:row-span-2">
                 <div className="flex items-center gap-5 lg:gap-10">
                     <h2 className="text-6xl lg:text-8xl font-extrabold">5</h2>
-                    <h3 className="text-2xl uppercase font-extrabold">eventos destacados</h3>
+                    <h3 className="text-2xl uppercase font-extrabold">{lang === 'es' ? "eventos destacados" : "Milestones of Our Journey"}</h3>
                 </div>
             </div>
             <div className="col-span-12 lg:row-span-1 lg:col-span-6">

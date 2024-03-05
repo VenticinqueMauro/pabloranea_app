@@ -6,7 +6,7 @@ export default async function page({ params: { lang } }: Lang) {
 
     const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
 
-    const { title } = dictionary.pages.press;
+    const { title } = dictionary?.press.page;
 
     return (
         <section className="max-w-7xl mx-auto px-3 lg:px-0">

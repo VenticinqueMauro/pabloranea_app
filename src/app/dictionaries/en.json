@@ -13,8 +13,20 @@
     "popups": {
         "title1": "The",
         "title2": "Concept",
-        "description": "Un atardecer junto a la bahía de San Francisco, un rooftop en New York, una huerta de flores en Asheville, una plaza en Mendoza o un sofisticado hotel en Shanghai son algunos de los escenarios que elegimos para llevar la nueva cocina argentina por todo el mundo. Nuestro concepto de “PopUp dinners” va más allá que una cena puertas adentro para amigos, sino que son experiencias itinerantes que combinan dos variables: tiempo y espacio.",
-        "button": "discover more"
+        "description": "A sunset overlooking the San Francisco Bay, a rooftop soirée in New York City, a flower-farm garden in Asheville, a charming plaza in Mendoza, or a luxurious hotel setting in Shanghai – these are just a few of the captivating backdrops we select to showcase the new Argentine cuisine across the globe. Our 'PopUp dinners' concept transcends traditional indoor gatherings; they are immersive experiences that seamlessly blend time and space.",
+        "button": "discover more",
+        "page": {
+            "section2": {
+                "popupsdinners1": "Since 2010, when we first opened our doors in the city of Mendoza to transform it into a hidden gem of a restaurant for discerning diners, we've had a clear vision: to share the essence of Argentine cuisine with the world.",
+                "popupsdinners2": "Today, our 'pop-up dinners' concept transcends mere gatherings among friends; they're immersive journeys that blend time and space. Whether it's a sunset over the San Francisco Bay, a rooftop soirée in New York, a flower-filled garden outside Asheville, a bustling plaza in Mendoza, a chic hotel in Shanghai, or an elegant art gallery in a cosmopolitan city, each locale is carefully chosen to provide our clients with an unforgettable dining experience."
+            },
+            "section3": {
+                "title": "CONNECT WITH ARGENTINA",
+                "description1": "At each of these gatherings, we curate a multi-course menu guided by the concept of 'traveling cuisine' - a culinary voyage that celebrates the fusion of new Argentine and Latin American flavors, with influences from Peru and Asia. Central to this experience is a journey through a selection of Argentina's premier wine labels.",
+                "description2": "Through our 'pop-up dinners', we strive for our guests to forge a connection with Argentina and its rich history, fueled by our dedication to showcasing the wines and flavors that define our culinary heritage.",
+                "button": "be a host"
+            }
+        }
     },
     "calendar": {
         "title": "tour 2024 dates",
@@ -22,28 +34,45 @@
     },
     "aboutpablo": {
         "title": "WHO IS PABLO?",
-        "description": "Pablo Ranea es chef y sommelier argentino, dedicado a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo. Consolidó su carrera perfeccionándose con reconocidos chefs de Estados Unidos, el Caribe, España, Perú y Buenos Aires. Durante 10 años estuvo frente a la cocina restaurante Azafrán, en Mendoza y logró posicionarlo como uno de los más reconocidos restaurantes de la región. Pablo es un embajador gastronómico la Nueva Cocina Argentina que  lleva su travelling cuisine a diversos destinos y que difunde lo mejor del vino argentino en sus viajes.",
-        "button": "discover more"
+        "description": "Pablo Ranea is an Argentine chef and sommelier committed to sharing the essence of Argentine and Latin American cuisine with the world. He has cultivated his expertise by apprenticing with esteemed chefs across the United States, the Caribbean, Spain, Peru, and Buenos Aires. For a decade, he helmed the kitchen at Azafrán restaurant in Mendoza, where he successfully established it as one of the region's premier dining destinations. Pablo serves as a culinary ambassador for the New Argentine Cuisine, showcasing his innovative dishes in diverse locales and championing the excellence of Argentine wine throughout his travels.",
+        "button": "discover more",
+        "page": {
+            "section2": {
+                "description1": "Trained at the prestigious Gato Dumas culinary school in Buenos Aires, Pablo Ranea emerges as an Argentine chef and sommelier who has dedicated several years of his life to showcasing the best of Argentine and Latin American cuisine worldwide.",
+                "description2": "After several years of working and refining his skills with renowned chefs at Marriott hotels in the United States and the Caribbean, as well as other restaurants in Spain, Peru, and Buenos Aires, upon returning to Mendoza, he spent a decade at the helm of the kitchen at Azafrán restaurant. There, he successfully positioned it as one of the most acclaimed dining destinations in the region, thanks to his distinctive focus on New Argentine Cuisine.",
+                "button": "download cv"
+            },
+            "section3": {
+                "title": "THE LAND OF SUN AND FINE WINE",
+                "description": "His profound ties to Mendoza and the viticultural world, coupled with his passion for incorporating and advocating for wines in his culinary endeavors, spurred him to attain the title of Sommelier from the Argentine School of Sommeliers in 2013. In 2016, following a successful stint at Azafrán, he opted to further immerse himself in gastronomic exploration, with a particular emphasis on instructing and championing Argentine wine in the world's foremost capitals.",
+                "title2": "Traveling Cuisine",
+                "description2": "With a solid culinary background and having created a signature cuisine with his own style, Pablo is a sort of culinary ambassador who not only brings his traveling cuisine to various destinations but is also sought after by the most prestigious culinary schools in the world. Institutions such as the CIA 'The Culinary Institute of America' (San Antonio, TX) and the ICE 'The Institute of Culinary Education' (New York, NY) have invited him to teach classes on Argentine wines to new generations of young students in sommelier and culinary programs.",
+                "button": "SEE MORE ABOUT CLASSES"
+            },
+            "section4": {
+                "title": "ARGENTINE WINE AMBASSADOR",
+                "description1": "Esteemed wineries from Mendoza, including <b>El Enemigo, Catena Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner, AchavalFerrer, and AWI Wines</b>, as well as <b>Colomé</b> from Salta and <b>Otronia</b> from the Argentine Patagonia, entrust <b>Ranea</b> as their spokesperson and ambassador. He presents their most exclusive labels at his nomadic dinners abroad, thus introducing them to new consumers and expanding their global presence.",
+                "description2": "Throughout the years, Pablo Ranea has crafted a distinguished presence in the culinary world, not only within Argentina but also on the international stage. From New York, San Francisco, Houston, and Denver in the USA, to Peru, Canada, and Hong Kong, he has left his mark, cultivating a devoted following of adventurous food enthusiasts who eagerly anticipate updates on Argentine wines and revel in the delight of his exquisite creations."
+            }
+        }
     },
     "classes": {
         "title": "Lessons",
-        "description": "Durante sus viajes y orientado siempre hacia el maridaje, Pablo se dedica a ofrecer clases de cocina y de vinos. Cada destino visitado lo tienta con la oportunidad de compartir sus experiencias, recetas y conocimientos. The Culinary Institute of America en San Antonio y California, The Institute of Culinary Education en New York, The Macao University of Science en Macao y Urban Kitchen en Lima Perú,  han albergado sus palabras en clases magistrales y talleres de cocina, destinados a cocineros, chefs, sommeliers, prensa y público en general.",
+        "description": "Throughout his journeys, with a constant focus on culinary pairings, Pablo dedicates himself to providing cooking and wine classes. Every destination he visits presents him with the chance to impart his experiences, recipes, and expertise. The Culinary Institute of America in San Antonio and California, The Institute of Culinary Education in New York, The Macao University of Science in Macao, and Urban Kitchen in Lima, Peru, have all welcomed his insightful instruction through masterclasses and cooking workshops tailored for chefs, sommeliers, the press, and the wider public alike.",
         "button": "discover more"
     },
     "partners": {
         "title1": "The Wine",
         "title2": "tour Selection",
-        "description": "Como todos los años, tras la época de la vendimia en Mendoza, Pablo emprende su tour que lo lleva a viajar por los Estados Unidos donde cientos de comensales lo esperan para disfrutar de sus cenas y/o almuerzos exclusivosendeslumbrantespaisajes.",
+        "description": "As every year, the selection of Argentine wines that Pablo presents in his tours aims to be a journey through the vast landscapes and different regions of Argentina, as well as a snapshot of the fantastic moment that the wine industry is going through.",
         "button": "the wines of the tour"
     },
     "press": {
         "badge": "Press",
         "title": "The press",
         "subtitle": "Read about our latest press releases and media coverage.",
-        "button": "View All Press Releases"
-    },
-    "pages":{
-        "press":{
+        "button": "See more press releases",
+        "page":{
             "title": "Press"
         }
     }

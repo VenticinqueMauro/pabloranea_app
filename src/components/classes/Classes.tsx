@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import ContainerCardClasses from './ContainerCard.classes'
 
 export default function Classes({ dictionary }: any) {

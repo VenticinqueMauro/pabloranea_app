@@ -14,7 +14,19 @@
         "title1": "Cenas",
         "title2": "PopUp",
         "description": "Un atardecer junto a la bahía de San Francisco, un rooftop en New York, una huerta de flores en Asheville, una plaza en Mendoza o un sofisticado hotel en Shanghai son algunos de los escenarios que elegimos para llevar la nueva cocina argentina por todo el mundo. Nuestro concepto de “PopUp dinners” va más allá que una cena puertas adentro para amigos, sino que son experiencias itinerantes que combinan dos variables: tiempo y espacio.",
-        "button": "descubre más"
+        "button": "descubre más",
+        "page": {
+            "section2": {
+                "popupsdinners1": "Desde 2010, cuando abrimos por primera vez las puertas de nuestro hogar en la ciudad de Mendoza para convertirlo en un restaurante escondido para comensales selectos, supimos lo que queríamos: llevar la nueva cocina argentina por todo el mundo.",
+                "popupsdinners2": "Hoy en día, nuestro concepto de “pop up dinners” son mucho más que una cena puertas adentro para amigos, sino que son experiencias itinerantes que combinan dos variables: tiempo y espacio. Un atardecer junto a la bahía de San Francisco, un rooftop en New York, una huerta de flores en las afueras de Asheville, una plaza en la ciudad de Mendoza, un sofisticado hotel en Shanghai o una elegante galería de arte de una ciudad cosmopolita son algunos de los deslumbrantes escenarios que elegimos para recibir a nuestros clientes."
+            },
+            "section3": {
+                "title": "conectar con argentina",
+                "description1": "En cada uno de estos encuentros, creamos un menú de pasos bajo la premisa de “traveling cuisine” - una cocina de viajes -, una propuesta donde prima la nueva cocina argentina y latinoamericana con influencias de peruana y asiática; donde la columna vertebral de la experiencia es un viaje a través de una selección de las mejores etiquetas de vinos de Argentina.",
+                "description2": "Con nuestros “pop up dinners” buscamos que nuestros comensales conecten con Argentina y su historia a través de nuestra pasión por los vinos y los sabores de nuestra propuesta gastronómica.",
+                "button": "convertite en anfitrión"
+            }
+        }
     },
     "calendar": {
         "title": "tour´24 dates",
@@ -23,7 +35,26 @@
     "aboutpablo": {
         "title": "QUIÉN ES PABLO",
         "description": "Pablo Ranea es chef y sommelier argentino, dedicado a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo. Consolidó su carrera perfeccionándose con reconocidos chefs de Estados Unidos, el Caribe, España, Perú y Buenos Aires. Durante 10 años estuvo frente a la cocina restaurante Azafrán, en Mendoza y logró posicionarlo como uno de los más reconocidos restaurantes de la región. Pablo es un embajador gastronómico la Nueva Cocina Argentina que  lleva su travelling cuisine a diversos destinos y que difunde lo mejor del vino argentino en sus viajes.",
-        "button": "descubre más"
+        "button": "descubre más",
+        "page": {
+            "section2": {
+                "description1": "Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo.",
+                "description2": "Tras varios años de trabajar y perfeccionarse con reconocidos chefs en la cadena de hoteles Marriott de Estados Unidos y el Caribe y otros restaurantes en España, Perú y Buenos Aires, al regresar a Mendoza estuvo durante 10 años al frente de la cocina del restaurante Azafrán y logró posicionarlo como uno de los más reconocidos restaurantes de la región gracias a su distintivo enfoque en la Nueva Cocina Argentina.",
+                "button": "descargar cv"
+            },
+            "section3": {
+                "title": "la tierra del sol y el buen vino",
+                "description": "Su fuerte conexión con Mendoza y el mundo vitivinícola, y su interés por introducir y comunicar los vinos en su propuesta gastronómica, lo llevaron a obtener el título de Sommelier en la Escuela Argentina de Sommelier en el 2013. En 2016, tras su exitoso periodo en Azafrán, decidió profundizar su exploración gastronómica para seguir innovando, destacándose especialmente en la enseñanza y promoción del vino argentino en las principales capitales del mundo.",
+                "title2": "Traveling Cuisine",
+                "description2": "Con una sólida formación y habiendo creado una cocina de autor con su propia impronta, Pablo es una suerte de embajador gastronómico que no sólo lleva su travelling cuisine a diversos destinos; sino que tambiénes convocado por las más prestigiosas escuelas de cocina del mundo - como el CIA “The Culinary America” (Antonio, TX) y el ICE “The Institute of Culinary Education” (Nueva York, NY)- para dictarlas clases sobre vinos argentinos para nuevas camadas de jóvenes estudiantes de los programas de sommelier y cocina.",
+                "button": "CONOCÉ MÁS SOBRE LAS CLASES"
+            },
+            "section4": {
+                "title": "EMBAJADOR DEL VINO ARGENTINO",
+                "description1": "Reconocidas bodegas de Mendoza como <b>El Enemigo, Catena Zapata, Susana Balbo, Trivento, Rutini, Nieto Senetiner, Achaval Ferrer, AWI Wines</b> así como también <b>Colomé</b> de Salta, <b>Otronia</b> de la Patagonia Argentina confían en <b>Ranea</b> como comunicador y embajador para presentar sus más exclusivas etiquetas en sus cenas nómades en el extranjero y de esta manera, llegar a nuevos consumidores.",
+                "description2": "A lo largo de estos años, Pablo Ranea ha sabido construir un nombre propio en la gastronomía no sólo en Argentina sino también en el exterior. New York, San Francisco, Houston, y Denver en USA; como tambien Perú, Canadá, y Hong Kong son algunas de las regiones donde plantó bandera creando una comunidad foodie fiel de comensales aventureros que siempre están atentos a todas las novedades sobre vinos argentinos y deleitar sus sentidos con sus fabulosos platos."
+            }
+        }
     },
     "classes": {
         "title": "Clases",
@@ -33,17 +64,15 @@
     "partners": {
         "title1": "Los Vinos",
         "title2": "del Tour",
-        "description": "Como todos los años, tras la época de la vendimia en Mendoza, Pablo emprende su tour que lo lleva a viajar por los Estados Unidos donde cientos de comensales lo esperan para disfrutar de sus cenas y/o almuerzos exclusivos en deslumbrantes paisajes.",
+        "description": "Como todos los años, la selección de vinos argentinos que Pablo presenta en sus tours busca ser un recorrido por los inmensos paisajes y diferentes regiones de Argentina, así como también una fotografía del estupendo momento que está atravesando la industria vitivinícola.",
         "button": "descubre más"
     },
     "press": {
         "badge": "Prensa",
         "title": "Prensa y medios",
         "subtitle": "Lea acerca de nuestros últimos comunicados de prensa y cobertura de los medios.",
-        "button": "Ver todos los comunicados de prensa"
-    },
-    "pages":{
-        "press":{
+        "button": "Ver todos los comunicados de prensa",
+        "page": {
             "title": "Prensa"
         }
     }

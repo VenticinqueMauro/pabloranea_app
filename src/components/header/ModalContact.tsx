@@ -8,9 +8,7 @@ export default function ModalContact({ pathname, lang }: any) {
     return (
         <>
             <button onClick={onOpen} className={`${pathname === `/${lang}/contact` ? 'bg-black text-white' : ''} z-10 hover:bg-black hover:text-white cursor-pointer capitalize lg:uppercase lg:px-3 xl:px-5 lg:text-xs xl:text-sm`}
-            >{
-                    lang === 'es' ? 'contacto' : 'contact'
-                }</button>
+            >{lang === 'es' ? 'contacto' : 'contact'}</button>
             <Modal radius="sm" isOpen={isOpen} onOpenChange={onOpenChange}>
                 <ModalContent>
                     {(onClose) => (
@@ -60,7 +58,9 @@ export default function ModalContact({ pathname, lang }: any) {
                                 </div>
                             </ModalFooter>
                             <ModalFooter className="border-t">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" className="py-2 px-1 lg:px-5 bg-[#5E6B45] uppercase font-bold text-sm lg:text-base me-auto text-center text-white">convertite en anfitrión </a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" className="py-2 px-1 lg:px-5 bg-[#5E6B45] uppercase font-bold text-sm lg:text-base me-auto text-center text-white">
+                                    {lang === 'es' ? "convertite en anfitrión" : "be a host"}
+                                </a>
                             </ModalFooter>
                         </>
                     )}
