@@ -22,7 +22,7 @@ async function HomePage({ params: { lang } }: Lang) {
       <TradButton lang={lang} />
       <Portada />
       <Popups dictionary={dictionary} lang={lang} />
-      <GiraEnNum />
+      <GiraEnNum lang={lang} />
       <CalendarFront dictionary={dictionary} lang={lang} />
       <About dictionary={dictionary} lang={lang} />
       <Classes dictionary={dictionary} />

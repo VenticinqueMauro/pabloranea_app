@@ -13,17 +13,32 @@ export default function Section4({ lang }: any) {
             </div>
             <div className="col-span-12 lg:row-span-1 lg:col-span-6">
                 <div className="text-xl lg:text-2xl lg:pt-10">
-                    Pop Up Dinner para el <b>Festival Argentino</b> en el <b>American Club</b>, <b>HONG KONG</b>, 2017
-                    <br /><br />
-                    Wine Dinner en <b>La Journée Mondial edu Malbec</b>, <b>CAHORS FRANCIA</b>, 2010
-                    <br /><br />
-                    Pop Up Dinner en el <b>International Culinary Center</b>, <b>SOHO EN NEW YORK</b>, 2019
-                    <br /><br />
-                    Gala Dinner con Rutini Wines en el <b>ParkHyatt</b>, <b>SHANGHAI</b>, 2019
-                    <br /><br />
-                    Wine dinner en el <b>Caesar Palace</b>, <b>LAS VEGAS NEVADA</b>, 2014
+                    {lang === 'es' ? (
+                        <>
+                            Pop Up Dinner para el <b>Festival Argentino</b> en el <b>American Club</b>, <b>HONG KONG</b>, 2017
+                            <br /><br />
+                            Wine Dinner en <b>La Journée Mondial du Malbec</b>, <b>CAHORS FRANCIA</b>, 2010
+                            <br /><br />
+                            Pop Up Dinner en el <b>International Culinary Center</b>, <b>SOHO EN NEW YORK</b>, 2019
+                            <br /><br />
+                            Gala Dinner con Rutini Wines en el <b>ParkHyatt</b>, <b>SHANGHAI</b>, 2019
+                            <br /><br />
+                            Wine dinner en el <b>Caesar Palace</b>, <b>LAS VEGAS NEVADA</b>, 2014
+                        </>
+                    ) : (
+                        <>
+                            Pop Up Dinner at the <b>Festival Argentino</b> in the <b>American Club</b>, <b>HONG KONG</b>, 2017
+                            <br /><br />
+                            Wine Dinner in <b>La Journée Mondial du Malbec</b>, <b>CAHORS FRANCIA</b>, 2010
+                            <br /><br />
+                            Pop Up Dinner at the <b>International Culinary Center</b>, <b>SOHO EN NEW YORK</b>, 2019
+                            <br /><br />
+                            Gala Dinner with Rutini Wines at the <b>ParkHyatt</b>, <b>SHANGHAI</b>, 2019
+                            <br /><br />
+                            Wine dinner in the <b>Caesar Palace</b>, <b>LAS VEGAS NEVADA</b>, 2014
+                        </>
+                    )}
                 </div>
-
             </div>
             <div className="col-span-12 lg:col-span-6 lg:row-span-1 lg:row-start-3 flex justify-center lg:items-end">
                 <Image radius="none" className="object-cover w-full h-full" src="/popups/img2.jpg" alt="popups dinners" width={720} height={600} />

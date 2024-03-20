@@ -38,7 +38,7 @@ export default async function page({ params: { lang } }: Lang) {
 
     return (
         <section className="h-screen max-w-7xl mx-auto px-3 lg:px-0">
-            <h2 className="hidden lg:block text-6xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10 " style={{ lineHeight: 0.8 }}>{lang === 'es' ? "Los Vinos del Tour" : "The Wine tour Selection"} </h2>
+            <h2 className="hidden lg:block text-6xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[7px] mb-10 lg:mb-20 mt-10 " style={{ lineHeight: 0.8 }}>{lang === 'es' ? "Los Vinos del Tour" : "TOUR’S WINE SELECTION"} </h2>
             <h2 className="text-6xl lg:text-8xl lg:hidden font-bold text-shadow -tracking-[4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10 " style={{ lineHeight: 0.9 }}>{lang === 'es' ? "Los Vinos" : "The Wine"}<br />{lang === 'es' ? "del Tour" : "tour Selection"}</h2>
             <div>
                 {
