@@ -14,6 +14,42 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 
 const pressMap = [
     {
+        title: "El cocinero itinerante que lleva el paladar argentino hacia el mundo",
+        linkPress: "https://andigital.com.ar/nota/122394/el-cocinero-itinerante-que-lleva-el-paladar-argentino-hacia-el-mundo/",
+        image: "https://andigital.com.ar/uploads/noticias/5/2024/03/20240318131645_anss.jpg",
+        width: 791,
+        height: 460,
+        diary: "andigital.com.ar",
+        date: new Date(2024, 2),
+    },
+    {
+        title: "Pablo Ranea, el chef y sommelier nómade que este año hará 65 Pop Ups en EEUU, Perú y China",
+        linkPress: "https://mendoza.puntoapunto.com.ar/pablo-ranea-el-chef-y-sommelier-nomade-que-este-ano-hara-65-pop-ups-en-eeuu-peru-y-china/",
+        image: "https://mendoza.puntoapunto.com.ar/wp-content/uploads/2024/03/Pablo-Ranea-principal-1170x780.jpg",
+        width: 819,
+        height: 546,
+        diary: "mendoza.puntoapunto.com.ar",
+        date: new Date(2024, 2),
+    },
+    {
+        title: "RANEA DE 10 AÑOS COMO CHEF EN AZAFRAN A NOMADE",
+        linkPress: "https://www.granbanquete.com.ar/buena-comida/ranea-de-10-anos-como-chef-en-azafran-a-nomade/",
+        image: "https://www.granbanquete.com.ar/files/image/7/7437/65f6fbb37b79e_905_510!.webp?s=bd7e573f06eff01eab0b1d61f2e16373&d=1710686567&oe=jpg",
+        width: 924,
+        height: 520,
+        diary: "granbanquete.com.ar",
+        date: new Date(2024, 2),
+    },
+    {
+        title: "Pablo Ranea: El reconocido chef y sommelier nómade que lleva el paladar argentino al mundo",
+        linkPress: "https://eldescorchediario.com/pablo-ranea-el-reconocido-chef-y-sommelier-nomade-que-lleva-el-paladar-argentino-al-mundo/",
+        image: "https://eldescorchediario.com/wp-content/uploads/2024/03/Pablo-Ranea-min.jpg",
+        width: 885,
+        height: 590,
+        diary: "eldescorchediario.com",
+        date: new Date(2024, 2),
+    },
+    {
         title: "Pablo Ranea: 'Ninguna capital del vino tiene la cocina de Mendoza'",
         linkPress: "https://www.mdzol.com/estilo/2024/1/14/pablo-ranea-ninguna-capital-del-vino-tiene-la-cocina-de-mendoza-398310.html",
         image: "https://www.mdzol.com/u/fotografias/m/2024/1/3/f848x477-1531330_1589133_5050.jpg",
