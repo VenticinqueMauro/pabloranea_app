@@ -15,7 +15,7 @@ const classes: Class[] = [
     {
         date: '03.06 – 22.07',
         location: 'New York – Washington DC – Asbury Pk, East Coast', 
-        description: 'June xx Argentinian wine class at ICE Institute of Culinary Education in Battery Park New York'
+        description: 'June 4th Argentinian wine class at ICE Institute of Culinary Education in Battery Park New York'
     }
 ];
 
