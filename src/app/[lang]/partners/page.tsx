@@ -50,15 +50,15 @@ const bodegas = [
     {
         title: "Enemigo Wines",
         titleEn: "Enemigo Wines",
-        description: "-",
-        descriptionEn: "-",
+        description: "En este Tour 2024, nos complace presentar uno de los mejores Cabernet Franc argentinos: el Gran Enemigo Single Vineyard Gualtallary de Alejandro Vigil. Este vino ha sido distinguido como el primer vino argentino en alcanzar la puntuación perfecta de 100 puntos por Parker.",
+        descriptionEn: "In this 2024 Tour, we are delighted to introduce one of the finest Argentine Cabernet Francs: Alejandro Vigil's Gran Enemigo Single Vineyard Gualtallary. This wine has been distinguished as the first Argentine wine to achieve the perfect score of 100 points by Parker.",
         imageUrl: "/partners/Enemigo-Wines.gif"
     },
     {
         title: "Bodega Susana Balbo",
         titleEn: "Susana Balbo Winery",
-        description: "-",
-        descriptionEn: "-",
+        description: "Reconocida como la 'reina de los blancos' y como la primera mujer enóloga argentina, en esta ocasión estamos encantados de presentar el Susana Balbo Signature Rosé. Este exquisito blend de Pinot Noir y Malbec del Valle de Uco ha sido destacado como uno de los mejores rosados argentinos.",
+        descriptionEn: "Renowned as the 'queen of whites' and as the first female Argentine winemaker, we are thrilled to introduce the Susana Balbo Signature Rosé. This exquisite blend of Pinot Noir and Malbec from the Uco Valley is celebrated as one of Argentina's finest rosés.",
         imageUrl: "/partners/SusanaBalbo.gif"
     }
 ];
