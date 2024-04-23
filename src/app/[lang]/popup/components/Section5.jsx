@@ -9,7 +9,7 @@ export default function Section5({ lang }) {
     const [isEnter, setIsEnter] = useState(false);
 
     return (
-        <div className="bg-background text-foreground dark px-3 lg:px-20 lg:pt-16 pt-10 pb-20 min-h-screen">
+        <div className="bg-background text-foreground dark px-3 lg:px-20 lg:pt-16  pb-20 min-h-screen">
             <ScrollTrigger onEnter={() => setIsEnter(true)} onExit={() => setIsEnter(false)}>
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-52 sm:gap-5 lg:gap-10">
                     <div className="relative w-full flex flex-col min-h-full lg:justify-between items-center justify-between lg:items-center h-screen ">
@@ -17,7 +17,7 @@ export default function Section5({ lang }) {
                             <h2 className="text-[250px] font-medium">
                                 {isEnter && <CountUp start={0} end={40} duration={6} />}
                             </h2>
-                            <h3 className={`${lang ==='es' ? 'left-10' : 'left-20'} uppercase absolute bottom-8 text-xl`}>{lang === 'es' ? "ciudades recorridas" : "cities visited"}</h3>
+                            <h3 className={`${lang === 'es' ? 'left-10' : 'left-20'} uppercase absolute bottom-8 text-xl`}>{lang === 'es' ? "ciudades recorridas" : "cities visited"}</h3>
                         </div>
                         <div>
                             <div className="grid grid-cols-2 max-w-md">
@@ -68,9 +68,12 @@ export default function Section5({ lang }) {
                                     <p className="uppercase w-full text-start">{lang === 'es' ? "comensales promedio por encuentro" : "average diners per gathering"}</p>
                                 </div>
                             </div>
+                            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform' target="_blank" rel="noopener noreferrer" className="uppercase  text-base text-center lg:text-lg w-fit mx-auto block px-5 py-4 bg-[#5E6B45]  font-bold text-white mt-10">
+                                {lang === 'en' ? 'Be a host' : 'convertite en anfitrión'}
+                            </a>
                         </div>
                     </div>
-                    <div className="w-full flex flex-col justify-between min-h-full gap-10 lg:gap-28">
+                    <div className="w-full flex flex-col justify-between min-h-full gap-10 lg:gap-28 mt-24 lg:mt-20">
                         <Image radius="none" className="object-cover w-full h-full" src="/popups/vertical3.jpg" alt="popups dinners" width={900} height={1350} />
                     </div>
                 </div>
