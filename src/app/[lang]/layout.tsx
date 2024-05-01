@@ -1,6 +1,7 @@
-import Navbar from '@/components/header/Navbar'
-import type { Metadata } from 'next'
 import '../globals.css'
+import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
+import Navbar from '@/components/header/Navbar'
 import { Providers } from '../providers'
 
 type Props = {
@@ -61,6 +62,7 @@ export default async function RootLayout({ children, params: { lang } }: Props) 
         <Providers>
           <Navbar dictionary={dictionary} />
           {children}
+          <Analytics />
         </Providers>
       </body>
     </html >
