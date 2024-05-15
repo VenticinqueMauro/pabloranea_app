@@ -14,6 +14,15 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 
 const pressMap = [
     {
+        title: "La vida del chef nómade que recorrió más de 100 ciudades y lleva la comida argentina por el mundo",
+        linkPress: "https://www.forbesargentina.com/lifestyle/la-vida-chef-nomade-recorrio-mas-100-ciudades-lleva-comida-argentina-mundo-n50443",
+        image: "https://statics.forbesargentina.com/2024/03/crop/6601e9337b7f0__822x460.webp",
+        width: 822,
+        height: 460,
+        diary: "www.forbesargentina.com",
+        date: new Date(2024, 3),
+    },
+    {
         title: "El cocinero itinerante que lleva el paladar argentino hacia el mundo",
         linkPress: "https://andigital.com.ar/nota/122394/el-cocinero-itinerante-que-lleva-el-paladar-argentino-hacia-el-mundo/",
         image: "https://andigital.com.ar/uploads/noticias/5/2024/03/20240318131645_anss.jpg",
