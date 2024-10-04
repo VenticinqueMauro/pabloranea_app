@@ -46,7 +46,6 @@ body {
   }
 }
 
-
 .light {
   font-family: "Aileron-Light";
 }
@@ -251,6 +250,7 @@ body {
 
 .embla {
   overflow: hidden;
+  height: auto;
 }
 .embla__container {
   display: flex;
