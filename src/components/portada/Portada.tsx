@@ -54,9 +54,10 @@ export default function Portada() {
                 {
                     Array.from({ length: 8 }, (_, index) => {
                         const slideNumber = index;
-                        const src = slideNumber === 4 && isMobile
+                        const src = (slideNumber === 4 || slideNumber === 0) && isMobile
                             ? `/portada/slide${slideNumber}-mobile.jpg`
                             : `/portada/slide${slideNumber}.jpg`;
+
 
                         return (
                             <div
@@ -71,7 +72,7 @@ export default function Portada() {
                                     alt='portada'
                                     className={
                                         slideNumber === 0
-                                            ? "object-cover w-full mt-[120px] max-h-[100vh] max-w-[100vw]"
+                                            ? "object-cover w-full mt-[40px] lg:mt-[120px] max-h-[100vh] max-w-[100vw]"
                                             : "object-cover w-full h-screen sm:h-screen"
                                     }
                                 />
