@@ -12,7 +12,7 @@ export default async function Popups({ dictionary, lang }: any) {
             <div className="bg-black">
                 <img
                     src="/popups/popups.jpg"
-                    className="object-cover w-full h-screen sm:h-screen imgScroll"
+                    className="object-cover w-full h-screen sm:h-screen"
                     alt="pop-ups"
                     style={{
                         maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'

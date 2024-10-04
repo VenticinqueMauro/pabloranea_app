@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 
 export default function Portada() {
-    const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 2000 })]);
+    const autoplayRef = useRef(Autoplay({ delay: 2000 })); // 2s delay for other slides
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplayRef.current]);
     const [isMobile, setIsMobile] = useState(false);
-    const ref = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -17,38 +17,63 @@ export default function Portada() {
         };
 
         window.addEventListener('resize', handleResize);
-
-        // Initial check
-        handleResize();
+        handleResize(); // Initial check
 
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
 
+    useEffect(() => {
+        if (emblaApi) {
+            // Disable autoplay initially and set a custom duration for the first slide
+            autoplayRef.current.stop();
+            const timer = setTimeout(() => {
+                autoplayRef.current.play(); // Start autoplay after 4s for the first slide
+            }, 5000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [emblaApi]);
+
+    const handleFirstSlideClick = () => {
+        const link = document.createElement('a');
+        link.href = '/pdf/mvam_ItinerarioRaneaOK.pdf';
+        link.download = 'mvam_ItinerarioRaneaOK.pdf';
+        link.click();
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.3 } }}
-            className='h-screen embla '
+            animate={{ opacity: 1, transition: { duration: 0.5 } }}
+            className='h-screen embla'
             ref={emblaRef}
         >
             <div className="embla__container">
                 {
-                    Array.from({ length: 7 }, (_, index) => {
-                        const slideNumber = index + 1;
+                    Array.from({ length: 8 }, (_, index) => {
+                        const slideNumber = index;
                         const src = slideNumber === 4 && isMobile
                             ? `/portada/slide${slideNumber}-mobile.jpg`
                             : `/portada/slide${slideNumber}.jpg`;
 
                         return (
-                            <div key={`slide${index}`} className="embla__slide">
+                            <div
+                                key={`slide${index}`}
+                                className="embla__slide"
+                                onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
+                            >
                                 <Image
                                     src={src}
                                     width={1980}
                                     height={1114}
                                     alt='portada'
-                                    className="object-cover  w-full h-screen sm:h-screen"
+                                    className={
+                                        slideNumber === 0
+                                            ? "object-cover w-full mt-[120px] max-h-[100vh] max-w-[100vw]"
+                                            : "object-cover w-full h-screen sm:h-screen"
+                                    }
                                 />
                             </div>
                         );
