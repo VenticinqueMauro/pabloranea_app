@@ -50,7 +50,7 @@ export default function Portada() {
             className='h-screen embla'
             ref={emblaRef}
         >
-            <div className="embla__container">
+            <div className="embla__container max-h-[805px] md:max-h-fit  bg-black">
                 {
                     Array.from({ length: 8 }, (_, index) => {
                         const slideNumber = index;
@@ -72,7 +72,7 @@ export default function Portada() {
                                     alt='portada'
                                     className={
                                         slideNumber === 0
-                                            ? "object-cover w-full mt-[40px] lg:mt-[120px] max-h-[100vh] max-w-[100vw]"
+                                            ? "bannerPDF w-full h-screen lg:max-h-screen  lg:pt-[120px] "
                                             : "object-cover w-full h-screen sm:h-screen"
                                     }
                                 />

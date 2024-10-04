@@ -255,9 +255,25 @@ body {
 .embla__container {
   display: flex;
 }
+
+
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.bannerPDF{
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .embla__container {
+    max-height: 805px;
+  }
+  
+.bannerPDF{
+  object-fit: scale-down;
+}
 }
 
 .imageContainer {
