@@ -256,13 +256,12 @@ body {
   display: flex;
 }
 
-
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
 }
 
-.bannerPDF{
+.bannerPDF {
   object-fit: cover;
 }
 
@@ -270,10 +269,10 @@ body {
   .embla__container {
     max-height: 805px;
   }
-  
-.bannerPDF{
-  object-fit: scale-down;
-}
+
+  .bannerPDF {
+    object-fit: contain;
+  }
 }
 
 .imageContainer {
