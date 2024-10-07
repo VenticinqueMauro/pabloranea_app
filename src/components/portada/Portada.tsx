@@ -13,7 +13,7 @@ export default function Portada() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+            setIsMobile(window.matchMedia('(max-width: 668px)').matches);
         };
 
         window.addEventListener('resize', handleResize);
@@ -50,7 +50,7 @@ export default function Portada() {
             className='h-screen embla'
             ref={emblaRef}
         >
-            <div className="embla__container max-h-[805px] md:max-h-fit  bg-black">
+            <div className="embla__container max-h-[805px] mt-[60px] md:mt-0 md:max-h-fit  bg-black">
                 {
                     Array.from({ length: 8 }, (_, index) => {
                         const slideNumber = index;
@@ -72,8 +72,8 @@ export default function Portada() {
                                     alt='portada'
                                     className={
                                         slideNumber === 0
-                                            ? "bannerPDF w-full h-screen lg:max-h-screen  lg:pt-[120px] "
-                                            : "object-cover w-full h-screen sm:h-screen"
+                                            ? "bannerPDF w-full  lg:h-screen lg:max-h-screen  lg:pt-[110px] "
+                                            : "object-cover w-full h-screen "
                                     }
                                 />
                             </div>
