@@ -17,7 +17,7 @@ export default function Portada() {
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize(); // Initial check
+        handleResize(); 
 
         return () => {
             window.removeEventListener('resize', handleResize);
