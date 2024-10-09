@@ -1,15 +1,24 @@
 import { Stay } from "@/types/stay.type";
 import { getStays } from "@/utils/helpers";
 import { Image } from "@nextui-org/react";
-import dayjs from "dayjs";
 import React from "react";
-
 
 export default async function CalendarFront({ dictionary, lang }: any) {
 
     const stays: Stay[] | undefined = await getStays();
 
     const { title, button } = dictionary.calendar;
+
+    const formatDate = (date: string): string => {
+        const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const monthsES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
+        const parsedDate = new Date(date);
+        const day = parsedDate.getDate();
+        const month = lang === 'es' ? monthsES[parsedDate.getMonth()] : monthsEN[parsedDate.getMonth()];
+
+        return `${day} ${month}`;
+    };
 
     return (
         <section id="calendar" className="flex items-center justify-center flex-col mb-20 px-2 border-white">
@@ -24,7 +33,9 @@ export default async function CalendarFront({ dictionary, lang }: any) {
                         stays?.map((stay) => (
                             <div key={stay._id} className=" border-gray-400 border-b border-dashed flex justify-between items-center py-5 hover:bg-gray-100 letterScroll px-3">
                                 <div className="w-full text-start px-1">
-                                    <p className="font-bold text-base lg:text-xl">{dayjs(stay.startDate).format('DD.MM')} - {dayjs(stay.endDate).format('DD.MM')}</p>
+                                    <p className="font-bold text-base lg:text-xl">
+                                        {formatDate(stay.startDate.toISOString())} - {formatDate(stay.endDate.toISOString())}
+                                    </p>
                                     <p className="uppercase text-sm lg:text-base text-zinc-500 font-bold">{stay.location}</p>
                                 </div>
                                 <div className="w-full text-start text-sm lg:text-base px-1 whitespace-pre-line">
