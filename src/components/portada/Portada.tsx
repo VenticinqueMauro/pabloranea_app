@@ -26,10 +26,9 @@ export default function Portada() {
 
     useEffect(() => {
         if (emblaApi) {
-            // Disable autoplay initially and set a custom duration for the first slide
             autoplayRef.current.stop();
             const timer = setTimeout(() => {
-                autoplayRef.current.play(); // Start autoplay after 4s for the first slide
+                autoplayRef.current.play(); 
             }, 5000);
 
             return () => clearTimeout(timer);
