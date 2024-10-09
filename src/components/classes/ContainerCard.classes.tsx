@@ -8,23 +8,34 @@ export interface Class {
 }
 
 const classes: Class[] = [
+    // {
+    //     date: 'Tuesday, May 7',
+    //     location: 'Central Market Cooking School, Houston - Texas', 
+    //     description: 'Food & Wine from South America with Chef Pablo Ranea',
+    //     link: 'https://www.eventbrite.com/e/food-wine-from-south-america-with-chef-pablo-ranea-tickets-887704507077?aff=oddtdtcreator'
+    // },
+    // {
+    //     date: '29.04 – 02.06',
+    //     location: 'Houston – San Antonio, Texas', 
+    //     description: 'May 8th Food & Wine pairing class at Central Market in Houston',
+    // },
+    // {
+    //     date: '03.06 – 22.07',
+    //     location: 'New York – Washington DC – Asbury Pk, East Coast', 
+    //     description: 'June 4th Argentinian wine class at ICE Institute of Culinary Education in Battery Park New York',
+    // },
     {
-        date: 'Tuesday, May 7',
-        location: 'Central Market Cooking School, Houston - Texas', 
-        description: 'Food & Wine from South America with Chef Pablo Ranea',
-        link: 'https://www.eventbrite.com/e/food-wine-from-south-america-with-chef-pablo-ranea-tickets-887704507077?aff=oddtdtcreator'
+        date: 'Nov 23rd, 2024',
+        location: 'Urban Kitchen, Lima - Perú',
+        description: 'Cooking class with Chef Ignacio Barrios'
     },
     {
-        date: '29.04 – 02.06',
-        location: 'Houston – San Antonio, Texas', 
-        description: 'May 8th Food & Wine pairing class at Central Market in Houston',
-    },
-    {
-        date: '03.06 – 22.07',
-        location: 'New York – Washington DC – Asbury Pk, East Coast', 
-        description: 'June 4th Argentinian wine class at ICE Institute of Culinary Education in Battery Park New York',
+        date: 'Dic 2nd, 2024',
+        location: 'Urritigoity Cocina, Mendoza - Argentina',
+        description: 'Cooking class with María Urrutigoity'
     }
 ];
+
 
 
 export default function ContainerCardClasses() {
