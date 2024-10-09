@@ -47,40 +47,40 @@ export default function Portada() {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
-            className='h-screen embla'
+            className='embla'
             ref={emblaRef}
         >
-            <div className="embla__container max-h-[805px] mt-[60px] md:mt-0 md:max-h-fit  bg-black">
-                {
-                    Array.from({ length: 8 }, (_, index) => {
-                        const slideNumber = index;
-                        const src = (slideNumber === 4 || slideNumber === 0) && isMobile
-                            ? `/portada/slide${slideNumber}-mobile.jpg`
-                            : `/portada/slide${slideNumber}.jpg`;
-
-
-                        return (
-                            <div
-                                key={`slide${index}`}
-                                className="embla__slide"
-                                onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
-                            >
+            <div className="embla__container mt-[30px] md:mt-0 md:max-h-fit bg-black">
+                {Array.from({ length: 8 }, (_, index) => {
+                    const slideNumber = index;
+                    const src = (slideNumber === 4 || slideNumber === 0) && isMobile
+                        ? `/portada/slide${slideNumber}-mobile.jpg`
+                        : `/portada/slide${slideNumber}.jpg`;
+                    return (
+                        <div
+                            key={`slide${index}`}
+                            className="embla__slide"
+                            onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
+                        >
+                            <div className="w-full h-full relative">
                                 <Image
                                     src={src}
+                                    alt="portada"
+                                    quality={100}
                                     width={1980}
                                     height={1114}
-                                    alt='portada'
                                     className={
                                         slideNumber === 0
-                                            ? "bannerPDF w-full  lg:h-screen lg:max-h-screen  lg:pt-[110px] "
-                                            : "object-cover w-full h-screen "
+                                            ? "bannerPDF w-full h-full lg:pt-[110px]"
+                                            : "object-cover w-full h-full"
                                     }
                                 />
                             </div>
-                        );
-                    })
-                }
+                        </div>
+                    );
+                })}
             </div>
-        </motion.div>
+        </motion.div >
+
     );
 }

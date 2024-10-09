@@ -249,29 +249,45 @@ body {
 }
 
 .embla {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  height: auto;
 }
+
 .embla__container {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .embla__slide {
   flex: 0 0 100%;
-  min-width: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.embla__slide img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: top;
 }
 
 .bannerPDF {
+  width: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
 @media (max-width: 768px) {
-  .embla__container {
-    max-height: 805px;
-  }
-
   .bannerPDF {
-    object-fit: contain;
+    object-fit: scale-down;
+  }
+  .embla__slide,
+  .embla__container,
+  .embla {
+    height: auto;
   }
 }
 
