@@ -3,11 +3,10 @@
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export default function Portada() {
-    const autoplayRef = useRef(Autoplay({ delay: 2000 })); // 2s delay for other slides
+export default function Portada({ lang }: any) {
+    const autoplayRef = useRef(Autoplay({ delay: 2000 }));
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplayRef.current]);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -35,11 +34,9 @@ export default function Portada() {
         }
     }, [emblaApi]);
 
+    // Redirige a la página de travelmendoza
     const handleFirstSlideClick = () => {
-        const link = document.createElement('a');
-        link.href = '/pdf/mvam_ItinerarioRaneaOK.pdf';
-        link.download = 'mvam_ItinerarioRaneaOK.pdf';
-        link.click();
+        window.location.href = `/${lang}/travelmendoza`;
     };
 
     return (
@@ -59,6 +56,7 @@ export default function Portada() {
                         <div
                             key={`slide${index}`}
                             className="embla__slide"
+                            // Aplica la función de click en la primera diapositiva (slide 0)
                             onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
                         >
                             <div className="w-full h-full relative">
@@ -81,6 +79,5 @@ export default function Portada() {
                 })}
             </div>
         </motion.div >
-
     );
 }

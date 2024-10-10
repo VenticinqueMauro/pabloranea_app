@@ -20,7 +20,7 @@ async function HomePage({ params: { lang } }: Lang) {
   return (
     <section className="relative z-30">
       <TradButton lang={lang} />
-      <Portada />
+      <Portada lang={lang} />
       <Popups dictionary={dictionary} lang={lang} />
       <GiraEnNum lang={lang} />
       <CalendarFront dictionary={dictionary} lang={lang} />
