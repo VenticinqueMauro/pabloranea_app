@@ -7,7 +7,7 @@ export default async function CalendarFront({ dictionary, lang }: any) {
 
     const stays: Stay[] | undefined = await getStays();
 
-    const { title, button } = dictionary.calendar;
+    const { button } = dictionary.calendar;
 
     const formatDate = (date: string): string => {
         const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
