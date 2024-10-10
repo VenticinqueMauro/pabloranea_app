@@ -55,8 +55,6 @@ export default function Portada() {
                     const src = (slideNumber === 4 || slideNumber === 0) && isMobile
                         ? `/portada/slide${slideNumber}-mobile.jpg`
                         : `/portada/slide${slideNumber}.jpg`;
-
-                    console.log(src)
                     return (
                         <div
                             key={`slide${index}`}
@@ -64,12 +62,13 @@ export default function Portada() {
                             onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
                         >
                             <div className="w-full h-full relative">
-                                <Image
+                                {/* eslint-disable-next-line @next/next/no-img-element  */}
+                                <img
                                     src={src}
-                                    alt="portada"
-                                    quality={100}
+                                    alt={`Slide ${slideNumber}`}
                                     width={1980}
                                     height={1114}
+                                    loading="lazy"
                                     className={
                                         slideNumber === 0
                                             ? "bannerPDF w-full h-full lg:pt-[110px]"

@@ -1,8 +1,6 @@
 
 import Footer from "@/components/footer/Footer";
 import { Lang } from "@/types/lang.type";
-import Image from "next/image";
-import Link from "next/link";
 
 const bodegas = [
     {
@@ -82,7 +80,14 @@ export default async function page({ params: { lang } }: Lang) {
                                 <p className="text-gray-500">{lang === 'es' ? bodega.description : bodega.descriptionEn}</p>
                             </div>
                             <div className="w-full min-h-full">
-                                <Image src={bodega.imageUrl} alt={bodega.title} width={520} height={230} />
+                                {/* eslint-disable-next-line @next/next/no-img-element  */}
+                                <img
+                                    src={bodega.imageUrl}
+                                    alt={bodega.title}
+                                    width={520}
+                                    height={230}
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     ))
