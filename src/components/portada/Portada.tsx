@@ -17,7 +17,7 @@ export default function Portada() {
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize(); 
+        handleResize();
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -28,7 +28,7 @@ export default function Portada() {
         if (emblaApi) {
             autoplayRef.current.stop();
             const timer = setTimeout(() => {
-                autoplayRef.current.play(); 
+                autoplayRef.current.play();
             }, 5000);
 
             return () => clearTimeout(timer);
