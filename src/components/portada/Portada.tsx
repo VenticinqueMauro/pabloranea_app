@@ -55,6 +55,8 @@ export default function Portada() {
                     const src = (slideNumber === 4 || slideNumber === 0) && isMobile
                         ? `/portada/slide${slideNumber}-mobile.jpg`
                         : `/portada/slide${slideNumber}.jpg`;
+
+                    console.log(src)
                     return (
                         <div
                             key={`slide${index}`}
