@@ -14,6 +14,15 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 
 const pressMap = [
     {
+        title: "Pablo Ranea, el chef que trae turistas a Mendoza para dar a conocer lo mejor de las bodegas y la gastronomía local",
+        linkPress: "https://thewinetime.com.ar/26299-2/",
+        image: "https://thewinetime.com.ar/wp/wp-content/uploads/2024/10/IMG-20241024-WA0002.jpg",
+        width: 1280,
+        height: 853,
+        diary: "thewinetime.com.ar",
+        date: new Date(2024, 9),
+    },
+    {
         title: "La vida del chef nómade que recorrió más de 100 ciudades y lleva la comida argentina por el mundo",
         linkPress: "https://www.forbesargentina.com/lifestyle/la-vida-chef-nomade-recorrio-mas-100-ciudades-lleva-comida-argentina-mundo-n50443",
         image: "https://statics.forbesargentina.com/2024/03/crop/6601e9337b7f0__822x460.webp",

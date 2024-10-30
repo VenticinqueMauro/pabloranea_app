@@ -1,5 +1,3 @@
-'use client';
-
 import Link from "next/link";
 
 type Props = {
@@ -7,18 +5,14 @@ type Props = {
 }
 
 export default function TradButton({ lang }: Props) {
-    const handleChangeLang = () => {
-        const newLang = lang === 'es' ? 'en' : 'es';
-        const currentPath = window.location.pathname;
-        const newPath = currentPath.includes(`/${lang}/`) ? currentPath.replace(`/${lang}/`, `/${newLang}/`) : `/${newLang}`;
-        window.location.href = newPath;
-    };
+    const newLang = lang === 'es' ? 'en' : 'es';
 
     return (
         <Link
-            href={`/${lang === 'es' ? 'en' : 'es'}`}
+            href={`/${newLang}`}
             className='hidden lg:block absolute top-5 right-24 px-2 text-xs py-1 border-black border light z-50'
-            onClick={handleChangeLang}
-        >{lang === 'es' ? 'ES' : 'EN'}</Link>
+        >
+            {lang === 'es' ? 'ES' : 'EN'}
+        </Link>
     )
 }
