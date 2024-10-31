@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default async function PressLayout({ children }: { children: React.ReactNode }) {
 
     return (
-        <section className='lg:pt-36'>
+        <section >
             {children}
         </section>
     )

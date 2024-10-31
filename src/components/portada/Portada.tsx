@@ -5,18 +5,21 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-export default function Portada({ lang }: any) {
+export default function Portada({ lang }: { lang: string }) {
     const autoplayRef = useRef(Autoplay({ delay: 2000 }));
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplayRef.current]);
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        { loop: true },
+        [autoplayRef.current]
+    );
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.matchMedia('(max-width: 668px)').matches);
+            setIsMobile(window.innerWidth <= 768);
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize();
+        handleResize(); // Set initial state
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -34,7 +37,6 @@ export default function Portada({ lang }: any) {
         }
     }, [emblaApi]);
 
-    // Redirige a la página de travelmendoza
     const handleFirstSlideClick = () => {
         window.location.href = `/${lang}/travelmendoza`;
     };
@@ -43,41 +45,34 @@ export default function Portada({ lang }: any) {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
-            className='embla'
-            ref={emblaRef}
+            className="embla"
         >
-            <div className="embla__container mt-[30px] md:mt-0 md:max-h-fit bg-black">
-                {Array.from({ length: 8 }, (_, index) => {
-                    const slideNumber = index;
-                    const src = (slideNumber === 4 || slideNumber === 0) && isMobile
-                        ? `/portada/slide${slideNumber}-mobile.jpg`
-                        : `/portada/slide${slideNumber}.jpg`;
-                    return (
-                        <div
-                            key={`slide${index}`}
-                            className="embla__slide"
-                            // Aplica la función de click en la primera diapositiva (slide 0)
-                            onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
-                        >
-                            <div className="w-full h-full relative">
-                                {/* eslint-disable-next-line @next/next/no-img-element  */}
+            <div className="embla__viewport" ref={emblaRef}>
+                <div className="embla__container">
+                    {Array.from({ length: 8 }, (_, index) => {
+                        const slideNumber = index;
+                        const src =
+                            (slideNumber === 4 || slideNumber === 0) && isMobile
+                                ? `/portada/slide${slideNumber}-mobile.jpg`
+                                : `/portada/slide${slideNumber}.jpg`;
+                        return (
+                            <div
+                                key={`slide${index}`}
+                                className="embla__slide"
+                                onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
+                            >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={src}
                                     alt={`Slide ${slideNumber}`}
-                                    width={1980}
-                                    height={1114}
                                     loading="lazy"
-                                    className={
-                                        slideNumber === 0
-                                            ? "bannerPDF w-full h-full lg:pt-[110px]"
-                                            : "object-cover w-full h-full"
-                                    }
+                                    className="object-cover w-full h-full"
                                 />
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
-        </motion.div >
+        </motion.div>
     );
 }

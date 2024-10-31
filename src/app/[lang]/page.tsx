@@ -1,10 +1,9 @@
-import Portada from "@/components/portada/Portada";
-import Popups from "@/components/pop-ups/Popups";
+import CalendarFront from "@/components/calendar/CalendarFront";
 import Footer from "@/components/footer/Footer";
-import TradButton from "@/components/tradButton/TradButton";
+import Popups from "@/components/pop-ups/Popups";
+import Portada from "@/components/portada/Portada";
 import { Lang } from "@/types/lang.type";
 import dynamic from "next/dynamic";
-import CalendarFront from "@/components/calendar/CalendarFront";
 
 const GiraEnNum = dynamic(() => import("@/components/giraennumeros/GiraEnNum"));
 const About = dynamic(() => import("@/components/about/About"));
@@ -19,7 +18,6 @@ async function HomePage({ params: { lang } }: Lang) {
 
   return (
     <section className="relative z-30">
-      <TradButton lang={lang} />
       <Portada lang={lang} />
       <Popups dictionary={dictionary} lang={lang} />
       <GiraEnNum lang={lang} />
