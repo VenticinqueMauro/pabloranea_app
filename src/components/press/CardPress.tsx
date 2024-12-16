@@ -14,6 +14,24 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 
 const pressMap = [
     {
+        title: "Cómo hacer empanadas de carne: relleno jugoso y masa sequita y dorada",
+        linkPress: "https://foodit.lanacion.com.ar/guias-de-cocina/como-hacer-empanadas-de-carne-relleno-jugoso-y-masa-sequita-y-dorada-nid05122024/",
+        image: "https://resizer.glanacion.com/resizer/v2/pablo-ranea-es-chef-y-sommelier-nomade-las-3H45HT5JVBGHPIGWQMB7KNX5Q4.jpeg?auth=688eabfb4f4bfbbbe89278006c8556a3964d24278a78e19b4ba6bc1964b92e8e&width=780&height=520&quality=70&smart=true",
+        width: 800,
+        height: 534,
+        diary: "foodit.lanacion.com.ar/",
+        date: new Date(2024, 11),
+    },
+    {
+        title: "El chef nómade que redescubre las regiones vitivinícolas de Mendoza",
+        linkPress: "https://www.ambito.com/lifestyle/el-chef-nomade-que-redescubre-las-regiones-vitivinicolas-mendoza-n6091101",
+        image: "https://media.ambito.com/p/75ce65cf6b6d81f2fe668e33ceeae8b0/adjuntos/239/imagenes/042/027/0042027857/655x368/smart/img_0787jpeg.jpeg",
+        width: 655,
+        height: 368,
+        diary: "ambito.com",
+        date: new Date(2024, 11),
+    },
+    {
         title: "Pablo Ranea, el chef que trae turistas a Mendoza para dar a conocer lo mejor de las bodegas y la gastronomía local",
         linkPress: "https://thewinetime.com.ar/26299-2/",
         image: "https://thewinetime.com.ar/wp/wp-content/uploads/2024/10/IMG-20241024-WA0002.jpg",
