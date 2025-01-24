@@ -45,28 +45,32 @@ export default function Portada({ lang }: { lang: string }) {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
-            className="embla"
+            className="embla w-full relative"
         >
-            <div className="embla__viewport" ref={emblaRef}>
+            <div className="embla__viewport w-full" ref={emblaRef}>
                 <div className="embla__container">
                     {Array.from({ length: 8 }, (_, index) => {
-                        const slideNumber = index;
-                        const src =
-                            (slideNumber === 4 || slideNumber === 0) && isMobile
-                                ? `/portada/slide${slideNumber}-mobile.jpg`
-                                : `/portada/slide${slideNumber}.jpg`;
+                        const slideNumber = index + 1;
+                        const src = isMobile 
+                            ? `/portada/mobile/${slideNumber}.png`
+                            : `/portada/${slideNumber}.jpg`;
                         return (
                             <div
                                 key={`slide${index}`}
-                                className="embla__slide"
-                                onClick={slideNumber === 0 ? handleFirstSlideClick : undefined}
+                                className="embla__slide relative w-full"
+                                style={{ 
+                                    paddingBottom: isMobile 
+                                        ? 'calc(100% / 1.25)' // Mobile ratio 1679:1344
+                                        : 'calc(100% / 2.33)' // Desktop ratio 3124:1344
+                                }}
+                                onClick={slideNumber === 1 ? handleFirstSlideClick : undefined}
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={src}
                                     alt={`Slide ${slideNumber}`}
                                     loading="lazy"
-                                    className="object-cover w-full h-full"
+                                    className="absolute top-0 left-0 w-full h-full object-cover"
                                 />
                             </div>
                         );
