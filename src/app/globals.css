@@ -384,3 +384,30 @@ body {
 video::-webkit-media-controls {
   display: none;
 }
+
+/* Earth Animation */
+.earth {
+    animation: rotate 20s linear infinite;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.continent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, transparent 0%, transparent 40%, rgba(0,255,0,0.1) 40%, rgba(0,255,0,0.1) 50%, transparent 50%),
+        radial-gradient(circle at 85% 30%, transparent 0%, transparent 30%, rgba(0,255,0,0.15) 30%, rgba(0,255,0,0.15) 35%, transparent 35%),
+        radial-gradient(circle at 20% 65%, transparent 0%, transparent 25%, rgba(0,255,0,0.1) 25%, rgba(0,255,0,0.1) 30%, transparent 30%);
+    animation: rotate 15s linear infinite reverse;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
