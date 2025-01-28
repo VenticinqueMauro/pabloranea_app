@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+Sitemap: https://pabloranea.com/sitemap.xml
