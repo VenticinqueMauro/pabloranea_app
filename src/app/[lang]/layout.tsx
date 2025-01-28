@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/header/Navbar'
 import { Providers } from '../providers'
+import Head from 'next/head';
 
 type Props = {
   children: React.ReactNode
@@ -12,10 +13,12 @@ type Props = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pabloranea.com/'),
   title: {
     default: 'Pablo Ranea: Chef y Sommelier - Experiencias Gastronómicas por Todo el Mundo',
     template: '%s - Pablo Ranea',
+  },
+  alternates: {
+    canonical: 'https://pabloranea.com/en',
   },
   description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
   keywords: [
@@ -53,11 +56,21 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children, params: { lang } }: Props) {
+  const alternateLinks = [
+    { href: "https://pabloranea.com/en", hreflang: "en" },
+    { href: "https://pabloranea.com/es", hreflang: "es" },
+    { href: "https://pabloranea.com", hreflang: "x-default" },
+  ];
 
   const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
 
   return (
     <html lang={lang} className='light'>
+      <Head>
+        {alternateLinks.map(({ href, hreflang }) => (
+          <link rel="alternate" href={href} hrefLang={hreflang} key={hreflang} />
+        ))}
+      </Head>
       <body className={`h-screen overflow-x-hidden relative`}>
         <Providers>
           <Navbar dictionary={dictionary} />

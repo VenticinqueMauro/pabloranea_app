@@ -5,6 +5,9 @@ import { Toaster } from "sonner"
 export const metadata: Metadata = {
     title: 'Login',
     description: 'Login',
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
+    },
 }
 
 export default function LoginLayout({ children }: { children: ReactNode }) {

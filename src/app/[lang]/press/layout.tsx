@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.com/'),
     title: {
         default: 'Prensa sobre Pablo Ranea: El Chef y Sommelier Trotamundos',
         template: '%s - Pablo Ranea',
+    },
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
     },
     description: 'Explora las noticias y artículos de prensa sobre Pablo Ranea, el chef y sommelier trotamundos que lleva la gastronomía mendocina y los vinos argentinos a lugares emblemáticos del mundo. Descubre las últimas entrevistas, reseñas y opiniones de expertos sobre la trayectoria y el legado de Pablo Ranea.',
     keywords: [

@@ -5,6 +5,9 @@ import NavbarEvent from "../components/event/Navbar.event";
 export const metadata: Metadata = {
     title: 'Events',
     description: 'lorem ipsum',
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
+    },
 }
 
 export default function EventLayout({ children }: { children: React.ReactNode }) {
