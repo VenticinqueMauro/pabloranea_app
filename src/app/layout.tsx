@@ -1,16 +1,5 @@
-import '../globals.css'
-import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react';
-import Navbar from '@/components/header/Navbar'
-import { Providers } from '../providers'
-import Head from 'next/head';
-
-type Props = {
-  children: React.ReactNode
-  params: {
-    lang: 'es' | 'en'
-  }
-}
+import './globals.css';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
@@ -32,6 +21,9 @@ export const metadata: Metadata = {
     'Maridaje',
     'Vino argentino',
   ],
+  icons: {
+    icon: '/icon.png',
+  },
   openGraph: {
     title: 'Pablo Ranea: Experiencias Gastronómicas por Todo el Mundo',
     images: '/icon.png',
@@ -55,29 +47,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({ children, params: { lang } }: Props) {
-  const alternateLinks = [
-    { href: "https://pabloranea.com/en", hreflang: "en" },
-    { href: "https://pabloranea.com/es", hreflang: "es" },
-    { href: "https://pabloranea.com", hreflang: "x-default" },
-  ];
-
-  const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang={lang} className='light'>
-      <Head>
-        {alternateLinks.map(({ href, hreflang }) => (
-          <link rel="alternate" href={href} hrefLang={hreflang} key={hreflang} />
-        ))}
-      </Head>
-      <body className={`h-screen overflow-x-hidden relative`}>
-        <Providers>
-          <Navbar dictionary={dictionary} />
-          {children}
-          <Analytics />
-        </Providers>
-      </body>
-    </html >
-  )
+    <html lang="en" className="light">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className="min-h-screen bg-white">{children}</body>
+    </html>
+  );
 }

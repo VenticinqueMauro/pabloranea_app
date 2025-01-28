@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.com/'),
-    title: {
+      title: {
         default: 'Pop Up Dinners de Pablo Ranea: Experiencias Gastronómicas Itinerantes',
         template: '%s - Pablo Ranea',
     },
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
+      },
     description: 'Descubre las experiencias gastronómicas itinerantes de Pablo Ranea a través de sus Pop Up Dinners, que llevan la nueva cocina argentina y latinoamericana a deslumbrantes lugares alrededor del mundo. Conecta con Argentina a través de sus vinos y sabores únicos en escenarios como San Francisco, New York, Asheville, Mendoza, Shanghai y más.',
     keywords: [
         'Pop Up Dinners',

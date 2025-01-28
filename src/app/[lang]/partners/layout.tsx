@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.com/'),
-    title: {
+      title: {
         default: 'Socios del Tour de Pablo Ranea: Destacadas Bodegas de Vinos Argentinos',
         template: '%s - Pablo Ranea',
     },
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
+      },
     description: 'Descubre a los socios del tour de Pablo Ranea, destacadas bodegas de vinos argentinos que ofrecen una selección excepcional de vinos en la gira del año 2024. Explora las novedades y los vinos emblemáticos de Bodega Trivento, Achaval Ferrer, Antigal, Otronia, Argento, Lagarde y más.',
     keywords: [
         'Socios del Tour',

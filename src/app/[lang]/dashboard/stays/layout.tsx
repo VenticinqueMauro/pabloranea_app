@@ -4,6 +4,9 @@ import NavbarStay from "../components/stay/Navbar.stay"
 export const metadata: Metadata = {
     title: 'Stays',
     description: 'lorem ipsum',
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
+    },
 }
 
 export default function EventLayout({ children }: { children: React.ReactNode }) {

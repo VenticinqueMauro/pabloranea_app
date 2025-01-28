@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://pabloranea.com/'),
     title: {
         default: 'Pablo Ranea: Chef y Sommelier - Trayectoria y Experiencias Gastronómicas',
         template: '%s - Pablo Ranea',
+    },
+    alternates: {
+        canonical: 'https://pabloranea.com/en',
     },
     description: 'Formado en la prestigiosa escuela de cocina del Gato Dumas en Buenos Aires, Pablo Ranea emerge como un chef y sommelier argentino que ha dedicado varios años de su vida a llevar lo mejor de la cocina argentina y latinoamericana por todo el mundo. Descubre sus experiencias gastronómicas únicas, sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, así como su pasión por los vinos argentinos.',
     keywords: [
