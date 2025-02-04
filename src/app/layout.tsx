@@ -3,6 +3,7 @@ import './globals.css';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pabloranea.com'),
   title: {
     default: 'Pablo Ranea: Chef y Sommelier - Experiencias Gastronómicas por Todo el Mundo',
     template: '%s - Pablo Ranea',
