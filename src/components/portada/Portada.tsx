@@ -49,11 +49,11 @@ export default function Portada({ lang }: { lang: string }) {
     // 📌 Lógica de imágenes en desktop
     const desktopImageOrder = [
         '1a', '1', '2a', '2', '3a', '3', '4a', '4',
-        '5a', '5', '6a', '6', '7a', '7', '8' // Sin "8a"
+        '5a', '5', '6a', '6', '7a', '7', '8'
     ];
 
-    // 📌 Lógica de imágenes en mobile (0.jpg y 1-8.png)
-    const mobileImageOrder = Array.from({ length: 9 }, (_, i) => `${i}`);
+    // 📌 Lógica de imágenes en mobile (1-8.png)
+    const mobileImageOrder = Array.from({ length: 8 }, (_, i) => `${i + 1}`);
 
     return (
         <motion.div
@@ -65,7 +65,7 @@ export default function Portada({ lang }: { lang: string }) {
                 <div className="embla__container">
                     {(isMobile ? mobileImageOrder : desktopImageOrder).map((name, index) => {
                         const src = isMobile
-                            ? `/portada/mobile/${name}.${name === '0' ? 'jpg' : 'png'}`  // 0.jpg y el resto .png
+                            ? `/portada/mobile/${name}.png`  // Todos son .png en mobile ahora
                             : `/portada/${name}.jpg`;       // Desktop mantiene la lógica actual
 
                         return (
@@ -77,7 +77,7 @@ export default function Portada({ lang }: { lang: string }) {
                                         ? 'calc(100% / 1.25)' // Mobile ratio 1679:1344
                                         : 'calc(100% / 2.33)' // Desktop ratio 3124:1344
                                 }}
-                                onClick={() => (!isMobile || name !== '0') && handleClick(name)}
+                                onClick={() => handleClick(name)}
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
