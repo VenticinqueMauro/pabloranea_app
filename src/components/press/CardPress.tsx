@@ -14,6 +14,15 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 
 const pressMap = [
     {
+        title: "Plato Insignia: Helado de sambayón al Malbec por Pablo Ranea",
+        linkPress: "https://inmendoza.com/plato-insignia-helado-de-sambayon-al-malbec-por-pablo-ranea/",
+        image: "https://inmendoza.com/wp-content/uploads/2025/02/PABLORANEA555-scaled.webp",
+        width: 800,
+        height: 534,
+        diary: "inmendoza.com",
+        date: new Date(2025, 1),
+    },
+    {
         title: "Cómo hacer empanadas de carne: relleno jugoso y masa sequita y dorada",
         linkPress: "https://foodit.lanacion.com.ar/guias-de-cocina/como-hacer-empanadas-de-carne-relleno-jugoso-y-masa-sequita-y-dorada-nid05122024/",
         image: "https://resizer.glanacion.com/resizer/v2/pablo-ranea-es-chef-y-sommelier-nomade-las-3H45HT5JVBGHPIGWQMB7KNX5Q4.jpeg?auth=688eabfb4f4bfbbbe89278006c8556a3964d24278a78e19b4ba6bc1964b92e8e&width=780&height=520&quality=70&smart=true",
@@ -133,7 +142,7 @@ const pressMap = [
     {
         title: "PABLO RANEA, EL CHEF Y SOMMELIER TROTAMUNDOS",
         linkPress: "https://vinomanos.com/2022/04/pablo-ranea/",
-        image: "https://vinomanos.com/wp-content/uploads/2022/04/Vinomanos_Pablo-_-Ale-Fotos-2018-33.jpg",
+        image: "https://vinomanos.com/wp-content/uploads/2022/04/Pablo-Ranea.jpeg.webp",
         diary: "eltrinche.com",
         width: 720,
         height: 481,
@@ -213,7 +222,7 @@ export default function CardPress({ isPage, lang }: Props) {
                     pressMap.sort((a: any, b: any) => b.date - a.date).map((press, i) => (
                         <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === pressMap.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
                             <div className="w-full">
-                                <p className="text-2xl md:text-3xl lg:text-4xl font-bold">{press.title}</p>
+                                <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
                                 <p className="text-gray-500">{press.diary}</p>
                                 <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
                             </div>
@@ -226,7 +235,7 @@ export default function CardPress({ isPage, lang }: Props) {
                     selectedPresses.map((press, i) => (
                         <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === selectedPresses.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
                             <div className="w-full">
-                                <p className="text-2xl md:text-3xl lg:text-4xl font-bold">{press.title}</p>
+                                <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
                                 <p className="text-gray-500">{press.diary}</p>
                                 <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
                             </div>
