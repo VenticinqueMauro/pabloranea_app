@@ -9,14 +9,17 @@ interface CalendarFrontProps {
 }
 
 const stays = [
-    { startDate: '2024-03-01', endDate: '2024-03-31', location: 'Los Angeles & Palm Springs' },
-    { startDate: '2024-04-01', endDate: '2024-04-30', location: 'Florida Tour (Miami, West Palm Beach, Orlando)' },
-    { startDate: '2024-05-01', endDate: '2024-05-31', location: 'Houston & San Antonio' },
-    { startDate: '2024-05-20', endDate: '2024-07-31', location: 'East Coast NY-DC-NJ' },
-    { startDate: '2024-07-15', endDate: '2024-08-31', location: 'Colorado' },
-    { startDate: '2024-09-01', endDate: '2024-10-31', location: 'North California' },
-    { startDate: '2024-10-01', endDate: '2024-10-15', location: 'Reno, Nevada' },
-    { startDate: '2024-11-01', endDate: '2024-11-30', location: 'Tucson & Phoenix' },
+    { startDate: '2025-03-30', endDate: '2025-04-13', location: 'Los Angeles & Palm Springs, USA' },
+    { startDate: '2025-04-13', endDate: '2025-04-23', location: 'Miami, USA' },
+    { startDate: '2025-04-23', endDate: '2025-06-01', location: 'Houston & San Antonio, USA' },
+    { startDate: '2025-06-01', endDate: '2025-06-08', location: 'Washington DC, USA' },
+    { startDate: '2025-06-08', endDate: '2025-07-12', location: 'New York, USA' },
+    { startDate: '2025-07-12', endDate: '2025-07-27', location: 'Denver & Colorado Springs, USA' },
+    { startDate: '2025-07-28', endDate: '2025-09-15', location: 'Mendoza & Buenos Aires, ARG' },
+    { startDate: '2025-09-15', endDate: '2025-10-19', location: 'Northern California, USA' },
+    { startDate: '2025-10-20', endDate: '2025-11-01', location: 'Los Angeles, USA' },
+    { startDate: '2025-11-02', endDate: '2025-11-09', location: 'Tucson, USA' },
+    { startDate: '2025-11-10', endDate: '2025-11-17', location: 'Lima, PER' },
 ];
 
 export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) {
