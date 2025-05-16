@@ -38,7 +38,12 @@ export default function Portada({ lang }: { lang: string }) {
     }, [emblaApi]);
 
     const handleClick = (imageName: string) => {
-        if (imageName !== '0') {
+        if (imageName === '0') {
+            window.open(
+                'https://shorturl.at/Wom1K',
+                '_blank'
+            );
+        } else {
             window.open(
                 'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform',
                 '_blank'
@@ -46,14 +51,14 @@ export default function Portada({ lang }: { lang: string }) {
         }
     };
 
-    // 📌 Lógica de imágenes en desktop
+    // Lógica de imágenes en desktop
     const desktopImageOrder = [
-        '1a', '1', '2a', '2', '3a', '3', '4a', '4',
+        '0', '1a', '1', '2a', '2', '3a', '3', '4a', '4',
         '5a', '5', '6a', '6', '7a', '7', '8'
     ];
 
-    // 📌 Lógica de imágenes en mobile (1-8.png)
-    const mobileImageOrder = Array.from({ length: 8 }, (_, i) => `${i + 1}`);
+    // Lógica de imágenes en mobile (0-8.jpg)
+    const mobileImageOrder = Array.from({ length: 9 }, (_, i) => `${i}`);
 
     return (
         <motion.div
@@ -65,8 +70,8 @@ export default function Portada({ lang }: { lang: string }) {
                 <div className="embla__container">
                     {(isMobile ? mobileImageOrder : desktopImageOrder).map((name, index) => {
                         const src = isMobile
-                            ? `/portada/mobile/${name}.png`  // Todos son .png en mobile ahora
-                            : `/portada/${name}.jpg`;       // Desktop mantiene la lógica actual
+                            ? `/portada/mobile/${name}.jpg`  
+                            : `/portada/${name}.jpg`;
 
                         return (
                             <div
