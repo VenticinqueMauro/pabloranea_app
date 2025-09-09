@@ -53,12 +53,12 @@ export default function Portada({ lang }: { lang: string }) {
 
     // Lógica de imágenes en desktop
     const desktopImageOrder = [
-        '9a', '1a', '2a', '4a', '4',
-        '5a', '5', '6a', '6', '7a', '7', '8'
+        '9a', '5', '1a', '2a', '4a', '4',
+        '5a', '6a', '6', '7a', '7', '8'
     ];
 
     // Lógica de imágenes en mobile (3-9.jpg) - Se excluyen las imágenes 0, 1 y 2
-    const mobileImageOrder = ['9', '4', '5', '6', '7', '8'];
+    const mobileImageOrder = ['9', '5', '4', '6', '7', '8'];
 
     return (
         <motion.div
