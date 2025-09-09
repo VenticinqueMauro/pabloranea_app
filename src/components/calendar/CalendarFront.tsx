@@ -60,32 +60,8 @@ const stays: CalendarItem[] = [
         }
     },
     {
-        startDate: '2025-06-09',
-        endDate: '2025-07-05',
-        location: {
-            en: 'New York + Asbury Park, USA',
-            es: 'Nueva York + Asbury Park, EE.UU.'
-        }
-    },
-    {
-        startDate: '2025-07-13',
-        endDate: '2025-07-27',
-        location: {
-            en: 'Denver + Colorado Springs, USA',
-            es: 'Denver + Colorado Springs, EE.UU.'
-        }
-    },
-    {
-        startDate: '2025-07-28',
-        endDate: '2025-09-15',
-        location: {
-            en: 'Mendoza + Buenos Aires, ARG',
-            es: 'Mendoza + Buenos Aires, ARG'
-        }
-    },
-    {
-        startDate: '2025-09-16',
-        endDate: '2025-10-25',
+        startDate: '2025-09-23',
+        endDate: '2025-10-31',
         location: {
             en: 'North California, USA',
             es: 'Norte de California, EE.UU.'
@@ -154,6 +130,25 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
         });
     };
 
+    // Filter out past events and sort by date (nearest first)
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to start of day for accurate comparison
+    
+    const sortedStays = [...stays]
+        .filter((stay) => {
+            if ('special' in stay && stay.special) {
+                return new Date(stay.date) >= today;
+            } else {
+                // For regular stays, check if the end date hasn't passed
+                return new Date(stay.endDate) >= today;
+            }
+        })
+        .sort((a, b) => {
+            const dateA = 'special' in a && a.special ? new Date(a.date) : new Date(a.startDate);
+            const dateB = 'special' in b && b.special ? new Date(b.date) : new Date(b.startDate);
+            return dateA.getTime() - dateB.getTime();
+        });
+
     return (
         <section id="calendar" className="flex flex-col justify-center items-center px-2 mb-20 border-white">
             <div className="flex relative flex-col justify-center items-center border-b">
@@ -162,7 +157,7 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
             </div>
             <div>
                 <div className="flex flex-col border-t border-gray-400 border-dashed max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:h-[420px] container-calendar overflow-y-scroll">
-                    {stays.map((stay, index) => {
+                    {sortedStays.map((stay, index) => {
                         if ('special' in stay && stay.special) {
                             return (
                                 <div
