@@ -37,58 +37,12 @@ type CalendarItem = Stay | SpecialStay;
 type ArchivedStay = Stay;
 
 const stays: CalendarItem[] = [
-    // Activos desde 1 de junio
-    {
-        startDate: '2025-06-01',
-        endDate: '2025-06-08',
-        location: {
-            en: 'Washington DC, USA',
-            es: 'Washington DC, EE.UU.'
-        }
-    },
-    {
-        special: true,
-        date: '2025-06-19',
-        title: {
-            en: '“A Latin Soul”. Open Pop-Up Dinner in NYC.',
-            es: '"A Latin Soul" – Cena Pop-Up Abierta en Nueva York'
-        },
-        link: 'https://shorturl.at/Wom1K',
-        linkLabel: {
-            en: 'Tickets on Eventbrite',
-            es: 'Entradas en Eventbrite'
-        }
-    },
-    {
-        startDate: '2025-09-23',
-        endDate: '2025-10-31',
-        location: {
-            en: 'North California, USA',
-            es: 'Norte de California, EE.UU.'
-        }
-    },
-    {
-        startDate: '2025-10-26',
-        endDate: '2025-11-01',
-        location: {
-            en: 'Los Angeles, USA',
-            es: 'Los Ángeles, EE.UU.'
-        }
-    },
-    {
-        startDate: '2025-11-02',
-        endDate: '2025-11-08',
-        location: {
-            en: 'Tucson, USA',
-            es: 'Tucson, EE.UU.'
-        }
-    },
     {
         startDate: '2025-11-09',
         endDate: '2025-11-16',
         location: {
-            en: 'Lima, PER',
-            es: 'Lima, PER'
+            en: 'Lima, Peru',
+            es: 'Lima, Perú'
         }
     }
 ];
@@ -122,12 +76,8 @@ const archivedStays: ArchivedStay[] = [
 
 export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) {
     const formatDate = (dateString: string) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: '2-digit',
-            year: '2-digit',
-        });
+        const [year, month, day] = dateString.split('-');
+        return `${day}/${month}/${year.slice(-2)}`;
     };
 
     // Filter out past events and sort by date (nearest first)
