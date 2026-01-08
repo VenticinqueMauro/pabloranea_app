@@ -29,7 +29,7 @@
         }
     },
     "calendar": {
-        "title": "tour 2024 dates",
+        "title": "tour 2026 dates",
         "button": "JOIN THE EXPERIENCE"
     },
     "aboutpablo": {
@@ -72,7 +72,7 @@
         "title": "The press",
         "subtitle": "Read about our latest press releases and media coverage.",
         "button": "See more press releases",
-        "page":{
+        "page": {
             "title": "Press"
         }
     }

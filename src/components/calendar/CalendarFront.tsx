@@ -38,11 +38,35 @@ type ArchivedStay = Stay;
 
 const stays: CalendarItem[] = [
     {
-        startDate: '2025-11-09',
-        endDate: '2025-11-16',
+        startDate: '2026-03-30',
+        endDate: '2026-04-13',
         location: {
-            en: 'Lima, Peru',
-            es: 'Lima, Perú'
+            en: 'Los Angeles & Palm Springs, USA',
+            es: 'Los Ángeles & Palm Springs, EE.UU.'
+        }
+    },
+    {
+        startDate: '2026-04-14',
+        endDate: '2026-04-27',
+        location: {
+            en: 'Texas, USA',
+            es: 'Texas, EE.UU.'
+        }
+    },
+    {
+        startDate: '2026-04-28',
+        endDate: '2026-05-18',
+        location: {
+            en: 'New York, USA',
+            es: 'Nueva York, EE.UU.'
+        }
+    },
+    {
+        startDate: '2026-05-19',
+        endDate: '2026-06-02',
+        location: {
+            en: 'Denver, USA',
+            es: 'Denver, EE.UU.'
         }
     }
 ];
@@ -83,7 +107,7 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
     // Filter out past events and sort by date (nearest first)
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Reset time to start of day for accurate comparison
-    
+
     const sortedStays = [...stays]
         .filter((stay) => {
             if ('special' in stay && stay.special) {
@@ -102,8 +126,8 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
     return (
         <section id="calendar" className="flex flex-col justify-center items-center px-2 mb-20 border-white">
             <div className="flex relative flex-col justify-center items-center border-b">
-                <Image src="/worldtitle.png" alt='world' className="wordlScroll hidden lg:block w-[350px]" width={500} height={500} />
-                <Image src="/worldtitle.png" alt='world' className="wordlScroll block lg:hidden w-[200px]" width={500} height={500} />
+                <Image src="/worldtitlee.png" alt='world' className="wordlScroll hidden lg:block w-[350px]" width={500} height={500} />
+                <Image src="/worldtitlee.png" alt='world' className="wordlScroll block lg:hidden w-[200px]" width={500} height={500} />
             </div>
             <div>
                 <div className="flex flex-col border-t border-gray-400 border-dashed max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:h-[420px] container-calendar overflow-y-scroll">

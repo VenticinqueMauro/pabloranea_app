@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 const EmbedCards = dynamic(() => import('./EmbedCards'), { ssr: false });
 
-const textEn = 'FOLLOW OUR TOUR 2024';
-const textEs = 'Sigue nuestro tour 2024';
+const textEn = 'FOLLOW OUR TOUR 2026';
+const textEs = 'Sigue nuestro tour 2026';
 
 export default function Instagram() {
 
