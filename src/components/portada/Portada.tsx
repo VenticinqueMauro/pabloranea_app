@@ -53,11 +53,11 @@ export default function Portada({ lang }: { lang: string }) {
 
     // Lógica de imágenes en desktop
     const desktopImageOrder = [
-        '1a', '2a', '3a', '4a', '5a', '6a', '7a', '8'
+        '1a', '2a', '3a', '4a', '5a', '6a', '7a'
     ];
 
     // Lógica de imágenes en mobile
-    const mobileImageOrder = ['8'];
+    const mobileImageOrder = desktopImageOrder;
 
     return (
         <motion.div
@@ -68,9 +68,7 @@ export default function Portada({ lang }: { lang: string }) {
             <div className="w-full embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {(isMobile ? mobileImageOrder : desktopImageOrder).map((name, index) => {
-                        const src = isMobile
-                            ? `/portada/mobile/${name}.jpg`  
-                            : `/portada/${name}.jpg`;
+                        const src = `/portada/${name}.jpg`;
 
                         return (
                             <div
