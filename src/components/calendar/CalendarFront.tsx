@@ -25,8 +25,12 @@ type SpecialStay = {
         en: string;
         es: string;
     };
-    link: string;
-    linkLabel: {
+    description?: {
+        en: string;
+        es: string;
+    };
+    link?: string;
+    linkLabel?: {
         en: string;
         es: string;
     };
@@ -37,6 +41,18 @@ type CalendarItem = Stay | SpecialStay;
 type ArchivedStay = Stay;
 
 const stays: CalendarItem[] = [
+    {
+        special: true,
+        date: '2026-03-22',
+        title: {
+            en: '"World Asado Day"',
+            es: '"World Asado Day"'
+        },
+        description: {
+            en: 'Event at Fuegos LA',
+            es: 'Evento en Fuegos LA'
+        }
+    },
     {
         startDate: '2026-03-30',
         endDate: '2026-04-13',
@@ -54,11 +70,71 @@ const stays: CalendarItem[] = [
         }
     },
     {
+        special: true,
+        date: '2026-04-15',
+        title: {
+            en: 'Argentina wine tasting for Cheers & Queers',
+            es: 'Degustación de vinos argentinos para Cheers & Queers'
+        },
+        description: {
+            en: 'Private event at Houston',
+            es: 'Evento privado en Houston'
+        }
+    },
+    {
+        special: true,
+        date: '2026-04-21',
+        title: {
+            en: 'Malbec Food & Wine Pairing class',
+            es: 'Clase de maridaje Malbec'
+        },
+        description: {
+            en: 'Central Market, Houston',
+            es: 'Central Market, Houston'
+        }
+    },
+    {
         startDate: '2026-04-28',
         endDate: '2026-05-18',
         location: {
             en: 'New York, USA',
             es: 'Nueva York, EE.UU.'
+        }
+    },
+    {
+        special: true,
+        date: '2026-05-07',
+        title: {
+            en: '"Latin Soul" (NYC) - Open Pop-Up Dinner',
+            es: '"Latin Soul" (NYC) - Pop-Up Dinner abierto'
+        },
+        description: {
+            en: 'Tickets available',
+            es: 'Entradas disponibles'
+        }
+    },
+    {
+        special: true,
+        date: '2026-05-11',
+        title: {
+            en: 'Private Pop-up dinner for Trivento Wines',
+            es: 'Pop-up dinner privado para Trivento Wines'
+        },
+        description: {
+            en: 'West Village, NYC',
+            es: 'West Village, NYC'
+        }
+    },
+    {
+        special: true,
+        date: '2026-05-14',
+        title: {
+            en: '"Latin Soul" (NYC) - Open Pop-Up Dinner',
+            es: '"Latin Soul" (NYC) - Pop-Up Dinner abierto'
+        },
+        description: {
+            en: 'Tickets SOLD OUT',
+            es: 'Entradas AGOTADAS'
         }
     },
     {
@@ -104,6 +180,14 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
         return `${day}/${month}/${year.slice(-2)}`;
     };
 
+    const formatSpecialDate = (dateString: string) => {
+        const date = new Date(dateString + 'T00:00:00');
+        const day = date.getDate();
+        const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const monthsEs = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+        return lang === 'es' ? `${day} de ${monthsEs[date.getMonth()]}` : `${monthsEn[date.getMonth()]} ${day}`;
+    };
+
     // Filter out past events and sort by date (nearest first)
     const today = new Date();
     today.setHours(0, 0, 0, 0); // Reset time to start of day for accurate comparison
@@ -139,11 +223,15 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
                                     className="flex justify-between items-center px-3 py-5 bg-yellow-50 border-b border-gray-400 border-dashed hover:bg-yellow-100 letterScroll"
                                 >
                                     <div className="px-1 w-full text-start">
-                                        <p className="text-base font-bold lg:text-xl text-[#5E6B45]">{lang === 'es' ? '19 de junio' : '19 June'}</p>
+                                        <p className="text-base font-bold lg:text-xl text-[#5E6B45]">{formatSpecialDate(stay.date)}</p>
                                         <p className="mb-1 text-sm font-bold lg:text-base text-zinc-700">{stay.title[lang as 'en' | 'es']}</p>
                                     </div>
                                     <div className="flex flex-col items-start px-1 w-full text-sm whitespace-pre-line text-start lg:text-base lg:items-center">
-                                        <a href={stay.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 underline">{stay.linkLabel[lang as 'en' | 'es']}</a>
+                                        {stay.link && stay.linkLabel ? (
+                                            <a href={stay.link} target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 underline">{stay.linkLabel[lang as 'en' | 'es']}</a>
+                                        ) : stay.description ? (
+                                            <p className="font-semibold text-zinc-600">{stay.description[lang as 'en' | 'es']}</p>
+                                        ) : null}
                                     </div>
                                 </div>
                             );

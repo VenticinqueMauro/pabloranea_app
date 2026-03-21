@@ -37,27 +37,29 @@ export default function Portada({ lang }: { lang: string }) {
         }
     }, [emblaApi]);
 
+    const EVENTBRITE_LINK = 'https://www.eventbrite.com/e/a-latin-soul-pop-up-dinner-with-argentine-wine-in-west-village-nyc-tickets-1984729720020?aff=ebdssbdestsearch';
+    const GOOGLE_FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform';
+
     const handleClick = (imageName: string) => {
-        if (imageName === '0') {
-            window.open(
-                'https://shorturl.at/Wom1K',
-                '_blank'
-            );
+        if (imageName === 'latin-soul') {
+            window.open(EVENTBRITE_LINK, '_blank');
         } else {
-            window.open(
-                'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform',
-                '_blank'
-            );
+            window.open(GOOGLE_FORM_LINK, '_blank');
         }
     };
 
-    // Lógica de imágenes en desktop
-    const desktopImageOrder = [
-        '1a', '2a', '3a', '4a', '5a', '6a', '7a'
-    ];
+    type Slide = { name: string; desktopSrc: string; mobileSrc: string };
 
-    // Lógica de imágenes en mobile
-    const mobileImageOrder = desktopImageOrder;
+    const slides: Slide[] = [
+        { name: 'latin-soul', desktopSrc: '/portada/latin-soul-desktop.jpg', mobileSrc: '/portada/latin-soul-mobile.jpg' },
+        { name: '1a', desktopSrc: '/portada/1a.jpg', mobileSrc: '/portada/1a.jpg' },
+        { name: '2a', desktopSrc: '/portada/2a.jpg', mobileSrc: '/portada/2a.jpg' },
+        { name: '3a', desktopSrc: '/portada/3a.jpg', mobileSrc: '/portada/3a.jpg' },
+        { name: '4a', desktopSrc: '/portada/4a.jpg', mobileSrc: '/portada/4a.jpg' },
+        { name: '5a', desktopSrc: '/portada/5a.jpg', mobileSrc: '/portada/5a.jpg' },
+        { name: '6a', desktopSrc: '/portada/6a.jpg', mobileSrc: '/portada/6a.jpg' },
+        { name: '7a', desktopSrc: '/portada/7a.jpg', mobileSrc: '/portada/7a.jpg' },
+    ];
 
     return (
         <motion.div
@@ -67,8 +69,8 @@ export default function Portada({ lang }: { lang: string }) {
         >
             <div className="w-full embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {(isMobile ? mobileImageOrder : desktopImageOrder).map((name, index) => {
-                        const src = `/portada/${name}.jpg`;
+                    {slides.map((slide, index) => {
+                        const src = isMobile ? slide.mobileSrc : slide.desktopSrc;
 
                         return (
                             <div
@@ -79,12 +81,12 @@ export default function Portada({ lang }: { lang: string }) {
                                         ? 'calc(100% / 1.25)' // Mobile ratio 1679:1344
                                         : 'calc(100% / 2.33)' // Desktop ratio 3124:1344
                                 }}
-                                onClick={() => handleClick(name)}
+                                onClick={() => handleClick(slide.name)}
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={src}
-                                    alt={`Slide ${name}`}
+                                    alt={`Slide ${slide.name}`}
                                     loading="lazy"
                                     className="object-cover absolute top-0 left-0 w-full h-full"
                                 />
