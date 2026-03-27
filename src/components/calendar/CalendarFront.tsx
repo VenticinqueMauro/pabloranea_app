@@ -21,7 +21,7 @@ type Stay = {
 type SpecialStay = {
     special: true;
     date: string;
-    title: {
+    location: {
         en: string;
         es: string;
     };
@@ -44,13 +44,13 @@ const stays: CalendarItem[] = [
     {
         special: true,
         date: '2026-03-22',
-        title: {
-            en: '"World Asado Day"',
-            es: '"World Asado Day"'
+        location: {
+            en: 'Los Angeles, USA',
+            es: 'Los Ángeles, EE.UU.'
         },
         description: {
-            en: 'Event at Fuegos LA',
-            es: 'Evento en Fuegos LA'
+            en: '"World Asado Day" - Event at Fuegos LA',
+            es: '"World Asado Day" - Evento en Fuegos LA'
         }
     },
     {
@@ -72,25 +72,25 @@ const stays: CalendarItem[] = [
     {
         special: true,
         date: '2026-04-15',
-        title: {
-            en: 'Argentina wine tasting for Cheers & Queers',
-            es: 'Degustación de vinos argentinos para Cheers & Queers'
+        location: {
+            en: 'Houston, USA',
+            es: 'Houston, EE.UU.'
         },
         description: {
-            en: 'Private event at Houston',
-            es: 'Evento privado en Houston'
+            en: 'Argentina wine tasting for Cheers & Queers - Private event',
+            es: 'Degustación de vinos argentinos para Cheers & Queers - Evento privado'
         }
     },
     {
         special: true,
         date: '2026-04-21',
-        title: {
-            en: 'Malbec Food & Wine Pairing class',
-            es: 'Clase de maridaje Malbec'
+        location: {
+            en: 'Houston, USA',
+            es: 'Houston, EE.UU.'
         },
         description: {
-            en: 'Central Market, Houston',
-            es: 'Central Market, Houston'
+            en: 'Malbec Food & Wine Pairing class - Central Market',
+            es: 'Clase de maridaje Malbec - Central Market'
         }
     },
     {
@@ -104,37 +104,37 @@ const stays: CalendarItem[] = [
     {
         special: true,
         date: '2026-05-07',
-        title: {
-            en: '"Latin Soul" (NYC) - Open Pop-Up Dinner',
-            es: '"Latin Soul" (NYC) - Pop-Up Dinner abierto'
+        location: {
+            en: 'New York, USA',
+            es: 'Nueva York, EE.UU.'
         },
         description: {
-            en: 'Tickets available',
-            es: 'Entradas disponibles'
+            en: '"Latin Soul" - Open Pop-Up Dinner - Tickets available',
+            es: '"Latin Soul" - Pop-Up Dinner abierto - Entradas disponibles'
         }
     },
     {
         special: true,
         date: '2026-05-11',
-        title: {
-            en: 'Private Pop-up dinner for Trivento Wines',
-            es: 'Pop-up dinner privado para Trivento Wines'
+        location: {
+            en: 'New York, USA',
+            es: 'Nueva York, EE.UU.'
         },
         description: {
-            en: 'West Village, NYC',
-            es: 'West Village, NYC'
+            en: 'Private Pop-up dinner for Trivento Wines - West Village',
+            es: 'Pop-up dinner privado para Trivento Wines - West Village'
         }
     },
     {
         special: true,
         date: '2026-05-14',
-        title: {
-            en: '"Latin Soul" (NYC) - Open Pop-Up Dinner',
-            es: '"Latin Soul" (NYC) - Pop-Up Dinner abierto'
+        location: {
+            en: 'New York, USA',
+            es: 'Nueva York, EE.UU.'
         },
         description: {
-            en: 'Tickets SOLD OUT',
-            es: 'Entradas AGOTADAS'
+            en: '"Latin Soul" - Open Pop-Up Dinner - Tickets SOLD OUT',
+            es: '"Latin Soul" - Pop-Up Dinner abierto - Entradas AGOTADAS'
         }
     },
     {
@@ -224,7 +224,7 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
                                 >
                                     <div className="px-1 w-full text-start">
                                         <p className="text-base font-bold lg:text-xl text-[#5E6B45]">{formatSpecialDate(stay.date)}</p>
-                                        <p className="mb-1 text-sm font-bold lg:text-base text-zinc-700">{stay.title[lang as 'en' | 'es']}</p>
+                                        <p className="text-sm font-bold uppercase lg:text-base text-zinc-500">{stay.location[lang as 'en' | 'es']}</p>
                                     </div>
                                     <div className="flex flex-col items-start px-1 w-full text-sm whitespace-pre-line text-start lg:text-base lg:items-center">
                                         {stay.link && stay.linkLabel ? (

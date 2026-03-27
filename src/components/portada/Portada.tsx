@@ -79,7 +79,7 @@ export default function Portada({ lang }: { lang: string }) {
                                 style={{
                                     paddingBottom: isMobile
                                         ? 'calc(100% / 1.25)' // Mobile ratio 1679:1344
-                                        : 'calc(100% / 2.33)' // Desktop ratio 3124:1344
+                                        : 'calc(100% / 1.78)' // Desktop ratio 1920:1080
                                 }}
                                 onClick={() => handleClick(slide.name)}
                             >
