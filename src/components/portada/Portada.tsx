@@ -48,17 +48,17 @@ export default function Portada({ lang }: { lang: string }) {
         }
     };
 
-    type Slide = { name: string; desktopSrc: string; mobileSrc: string };
+    type Slide = { name: string; desktopSrc: string; mobileSrc: string; position: string };
 
     const slides: Slide[] = [
-        { name: 'latin-soul', desktopSrc: '/portada/latin-soul-desktop.jpg', mobileSrc: '/portada/latin-soul-mobile.jpg' },
-        { name: '1a', desktopSrc: '/portada/1a.jpg', mobileSrc: '/portada/1a.jpg' },
-        { name: '2a', desktopSrc: '/portada/2a.jpg', mobileSrc: '/portada/2a.jpg' },
-        { name: '3a', desktopSrc: '/portada/3a.jpg', mobileSrc: '/portada/3a.jpg' },
-        { name: '4a', desktopSrc: '/portada/4a.jpg', mobileSrc: '/portada/4a.jpg' },
-        { name: '5a', desktopSrc: '/portada/5a.jpg', mobileSrc: '/portada/5a.jpg' },
-        { name: '6a', desktopSrc: '/portada/6a.jpg', mobileSrc: '/portada/6a.jpg' },
-        { name: '7a', desktopSrc: '/portada/7a.jpg', mobileSrc: '/portada/7a.jpg' },
+        { name: 'latin-soul', desktopSrc: '/portada/latin-soul-desktop.jpg', mobileSrc: '/portada/latin-soul-mobile.jpg', position: 'top' },
+        { name: '1a', desktopSrc: '/portada/1a.jpg', mobileSrc: '/portada/1a.jpg', position: 'center' },
+        { name: '2a', desktopSrc: '/portada/2a.jpg', mobileSrc: '/portada/2a.jpg', position: 'center' },
+        { name: '3a', desktopSrc: '/portada/3a.jpg', mobileSrc: '/portada/3a.jpg', position: 'center 100%' },
+        { name: '4a', desktopSrc: '/portada/4a.jpg', mobileSrc: '/portada/4a.jpg', position: 'center 100%' },
+        { name: '5a', desktopSrc: '/portada/5a.jpg', mobileSrc: '/portada/5a.jpg', position: 'left center' },
+        { name: '6a', desktopSrc: '/portada/6a.jpg', mobileSrc: '/portada/6a.jpg', position: 'center' },
+        { name: '7a', desktopSrc: '/portada/7a.jpg', mobileSrc: '/portada/7a.jpg', position: 'center' },
     ];
 
     return (
@@ -66,9 +66,17 @@ export default function Portada({ lang }: { lang: string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             className="relative w-full embla"
+            style={!isMobile ? { height: 'calc(100vh - 110px)' } : undefined}
         >
-            <div className="w-full embla__viewport" ref={emblaRef}>
-                <div className="embla__container">
+            <div
+                className="w-full embla__viewport"
+                ref={emblaRef}
+                style={!isMobile ? { height: '100%' } : undefined}
+            >
+                <div
+                    className="embla__container"
+                    style={!isMobile ? { height: '100%' } : undefined}
+                >
                     {slides.map((slide, index) => {
                         const src = isMobile ? slide.mobileSrc : slide.desktopSrc;
 
@@ -76,11 +84,10 @@ export default function Portada({ lang }: { lang: string }) {
                             <div
                                 key={`slide${index}`}
                                 className="relative w-full cursor-pointer embla__slide"
-                                style={{
-                                    paddingBottom: isMobile
-                                        ? 'calc(100% / 1.25)' // Mobile ratio 1679:1344
-                                        : 'calc(100% / 1.78)' // Desktop ratio 1920:1080
-                                }}
+                                style={isMobile
+                                    ? { paddingBottom: 'calc(100% / 1.25)' } // Mobile ratio 1679:1344
+                                    : { height: '100%' } // Desktop: fill remaining viewport
+                                }
                                 onClick={() => handleClick(slide.name)}
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -89,6 +96,7 @@ export default function Portada({ lang }: { lang: string }) {
                                     alt={`Slide ${slide.name}`}
                                     loading="lazy"
                                     className="object-cover absolute top-0 left-0 w-full h-full"
+                                    style={{ objectPosition: slide.position }}
                                 />
                             </div>
                         );
