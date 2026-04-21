@@ -51,7 +51,6 @@ export default function Portada({ lang }: { lang: string }) {
     type Slide = { name: string; desktopSrc: string; mobileSrc: string; position: string };
 
     const slides: Slide[] = [
-        { name: 'latin-soul', desktopSrc: '/portada/latin-soul-desktop.jpg', mobileSrc: '/portada/latin-soul-mobile.jpg', position: 'top' },
         { name: '1a', desktopSrc: '/portada/1a.jpg', mobileSrc: '/portada/1a.jpg', position: 'center' },
         { name: '2a', desktopSrc: '/portada/2a.jpg', mobileSrc: '/portada/2a.jpg', position: 'center' },
         { name: '3a', desktopSrc: '/portada/3a.jpg', mobileSrc: '/portada/3a.jpg', position: 'center 100%' },

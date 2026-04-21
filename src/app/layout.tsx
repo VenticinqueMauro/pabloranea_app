@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import './globals.css';
 import { Metadata } from "next";
 
@@ -43,27 +42,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
 }) {
-  const supportedLangs = ["en", "es"];
-  const lang = supportedLangs.includes(params.lang) ? params.lang : "en";
-  const alternateLinks = [
-    { href: "https://pabloranea.com/en", hreflang: "en" },
-    { href: "https://pabloranea.com/es", hreflang: "es" },
-    { href: "https://pabloranea.com", hreflang: "x-default" },
-  ];
-
   return (
-    <html lang={lang} className="light">
-      <Head>
-        <link rel="canonical" href={`https://pabloranea.com/${lang}`} />
-        {alternateLinks.map(({ href, hreflang }) => (
-          <link rel="alternate" href={href} hrefLang={hreflang} key={hreflang} />
-        ))}
-      </Head>
+    <html lang="en" className="light">
       <body className="min-h-screen bg-white">{children}</body>
     </html>
   );
