@@ -1,7 +1,7 @@
 import { Image } from "@nextui-org/react"
 import Link from "next/link";
 
-const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions): string => {
+export const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions): string => {
     if (locale === 'es') {
         const month = date.toLocaleString(locale, { month: 'long' });
         const year = date.getFullYear();
@@ -12,7 +12,7 @@ const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions)
 }
 
 
-const pressMap = [
+export const pressMap = [
     {
         title: "Plato Insignia: Helado de sambayón al Malbec por Pablo Ranea",
         linkPress: "https://inmendoza.com/plato-insignia-helado-de-sambayon-al-malbec-por-pablo-ranea/",
@@ -204,48 +204,34 @@ const pressMap = [
     },
 ]
 
-interface Props {
-    isPage: boolean;
-    lang: 'es' | 'en'
+export type PressItem = (typeof pressMap)[number];
+
+// Single press card, shared by the home section and the /press list.
+export function PressCard({ press, lang, isLast }: { press: PressItem; lang: 'es' | 'en'; isLast: boolean }) {
+    return (
+        <Link href={press.linkPress} target="_blank" className={`${isLast ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
+            <div className="w-full">
+                <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
+                <p className="text-gray-500">{press.diary}</p>
+                <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
+            </div>
+            <div className="w-full">
+                <Image isZoomed radius="none" src={press.image} alt={press.title} width={press.width} height={press.height} />
+            </div>
+        </Link>
+    );
 }
 
-export default function CardPress({ isPage, lang }: Props) {
+// Home section: 2 random notes (server-rendered, so the shuffle is stable per request).
+export default function CardPress({ lang }: { lang: 'es' | 'en' }) {
 
-
-    const shuffledPressMap = pressMap.sort(() => Math.random() - 0.5);
-    const selectedPresses = shuffledPressMap.slice(0, 2);
+    const selectedPresses = [...pressMap].sort(() => Math.random() - 0.5).slice(0, 2);
 
     return (
         <div className="px-3 lg:px-0">
-            {
-                !isPage ? (
-                    pressMap.sort((a: any, b: any) => b.date - a.date).map((press, i) => (
-                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === pressMap.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
-                            <div className="w-full">
-                                <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
-                                <p className="text-gray-500">{press.diary}</p>
-                                <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
-                            </div>
-                            <div className="w-full">
-                                <Image isZoomed radius="none" src={press.image} alt={press.title} width={press.width} height={press.height} />
-                            </div>
-                        </Link>
-                    ))
-                ) : (
-                    selectedPresses.map((press, i) => (
-                        <Link key={press.title} href={press.linkPress} target="_blank" className={`${i === selectedPresses.length - 1 ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
-                            <div className="w-full">
-                                <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
-                                <p className="text-gray-500">{press.diary}</p>
-                                <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
-                            </div>
-                            <div className="w-full">
-                                <Image isZoomed radius="none" src={press.image} alt={press.title} width={press.width} height={press.height} />
-                            </div>
-                        </Link>
-                    ))
-                )
-            }
+            {selectedPresses.map((press, i) => (
+                <PressCard key={press.title} press={press} lang={lang} isLast={i === selectedPresses.length - 1} />
+            ))}
         </div>
     )
 }

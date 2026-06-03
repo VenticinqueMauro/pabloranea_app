@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-
-import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 
 export default async function Popups({ dictionary, lang }: any) {
@@ -9,10 +7,13 @@ export default async function Popups({ dictionary, lang }: any) {
 
     return (
         <section className="min-h-screen relative overflow-x-clip">
-            <div className="bg-black">
-                <img
+            <div className="bg-black relative h-screen">
+                <Image
                     src="/popups/popups.jpg"
-                    className="object-cover w-full h-screen sm:h-screen"
+                    fill
+                    sizes="100vw"
+                    quality={70}
+                    className="object-cover"
                     alt="pop-ups"
                     style={{
                         maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'

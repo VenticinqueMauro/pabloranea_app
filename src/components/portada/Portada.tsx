@@ -3,6 +3,7 @@
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Portada({ lang }: { lang: string }) {
@@ -89,16 +90,16 @@ export default function Portada({ lang }: { lang: string }) {
                                 }
                                 onClick={() => handleClick(slide.name)}
                             >
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
+                                <Image
                                     src={src}
                                     alt={`Slide ${slide.name}`}
-                                    // First slide is the above-the-fold hero (LCP): load it
-                                    // eagerly with high priority. The rest stay lazy.
-                                    loading={index === 0 ? 'eager' : 'lazy'}
-                                    fetchPriority={index === 0 ? 'high' : 'auto'}
-                                    decoding="async"
-                                    className="object-cover absolute top-0 left-0 w-full h-full"
+                                    fill
+                                    sizes="100vw"
+                                    // First slide is the above-the-fold hero (LCP): preload it
+                                    // with high priority. The rest stay lazy by default.
+                                    priority={index === 0}
+                                    quality={70}
+                                    className="object-cover"
                                     style={{ objectPosition: slide.position }}
                                 />
                             </div>

@@ -69,7 +69,7 @@ export default async function RootLayout({ children, params: { lang } }: Props) 
       <body className={`h-screen overflow-x-hidden relative`}>
         <Providers>
           <Navbar dictionary={dictionary} />
-          {children}
+          <main>{children}</main>
           <Analytics />
         </Providers>
       </body>

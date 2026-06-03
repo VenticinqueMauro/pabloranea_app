@@ -1,10 +1,12 @@
 @font-face {
   font-family: "Aileron";
   src: url("/tipografia/Aileron-Regular.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: "Aileron-Light";
   src: url("/tipografia/Aileron-Light.otf");
+  font-display: swap;
 }
 @tailwind base;
 @tailwind components;

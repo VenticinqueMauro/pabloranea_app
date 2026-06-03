@@ -49,7 +49,7 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                     height={72}
                     className="w-32"
                 />
-                <button className="z-50" onClick={handleOpen}>
+                <button className="z-50" onClick={handleOpen} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
                     <Menu className={`${isOpen && "hidden"}`} size={30} />
                     <X className={`${!isOpen && "hidden"}`} size={30} />
                 </button>
