@@ -93,7 +93,11 @@ export default function Portada({ lang }: { lang: string }) {
                                 <img
                                     src={src}
                                     alt={`Slide ${slide.name}`}
-                                    loading="lazy"
+                                    // First slide is the above-the-fold hero (LCP): load it
+                                    // eagerly with high priority. The rest stay lazy.
+                                    loading={index === 0 ? 'eager' : 'lazy'}
+                                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                                    decoding="async"
                                     className="object-cover absolute top-0 left-0 w-full h-full"
                                     style={{ objectPosition: slide.position }}
                                 />
