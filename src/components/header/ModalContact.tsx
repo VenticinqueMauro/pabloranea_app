@@ -58,7 +58,7 @@ export default function ModalContact({ pathname, lang }: any) {
                                 </div>
                             </ModalFooter>
                             <ModalFooter className="border-t">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" className="py-2 px-1 lg:px-5 bg-[#5E6B45] uppercase font-bold text-sm lg:text-base me-auto text-center text-white">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform" target="_blank" rel="noopener noreferrer" className="py-2 px-1 lg:px-5 bg-[#5E6B45] uppercase font-bold text-sm lg:text-base me-auto text-center text-white">
                                     {lang === 'es' ? "convertite en anfitrión" : "be a host"}
                                 </a>
                             </ModalFooter>

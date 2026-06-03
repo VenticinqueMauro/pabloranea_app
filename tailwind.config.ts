@@ -8,6 +8,10 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
+  // Insurance: NextUI's modal overlay positions itself with `inset-0`. If the
+  // production purge ever drops it (it can be built dynamically), the fixed
+  // wrapper renders off-screen and the modal looks like it "won't open".
+  safelist: ['inset-0'],
   theme: {
     extend: {
       backgroundImage: {
