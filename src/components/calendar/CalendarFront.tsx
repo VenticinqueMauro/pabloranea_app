@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 import { useEffect } from 'react';
 
 interface CalendarFrontProps {
@@ -214,6 +215,19 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
                 <Image src="/worldtitlee.png" alt='world' className="wordlScroll block lg:hidden w-[200px]" width={500} height={500} />
             </div>
             <div>
+                {sortedStays.length === 0 ? (
+                    <div className="flex flex-col justify-center items-center px-6 py-12 mx-auto max-w-7xl text-center bg-white border-t border-gray-400 border-dashed lg:py-16 relative z-10 letterScroll">
+                        <MapPin className="mb-3 w-8 h-8 text-[#5E6B45]" strokeWidth={2.5} />
+                        <p className="text-lg font-bold lg:text-2xl text-[#5E6B45]">
+                            {lang === 'es' ? 'Próximamente nuevas fechas' : 'New dates coming soon'}
+                        </p>
+                        <p className="mt-2 max-w-md text-sm font-semibold lg:text-base text-zinc-500">
+                            {lang === 'es'
+                                ? 'Estamos planificando la próxima gira. Unite a la experiencia para ser el primero en enterarte.'
+                                : "We're planning the next tour. Join the experience to be the first to know."}
+                        </p>
+                    </div>
+                ) : (
                 <div className="flex flex-col border-t border-gray-400 border-dashed max-w-7xl mx-auto relative z-10 bg-white h-[300px] lg:h-[420px] container-calendar overflow-y-scroll">
                     {sortedStays.map((stay, index) => {
                         if ('special' in stay && stay.special) {
@@ -276,6 +290,7 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
                         </div>
                     )} */}
                 </div>
+                )}
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform"
                     target="_blank"
