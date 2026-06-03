@@ -13,8 +13,8 @@ export default function Instagram() {
     const pathname = usePathname();
 
     return (
-        <section id='community' className='flex justify-center items-center px-3 lg:px-0'>
-            <div className='max-w-7xl mx-auto py-10'>
+        <section id='community' className='flex overflow-x-hidden justify-center items-center px-3 lg:px-0'>
+            <div className='max-w-7xl w-full mx-auto py-10'>
                 <h2 className="text-5xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[6px] py-20 text-center" style={{ lineHeight: 0.8 }}>
                     {pathname === '/en' ? textEn : textEs}
                 </h2>
