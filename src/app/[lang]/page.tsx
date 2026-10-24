@@ -15,10 +15,12 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const lang = await resolveLang(params);
   const dictionary = await getDictionary(lang);
 
+  const events = homeJsonLd(lang, dictionary, stays);
+
   return (
     <>
       <HomeContent lang={lang} dictionary={dictionary} />
-      <JsonLd data={homeJsonLd(lang, dictionary, stays)} />
+      {events && <JsonLd data={events} />}
     </>
   );
 }

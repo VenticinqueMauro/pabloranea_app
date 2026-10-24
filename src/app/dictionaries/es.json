@@ -104,42 +104,5 @@
             "title": "Itinerario de viaje a Mendoza",
             "description": "Itinerario del viaje gastronómico y de vinos a Mendoza con Pablo Ranea."
         }
-    },
-    "faq": {
-        "title": "Preguntas frecuentes",
-        "items": [
-            {
-                "q": "¿Quién es Pablo Ranea?",
-                "a": "Pablo Ranea es un chef y sommelier argentino formado en la escuela de cocina Gato Dumas de Buenos Aires y recibido de sommelier en la Escuela Argentina de Sommeliers en 2013. Durante una década dirigió la cocina del restaurante Azafrán en Mendoza y hoy recorre el mundo como embajador de la nueva cocina argentina y del vino argentino."
-            },
-            {
-                "q": "¿Qué es un pop-up dinner de Pablo Ranea?",
-                "a": "Es una cena itinerante de varios pasos con nueva cocina argentina y latinoamericana, con influencias peruanas y asiáticas, maridada con una selección de grandes vinos argentinos. Se realiza en lugares elegidos especialmente: terrazas, jardines, galerías de arte, hoteles o casas particulares."
-            },
-            {
-                "q": "¿Cómo puedo organizar un pop-up dinner en mi ciudad?",
-                "a": "Completando el formulario «Convertite en anfitrión» o escribiendo por WhatsApp o email. Pablo realiza alrededor de 60 pop-up dinners por año en las ciudades de su gira."
-            },
-            {
-                "q": "¿Para cuántas personas es cada cena?",
-                "a": "En promedio, cada encuentro reúne entre 16 y 25 comensales."
-            },
-            {
-                "q": "¿En qué ciudades se hacen los pop-up dinners?",
-                "a": "Principalmente en Estados Unidos (Nueva York, San Francisco, Los Ángeles, Houston y Denver, entre otras) y en Mendoza, Argentina. También estuvo en Perú, Canadá, Hong Kong y Shanghái. Las fechas del tour se publican en el calendario de esta página."
-            },
-            {
-                "q": "¿Pablo da clases de cocina o de vino?",
-                "a": "Sí. Dicta clases de cocina, de vinos argentinos y de maridaje para chefs, sommeliers, prensa y público general. Fue invitado por The Culinary Institute of America, The Institute of Culinary Education de Nueva York, la Macao University of Science y Urban Kitchen en Lima."
-            },
-            {
-                "q": "¿Qué vinos se sirven?",
-                "a": "Una selección de bodegas argentinas que recorre distintas regiones del país, como Trivento, Achaval Ferrer, Antigal, Otronia, Argento, Lagarde, El Enemigo y Susana Balbo."
-            },
-            {
-                "q": "¿Cómo me contacto con Pablo?",
-                "a": "Por email a chefpabloranea@gmail.com o por WhatsApp al +1 (720) 284-9937 (EE.UU.) o al +54 9 261 6832720 (Argentina)."
-            }
-        ]
     }
 }

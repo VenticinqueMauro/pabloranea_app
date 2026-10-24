@@ -104,42 +104,5 @@
             "title": "Mendoza Travel Itinerary",
             "description": "Itinerary for the food and wine trip to Mendoza with Pablo Ranea."
         }
-    },
-    "faq": {
-        "title": "Frequently asked questions",
-        "items": [
-            {
-                "q": "Who is Pablo Ranea?",
-                "a": "Pablo Ranea is an Argentine chef and sommelier, trained at the Gato Dumas culinary school in Buenos Aires and certified by the Argentine School of Sommeliers in 2013. For a decade he led the kitchen at Azafrán restaurant in Mendoza, and today he travels the world as an ambassador for New Argentine cuisine and Argentine wine."
-            },
-            {
-                "q": "What is a Pablo Ranea pop-up dinner?",
-                "a": "A traveling, multi-course dinner of New Argentine and Latin American cuisine, with Peruvian and Asian influences, paired with a selection of Argentina’s finest wines. Each one is held in a carefully chosen setting: rooftops, gardens, art galleries, hotels or private homes."
-            },
-            {
-                "q": "How can I host a pop-up dinner in my city?",
-                "a": "Fill out the “Be a host” form or reach out by WhatsApp or email. Pablo hosts around 60 pop-up dinners a year in the cities on his tour."
-            },
-            {
-                "q": "How many guests does each dinner have?",
-                "a": "On average, each gathering brings together 16 to 25 diners."
-            },
-            {
-                "q": "Where do the pop-up dinners take place?",
-                "a": "Mainly in the United States (New York, San Francisco, Los Angeles, Houston and Denver, among others) and in Mendoza, Argentina. Pablo has also cooked in Peru, Canada, Hong Kong and Shanghai. Tour dates are published in the calendar on this page."
-            },
-            {
-                "q": "Does Pablo teach cooking or wine classes?",
-                "a": "Yes. He teaches cooking, Argentine wine and food-pairing classes for chefs, sommeliers, press and the general public. He has been invited by The Culinary Institute of America, The Institute of Culinary Education in New York, the Macao University of Science and Urban Kitchen in Lima."
-            },
-            {
-                "q": "Which wines are served?",
-                "a": "A selection of Argentine wineries that travels through the country’s different regions, such as Trivento, Achaval Ferrer, Antigal, Otronia, Argento, Lagarde, Enemigo Wines and Susana Balbo."
-            },
-            {
-                "q": "How do I contact Pablo?",
-                "a": "By email at chefpabloranea@gmail.com or by WhatsApp at +1 (720) 284-9937 (USA) or +54 9 261 6832720 (Argentina)."
-            }
-        ]
     }
 }

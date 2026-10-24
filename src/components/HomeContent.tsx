@@ -1,7 +1,6 @@
 import About from "@/components/about/About";
 import CalendarFront from "@/components/calendar/CalendarFront";
 import Classes from "@/components/classes/Classes";
-import Faq from "@/components/faq/Faq";
 import Footer from "@/components/footer/Footer";
 import GiraEnNum from "@/components/giraennumeros/GiraEnNum";
 import Instagram from "@/components/instagram/Instagram";
@@ -30,7 +29,6 @@ export default function HomeContent({ lang, dictionary }: HomeContentProps) {
       <Partners dictionary={dictionary} lang={lang} />
       <Instagram lang={lang} />
       <Press dictionary={dictionary} lang={lang} />
-      <Faq dictionary={dictionary} />
       <Footer dictionary={dictionary} lang={lang} />
     </section>
   );

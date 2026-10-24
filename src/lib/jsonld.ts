@@ -144,7 +144,7 @@ function address(location: string): Thing {
     return { '@type': 'PostalAddress', addressLocality: parts.join(', '), ...(country && { addressCountry: country }) }
 }
 
-// Home: upcoming one-off events from the tour calendar, plus the FAQ.
+// Home: upcoming one-off events from the tour calendar (null when there are none).
 export function homeJsonLd(lang: Locale, dictionary: Dictionary, calendar: CalendarItem[]) {
     const today = new Date().toISOString().slice(0, 10)
     const events = calendar
@@ -162,17 +162,5 @@ export function homeJsonLd(lang: Locale, dictionary: Dictionary, calendar: Calen
             performer: { '@id': PERSON_ID },
         }))
 
-    return graph(
-        {
-            '@type': 'FAQPage',
-            url: `${SITE_URL}/${lang}`,
-            inLanguage: lang,
-            mainEntity: dictionary.faq.items.map(({ q, a }) => ({
-                '@type': 'Question',
-                name: q,
-                acceptedAnswer: { '@type': 'Answer', text: a },
-            })),
-        },
-        ...events
-    )
+    return events.length ? graph(...events) : null
 }
