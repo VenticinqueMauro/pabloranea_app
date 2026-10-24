@@ -6,6 +6,9 @@ import { getDictionary, resolveLang } from "@/lib/i18n";
 import { homeJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
+// Regenerate daily so past tour dates drop out of the prerendered HTML.
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: PageProps<'/[lang]'>): Promise<Metadata> {
   const lang = await resolveLang(params);
   return pageMetadata(lang, 'home', await getDictionary(lang));

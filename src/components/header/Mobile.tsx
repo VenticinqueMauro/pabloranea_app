@@ -72,6 +72,8 @@ export default function Mobile({ sections, lang, pathname }: Props) {
                         >
                             <Link
                                 href={index === 0 ? `/${lang}` : `/${lang}${sectionshref[index]}`}
+                                aria-current={pathname === (index === 0 ? `/${lang}` : `/${lang}${sectionshref[index]}`) ? 'page' : undefined}
+                                className="aria-[current=page]:underline underline-offset-4"
                                 onClick={() => setIsOpen(false)}
                             >
                                 {section}

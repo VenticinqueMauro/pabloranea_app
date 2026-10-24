@@ -3,7 +3,8 @@
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import type { Locale } from '@/lib/locales';
 import { HOST_FORM_URL } from '@/lib/site';
 
 type Slide = { name: string; src: string; position: string };
@@ -18,21 +19,32 @@ const slides: Slide[] = [
     { name: '7a', src: '/portada/7a.jpg', position: 'center' },
 ];
 
-export default function Portada({ lang }: { lang: string }) {
+const T = {
+    es: { host: 'Convertite en anfitrión', dates: 'Próximas fechas', carousel: 'Galería de pop-up dinners', goTo: 'Ir a la imagen' },
+    en: { host: 'Become a host', dates: 'Tour dates', carousel: 'Pop-up dinners gallery', goTo: 'Go to image' },
+};
+
+export default function Portada({ lang }: { lang: Locale }) {
+    const t = T[lang];
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true },
-        [Autoplay({ delay: 2000, playOnInit: false })]
+        // Pauses while hovered and resumes on mouse leave.
+        [Autoplay({ delay: 5000, playOnInit: false, stopOnMouseEnter: true, stopOnInteraction: false })]
     );
+    const [selected, setSelected] = useState(0);
 
-    // Hold the first slide for 5s, then start autoplay.
     useEffect(() => {
-        const autoplay = emblaApi?.plugins().autoplay;
-        if (!autoplay) return;
-        const timer = setTimeout(() => autoplay.play(), 5000);
-        return () => clearTimeout(timer);
+        if (!emblaApi) return;
+        const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+        emblaApi.on('select', onSelect);
+        // No autoplay for visitors who asked for reduced motion.
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            emblaApi.plugins().autoplay?.play();
+        }
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
     }, [emblaApi]);
-
-    const linkLabel = lang === 'es' ? 'Convertite en anfitrión de un pop-up dinner' : 'Become a pop-up dinner host';
 
     // Sizing is pure CSS (mobile ratio 1679:1344, desktop fills the viewport
     // below the navbar) so the server HTML already has the final layout: no
@@ -40,18 +52,19 @@ export default function Portada({ lang }: { lang: string }) {
     return (
         <div
             className="relative w-full embla md:h-[calc(100vh-110px)]"
+            role="region"
             aria-roledescription="carousel"
+            aria-label={t.carousel}
         >
             <div className="w-full embla__viewport md:h-full" ref={emblaRef}>
                 <div className="embla__container md:h-full">
                     {slides.map((slide, index) => (
-                        <a
+                        <div
                             key={slide.name}
-                            href={HOST_FORM_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${linkLabel} (${index + 1}/${slides.length})`}
-                            className="relative block w-full embla__slide aspect-[1.25] md:aspect-auto md:h-full"
+                            role="group"
+                            aria-roledescription="slide"
+                            aria-label={`${index + 1} / ${slides.length}`}
+                            className="relative w-full embla__slide aspect-[1.25] md:aspect-auto md:h-full"
                         >
                             <Image
                                 src={slide.src}
@@ -65,7 +78,39 @@ export default function Portada({ lang }: { lang: string }) {
                                 className="object-cover"
                                 style={{ objectPosition: slide.position }}
                             />
-                        </a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Calls to action + slide indicators over a soft bottom gradient. */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-linear-to-t from-black/60 to-transparent px-3 pb-3 pt-16 md:px-12 md:pb-10 xl:px-20">
+                <div className="pointer-events-auto flex flex-wrap gap-2 md:gap-3">
+                    <a
+                        href={HOST_FORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-brand-olive px-3 py-2 text-xs font-bold uppercase text-white transition-colors hover:bg-black md:px-6 md:py-3 md:text-sm"
+                    >
+                        {t.host}
+                    </a>
+                    <a
+                        href="#calendar"
+                        className="hidden sm:inline-block border border-white px-3 py-2 text-xs font-bold uppercase text-white transition-colors hover:bg-white hover:text-black md:px-6 md:py-3 md:text-sm"
+                    >
+                        {t.dates}
+                    </a>
+                </div>
+                <div className="pointer-events-auto flex gap-1.5 pb-1 md:gap-2">
+                    {slides.map((slide, index) => (
+                        <button
+                            key={slide.name}
+                            type="button"
+                            onClick={() => emblaApi?.scrollTo(index)}
+                            aria-label={`${t.goTo} ${index + 1}`}
+                            aria-current={index === selected ? 'true' : undefined}
+                            className={`h-1.5 rounded-full transition-all md:h-2 ${index === selected ? 'w-6 bg-white md:w-8' : 'w-1.5 bg-white/50 hover:bg-white/80 md:w-2'}`}
+                        />
                     ))}
                 </div>
             </div>

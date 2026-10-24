@@ -65,7 +65,10 @@ export default function Footer({ dictionary, lang }: { dictionary: Dictionary, l
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2026 <a href="https://www.instagram.com/insiders.agencia/" rel="noopener" className="underline font-bold text-black">Insiders Agencia</a> & <a href="https://m25.com.ar/" rel="noopener" className="underline font-bold text-black">MVDEV</a>. All Rights Reserved.</span>
+                    <div className="flex flex-col gap-1">
+                        <span className="text-sm text-gray-500">© {new Date().getFullYear()} Pablo Ranea. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
+                        <span className="text-xs text-gray-400">{lang === 'es' ? 'Sitio por' : 'Site by'} <a href="https://www.instagram.com/insiders.agencia/" rel="noopener" className="underline hover:text-black">Insiders Agencia</a> & <a href="https://m25.com.ar/" rel="noopener" className="underline hover:text-black">MVDEV</a></span>
+                    </div>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
