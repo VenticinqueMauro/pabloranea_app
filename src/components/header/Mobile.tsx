@@ -1,18 +1,17 @@
 'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Image } from "@nextui-org/react";
-import NextImage from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { switchLocalePath, type Locale } from "@/lib/locales";
 import { sectionshref } from "./Desktop";
 import ModalContact from "./ModalContact";
 
 
 interface Props {
     sections: string[],
-    lang: string | string[],
+    lang: Locale,
     pathname: string
 }
 
@@ -20,80 +19,70 @@ interface Props {
 export default function Mobile({ sections, lang, pathname }: Props) {
 
     const [isOpen, setIsOpen] = useState(false);
+    const newLang = lang === 'es' ? 'en' : 'es';
 
     const handleOpen = () => setIsOpen((prevState) => !prevState);
 
-    const handleChangeLang = () => {
-        const newLang = lang === 'es' ? 'en' : 'es';
-        const currentPath = window.location.pathname;
-        const newPath = currentPath.includes(`/${lang}/`) ? currentPath.replace(`/${lang}/`, `/${newLang}/`) : `/${newLang}`;
-        window.location.href = newPath;
-    };
+    // Close with Escape while the menu is open.
+    useEffect(() => {
+        if (!isOpen) return;
+        const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpen(false);
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [isOpen]);
 
+    // Items slide in one after another, like the previous framer-motion stagger.
+    const itemClass = `transition-all duration-300 ease-out ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`;
 
     return (
         <div className={`${pathname === `/${lang}` ? 'sticky bg-white z-50 top-0 left-0' : ''} py-2 px-2 w-full lg:hidden`}>
             <Link
-                href={`/${lang === 'es' ? 'en' : 'es'}`}
+                href={switchLocalePath(pathname, newLang)}
+                hrefLang={newLang}
+                aria-label={newLang === 'es' ? 'Ver en español' : 'View in English'}
                 className='ms-auto block w-fit px-2 py-1 border-black border font-semibold z-50 text-xs'
-                onClick={handleChangeLang}
             >{lang === 'es' ? 'ES' : 'EN'}</Link>
             <div className="flex justify-between items-end">
-                <Image
-                    as={NextImage}
-                    src="/logo.png"
-                    radius="none"
-                    alt="logo"
-                    priority
-                    width={200}
-                    height={72}
-                    className="w-32"
-                />
-                <button className="z-50" onClick={handleOpen} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
-                    <Menu className={`${isOpen && "hidden"}`} size={30} />
-                    <X className={`${!isOpen && "hidden"}`} size={30} />
+                <Link href={`/${lang}`}>
+                    <Image
+                        src="/logo.png"
+                        alt="Pablo Ranea"
+                        loading="eager"
+                        width={200}
+                        height={72}
+                        className="w-32"
+                    />
+                </Link>
+                <button className="z-50" onClick={handleOpen} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen} aria-controls="mobile-menu">
+                    {isOpen ? <X size={30} /> : <Menu size={30} />}
                 </button>
             </div>
-            <div className={`${isOpen ? "translate-x-0" : "-translate-x-full"
-                } absolute top-[85px] left-0 block w-full h-screen bg-white transition-all ease-in-out duration-300 z-50`}>
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.ul
-                            key="menu"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -50 }}
-                            className="flex flex-col gap-4 px-6 pt-5 text-xl font-medium"
+            <nav
+                id="mobile-menu"
+                aria-label="Main"
+                inert={!isOpen}
+                className={`${isOpen ? "translate-x-0" : "-translate-x-full"} absolute top-[85px] left-0 block w-full h-screen bg-white transition-all ease-in-out duration-300 z-50`}
+            >
+                <ul className="flex flex-col gap-4 px-6 pt-5 text-xl font-medium">
+                    {sections.map((section, index) => (
+                        <li
+                            key={section}
+                            className={`capitalize ${itemClass}`}
+                            style={{ transitionDelay: isOpen ? `${index * 100}ms` : '0ms' }}
                         >
-                            {sections.map((section, index) => (
-                                <motion.li
-                                    key={section}
-                                    initial={{ opacity: 0, x: -50 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -50 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="capitalize"
-                                >
-                                    <Link
-                                        href={`${section === 'home' || section === 'inicio' ? `/${lang}` : `/${lang}${sectionshref[index]}`}`}
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        {section}
-                                    </Link>
-                                </motion.li>
-                            ))}
-                            <motion.li
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -50 }}
-                                transition={{ delay: 1 * 0.8 }}
+                            <Link
+                                href={index === 0 ? `/${lang}` : `/${lang}${sectionshref[index]}`}
+                                onClick={() => setIsOpen(false)}
                             >
-                                <ModalContact pathname={pathname} lang={lang} />
-                            </motion.li>
-                        </motion.ul>
-                    )}
-                </AnimatePresence>
-            </div>
+                                {section}
+                            </Link>
+                        </li>
+                    ))}
+                    <li className={itemClass} style={{ transitionDelay: isOpen ? '800ms' : '0ms' }}>
+                        <ModalContact lang={lang} />
+                    </li>
+                </ul>
+            </nav>
         </div>
     )
 }

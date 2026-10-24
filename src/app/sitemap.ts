@@ -1,36 +1,19 @@
 import type { MetadataRoute } from 'next'
+import { locales } from '@/lib/locales'
+import { PAGE_PATHS, type PageKey } from '@/lib/seo'
+import { SITE_URL } from '@/lib/site'
+
+// travelmendoza is a private, noindex itinerary, so it's left out.
+const pages: PageKey[] = ['home', 'about', 'popup', 'partners', 'press']
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://pabloranea.com';
+    return pages.flatMap((page) => {
+        const path = PAGE_PATHS[page]
+        const languages = Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}${path}`]))
 
-    // Rutas comunes en ambos idiomas (sin el prefijo de idioma)
-    const pages = ['', '/about', '/dashboard', '/partners', '/popup', '/press', '/travelmendoza'];
-
-    // Prefijos de idioma
-    const locales = ['es', 'en'];
-
-    // Array donde guardamos todas las entradas del sitemap
-    const sitemapEntries: MetadataRoute.Sitemap = [];
-
-    // Agregar la página principal sin prefijo de idioma
-    sitemapEntries.push({
-        url: `${baseUrl}/`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 1.0, // Mayor prioridad para la home sin prefijo de idioma
-    });
-
-    // Generar URLs para cada idioma
-    locales.forEach((locale) => {
-        pages.forEach((page) => {
-            sitemapEntries.push({
-                url: `${baseUrl}/${locale}${page}`,
-                lastModified: new Date(),
-                changeFrequency: 'weekly',
-                priority: page === '' ? 1.0 : 0.7, // Home con alta prioridad
-            });
-        });
-    });
-
-    return sitemapEntries;
+        return locales.map((lang) => ({
+            url: `${SITE_URL}/${lang}${path}`,
+            alternates: { languages },
+        }))
+    })
 }

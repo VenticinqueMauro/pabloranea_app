@@ -75,5 +75,34 @@
         "page": {
             "title": "Prensa"
         }
+    },
+    "meta": {
+        "home": {
+            "title": "Pablo Ranea · Chef y sommelier argentino | Pop-up dinners",
+            "description": "Chef y sommelier argentino que lleva la nueva cocina argentina y los mejores vinos de Argentina al mundo con pop-up dinners, clases de cocina y maridajes.",
+            "h1": "Pablo Ranea, chef y sommelier argentino"
+        },
+        "about": {
+            "title": "Sobre Pablo Ranea: chef y sommelier argentino",
+            "description": "Formado en el Gato Dumas y sommelier por la Escuela Argentina de Sommeliers, Pablo Ranea dirigió Azafrán en Mendoza y hoy es embajador de la cocina y el vino argentino.",
+            "h1": "Sobre Pablo Ranea"
+        },
+        "popup": {
+            "title": "Pop-up dinners: cocina argentina itinerante",
+            "description": "Cenas pop-up de varios pasos con nueva cocina argentina y latinoamericana y grandes vinos argentinos, en terrazas, jardines y galerías del mundo. Convertite en anfitrión.",
+            "h1": "Pop-up dinners de Pablo Ranea"
+        },
+        "partners": {
+            "title": "Los vinos del tour: bodegas argentinas",
+            "description": "La selección de vinos argentinos del tour de Pablo Ranea: Trivento, Achaval Ferrer, Antigal, Otronia, Argento, Lagarde, El Enemigo y Susana Balbo."
+        },
+        "press": {
+            "title": "Prensa",
+            "description": "Notas, entrevistas y recetas de Pablo Ranea en La Nación, Infobae, Forbes Argentina, Ámbito, TN, El Comercio y otros medios de Argentina y el mundo."
+        },
+        "travelmendoza": {
+            "title": "Itinerario de viaje a Mendoza",
+            "description": "Itinerario del viaje gastronómico y de vinos a Mendoza con Pablo Ranea."
+        }
     }
 }

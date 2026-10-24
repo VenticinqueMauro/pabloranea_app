@@ -1,10 +1,9 @@
-import { Image } from "@nextui-org/react";
+import Image from "next/image";
 
 export default function Section1() {
-    //deploy
     return (
         <div className="relative">
-            <Image className="aspect-[3.3/1]" radius="none" src="/aboutpablo/portadapage.png" alt="portada popups" width={2760} height={825} />
+            <Image className="aspect-[3.3/1] w-full h-auto" src="/aboutpablo/portadapage.png" alt="Pablo Ranea" width={2760} height={825} sizes="100vw" preload />
         </div>
     )
 }

@@ -1,9 +1,10 @@
-import { Lang } from "@/types/lang.type";
+import type { Dictionary } from "@/lib/i18n";
+import type { Locale } from "@/lib/locales";
 import Link from "next/link";
 
 interface Props{
-    dictionary: any,
-    lang: Lang | string,
+    dictionary: Dictionary,
+    lang: Locale,
 }
 
 export default function About({ dictionary, lang }: Props) {

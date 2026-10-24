@@ -1,16 +1,24 @@
+import type { Metadata } from "next";
 import Footer from "@/components/footer/Footer";
 import CardPressList from "@/components/press/CardPressList";
-import { Lang } from "@/types/lang.type";
+import { getDictionary, resolveLang } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
-export default async function page({ params: { lang } }: Lang) {
+export async function generateMetadata({ params }: PageProps<'/[lang]/press'>): Promise<Metadata> {
+    const lang = await resolveLang(params);
+    return pageMetadata(lang, 'press', await getDictionary(lang));
+}
 
-    const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
+export default async function page({ params }: PageProps<'/[lang]/press'>) {
 
-    const { title } = dictionary?.press.page;
+    const lang = await resolveLang(params);
+    const dictionary = await getDictionary(lang);
+
+    const { title } = dictionary.press.page;
 
     return (
         <section className="max-w-7xl mx-auto px-3 lg:px-0">
-            <h2 className="text-6xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10" style={{ lineHeight: 0.8 }}>{title}</h2>
+            <h1 className="text-6xl lg:text-8xl font-bold text-shadow tracking-[-4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10" style={{ lineHeight: 0.8 }}>{title}</h1>
             <CardPressList lang={lang} />
             <Footer dictionary={dictionary} lang={lang} />
         </section>

@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from "next/dynamic";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const EmbedCards = dynamic(() => import('./EmbedCards'), { ssr: false });
@@ -19,9 +18,8 @@ function EmbedSkeleton() {
     );
 }
 
-export default function Instagram() {
+export default function Instagram({ lang }: { lang: string }) {
 
-    const pathname = usePathname();
     const ref = useRef<HTMLDivElement>(null);
     const [inView, setInView] = useState(false);
 
@@ -48,8 +46,8 @@ export default function Instagram() {
     return (
         <section id='community' className='flex overflow-x-hidden justify-center items-center px-3 lg:px-0'>
             <div className='max-w-7xl w-full mx-auto py-10'>
-                <h2 className="text-5xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[6px] py-20 text-center" style={{ lineHeight: 0.8 }}>
-                    {pathname === '/en' ? textEn : textEs}
+                <h2 className="text-5xl lg:text-8xl font-bold text-shadow tracking-[-4px] lg:-tracking-[6px] py-20 text-center" style={{ lineHeight: 0.8 }}>
+                    {lang === 'en' ? textEn : textEs}
                 </h2>
                 <div ref={ref}>
                     {inView ? <EmbedCards /> : <EmbedSkeleton />}

@@ -1,7 +1,9 @@
 import Image from "next/image";
+import type { Dictionary } from "@/lib/i18n";
+import type { Locale } from "@/lib/locales";
 
 
-export default async function Popups({ dictionary, lang }: any) {
+export default function Popups({ dictionary, lang }: { dictionary: Dictionary, lang: Locale }) {
 
     const { title1, title2, description, button } = dictionary.popups;
 
@@ -14,14 +16,14 @@ export default async function Popups({ dictionary, lang }: any) {
                     sizes="100vw"
                     quality={70}
                     className="object-cover"
-                    alt="pop-ups"
+                    alt="Pop-up dinner"
                     style={{
                         maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), #000000cc)'
                     }}
                 />
             </div>
             <div className="absolute bottom-28 md:top-0 left-0 px-6  lg:px-20 lg:py-16 max-w-lg text-start text-white scroll-parallax" >
-                <h2 className={`${lang === 'es' ? "lg:text-7xl" : "lg:text-6xl"} text-6xl font-bold text-shadow -tracking-[4px] lg:-tracking-[5px]`} style={{lineHeight: 0.9}}>{title1}<br />{title2}</h2>
+                <h2 className={`${lang === 'es' ? "lg:text-7xl" : "lg:text-6xl"} text-6xl font-bold text-shadow tracking-[-4px] lg:-tracking-[5px]`} style={{lineHeight: 0.9}}>{title1}<br />{title2}</h2>
                 <h3 className="text-sm w-full md:w-fit md:text-base pt-5 text-start" style={{lineHeight: 1.2}}>{description}</h3>
                 <a href={`/${lang}/popup`} className="flex justify-between font-bold pt-10 w-fit gap-10">
                     <span>

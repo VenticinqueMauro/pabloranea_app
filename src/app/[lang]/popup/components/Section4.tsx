@@ -1,8 +1,7 @@
-import { Lang } from '@/types/lang.type'
-import { Image } from '@nextui-org/react'
-import React from 'react'
+import Image from 'next/image'
+import type { Locale } from '@/lib/locales'
 
-export default function Section4({ lang }: any) {
+export default function Section4({ lang }: { lang: Locale }) {
     return (
         <div className="bg-background text-foreground light px-3 lg:px-20 py-10 lg:py-16 grid grid-cols-12 lg:grid-rows-2 gap-5 ">
             <div className="col-span-12 lg:col-span-6 lg:row-span-2">
@@ -41,10 +40,10 @@ export default function Section4({ lang }: any) {
                 </div>
             </div>
             <div className="col-span-12 lg:col-span-6 lg:row-span-1 lg:row-start-3 flex justify-center lg:items-end">
-                <Image radius="none" className="object-cover w-full h-full" src="/popups/img2.jpg" alt="popups dinners" width={720} height={600} />
+                <Image className="object-cover w-full h-full" src="/popups/img2.jpg" alt="Pop-up dinner" width={720} height={600} sizes="(min-width: 1024px) 50vw, 100vw" />
             </div>
             <div className="hidden lg:col-span-6 lg:row-span-2 lg:row-start-2 lg:flex items-end">
-                <Image radius="none" className="object-cover w-full h-full" src="/popups/vertical2.jpg" alt="popups dinners" width={720} height={1079} />
+                <Image className="object-cover w-full h-full" src="/popups/vertical2.jpg" alt="Pop-up dinner" width={720} height={1079} sizes="50vw" />
             </div>
         </div>
     )

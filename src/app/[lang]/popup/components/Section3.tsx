@@ -1,7 +1,8 @@
 import SliderPopups from "@/components/pop-ups/page/sliderPopups";
-import { Image } from "@nextui-org/react";
+import type { Dictionary } from "@/lib/i18n";
+import { HOST_FORM_URL } from "@/lib/site";
 
-export default function Section3({ dictionary }: any) {
+export default function Section3({ dictionary }: { dictionary: Dictionary }) {
 
     const { title, description1, description2, button } = dictionary.popups.page.section3;
 
@@ -16,14 +17,11 @@ export default function Section3({ dictionary }: any) {
                         <br /><br />
                         {description2}
                     </p>
-                    <button className="uppercase text-base lg:text-lg w-full lg:w-fit lg:ms-auto block px-5 py-4 bg-[#5E6B45] font-bold">
-                        <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform'>{button}</a>
-                    </button>
+                    <a href={HOST_FORM_URL} target="_blank" rel="noopener noreferrer" className="uppercase text-base lg:text-lg w-full lg:w-fit lg:ms-auto block text-center px-5 py-4 bg-brand-olive font-bold">
+                        {button}
+                    </a>
                 </div>
                 <SliderPopups />
-                {/* <div className="col-span-12">
-                    <Image radius="none" className="object-cover w-full h-full" src="/portada/slide5.jpg" alt="popups dinners" width={1920} height={1100} />
-                </div> */}
             </div>
         </div>
     )
