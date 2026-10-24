@@ -1,5 +1,3 @@
-import { Image } from "@nextui-org/react"
-import Link from "next/link";
 
 export const format = (date: Date, locale: string, options: Intl.DateTimeFormatOptions): string => {
     if (locale === 'es') {
@@ -209,23 +207,34 @@ export type PressItem = (typeof pressMap)[number];
 // Single press card, shared by the home section and the /press list.
 export function PressCard({ press, lang, isLast }: { press: PressItem; lang: 'es' | 'en'; isLast: boolean }) {
     return (
-        <Link href={press.linkPress} target="_blank" className={`${isLast ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
+        <a href={press.linkPress} target="_blank" rel="noopener noreferrer" className={`${isLast ? "border-none" : "border-b-4 border-black"} flex flex-col lg:flex-row gap-6 pt-10 pb-10`}>
             <div className="w-full">
                 <p className="text-2xl font-bold md:text-3xl lg:text-4xl">{press.title}</p>
                 <p className="text-gray-500">{press.diary}</p>
                 <p className="text-sm capitalize">{format(press.date, lang, { month: 'long', year: 'numeric' })}</p>
             </div>
-            <div className="w-full">
-                <Image isZoomed radius="none" src={press.image} alt={press.title} width={press.width} height={press.height} />
+            <div className="w-full overflow-hidden">
+                {/* Third-party hosts: served as-is rather than through the image optimizer. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src={press.image}
+                    alt={press.title}
+                    width={press.width}
+                    height={press.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full transition-transform duration-300 hover:scale-125"
+                />
             </div>
-        </Link>
+        </a>
     );
 }
 
-// Home section: 2 random notes (server-rendered, so the shuffle is stable per request).
+// Home section: the 2 most recent notes. (The page is prerendered, so a
+// random pick would be frozen at build time anyway.)
 export default function CardPress({ lang }: { lang: 'es' | 'en' }) {
 
-    const selectedPresses = [...pressMap].sort(() => Math.random() - 0.5).slice(0, 2);
+    const selectedPresses = [...pressMap].sort((a, b) => b.date.getTime() - a.date.getTime()).slice(0, 2);
 
     return (
         <div className="px-3 lg:px-0">

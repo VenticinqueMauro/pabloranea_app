@@ -2,16 +2,13 @@
 
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function SliderPopups() {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay({ delay: 2000 })])
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.3 } }}
+        <div
             className='embla col-span-12'
             ref={emblaRef}
         >
@@ -23,13 +20,14 @@ export default function SliderPopups() {
                                 src={`/popups/${index + 1}.jpg`}
                                 width={1600}
                                 height={840}
-                                alt='portada'
-                                className="w-full"
+                                alt='Pop-up dinner'
+                                sizes="100vw"
+                                className="w-full h-auto"
                             />
                         </div>
                     ))
                 }
             </div>
-        </motion.div>
+        </div>
     )
 }

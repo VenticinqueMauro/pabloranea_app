@@ -2,111 +2,73 @@
 
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
+import { HOST_FORM_URL } from '@/lib/site';
+
+type Slide = { name: string; src: string; position: string };
+
+const slides: Slide[] = [
+    { name: '1a', src: '/portada/1a.jpg', position: 'center' },
+    { name: '2a', src: '/portada/2a.jpg', position: 'center' },
+    { name: '3a', src: '/portada/3a.jpg', position: 'center 100%' },
+    { name: '4a', src: '/portada/4a.jpg', position: 'center 100%' },
+    { name: '5a', src: '/portada/5a.jpg', position: 'left center' },
+    { name: '6a', src: '/portada/6a.jpg', position: 'center' },
+    { name: '7a', src: '/portada/7a.jpg', position: 'center' },
+];
 
 export default function Portada({ lang }: { lang: string }) {
-    const autoplayRef = useRef(Autoplay({ delay: 2000 }));
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true },
-        [autoplayRef.current]
+        [Autoplay({ delay: 2000, playOnInit: false })]
     );
-    const [isMobile, setIsMobile] = useState(false);
 
+    // Hold the first slide for 5s, then start autoplay.
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Set initial state
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    useEffect(() => {
-        if (emblaApi) {
-            autoplayRef.current.stop();
-            const timer = setTimeout(() => {
-                autoplayRef.current.play();
-            }, 5000);
-
-            return () => clearTimeout(timer);
-        }
+        const autoplay = emblaApi?.plugins().autoplay;
+        if (!autoplay) return;
+        const timer = setTimeout(() => autoplay.play(), 5000);
+        return () => clearTimeout(timer);
     }, [emblaApi]);
 
-    const EVENTBRITE_LINK = 'https://www.eventbrite.com/e/a-latin-soul-pop-up-dinner-with-argentine-wine-in-west-village-nyc-tickets-1984729720020?aff=ebdssbdestsearch';
-    const GOOGLE_FORM_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform';
+    const linkLabel = lang === 'es' ? 'Convertite en anfitrión de un pop-up dinner' : 'Become a pop-up dinner host';
 
-    const handleClick = (imageName: string) => {
-        if (imageName === 'latin-soul') {
-            window.open(EVENTBRITE_LINK, '_blank');
-        } else {
-            window.open(GOOGLE_FORM_LINK, '_blank');
-        }
-    };
-
-    type Slide = { name: string; desktopSrc: string; mobileSrc: string; position: string };
-
-    const slides: Slide[] = [
-        { name: '1a', desktopSrc: '/portada/1a.jpg', mobileSrc: '/portada/1a.jpg', position: 'center' },
-        { name: '2a', desktopSrc: '/portada/2a.jpg', mobileSrc: '/portada/2a.jpg', position: 'center' },
-        { name: '3a', desktopSrc: '/portada/3a.jpg', mobileSrc: '/portada/3a.jpg', position: 'center 100%' },
-        { name: '4a', desktopSrc: '/portada/4a.jpg', mobileSrc: '/portada/4a.jpg', position: 'center 100%' },
-        { name: '5a', desktopSrc: '/portada/5a.jpg', mobileSrc: '/portada/5a.jpg', position: 'left center' },
-        { name: '6a', desktopSrc: '/portada/6a.jpg', mobileSrc: '/portada/6a.jpg', position: 'center' },
-        { name: '7a', desktopSrc: '/portada/7a.jpg', mobileSrc: '/portada/7a.jpg', position: 'center' },
-    ];
-
+    // Sizing is pure CSS (mobile ratio 1679:1344, desktop fills the viewport
+    // below the navbar) so the server HTML already has the final layout: no
+    // layout shift on hydration.
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.5 } }}
-            className="relative w-full embla"
-            style={!isMobile ? { height: 'calc(100vh - 110px)' } : undefined}
+        <div
+            className="relative w-full embla md:h-[calc(100vh-110px)]"
+            aria-roledescription="carousel"
         >
-            <div
-                className="w-full embla__viewport"
-                ref={emblaRef}
-                style={!isMobile ? { height: '100%' } : undefined}
-            >
-                <div
-                    className="embla__container"
-                    style={!isMobile ? { height: '100%' } : undefined}
-                >
-                    {slides.map((slide, index) => {
-                        const src = isMobile ? slide.mobileSrc : slide.desktopSrc;
-
-                        return (
-                            <div
-                                key={`slide${index}`}
-                                className="relative w-full cursor-pointer embla__slide"
-                                style={isMobile
-                                    ? { paddingBottom: 'calc(100% / 1.25)' } // Mobile ratio 1679:1344
-                                    : { height: '100%' } // Desktop: fill remaining viewport
-                                }
-                                onClick={() => handleClick(slide.name)}
-                            >
-                                <Image
-                                    src={src}
-                                    alt={`Slide ${slide.name}`}
-                                    fill
-                                    sizes="100vw"
-                                    // First slide is the above-the-fold hero (LCP): preload it
-                                    // with high priority. The rest stay lazy by default.
-                                    priority={index === 0}
-                                    quality={70}
-                                    className="object-cover"
-                                    style={{ objectPosition: slide.position }}
-                                />
-                            </div>
-                        );
-                    })}
+            <div className="w-full embla__viewport md:h-full" ref={emblaRef}>
+                <div className="embla__container md:h-full">
+                    {slides.map((slide, index) => (
+                        <a
+                            key={slide.name}
+                            href={HOST_FORM_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${linkLabel} (${index + 1}/${slides.length})`}
+                            className="relative block w-full embla__slide aspect-[1.25] md:aspect-auto md:h-full"
+                        >
+                            <Image
+                                src={slide.src}
+                                alt=""
+                                fill
+                                sizes="100vw"
+                                // First slide is the above-the-fold hero (LCP): preload it
+                                // in <head>. The rest stay lazy by default.
+                                preload={index === 0}
+                                quality={70}
+                                className="object-cover"
+                                style={{ objectPosition: slide.position }}
+                            />
+                        </a>
+                    ))}
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }

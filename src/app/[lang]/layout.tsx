@@ -1,78 +1,71 @@
 import '../globals.css'
-import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react';
+import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
+import { Analytics } from '@vercel/analytics/next'
 import Navbar from '@/components/header/Navbar'
-import { Providers } from '../providers'
+import { getDictionary, resolveLang } from '@/lib/i18n'
+import { locales } from '@/lib/locales'
+import { SITE_NAME, SITE_URL } from '@/lib/site'
 
-type Props = {
-  children: React.ReactNode
-  params: {
-    lang: 'es' | 'en'
-  }
+const aileron = localFont({
+  src: '../../fonts/Aileron-Regular.woff2',
+  variable: '--font-aileron',
+  display: 'swap',
+})
+
+const aileronLight = localFont({
+  src: '../../fonts/Aileron-Light.woff2',
+  variable: '--font-aileron-light',
+  display: 'swap',
+})
+
+// Only /es and /en exist; anything else is a 404 (see global-not-found.tsx).
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }))
 }
 
-export async function generateMetadata({ params: { lang } }: Props): Promise<Metadata> {
-  return {
-    title: {
-      default: 'Pablo Ranea: Chef y Sommelier - Experiencias Gastronómicas por Todo el Mundo',
-      template: '%s - Pablo Ranea',
-    },
-    alternates: {
-      canonical: `https://pabloranea.com/${lang}`,
-      languages: {
-        en: 'https://pabloranea.com/en',
-        es: 'https://pabloranea.com/es',
-        'x-default': 'https://pabloranea.com',
-      },
-    },
-    description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
-    keywords: [
-      'Pablo Ranea',
-      'Chef argentino',
-      'Sommelier',
-      'Experiencias gastronómicas',
-      'Cenas Pop-Up',
-      'Tours gastronómicos',
-      'Clases de cocina',
-      'Maridaje',
-      'Vino argentino',
-    ],
-    openGraph: {
-      title: 'Pablo Ranea: Experiencias Gastronómicas por Todo el Mundo',
-      images: '/icon.png',
-      description: 'Descubre las experiencias gastronómicas únicas de Pablo Ranea, chef y sommelier argentino, que lleva la nueva cocina argentina y latinoamericana a diversos destinos en todo el mundo. Explora sus cenas pop-up, tours gastronómicos, clases de cocina y maridaje, y sumérgete en el fascinante mundo de los vinos argentinos.',
-    },
-    referrer: 'origin-when-cross-origin',
-    creator: 'Insiders Agencia & MVDEV',
-    publisher: 'Insiders Agencia & MVDEV',
-    robots: {
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: 'Insiders Agencia & MVDEV',
+  publisher: SITE_NAME,
+  referrer: 'origin-when-cross-origin',
+  formatDetection: { telephone: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
       index: true,
       follow: true,
-      nocache: false,
-      googleBot: {
-        index: true,
-        follow: true,
-        noimageindex: false,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
-  }
+  },
 }
 
-export default async function RootLayout({ children, params: { lang } }: Props) {
-  const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+}
+
+export default async function RootLayout({ children, params }: LayoutProps<'/[lang]'>) {
+  const lang = await resolveLang(params)
+  const dictionary = await getDictionary(lang)
 
   return (
-    <html lang={lang} className='light'>
-      <body className={`h-screen overflow-x-hidden relative`}>
-        <Providers>
-          <Navbar dictionary={dictionary} />
-          <main>{children}</main>
-          <Analytics />
-        </Providers>
+    <html lang={lang} className={`${aileron.variable} ${aileronLight.variable}`}>
+      <body className="h-screen overflow-x-hidden relative">
+        <Navbar dictionary={dictionary} lang={lang} />
+        <main id="main">{children}</main>
+        <Analytics />
       </body>
-    </html >
+    </html>
   )
 }

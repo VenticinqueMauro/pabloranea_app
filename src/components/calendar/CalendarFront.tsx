@@ -2,10 +2,11 @@
 
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
-import { useEffect } from 'react';
+import type { Dictionary } from '@/lib/i18n';
+import { HOST_FORM_URL } from '@/lib/site';
 
 interface CalendarFrontProps {
-    dictionary: any;
+    dictionary: Dictionary;
     lang: string;
 }
 
@@ -211,8 +212,7 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
     return (
         <section id="calendar" className="flex flex-col justify-center items-center px-2 mb-20 border-white">
             <div className="flex relative flex-col justify-center items-center border-b">
-                <Image src="/worldtitlee.png" alt='world' className="wordlScroll hidden lg:block w-[350px]" width={500} height={500} />
-                <Image src="/worldtitlee.png" alt='world' className="wordlScroll block lg:hidden w-[200px]" width={500} height={500} />
+                <Image src="/worldtitlee.png" alt={dictionary.calendar.title} className="wordlScroll w-[200px] lg:w-[350px]" width={500} height={500} sizes="(min-width: 1024px) 350px, 200px" />
             </div>
             <div>
                 {sortedStays.length === 0 ? (
@@ -292,8 +292,9 @@ export default function CalendarFront({ dictionary, lang }: CalendarFrontProps) 
                 </div>
                 )}
                 <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfPg5abINAQ4OkZLFPLVRm3dSJSIEjpjBsUheJS5eOs_O-pWg/viewform"
+                    href={HOST_FORM_URL}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white px-5 py-2 text-base lg:text-lg bg-[#5E6B45] w-fit block mx-auto mt-10 font-semibold letterScroll"
                 >
                     {dictionary.calendar.button}

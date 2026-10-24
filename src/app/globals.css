@@ -1,23 +1,76 @@
-@font-face {
-  font-family: "Aileron";
-  src: url("/tipografia/Aileron-Regular.otf");
-  font-display: swap;
+@import 'tailwindcss';
+
+/* The site only ever opts into dark sections explicitly via the `.dark` class. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-aileron), 'Helvetica Neue', Arial, sans-serif;
+  --font-light: var(--font-aileron-light), 'Helvetica Neue', Arial, sans-serif;
+
+  --color-brand-olive: #5e6b45;
+
+  --animate-border-width: border-width 3s infinite alternate;
+
+  @keyframes border-width {
+    from {
+      width: 10px;
+      opacity: 0;
+    }
+    to {
+      width: 100px;
+      opacity: 1;
+    }
+  }
 }
-@font-face {
-  font-family: "Aileron-Light";
-  src: url("/tipografia/Aileron-Light.otf");
-  font-display: swap;
+
+/* `inline` makes bg-background/text-foreground read the variables on each
+   element, so a `.dark` section switches palette for its subtree. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Light/dark section palettes (previously provided by the NextUI theme). */
+:root,
+.light {
+  --background: #ffffff;
+  --foreground: #11181c;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ecedee;
+}
+
+@layer base {
+  :root {
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  /* Tailwind v3 defaults that the existing markup relies on. */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Aileron", "Helvetica Neue", Arial, sans-serif; /* Para Chrome y Safari en macOS */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 .navbarTest {
@@ -49,24 +102,7 @@ body {
 }
 
 .light {
-  font-family: "Aileron-Light";
-}
-/* Para Safari en macOS */
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    body {
-      font-family: "Aileron", "Helvetica Neue", Arial, sans-serif;
-    }
-  }
-}
-
-/* Para Chrome en Windows */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @media {
-    body {
-      font-family: "Aileron", Arial, sans-serif;
-    }
-  }
+  font-family: var(--font-light);
 }
 
 .showAnimate {
@@ -412,4 +448,47 @@ video::-webkit-media-controls {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Contact dialog */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.contact-dialog[open] {
+  animation: dialog-in 200ms ease-out;
+}
+
+.contact-dialog[open]::backdrop {
+  animation: backdrop-in 200ms ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Press logos marquee */
+.marquee-track {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

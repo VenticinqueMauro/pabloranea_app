@@ -1,4 +1,7 @@
-import { InstagramEmbed } from "react-social-media-embed";
+'use client';
+
+import Script from "next/script";
+import { useEffect } from "react";
 
 const POSTS = [
     "https://www.instagram.com/p/DY7nCOllEhH/",
@@ -6,7 +9,19 @@ const POSTS = [
     "https://www.instagram.com/reel/DY0s7ZzKY6k/",
 ];
 
+declare global {
+    interface Window {
+        instgrm?: { Embeds: { process: () => void } };
+    }
+}
+
+// Instagram's official embed: blockquotes that embed.js upgrades to iframes.
 export default function EmbedCards() {
+    // If embed.js is already on the page (client-side navigation), re-scan.
+    useEffect(() => {
+        window.instgrm?.Embeds.process();
+    }, []);
+
     return (
         <div className='flex flex-col gap-4 items-center w-full lg:justify-center lg:flex-row'>
             {POSTS.map((url) => (
@@ -18,9 +33,21 @@ export default function EmbedCards() {
                     key={url}
                     className="w-full max-w-[328px] min-h-[615px] overflow-hidden rounded-md bg-gray-50"
                 >
-                    <InstagramEmbed url={url} width="100%" />
+                    <blockquote
+                        className="instagram-media"
+                        data-instgrm-permalink={url}
+                        data-instgrm-version="14"
+                        style={{ width: '100%', minWidth: 0, margin: 0, border: 0 }}
+                    >
+                        <a href={url} target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </blockquote>
                 </div>
             ))}
+            <Script
+                src="https://www.instagram.com/embed.js"
+                strategy="lazyOnload"
+                onReady={() => window.instgrm?.Embeds.process()}
+            />
         </div>
     );
 }

@@ -5,53 +5,38 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start dev server (port 3000)
-npm run build    # Production build
+npm run dev      # Start dev server (port 3000, Turbopack)
+npm run build    # Production build (also type-checks)
 npm run start    # Start production server
-npm run lint     # ESLint (next/core-web-vitals)
+npm run lint     # ESLint 9 flat config (eslint.config.mjs)
 ```
 
 ## Architecture
 
-**Next.js 14 App Router** full-stack app for chef Pablo Ranea's website. Multi-language (en/es), MongoDB backend, JWT auth, deployed on Vercel.
+**Next.js 16 App Router** static marketing site for chef Pablo Ranea. React 19, Tailwind CSS 4, TypeScript. Bilingual (es/en), no backend. Deployed on Vercel at `https://www.pabloranea.com` (apex redirects to www).
 
 ### Routing & i18n
 
-- `src/app/[lang]/` — all public pages use dynamic `[lang]` param (en/es)
-- Dictionaries at `src/app/dictionaries/{en,es}.json`, loaded server-side via dynamic import
-- `src/app/api/` — REST API routes for auth, events, stays
-- `src/middleware.ts` — protects `/dashboard/*` routes via JWT cookie (`PR_app`)
+- `src/app/[lang]/layout.tsx` is the **only root layout** (`<html lang>` per locale). `generateStaticParams` + `dynamicParams = false` → only `/es` and `/en` exist; every page is prerendered (SSG).
+- `src/proxy.ts` (Next 16's replacement for middleware) redirects locale-less URLs (`/`, `/about`…) to `/{locale}…` using the `NEXT_LOCALE` cookie, then `Accept-Language`, default `en`. It also stores the last visited locale in that cookie.
+- `src/app/global-not-found.tsx` (experimental `globalNotFound`) renders the bilingual 404 for unmatched URLs.
+- Dictionaries: `src/app/dictionaries/{en,es}.json`, loaded with `getDictionary(lang)` from `src/lib/i18n.ts`. Route params are async: use `resolveLang(params)`.
+- `src/lib/locales.ts`: locale list, `isLocale`, `switchLocalePath` (kept free of dictionary imports for the proxy bundle).
 
-### Data Layer
+### SEO
 
-- **MongoDB** via Mongoose (`src/lib/mongodb.ts` connection helper)
-- **Models** (`src/models/`): User, Event, Stay
-- **Stay** has i18n fields (`description.en`, `description.es`) and references Event[] via ObjectIds
-- **Types** mirror models at `src/types/`
-- Date handling: `dayjs` for formatting, stored as YYYY-MM-DD
-
-### Auth Flow
-
-- JWT token stored in `PR_app` httpOnly cookie (30-day expiry)
-- Login: POST `/api/auth/login` → bcrypt verify → JWT → cookie
-- Middleware (`src/middleware.ts`) verifies token with `jose` jwtVerify for dashboard routes
-- Env vars: `MONGODB_URI`, `JWT_KEY`, `NEXT_PUBLIC_BASE_URL`
+- `src/lib/seo.ts` → `pageMetadata(lang, page, dictionary)`: localized title/description (from `dictionary.meta`), self-canonical, hreflang alternates (+ `x-default`), OG/Twitter with 1200×630 images in `public/og/`.
+- `src/lib/site.ts`: `SITE_URL`, `HOST_FORM_URL` (Google Form "be a host"), social links. Use these constants instead of hardcoding URLs.
+- `src/app/sitemap.ts` / `src/app/robots.ts` are generated from the same constants. `travelmendoza` is `noindex` and excluded from the sitemap.
+- Each page has exactly one `<h1>` (visually hidden on pages whose hero is an image).
 
 ### Frontend
 
-- **NextUI v2** + **TailwindCSS 3** for UI (config in `tailwind.config.ts`)
-- **Zustand** store (`src/store/dashboard.ts`) — single `refresh` toggle to trigger refetches in dashboard
-- **Framer Motion** for animations, **embla-carousel** for sliders
-- **Million.js** compiler enabled in `next.config.js` for performance
-- Dynamic imports with `next/dynamic` for non-critical sections (Instagram, etc.)
+- No UI kit: plain Tailwind 4 (tokens in `src/app/globals.css` via `@theme`). `bg-background`/`text-foreground` follow the `.dark`/`.light` class on a section.
+- Fonts: Aileron Regular/Light as local `woff2` (`src/fonts/`) through `next/font/local` (`--font-aileron`, `--font-aileron-light`; the `.light` class switches to Light). Navbar uses Roboto via `next/font/google`.
+- Images: `next/image` for local assets (`preload` on the LCP image, not the deprecated `priority`); plain `<img loading="lazy">` for third-party press images.
+- Carousels: embla-carousel. Contact modal: native `<dialog>`. Count-up stats: `src/components/ui/CountUp.tsx`. Instagram: official `embed.js` loaded when the section nears the viewport.
 - Path alias: `@/*` → `./src/*`
-
-### Key Patterns
-
-- Public pages: server components orchestrated by `src/components/HomeContent.tsx`
-- Dashboard: client components with modal-based CRUD (create/edit/delete) + Sonner toasts
-- `src/utils/helpers.ts` — `getStays()` sorts active stays (endDate >= today) first by startDate
-- API routes: consistent try/catch with NextResponse.json() + status codes
 
 ### Calendar (CalendarFront.tsx)
 
@@ -63,4 +48,4 @@ Hardcoded event data in `src/components/calendar/CalendarFront.tsx`. Two types:
 
 ### Portada (Hero Carousel)
 
-`src/components/portada/Portada.tsx` — embla-carousel with desktop/mobile image variants. All desktop images normalized to **1920x1080**. Container aspect ratio: `calc(100% / 1.78)`. Mobile ratio: `calc(100% / 1.25)` (1679x1344).
+`src/components/portada/Portada.tsx` — embla-carousel. All images normalized to **1920x1080**. Sizing is pure CSS: below `md` the slide uses `aspect-[1.25]`, from `md` it fills `calc(100vh - 110px)`. Every slide links to the host form.

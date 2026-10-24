@@ -1,6 +1,7 @@
-
+import type { Metadata } from "next";
 import Footer from "@/components/footer/Footer";
-import { Lang } from "@/types/lang.type";
+import { getDictionary, resolveLang } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 const bodegas = [
     {
@@ -35,14 +36,14 @@ const bodegas = [
         title: "Bodega Argento",
         titleEn: "Argento Winery",
         description: "Por primera vez en nuestro tour nos acompaña la Bodega Argento con dos vinos orgánicos; el Argento Estate Bottled Pinot Grigio de El Carrizal en el este mendocino y el Argento Estate  Collection Malbec de Agrelo en Luján de Cuyo.",
-        descriptionEn: "Exclusive to Texas, Lagarde presents their latest creation, the Lagarde Organic Rosé, a blend of Malbec and Semillon crafted with environmentally responsible practices, reflecting Lagarde's dedication to sustainability and community.",
+        descriptionEn: "Making their tour debut, Argento Winery introduces two spectacular wines made with organic grapes: the Argento Estate Bottled Pinot Grigio from El Carrizal in eastern Mendoza, and the Argento Estate Collection Malbec from Agrelo in Luján de Cuyo.",
         imageUrl: "/partners/Argento.gif"
     },
     {
         title: "Bodega Lagarde",
         titleEn: "Lagarde Winery",
         description: "Lagarde presentará, únicamente en Texas, una de sus últimas novedades, el Lagarde Organic Rosé, un blend rosado de Malbec y Semillón orgánico realizado con prácticas responsables con el medio ambiente y la comunidad.",
-        descriptionEn: "Making their tour debut, Argento Winery introduces two spectacular wines made with organic grapes: the Argento Estate Bottled Pinot Grigio from El Carrizal in eastern Mendoza, and the Argento Estate Collection Malbec from Agrelo in Luján de Cuyo.",
+        descriptionEn: "Exclusive to Texas, Lagarde presents their latest creation, the Lagarde Organic Rosé, a blend of Malbec and Semillon crafted with environmentally responsible practices, reflecting Lagarde's dedication to sustainability and community.",
         imageUrl: "/partners/Lagarde.gif"
     },
     {
@@ -62,15 +63,25 @@ const bodegas = [
 ];
 
 
-export default async function page({ params: { lang } }: Lang) {
+export async function generateMetadata({ params }: PageProps<'/[lang]/partners'>): Promise<Metadata> {
+    const lang = await resolveLang(params);
+    return pageMetadata(lang, 'partners', await getDictionary(lang));
+}
 
-    const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(m => m.default)
+export default async function page({ params }: PageProps<'/[lang]/partners'>) {
+
+    const lang = await resolveLang(params);
+    const dictionary = await getDictionary(lang);
 
 
     return (
         <section className="h-screen max-w-7xl mx-auto px-3 lg:px-0">
-            <h2 className="hidden lg:block text-6xl lg:text-8xl font-bold text-shadow -tracking-[4px] lg:-tracking-[7px] mb-10 lg:mb-20 mt-10 " style={{ lineHeight: 0.8 }}>{lang === 'es' ? "Los Vinos del Tour" : "TOUR’S WINE SELECTION"} </h2>
-            <h2 className="text-6xl lg:text-8xl lg:hidden font-bold text-shadow -tracking-[4px] lg:-tracking-[8px] mb-10 lg:mb-20 mt-10 " style={{ lineHeight: 0.9 }}>{lang === 'es' ? "Los Vinos" : "The Wine"}<br />{lang === 'es' ? "del Tour" : "tour Selection"}</h2>
+            {/* One heading: the line break only applies below lg, as before. */}
+            <h1 className="text-6xl lg:text-8xl font-bold text-shadow tracking-[-4px] lg:-tracking-[7px] mb-10 lg:mb-20 mt-10 leading-[0.9] lg:leading-[0.8]">
+                {lang === 'es' ? "Los Vinos" : <><span className="lg:hidden">The Wine</span><span className="hidden lg:inline">TOUR’S WINE</span></>}
+                <br className="lg:hidden" />{" "}
+                {lang === 'es' ? "del Tour" : <><span className="lg:hidden">tour Selection</span><span className="hidden lg:inline">SELECTION</span></>}
+            </h1>
             <div>
                 {
                     bodegas.map((bodega, i) => (
@@ -83,7 +94,7 @@ export default async function page({ params: { lang } }: Lang) {
                                 {/* eslint-disable-next-line @next/next/no-img-element  */}
                                 <img
                                     src={bodega.imageUrl}
-                                    alt={bodega.title}
+                                    alt={lang === 'es' ? bodega.title : bodega.titleEn}
                                     width={520}
                                     height={230}
                                     loading="lazy"

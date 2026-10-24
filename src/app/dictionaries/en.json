@@ -75,5 +75,34 @@
         "page": {
             "title": "Press"
         }
+    },
+    "meta": {
+        "home": {
+            "title": "Pablo Ranea · Argentine Chef & Sommelier | Pop-up Dinners",
+            "description": "Argentine chef and sommelier bringing New Argentine cuisine and Argentina’s finest wines to the world through pop-up dinners, cooking classes and wine pairings.",
+            "h1": "Pablo Ranea, Argentine chef and sommelier"
+        },
+        "about": {
+            "title": "About Pablo Ranea: Argentine Chef & Sommelier",
+            "description": "Trained at Gato Dumas and certified by the Argentine School of Sommeliers, Pablo Ranea led Azafrán in Mendoza and now champions Argentine cuisine and wine worldwide.",
+            "h1": "About Pablo Ranea"
+        },
+        "popup": {
+            "title": "Pop-up Dinners: Traveling Argentine Cuisine",
+            "description": "Multi-course pop-up dinners pairing New Argentine and Latin American cuisine with Argentina’s finest wines, hosted on rooftops, gardens and galleries worldwide. Become a host.",
+            "h1": "Pablo Ranea’s pop-up dinners"
+        },
+        "partners": {
+            "title": "Tour’s Wine Selection: Argentine Wineries",
+            "description": "The Argentine wines featured on Pablo Ranea’s tour: Trivento, Achaval Ferrer, Antigal, Otronia, Argento, Lagarde, Enemigo Wines and Susana Balbo."
+        },
+        "press": {
+            "title": "Press",
+            "description": "Interviews, features and recipes by Pablo Ranea in La Nación, Infobae, Forbes Argentina, Ámbito, TN, El Comercio and more media worldwide."
+        },
+        "travelmendoza": {
+            "title": "Mendoza Travel Itinerary",
+            "description": "Itinerary for the food and wine trip to Mendoza with Pablo Ranea."
+        }
     }
 }
