@@ -56,6 +56,10 @@ ${pages.join('\n')}
 
 ${upcoming.length ? upcoming.join('\n') : `New dates coming soon. See ${SITE_URL}/en#calendar`}
 
+## FAQ
+
+${en.faq.items.map(({ q, a }) => `### ${q}\n\n${a}`).join('\n\n')}
+
 ## Contact
 
 - Email: chefpabloranea@gmail.com
