@@ -29,6 +29,9 @@ npm run lint     # ESLint 9 flat config (eslint.config.mjs)
 - `src/lib/site.ts`: `SITE_URL`, `HOST_FORM_URL` (Google Form "be a host"), social links. Use these constants instead of hardcoding URLs.
 - `src/app/sitemap.ts` / `src/app/robots.ts` are generated from the same constants. `travelmendoza` is `noindex` and excluded from the sitemap.
 - Each page has exactly one `<h1>` (visually hidden on pages whose hero is an image).
+- **Structured data** (`src/lib/jsonld.ts`, rendered with `<JsonLd>`): Person + WebSite site-wide (layout), FAQPage + upcoming FoodEvents on home, ProfilePage on about, CollectionPage (wineries / press articles) and BreadcrumbList on subpages. Built from the same data the pages render.
+- **AI visibility**: `/llms.txt` (`src/app/llms.txt/route.ts`, static) summarizes Pablo, pages, upcoming dates, FAQ and contact from dictionaries + calendar. `robots.ts` explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…).
+- **FAQ**: `dictionary.faq` (es/en) feeds both the home FAQ section (`src/components/faq/Faq.tsx`) and the FAQPage schema / llms.txt.
 
 ### Frontend
 
@@ -40,7 +43,7 @@ npm run lint     # ESLint 9 flat config (eslint.config.mjs)
 
 ### Calendar (CalendarFront.tsx)
 
-Hardcoded event data in `src/components/calendar/CalendarFront.tsx`. Two types:
+Event data lives in `src/data/calendar.ts` (rendered by `CalendarFront.tsx`, also used for Event JSON-LD and llms.txt). Two types:
 - **Stay** (date range): `startDate`, `endDate`, `location` (en/es)
 - **SpecialStay** (single event): `date`, `location` (en/es), `description` (en/es)
 

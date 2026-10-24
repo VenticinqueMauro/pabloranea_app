@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer/Footer";
+import JsonLd from "@/components/seo/JsonLd";
 import { getDictionary, resolveLang } from "@/lib/i18n";
+import { popupJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
@@ -27,6 +29,7 @@ export default async function page({ params }: PageProps<'/[lang]/popup'>) {
             <Section4 lang={lang} />
             <Section5 lang={lang} />
             <Footer dictionary={dictionary} lang={lang} />
+            <JsonLd data={popupJsonLd(lang, dictionary)} />
         </section>
     )
 }

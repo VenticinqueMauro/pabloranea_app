@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer/Footer";
+import JsonLd from "@/components/seo/JsonLd";
 import LazyVideo from "@/components/ui/LazyVideo";
 import { getDictionary, resolveLang } from "@/lib/i18n";
+import { partnersJsonLd } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/seo";
 
 const bodegas = [
@@ -108,6 +110,7 @@ export default async function page({ params }: PageProps<'/[lang]/partners'>) {
                 }
             </div>
             <Footer dictionary={dictionary} lang={lang} />
+            <JsonLd data={partnersJsonLd(lang, dictionary, bodegas.map((b) => (lang === 'es' ? b.title : b.titleEn)))} />
         </section>
     )
 }

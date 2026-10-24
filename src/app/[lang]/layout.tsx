@@ -3,7 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
 import Navbar from '@/components/header/Navbar'
+import JsonLd from '@/components/seo/JsonLd'
 import { getDictionary, resolveLang } from '@/lib/i18n'
+import { siteJsonLd } from '@/lib/jsonld'
 import { locales } from '@/lib/locales'
 import { SITE_NAME, SITE_URL } from '@/lib/site'
 
@@ -64,6 +66,7 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
       <body className="h-screen overflow-x-hidden relative">
         <Navbar dictionary={dictionary} lang={lang} />
         <main id="main">{children}</main>
+        <JsonLd data={siteJsonLd(lang, dictionary)} />
         <Analytics />
       </body>
     </html>
