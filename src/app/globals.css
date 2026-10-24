@@ -322,6 +322,7 @@ html {
   position: relative;
   height: 100vh;
   background-image: url("/partners/partners.jpg");
+  background-image: image-set(url("/partners/partners.avif") type("image/avif"), url("/partners/partners.jpg") type("image/jpeg"));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -331,6 +332,11 @@ html {
   position: relative;
   height: 100vh;
   background-image: url("/classes/classes.jpg");
+  background-image: image-set(
+    url("/classes/classes.avif") type("image/avif"),
+    url("/classes/classes.webp") type("image/webp"),
+    url("/classes/classes.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
