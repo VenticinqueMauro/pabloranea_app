@@ -67,7 +67,7 @@ export default function Footer({ dictionary, lang }: { dictionary: Dictionary, l
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <div className="flex flex-col gap-1">
                         <span className="text-sm text-gray-500">© {new Date().getFullYear()} Pablo Ranea. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</span>
-                        <span className="text-xs text-gray-400">{lang === 'es' ? 'Sitio por' : 'Site by'} <a href="https://www.instagram.com/insiders.agencia/" rel="noopener" className="underline hover:text-black">Insiders Agencia</a> & <a href="https://m25.com.ar/" rel="noopener" className="underline hover:text-black">MVDEV</a></span>
+                        <span className="text-xs text-gray-400"><a href={`/${lang}/privacy`} className="underline hover:text-black">{dictionary.privacy.title}</a> · {lang === 'es' ? 'Sitio por' : 'Site by'} <a href="https://www.instagram.com/insiders.agencia/" rel="noopener" className="underline hover:text-black">Insiders Agencia</a> & <a href="https://m25.com.ar/" rel="noopener" className="underline hover:text-black">MVDEV</a></span>
                     </div>
                     <div className="flex mt-4 sm:justify-center sm:mt-0">
                         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">

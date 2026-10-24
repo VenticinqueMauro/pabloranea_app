@@ -33,6 +33,11 @@ export function siteJsonLd(lang: Locale, dictionary: Dictionary) {
             description: dictionary.aboutpablo.description,
             nationality: { '@type': 'Country', name: 'Argentina' },
             homeLocation: { '@type': 'Place', name: 'Mendoza, Argentina' },
+            address: { '@type': 'PostalAddress', addressLocality: 'Mendoza', addressRegion: 'Mendoza', addressCountry: 'AR' },
+            contactPoint: [
+                { '@type': 'ContactPoint', contactType: 'reservations', email: 'chefpabloranea@gmail.com', telephone: '+1-720-284-9937', areaServed: 'US', availableLanguage: ['es', 'en'] },
+                { '@type': 'ContactPoint', contactType: 'reservations', email: 'chefpabloranea@gmail.com', telephone: '+54-9-261-683-2720', areaServed: 'AR', availableLanguage: ['es', 'en'] },
+            ],
             alumniOf: { '@type': 'EducationalOrganization', name: 'Gato Dumas' },
             hasCredential: {
                 '@type': 'EducationalOccupationalCredential',

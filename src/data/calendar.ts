@@ -166,3 +166,14 @@ export const archivedStays: ArchivedStay[] = [
         }
     }
 ];
+
+export const isEvent = (item: CalendarItem): item is SpecialStay => item.special === true;
+export const startOf = (item: CalendarItem) => (isEvent(item) ? item.date : item.startDate);
+const endOf = (item: CalendarItem) => (isEvent(item) ? item.date : item.endDate);
+
+// Items that haven't ended by `today` (YYYY-MM-DD), nearest first. Dates are
+// compared as strings: new Date("2026-04-15") would be read as UTC and drop an
+// event on its own day in the Americas.
+export function upcomingStays(today: string): CalendarItem[] {
+    return stays.filter((item) => endOf(item) >= today).sort((a, b) => startOf(a).localeCompare(startOf(b)));
+}

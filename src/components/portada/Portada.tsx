@@ -4,6 +4,8 @@ import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useToday } from '@/components/calendar/useToday';
+import { upcomingStays } from '@/data/calendar';
 import type { Locale } from '@/lib/locales';
 import { HOST_FORM_URL } from '@/lib/site';
 
@@ -24,8 +26,10 @@ const T = {
     en: { host: 'Become a host', dates: 'Tour dates', carousel: 'Pop-up dinners gallery', goTo: 'Go to image' },
 };
 
-export default function Portada({ lang }: { lang: Locale }) {
+export default function Portada({ lang, buildDate }: { lang: Locale; buildDate: string }) {
     const t = T[lang];
+    // "Tour dates" only makes sense when the calendar has upcoming dates.
+    const hasDates = upcomingStays(useToday(buildDate)).length > 0;
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true },
         // Pauses while hovered and resumes on mouse leave.
@@ -94,12 +98,14 @@ export default function Portada({ lang }: { lang: Locale }) {
                     >
                         {t.host}
                     </a>
-                    <a
-                        href="#calendar"
-                        className="hidden sm:inline-block border border-white px-3 py-2 text-xs font-bold uppercase text-white transition-colors hover:bg-white hover:text-black md:px-6 md:py-3 md:text-sm"
-                    >
-                        {t.dates}
-                    </a>
+                    {hasDates && (
+                        <a
+                            href="#calendar"
+                            className="hidden sm:inline-block border border-white px-3 py-2 text-xs font-bold uppercase text-white transition-colors hover:bg-white hover:text-black md:px-6 md:py-3 md:text-sm"
+                        >
+                            {t.dates}
+                        </a>
+                    )}
                 </div>
                 <div className="pointer-events-auto flex gap-1.5 pb-1 md:gap-2">
                     {slides.map((slide, index) => (

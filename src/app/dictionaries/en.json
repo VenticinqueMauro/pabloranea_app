@@ -103,6 +103,44 @@
         "travelmendoza": {
             "title": "Mendoza Travel Itinerary",
             "description": "Itinerary for the food and wine trip to Mendoza with Pablo Ranea."
+        },
+        "privacy": {
+            "title": "Privacy policy",
+            "description": "How Pablo Ranea’s website handles your data: contact by email and WhatsApp, the host request form, anonymous cookie-free analytics and third-party content."
         }
+    },
+    "privacy": {
+        "title": "Privacy policy",
+        "updated": "Last updated: October 2026",
+        "sections": [
+            {
+                "h": "Who we are",
+                "p": "This website belongs to Pablo Ranea, chef and sommelier. For any question about your data, write to chefpabloranea@gmail.com."
+            },
+            {
+                "h": "What data we collect",
+                "p": "The site has no user accounts or forms of its own. If you contact us by email or WhatsApp, we use your name, contact details and whatever you share only to reply and to organize the experience you request. We do not sell or share your data with third parties."
+            },
+            {
+                "h": "“Be a host” form",
+                "p": "The form to request a pop-up dinner is hosted on Google Forms. The information you enter there is received by Pablo Ranea and is also subject to Google’s privacy policy."
+            },
+            {
+                "h": "Analytics",
+                "p": "We use Vercel Web Analytics to understand, in an aggregated and anonymous way, how many people visit the site and which pages they view. It does not use cookies or identify visitors."
+            },
+            {
+                "h": "Cookies",
+                "p": "The site only stores one technical cookie, NEXT_LOCALE, to remember the language you chose (Spanish or English) for one year. We do not use advertising cookies."
+            },
+            {
+                "h": "Third-party content",
+                "p": "Some pages show Instagram (Meta) posts and Google Drive documents. When they load, those services may use their own cookies under their privacy policies."
+            },
+            {
+                "h": "Your rights",
+                "p": "You can ask at any time to access, correct or delete your data by writing to chefpabloranea@gmail.com, in accordance with Argentina’s Personal Data Protection Law 25,326 and the laws that apply in your country."
+            }
+        ]
     }
 }

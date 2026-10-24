@@ -17,13 +17,15 @@ interface HomeContentProps {
 }
 
 export default function HomeContent({ lang, dictionary }: HomeContentProps) {
+  const buildDate = new Date().toISOString().slice(0, 10);
+
   return (
     <section className="relative z-30">
       <h1 className="sr-only">{dictionary.meta.home.h1}</h1>
-      <Portada lang={lang} />
+      <Portada lang={lang} buildDate={buildDate} />
       <Popups dictionary={dictionary} lang={lang} />
       <GiraEnNum lang={lang} />
-      <CalendarFront dictionary={dictionary} lang={lang} buildDate={new Date().toISOString().slice(0, 10)} />
+      <CalendarFront dictionary={dictionary} lang={lang} buildDate={buildDate} />
       <About dictionary={dictionary} lang={lang} />
       <Classes dictionary={dictionary} />
       <Partners dictionary={dictionary} lang={lang} />

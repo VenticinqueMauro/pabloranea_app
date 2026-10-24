@@ -103,6 +103,44 @@
         "travelmendoza": {
             "title": "Itinerario de viaje a Mendoza",
             "description": "Itinerario del viaje gastronómico y de vinos a Mendoza con Pablo Ranea."
+        },
+        "privacy": {
+            "title": "Política de privacidad",
+            "description": "Cómo el sitio de Pablo Ranea trata tus datos: contacto por email y WhatsApp, formulario de anfitriones, analítica anónima sin cookies y contenido de terceros."
         }
+    },
+    "privacy": {
+        "title": "Política de privacidad",
+        "updated": "Última actualización: octubre de 2026",
+        "sections": [
+            {
+                "h": "Responsable",
+                "p": "Este sitio pertenece a Pablo Ranea, chef y sommelier. Para cualquier consulta sobre tus datos podés escribir a chefpabloranea@gmail.com."
+            },
+            {
+                "h": "Qué datos recopilamos",
+                "p": "El sitio no tiene cuentas de usuario ni formularios propios. Si nos escribís por email o WhatsApp, usamos tu nombre, tus datos de contacto y lo que nos cuentes únicamente para responderte y organizar la experiencia que nos pidas. No vendemos ni cedemos tus datos a terceros."
+            },
+            {
+                "h": "Formulario «Convertite en anfitrión»",
+                "p": "El formulario para organizar un pop-up dinner está alojado en Google Forms. Los datos que cargues ahí los recibe Pablo Ranea y además se rigen por la política de privacidad de Google."
+            },
+            {
+                "h": "Analítica",
+                "p": "Usamos Vercel Web Analytics para conocer de forma agregada y anónima cuántas personas visitan el sitio y qué páginas ven. No usa cookies ni identifica a los visitantes."
+            },
+            {
+                "h": "Cookies",
+                "p": "El sitio solo guarda una cookie técnica, NEXT_LOCALE, para recordar el idioma que elegiste (español o inglés) durante un año. No usamos cookies publicitarias."
+            },
+            {
+                "h": "Contenido de terceros",
+                "p": "Algunas páginas muestran publicaciones de Instagram (Meta) y documentos de Google Drive. Al cargarse, esos servicios pueden usar sus propias cookies según sus políticas de privacidad."
+            },
+            {
+                "h": "Tus derechos",
+                "p": "Podés pedir en cualquier momento acceder a tus datos, corregirlos o eliminarlos escribiendo a chefpabloranea@gmail.com, conforme a la Ley 25.326 de Protección de Datos Personales de Argentina y a la normativa aplicable en tu país."
+            }
+        ]
     }
 }

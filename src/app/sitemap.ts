@@ -4,7 +4,7 @@ import { PAGE_PATHS, type PageKey } from '@/lib/seo'
 import { SITE_URL } from '@/lib/site'
 
 // travelmendoza is a private, noindex itinerary, so it's left out.
-const pages: PageKey[] = ['home', 'about', 'popup', 'partners', 'press']
+const pages: PageKey[] = ['home', 'about', 'popup', 'partners', 'press', 'privacy']
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return pages.flatMap((page) => {

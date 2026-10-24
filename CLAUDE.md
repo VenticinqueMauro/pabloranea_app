@@ -30,6 +30,8 @@ npm run lint     # ESLint 9 flat config (eslint.config.mjs)
 - `src/app/sitemap.ts` / `src/app/robots.ts` are generated from the same constants. `travelmendoza` is `noindex` and excluded from the sitemap.
 - Each page has exactly one `<h1>` (visually hidden on pages whose hero is an image).
 - **Structured data** (`src/lib/jsonld.ts`, rendered with `<JsonLd>`): Person + WebSite site-wide (layout), upcoming FoodEvents on home, ProfilePage on about, CollectionPage (wineries / press articles) and BreadcrumbList on subpages. Built from the same data the pages render.
+- **Markdown for agents**: requests that prefer `Accept: text/markdown` get the same URL as Markdown (`src/proxy.ts` rewrites to `src/app/md/[lang]/[page]`; unknown URLs to `md/[lang]/missing` with a 404). Content comes from `src/lib/markdown.ts` (also used by llms.txt).
+- **Privacy**: `/[lang]/privacy` from `dictionary.privacy`, linked in the footer and listed in the sitemap.
 - **AI visibility**: `/llms.txt` (`src/app/llms.txt/route.ts`, static) summarizes Pablo, pages, upcoming dates and contact from dictionaries + calendar. `robots.ts` explicitly allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…).
 
 ### Frontend
