@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import LazyVideo from '@/components/ui/LazyVideo'
 import type { Dictionary } from '@/lib/i18n'
 
 export default function Section2({ dictionary }: { dictionary: Dictionary }) {
@@ -19,9 +20,7 @@ export default function Section2({ dictionary }: { dictionary: Dictionary }) {
                 <Image className="object-cover hidden md:block aspect-video w-full h-auto" src="/popups/3.jpg" alt="Pablo Ranea" width={1600} height={840} sizes="(min-width: 768px) 50vw, 100vw" />
             </div>
             <div className="w-full">
-                <video className="w-full h-auto lg:max-h-[1000px] aspect-9/16 mt-1 mb-1 lg:mb-0 p-0" src="/aboutpablo/reelabout.mov" preload="none" controls autoPlay loop muted>
-                    Tu navegador no admite el elemento de video.
-                </video>
+                <LazyVideo className="w-full h-auto lg:max-h-[1000px] aspect-9/16 mt-1 mb-1 lg:mb-0 p-0 object-cover" src="/aboutpablo/reelabout.mp4" poster="/aboutpablo/reelabout-poster.webp" width={720} height={1280} controls aria-label="Pablo Ranea reel" />
             </div>
         </div>
     )

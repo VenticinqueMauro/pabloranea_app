@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n";
+import LazyVideo from "@/components/ui/LazyVideo";
 import { HOST_FORM_URL } from "@/lib/site";
 
 export default function Section2({ dictionary }: { dictionary: Dictionary }) {
@@ -22,9 +23,7 @@ export default function Section2({ dictionary }: { dictionary: Dictionary }) {
                 <Image className="object-cover hidden md:block min-w-full h-auto" src="/popups/img1.jpg" alt="Pop-up dinner" width={720} height={405} sizes="(min-width: 768px) 50vw, 100vw" />
             </div>
             <div className="w-full">
-                <video className="w-full h-auto lg:max-h-[1000px] aspect-9/16 mt-1 mb-1 lg:mb-0 p-0" src="/popups/reelpopup.mov" preload="none" controls autoPlay loop muted>
-                    Tu navegador no admite el elemento de video.
-                </video>
+                <LazyVideo className="w-full h-auto lg:max-h-[1000px] aspect-9/16 mt-1 mb-1 lg:mb-0 p-0 object-cover" src="/popups/reelpopup.mp4" poster="/popups/reelpopup-poster.webp" width={720} height={1280} controls aria-label="Pop-up dinners reel" />
             </div>
         </div>
     )

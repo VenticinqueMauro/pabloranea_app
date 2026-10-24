@@ -15,6 +15,9 @@ export default function Popups({ dictionary, lang }: { dictionary: Dictionary, l
                     fill
                     sizes="100vw"
                     quality={70}
+                    // On mobile the hero is short, so this image is the LCP.
+                    loading="eager"
+                    fetchPriority="high"
                     className="object-cover"
                     alt="Pop-up dinner"
                     style={{
