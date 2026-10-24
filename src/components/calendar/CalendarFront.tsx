@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import { useSyncExternalStore } from 'react';
-import { stays, type CalendarItem, type SpecialStay } from '@/data/calendar';
+import { isEvent, startOf, upcomingStays } from '@/data/calendar';
 import type { Dictionary } from '@/lib/i18n';
 import type { Locale } from '@/lib/locales';
 import { HOST_FORM_URL } from '@/lib/site';
+import { useToday } from './useToday';
 
 interface CalendarFrontProps {
     dictionary: Dictionary;
@@ -15,16 +15,6 @@ interface CalendarFrontProps {
     // and hydration, then swapped for the visitor's local date.
     buildDate: string;
 }
-
-const isEvent = (item: CalendarItem): item is SpecialStay => item.special === true;
-const startOf = (item: CalendarItem) => (isEvent(item) ? item.date : item.startDate);
-const endOf = (item: CalendarItem) => (isEvent(item) ? item.date : item.endDate);
-
-// Local calendar date as YYYY-MM-DD. Dates are compared as strings: parsing
-// "2026-04-15" with new Date() would read it as UTC and drop an event on its
-// own day in the Americas.
-const localToday = () => new Date().toLocaleDateString('en-CA');
-const noopSubscribe = () => () => {};
 
 const MONTHS = {
     en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -49,7 +39,7 @@ const T = {
 };
 
 export default function CalendarFront({ dictionary, lang, buildDate }: CalendarFrontProps) {
-    const today = useSyncExternalStore(noopSubscribe, localToday, () => buildDate);
+    const today = useToday(buildDate);
     const t = T[lang];
 
     const formatDate = (iso: string) => {
@@ -62,9 +52,7 @@ export default function CalendarFront({ dictionary, lang, buildDate }: CalendarF
         return lang === 'es' ? `${day} de ${MONTHS.es[month - 1]}` : `${MONTHS.en[month - 1]} ${day}`;
     };
 
-    const upcoming = stays
-        .filter((item) => endOf(item) >= today)
-        .sort((a, b) => startOf(a).localeCompare(startOf(b)));
+    const upcoming = upcomingStays(today);
 
     return (
         <section id="calendar" className="flex flex-col justify-center items-center px-2 mb-20 border-white">

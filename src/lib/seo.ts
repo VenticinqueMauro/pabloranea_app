@@ -10,6 +10,7 @@ export const PAGE_PATHS = {
     partners: '/partners',
     press: '/press',
     travelmendoza: '/travelmendoza',
+    privacy: '/privacy',
 } as const
 
 export type PageKey = keyof typeof PAGE_PATHS
@@ -23,7 +24,7 @@ export function pageMetadata(lang: Locale, page: PageKey, dictionary: Dictionary
     const path = PAGE_PATHS[page]
     const { title, description } = dictionary.meta[page]
     const url = `/${lang}${path}`
-    const image = `/og/${page === 'travelmendoza' ? 'home' : page}.jpg`
+    const image = `/og/${page === 'travelmendoza' || page === 'privacy' ? 'home' : page}.jpg`
 
     return {
         // The home title already includes the brand, so skip the template.
