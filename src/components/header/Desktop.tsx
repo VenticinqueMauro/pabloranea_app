@@ -45,7 +45,7 @@ export default function Desktop({ sections, lang, pathname }: Props) {
                             key={section}
                             href={index === 0 ? `/${lang}` : `/${lang}${sectionshref[index]}`}
                             aria-current={pathname === `/${lang}${sectionshref[index]}` || (index === 0 && pathname === `/${lang}`) ? 'page' : undefined}
-                            className='z-10 hover:bg-black px-3 xl:px-5 hover:text-white cursor-pointer text-xs xl:text-sm border-r border-black'
+                            className='z-10 hover:bg-black px-3 xl:px-5 hover:text-white aria-[current=page]:bg-black aria-[current=page]:text-white cursor-pointer text-xs xl:text-sm border-r border-black'
                         >
                             {section}
                         </a>

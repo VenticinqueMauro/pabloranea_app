@@ -46,8 +46,10 @@ Event data lives in `src/data/calendar.ts` (rendered by `CalendarFront.tsx`, als
 - **Stay** (date range): `startDate`, `endDate`, `location` (en/es)
 - **SpecialStay** (single event): `date`, `location` (en/es), `description` (en/es)
 
+Upcoming items are filtered by comparing `YYYY-MM-DD` strings against the visitor's local date (`useSyncExternalStore`; server/hydration use the `buildDate` prop). The home revalidates daily (`revalidate = 86400`). The first upcoming item is highlighted as "next date"; stays get a "book your date" CTA (host form) and events with `link` + `linkLabel` get a ticket button.
+
 **Format rule**: all entries must follow the same visual format — date on top, LOCATION in uppercase below, description on the right side. NYC = "New York, USA" / "Nueva York, EE.UU."
 
 ### Portada (Hero Carousel)
 
-`src/components/portada/Portada.tsx` — embla-carousel. All images normalized to **1920x1080**. Sizing is pure CSS: below `md` the slide uses `aspect-[1.25]`, from `md` it fills `calc(100vh - 110px)`. Every slide links to the host form.
+`src/components/portada/Portada.tsx` — embla-carousel. All images normalized to **1920x1080**. Sizing is pure CSS: below `md` the slide uses `aspect-[1.25]`, from `md` it fills `calc(100vh - 110px)`. Autoplay every 5s (paused on hover, disabled with reduced motion), dot indicators and two CTAs over the image (host form + `#calendar`; only the first on mobile).

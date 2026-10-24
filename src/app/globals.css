@@ -71,6 +71,27 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  /* Scroll-driven entrances: show everything in its final state. */
+  .showAnimate,
+  .imgScroll,
+  .fade,
+  .wordlScroll,
+  .letterScroll,
+  .scroll-parallax,
+  .scroll-reveal span {
+    animation: none !important;
+  }
+
+  .scroll-reveal span {
+    background-size: 110% 100% !important;
+  }
+}
+
+/* Visible keyboard focus in the brand color. */
+:focus-visible {
+  outline: 2px solid var(--color-brand-olive);
+  outline-offset: 2px;
 }
 
 .navbarTest {

@@ -64,6 +64,9 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[la
   return (
     <html lang={lang} className={`${aileron.variable} ${aileronLight.variable}`}>
       <body className="h-screen overflow-x-hidden relative">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-black focus:px-4 focus:py-2 focus:text-white">
+          {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
+        </a>
         <Navbar dictionary={dictionary} lang={lang} />
         <main id="main">{children}</main>
         <JsonLd data={siteJsonLd(lang, dictionary)} />

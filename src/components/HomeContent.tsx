@@ -23,7 +23,7 @@ export default function HomeContent({ lang, dictionary }: HomeContentProps) {
       <Portada lang={lang} />
       <Popups dictionary={dictionary} lang={lang} />
       <GiraEnNum lang={lang} />
-      <CalendarFront dictionary={dictionary} lang={lang} />
+      <CalendarFront dictionary={dictionary} lang={lang} buildDate={new Date().toISOString().slice(0, 10)} />
       <About dictionary={dictionary} lang={lang} />
       <Classes dictionary={dictionary} />
       <Partners dictionary={dictionary} lang={lang} />

@@ -1,6 +1,6 @@
 'use client';
 
-import { X } from "lucide-react";
+import { Mail, MessageCircle, X } from "lucide-react";
 import { useRef } from "react";
 import type { Locale } from "@/lib/locales";
 import { HOST_FORM_URL, SOCIAL_LINKS } from "@/lib/site";
@@ -37,18 +37,18 @@ export default function ModalContact({ lang }: { lang: Locale }) {
                     </button>
                     <h2 id="contact-title" className="px-6 py-4 uppercase text-xl font-bold">{label}</h2>
                     <div className="border-t px-6 py-2">
-                        <div className="text-lg space-y-1 w-full mt-auto text-end ">
+                        <div className="space-y-3 w-full py-2">
                             <a href="mailto:chefpabloranea@gmail.com" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900">
-                                <span aria-hidden>📧</span>
+                                <Mail aria-hidden className="size-5 shrink-0" strokeWidth={1.5} />
                                 <span className='pl-1 text-xs'>chefpabloranea@gmail.com</span>
                             </a>
                             <a href="https://wa.me/17202849937" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900">
-                                <span aria-hidden>🇺🇸</span>
-                                <span className='pl-1 text-xs'>WhatsApp +1 (720) 284-9937</span>
+                                <MessageCircle aria-hidden className="size-5 shrink-0" strokeWidth={1.5} />
+                                <span className='pl-1 text-xs'>WhatsApp {lang === 'es' ? 'EE.UU.' : 'USA'} · +1 (720) 284-9937</span>
                             </a>
                             <a href="https://wa.me/5492616832720" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-700 text-base hover:text-gray-900">
-                                <span aria-hidden>🇦🇷</span>
-                                <span className='pl-1 text-xs'>WhatsApp +54 9 261 6832720</span>
+                                <MessageCircle aria-hidden className="size-5 shrink-0" strokeWidth={1.5} />
+                                <span className='pl-1 text-xs'>WhatsApp Argentina · +54 9 261 6832720</span>
                             </a>
                         </div>
                     </div>
