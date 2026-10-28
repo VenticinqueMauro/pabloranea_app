@@ -54,4 +54,4 @@ Upcoming items are filtered by comparing `YYYY-MM-DD` strings against the visito
 
 ### Portada (Hero Carousel)
 
-`src/components/portada/Portada.tsx` — embla-carousel. All images normalized to **1920x1080**. Sizing is pure CSS: below `md` the slide uses `aspect-[1.25]`, from `md` it fills `calc(100vh - 110px)`. Autoplay every 5s (paused on hover, disabled with reduced motion), dot indicators and two CTAs over the image (host form + `#calendar`; only the first on mobile).
+`src/components/portada/Portada.tsx` — embla-carousel. Images are optimized JPEGs up to 2560px wide (3:2 or panoramic), each with a tuned `objectPosition` focal point. Sizing is pure CSS: below `md` the slide uses `aspect-[1.25]`, from `md` it fills `calc(100vh - 110px)`. Autoplay every 5s (paused on hover, disabled with reduced motion), dot indicators and two CTAs over the image (host form + `#calendar`; only the first on mobile).
