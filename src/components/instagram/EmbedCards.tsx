@@ -4,9 +4,9 @@ import Script from "next/script";
 import { useEffect } from "react";
 
 const POSTS = [
-    "https://www.instagram.com/p/DY7nCOllEhH/",
-    "https://www.instagram.com/reel/DYNXR5Mqr5K/",
-    "https://www.instagram.com/reel/DY0s7ZzKY6k/",
+    "https://www.instagram.com/reel/DextLlJKVzH/",
+    "https://www.instagram.com/reel/DekEkxtqAtR/",
+    "https://www.instagram.com/reel/DeVGHOVKkdB/",
 ];
 
 declare global {

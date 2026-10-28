@@ -11,14 +11,26 @@ import { HOST_FORM_URL } from '@/lib/site';
 
 type Slide = { name: string; src: string; position: string };
 
+// Focal point per image: the same slide is cropped to ~2:1 on desktop and
+// 1.25:1 on mobile, so `position` keeps the subject inside both crops.
 const slides: Slide[] = [
-    { name: '1a', src: '/portada/1a.jpg', position: 'center' },
-    { name: '2a', src: '/portada/2a.jpg', position: 'center' },
-    { name: '3a', src: '/portada/3a.jpg', position: 'center 100%' },
-    { name: '4a', src: '/portada/4a.jpg', position: 'center 100%' },
-    { name: '5a', src: '/portada/5a.jpg', position: 'left center' },
-    { name: '6a', src: '/portada/6a.jpg', position: 'center' },
-    { name: '7a', src: '/portada/7a.jpg', position: 'center' },
+    { name: '01', src: '/portada/01.jpg', position: 'center 35%' },
+    { name: '02', src: '/portada/02.jpg', position: 'center' },
+    { name: '03', src: '/portada/03.jpg', position: 'center' },
+    { name: '04', src: '/portada/04.jpg', position: 'center' },
+    { name: '05', src: '/portada/05.jpg', position: '40% center' },
+    { name: '06', src: '/portada/06.jpg', position: 'center' },
+    { name: '07', src: '/portada/07.jpg', position: 'center' },
+    { name: '08', src: '/portada/08.jpg', position: 'center' },
+    { name: '09', src: '/portada/09.jpg', position: 'center' },
+    { name: '10', src: '/portada/10.jpg', position: 'center' },
+    { name: '11', src: '/portada/11.jpg', position: 'center 25%' },
+    { name: '12', src: '/portada/12.jpg', position: 'center' },
+    { name: '13', src: '/portada/13.jpg', position: 'center' },
+    { name: '14', src: '/portada/14.jpg', position: 'left center' },
+    { name: '15', src: '/portada/15.jpg', position: 'center' },
+    { name: '16', src: '/portada/16.jpg', position: 'center 35%' },
+    { name: '17', src: '/portada/17.jpg', position: 'center 40%' },
 ];
 
 const T = {

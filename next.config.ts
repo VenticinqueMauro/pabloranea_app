@@ -2,6 +2,8 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // We use CLAUDE.md for agent guidance; don't let `next dev` generate AGENTS.md.
+  agentRules: false,
   images: {
     // Serve modern formats; the optimizer picks AVIF/WebP when supported,
     // falling back to the original otherwise.
